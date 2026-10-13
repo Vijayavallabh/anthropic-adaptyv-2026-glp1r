@@ -70,11 +70,18 @@ RFd rim-binder lineage. `runs/rfd_val_tm5tip.log`.
   + the buried-pocket geometry). Do NOT scale RFd vestibule binders.
 - MPNN caveat confirmed: small-interface rim binders → degenerate poly-Ala seqs at temp 0.2.
 
-### IN FLIGHT (2026-10-13, GPUs idle after TNF finished)
-- **ECD-arm af2ig** (GPUs 1-4): 192 ecd_mini variants vs R29-129 target. The ECD is a soluble domain (normal PPI
-  target) — best shot at a folded binder that actually binds (antagonist/diversity hedge). `runs/af2/ecd_mini/sharded`.
-- **EvoBind agonism production** (GPUs 0/5/6/7): lengths 14/20/26/32, 200 iters, steered to the vestibule. The
-  agonism bet (threading peptides). Smoke VERIFIED end-to-end (metrics.csv, ~50s/iter). `runs/evobind/prod_l*`.
+### ECD arm: MARGINALLY VIABLE (partial af2ig, re-scoring)
+- ECD af2ig (first run truncated by a cuBLAS-init race, now fixed w/ stagger): **best pae_interaction 10.38**
+  (des_3_7, plddt 91.6, rmsd 0.88) — right at the binding threshold; several in 10-18. The soluble ECD IS a
+  designable target (unlike the vestibule). BUT an ECD-only binder = ANTAGONIST (blocks address, no message) →
+  a binding hedge, not agonism. Re-scoring the full 192 (`runs/af2/ecd_mini/sharded`, staggered GPUs 1-3).
+
+### IN FLIGHT (2026-10-13, idle window, all 8 GPUs on GLP1R)
+- **EvoBind agonism production** (GPUs 0/5/6/7): lengths 14/20/26/32, 200 iters, steered to the deep vestibule.
+  THE agonism bet (threading peptides). Viability VERIFIED (smoke). `runs/evobind/prod_l*`; early, converging.
+- **RFd3 all-atom vestibule** (GPU 4): `specs/rfd3/glp1r_vestibule_deep.json`, deep cluster {190,194,233,234,237}
+  RFd1 could not reach. The TNF-proven wall-breaker for the af2ig-floor pattern. `runs/rfd3/vestdeep`.
+- **ECD af2ig re-run** (GPUs 1-3): full 192, staggered.
 
 ### Next
 1. Read ECD af2ig (does any ECD binder pass pae<10?) + EvoBind convergence (if_dist→<4, peptide plddt up?).

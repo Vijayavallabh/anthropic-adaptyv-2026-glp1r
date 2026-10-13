@@ -64,10 +64,10 @@
     {
       "id": "F7",
       "title": "Stage 5 - novelty + liabilities (eligibility + developability + FoldSeek structural novelty)",
-      "status": "in-progress",
+      "status": "done",
       "deps": ["F5"],
       "done_when": "eligibility (de-novo, not GLP-1/exendin/glucagon/semaglutide/GIP) + developability + structural-novelty scorecards; recorded",
-      "evidence": "DONE: eligibility_check.py (local SW id vs known_agonists.fasta, FLAG id>30% AND cov>=0.5) - 14/15 OK, eb_accv_l32 dropped; developability.py (Cys/low-complexity/GRAVY/instability) - 3 clean ECD binders + 1 clean peptide. PENDING: FoldSeek/MMseqs2 structural novelty (seq<=30% + TM<0.5) vs PDB/AFDB; portal is the authority"
+      "evidence": "eligibility_check.py (local SW id vs known_agonists.fasta, FLAG id>30% AND cov>=0.5) - 14/15 OK, eb_accv_l32 dropped; developability.py - 3 clean ECD binders + 1 clean peptide; FoldSeek vs PDB100 (runs/novelty/pdb_hits.m8) - 7/7 ECD binders sequence-novel but STRUCTURALLY COMMON helical bundles (maxTM 0.87-0.92 to PDB; des_8_7 most novel 0.70) -> expect ~3/4 portal novelty. AFDB skipped (disk); Proteinbase portal is the authority. All in data/candidates/candidates.csv (struct_nov_maxTM col)"
     },
     {
       "id": "F8",

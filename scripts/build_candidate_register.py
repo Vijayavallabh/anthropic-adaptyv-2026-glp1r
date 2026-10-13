@@ -31,7 +31,29 @@ OUT_DIR = os.path.join(REPO, "data/candidates")
 
 COLS = ["name", "arm", "status", "molecule_class", "length", "binding_model", "binding_metric",
         "binding_value", "plddt", "rmsd", "instability", "gravy", "net_charge", "cys",
-        "max_aa_frac", "elig_id_pct", "elig_cov", "elig_nearest", "eligible", "dev_flags", "sequence"]
+        "max_aa_frac", "elig_id_pct", "elig_cov", "elig_nearest", "eligible",
+        "struct_nov_maxTM", "struct_nov_pdb", "dev_flags", "sequence"]
+
+
+def pdb_novelty():
+    """Max TM to PDB per design from the FoldSeek easy-search output (F7 structural novelty).
+    runs/novelty/pdb_hits.m8 columns: query,target,alntmscore,evalue,prob. Missing file -> {}."""
+    best = {}
+    f = os.path.join(REPO, "runs/novelty/pdb_hits.m8")
+    if not os.path.exists(f):
+        return best
+    for ln in open(f):
+        p = ln.rstrip("\n").split("\t")
+        if len(p) < 3:
+            continue
+        q = p[0].replace(".pdb", "")
+        try:
+            tm = float(p[2])
+        except ValueError:
+            continue
+        if q not in best or tm > best[q][0]:
+            best[q] = (tm, p[1])
+    return best
 
 
 def best_peptide(run):
@@ -83,6 +105,13 @@ def main():
                             "af2ig", "pae_interaction", s["pae_i"], s["plddt_b"], s["rmsd"],
                             refs, aligner))
 
+    # F7 structural novelty: attach max-TM-to-PDB (ECD binders have folds; peptides too short -> blank)
+    nov = pdb_novelty()
+    for r in rows:
+        t = nov.get(r["name"])
+        r["struct_nov_maxTM"] = f"{t[0]:.3f}" if t else ""
+        r["struct_nov_pdb"] = t[1] if t else ""
+
     os.makedirs(OUT_DIR, exist_ok=True)
     with open(os.path.join(OUT_DIR, "candidates.csv"), "w", newline="") as fh:
         w = csv.DictWriter(fh, fieldnames=COLS)
@@ -95,12 +124,13 @@ def main():
 
 
 def _md_table(rows, metric_label):
-    out = [f"| name | status | len | {metric_label} | plddt | rmsd | instab | eligibility (id%/cov/nearest) | dev |",
-           "|---|---|---|---|---|---|---|---|---|"]
+    out = [f"| name | status | len | {metric_label} | plddt | rmsd | instab | eligibility (id%/cov/nearest) | novTM(PDB) | dev |",
+           "|---|---|---|---|---|---|---|---|---|---|"]
     for r in rows:
         elig = f"{'OK' if r['eligible'] else 'FLAG'} {r['elig_id_pct']}%/cov{r['elig_cov']}/{r['elig_nearest']}"
         out.append(f"| {r['name']} | {r['status']} | {r['length']} | {r['binding_value']} | "
-                   f"{r['plddt'] or '-'} | {r['rmsd'] or '-'} | {r['instability']} | {elig} | {r['dev_flags']} |")
+                   f"{r['plddt'] or '-'} | {r['rmsd'] or '-'} | {r['instability']} | {elig} | "
+                   f"{r.get('struct_nov_maxTM') or '-'} | {r['dev_flags']} |")
     return "\n".join(out)
 
 
@@ -135,6 +165,9 @@ rows failed the de-novo eligibility gate (local id to a known agonist >30% over 
 RFdiffusion→LigandMPNN→af2ig on the soluble ECD groove; all shown pass the binder gate
 (pae<10, plddt>80, rmsd<2). Mechanistically ECD-only (no 7TM message) → expected to BIND and pass the
 binding gate but lean antagonist, not agonist. All de-novo (eligibility OK; coverage ≪ 0.5).
+**Structural novelty (FoldSeek vs PDB100, F7):** all are sequence-novel but structurally common helical
+bundles (max TM 0.87–0.92 to PDB; `des_8_7` most novel at 0.70) → expect ~3/4 on the portal novelty axis
+(sequence saves them). Query = the af2ig binder fold; the portal is the authority (it also compares AFDB).
 
 {_md_table(ecd, "af2ig pae")}
 

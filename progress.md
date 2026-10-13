@@ -116,12 +116,18 @@ diversity). [[lesson-denovo-binder-cant-reach-buried-pocket]]
 This is the honest in-silico ceiling: no folded de-novo protein engages this vestibule, and no in-silico score
 proves agonism regardless. Remaining work is to finalize the submission from the candidates in hand.
 
+### F7 novelty + liabilities — DONE
+Eligibility (de-novo) + developability done earlier. **Structural novelty (FoldSeek vs PDB100):** 7/7 ECD binders
+are sequence-novel but **structurally common helical bundles** (max TM 0.87–0.92 to PDB; `des_8_7` most novel at
+0.70) → expect ~3/4 on the portal novelty axis (sequence saves them). Peptides are too short for a fold-TM; their
+novelty is sequence-based (eligibility). AFDB skipped (disk ~93%); **Proteinbase portal is the authority** (it also
+compares AFDB) — re-check pre-upload. Numbers in `data/candidates/candidates.csv` (`struct_nov_maxTM`).
+
 ### Next (deliverables)
-1. **F7 structural novelty** — FoldSeek (single-seq fold max TM vs PDB/AFDB; safe TM<~0.80) on the keep candidates;
-   eligibility (sequence) + developability already done. Proteinbase portal is the authority.
-2. **F8 rank + select ≤20** — 5 scorecards, rank WITHIN arm (binding_value not cross-comparable), cap ≤2/lineage,
-   best-first. Input `data/candidates/candidates.csv` (status==keep & eligible==True).
-3. **F9 package** — build submission CSV (`name,sequence,molecule_class`), `validate_submission.py` exit 0, md5,
+1. **F8 rank + select ≤20** — 5 scorecards, rank WITHIN arm (binding_value not cross-comparable), cap ≤2/lineage,
+   best-first. Input `data/candidates/candidates.csv` (status==keep & eligible==True). Novelty barely differentiates
+   the ECD binders (all ~0.9 TM) → rank them on binding (pae) + developability; diversify arm/mechanism.
+2. **F9 package** — build submission CSV (`name,sequence,molecule_class`), `validate_submission.py` exit 0, md5,
    dossier. **USER-GATED upload** (re-verify the live molecule_class dropdown first).
 
 ## Compute

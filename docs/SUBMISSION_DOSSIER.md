@@ -152,12 +152,10 @@ Single-sourced pipeline, all committed to the private repo (`Vijayavallabh/anthr
 
 - [ ] `molecule_class`: CONFIRMED on the live portal (owner's 2026-10-13 paste parsed all 19 as **"Single chain"**,
       accepted `protein`, 0 needing fixes). Low-risk; glance at the /submit dropdown once more at upload.
-- [ ] **Portal novelty/eligibility re-check: inspect ALL 9 peptides marked `recheck` in
-      `submissions/glp1r_track3_eligibility.csv`** (glp1r_04/09/11/12/10/03/05/01/02) — NOT just 3. Drop/reorder
-      ONLY what the portal actually flags; never pre-emptively drop a win-path peptide over a 3–6 residue motif.
-- [ ] **Package-level gate — EvoBind license:** CC-BY-NC governs the generation method behind ALL 12 win-path
-      peptides. Confirm it is acceptable under the competition's publication terms BEFORE upload (affects the whole
-      agonism arm, not one design).
+- [x] **Portal novelty/eligibility: CONFIRMED by owner (2026-10-13)** — all 9 `recheck` peptides in
+      `submissions/glp1r_track3_eligibility.csv` (glp1r_04/09/11/12/10/03/05/01/02) are tagged **novel enough** on the
+      portal (the authority); the convergent-motif reasoning held, **no drops needed**.
+- [x] **EvoBind license (CC-BY-NC): CONFIRMED acceptable by owner (2026-10-13)** — covers all 12 win-path peptides.
 - [ ] Confirm row order = intended ranking; submit `submissions/glp1r_track3.csv` (md5 `be5b762…`) **unchanged** (bytes).
 - [ ] Optional: an orthogonal-generator peptide sub-arm (BoltzGen/RFpeptides) may be folded in before upload to
       diversify the win-path monoculture (see §8) — only if it clears eligibility/developability.

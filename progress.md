@@ -155,14 +155,14 @@ corrected; molecule_class recorded as resolved). **Highest-value remaining move 
 12-member EvoBind monoculture → an orthogonal-generator peptide sub-arm (BoltzGen MIT / RFpeptides BSD-3
 disulfide-cyclized) would diversify it — pursuing as an expansion (autonomous mandate; ≤4 GPU).
 
-### Remaining (USER-GATED / pre-upload)
-1. **Portal novelty/eligibility re-check** of ALL 9 peptides marked `recheck` in
-   `submissions/glp1r_track3_eligibility.csv` (glp1r_04/09/11/12/10/03/05/01/02 — short convergent motifs ≤3-res runs,
-   pass our cov-gated gate) — drop/reorder ONLY what the portal flags.
-2. **molecule_class: CONFIRMED** via the owner's live portal paste 2026-10-13 (all 19 parsed "Single chain", accepted
-   `protein`, 0 needing fixes). Glance at the /submit dropdown once more at upload.
-3. **EvoBind CC-BY-NC license**: confirm acceptable under the competition's publication terms (covers all 12 win-path peptides).
-4. **UPLOAD IS USER-GATED — never auto-upload.** Package + dossier staged for the owner to review and submit.
+### Pre-upload gates — ALL CLEARED (2026-10-13); only the owner's upload action remains
+1. **Portal novelty/eligibility: CLEARED** — owner confirmed all 9 `recheck` peptides in
+   `submissions/glp1r_track3_eligibility.csv` are tagged **novel enough** on the portal (authority); no drops.
+2. **molecule_class: CLEARED** — live portal parsed all 19 as "Single chain", accepted `protein`, 0 needing fixes.
+3. **EvoBind CC-BY-NC license: CLEARED** — owner confirmed acceptable (covers all 12 win-path peptides).
+4. **Format/validator: CLEARED** — `rows=19 errors=0`, md5 `be5b7621447eeab3402f409bcec76c9d`, submit==register 19/19.
+→ **The submission has passed every known gate (format + novelty + license). Nothing blocks upload except the
+owner's action. UPLOAD IS USER-GATED — never auto-upload.** Submit `submissions/glp1r_track3.csv` (md5 above) unchanged.
 
 ## Compute
 

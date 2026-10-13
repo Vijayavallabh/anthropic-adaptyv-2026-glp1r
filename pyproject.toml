@@ -1,0 +1,38 @@
+[project]
+name = "adaptyv-glp1r"
+version = "0.1.0"
+description = "De-novo GLP1R AGONIST design + in-silico validation — Anthropic x Adaptyv 2026 Challenge 3 (Track 3)"
+readme = "README.md"
+authors = [
+    { name = "Vijayavallabh" }
+]
+requires-python = ">=3.12"
+# Core env is CPU-only: orchestration, parsing, scoring glue, submission validation.
+# Heavy design/fold models live in isolated per-tool venvs under envs/ (see docs/TOOLS.md).
+dependencies = [
+    "anarcism>=1.0.1",      # ANARCI-equivalent: antibody-format numbering for nanobody/scfv/fab validation
+    "biopython>=1.88",      # PDB/mmCIF parsing, sequence utils, structure handling for target prep
+    "freesasa>=2.2.1",      # SASA / interface burial for interface QC
+    "numpy>=2.1",
+    "pandas>=2.2",
+    "pyyaml>=6.0.1",        # configs/*.yaml (the target + filter contracts)
+    "requests>=2.32",       # RCSB / UniProt fetches (https only; see memory env-no-outbound-network)
+    "tqdm>=4.66",
+]
+
+[project.scripts]
+adaptyv-glp1r = "adaptyv_glp1r:main"
+
+[build-system]
+requires = ["uv_build>=0.12.13,<0.13.0"]
+build-backend = "uv_build"
+
+[dependency-groups]
+dev = [
+    "pytest>=8.0",
+]
+
+[tool.pytest.ini_options]
+# Only our tests - never recurse into vendored third_party/ tool test suites.
+testpaths = ["tests"]
+addopts = "-q"

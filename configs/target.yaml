@@ -1,0 +1,102 @@
+# ============================================================================
+# Human GLP1R AGONIST design contract — Anthropic x Adaptyv 2026 Challenge 3 (Track 3)
+# Numbering is UniProt P43220 throughout (6X18 author numbering follows UniProt).
+# Provenance: verified live 2026-10-13 (RCSB/UniProt/Sino) + 8-stream research wave
+#   (see reports/ + research_notes/). Organizer-unspecified values are null, NOT invented.
+# ============================================================================
+
+target:
+  name: human Glucagon-like peptide-1 receptor (GLP1R)
+  uniprot: P43220-1                 # canonical isoform
+  length: 463
+  signal_peptide: [1, 23]
+  mature: [24, 463]
+  topology:                          # UniProt feature ranges (class B1 / secretin-family GPCR)
+    ecd: [24, 139]                   # extracellular N-terminal domain ("address" capture); crystallized ECD 24-145
+    tm1: [140, 164]
+    tm2: [176, 201]
+    tm3: [228, 251]
+    tm4: [266, 290]
+    tm5: [306, 328]
+    tm6: [349, 370]                  # the activation lever (sharp PxxG kink + ~18 A outward swing)
+    tm7: [384, 404]
+    ctail: [405, 463]
+  ecd_disulfides: [[46, 71], [62, 104], [85, 126]]
+  n_glycosylation: [63, 82, 115]     # complex glycans in BOTH HEK293 construct and cell-surface receptor
+
+# --- The experimental BINDING construct (the gate before the functional assay) ---------------
+binding_construct:
+  vendor_id: Sino Biological 13944-H18H-DD
+  residues: [24, 432]                # Arg24-Ser432, 409 aa = ECD + full 7TM (C-tail truncated)
+  tags: {n_term: FLAG, c_term: polyHis}
+  host: HEK293                       # -> complex glycosylation present
+  detergent: DDM/CHS
+  thermostabilizing_mutations: proprietary_undisclosed   # DO NOT invent; likely INACTIVE-biased
+  nanodisc_sibling: 13944-H98H-NA-B  # orthogonal, more-native counter-screen (lab's option)
+  note: >
+    ECD groove is natively presented on this construct (binds dulaglutide / anti-GLP1R Abs), so an
+    ECD-anchored design WILL register as a binder here. But the thermostabilized 7TM is likely
+    inactive-biased -> this construct can REWARD off-state / antagonist binders. Model binding-assay
+    passage against WT 24-432 (treated inactive/apo); design/validate AGONISM against the active state below.
+
+# --- The ACTIVE-STATE design/validation reference (NOT the construct) -----------------------
+active_state_reference:
+  pdb: 6X18                          # 2.1 A cryo-EM; CLEAN human template (FLAG+HRV3C tag only; NO BRIL/T4L, NO thermostab mutations)
+  chains: {receptor: R, peptide: P, Gs_alpha: A, Gs_beta: B, Gs_gamma: C, Nb35: D}
+  receptor_modeled: [29, 423]        # unmodeled gaps: 130-135 (ECD->TM1 stalk), 339-343 (ICL3); C-tail 424-463 disordered
+  secondary: 6B3J                    # ExP5-bound active state (cross-check)
+  state_stabilized_by: dominant-negative Galpha-s + Nb35
+  avoid_for_human_design: 5VAI       # RABBIT receptor — mechanism only
+
+# --- Activation mechanism: what an agonist MUST do ------------------------------------------
+mechanism:
+  model: two_domain_address_message
+  address: ECD captures the ligand C-terminal helix (affinity; conformation-independent)
+  message: ligand N-terminus inserts into the 7TM core and drives the TM6 kink -> Gs cavity opens -> cAMP
+  key_pharmacophore: His7 imidazole POSITIVE CHARGE is the decisive activation element (not the a-amino)
+  minimal_agonist: 11-mer N-terminal analogues activate (Mapelli 2009); Boc5 non-peptide gives full cAMP
+  vestibule_is_sufficient: true      # oral agonists (orforglipron 6XOX) engage the UPPER vestibule (ECD+ECL2+TM1/2/3/7) and activate
+  bias_target: Gs/cAMP (partial, G-protein-biased is fine for CRE-SEAP; EvoBind designs were Gs-biased)
+
+# --- Hotspots to target (generation) and score against (validation) -------------------------
+hotspots:
+  ecd_groove: [32, 69, 88, 89, 90, 121, 127, 128]   # Y69,Y88,L89,P90 fold/bind-critical; R121,E127,E128; L32; peptide anchor F28 (F28A=1300x loss)
+  tm_message_reader: [145, 190, 197, 299, 363, 364, 388, 392, 394]  # Y145(TM1) R190/K197(TM2) R299(ECL2 reads His7/Thr11) H363/E364(TM6) L388/S392/Q394(TM7)
+  central_polar_network: [190, 240, 363, 364, 394]  # activation/bias fulcrum
+  primary_design_site: 7TM_vestibule_plus_ecd_anchor # engage the vestibule message-reader, anchored via the ECD groove
+  avoid:
+    - stable_ECL3_contacts          # beta-arrestin bias / blocking
+    - deep_cytoplasmic_TM6_contacts # risks NAM-like clamping (cf. NAM structures 5VEW/5VEX)
+    - glycan_clash                  # N63/N82/N115 ~15-20 A exclusion zone
+    - tag_binding                   # FLAG (near ECD a1 helix) / C-His (keep epitope off the termini)
+
+# --- Controls (calibration ONLY — NEVER design seeds; see eligibility) ----------------------
+controls:
+  positive_agonists: [GLP-1(7-36)NH2, exendin-4, liraglutide, Boc5]   # for scoring calibration / active-state co-fold positives
+  positive_small_molecule: orforglipron            # vestibule agonist reference (6XOX)
+  negative: scrambled_sequence_matched_composition
+  reference_agonist_in_assay: null                 # UNSPECIFIED by organizer (commonly GLP-1 or exendin-4)
+
+# --- Eligibility / novelty (hard gate) ------------------------------------------------------
+eligibility:
+  de_novo: true
+  zero_shot: true
+  rule: generated-not-grafted scaffold; NO significant identity to GLP-1 / exendin-4 / glucagon / semaglutide; never seed from a known binder or a native agonist-receptor complex
+  forbidden_archetype: semaglutide redesign (Wei et al. Adv Sci 2025; template 7KI0; 0.68-0.81 id) = DISQUALIFIED
+  backbone: linear or DISULFIDE-cyclized only (gene-encodable); head-to-tail macrocycles NOT submittable; natural AAs only
+  novelty_level4: sequence <=30% id (MMseqs2 vs SwissProt+PDB+patents+Ab-DBs) AND sub-moderate structural (Foldseek/TM-align TM<0.5)
+  portal_is_authority: true          # the Proteinbase novelty check is the final word; always re-check before upload
+
+# --- Allowed formats ------------------------------------------------------------------------
+formats:
+  protein: {len: [10, 250], bands: {microbinder: "<40", minibinder: "40-100", large: ">100"}}
+  antibody: [nanobody, scfv, fab_kappa, fab_lambda]   # ANARCI-parseable; Fab encoded VH:VL (heavy first)
+  molecule_class_conflict: "brief/page='protein'; live TNF portal 2026-10='single_chain' -> accept both, emit 'protein', VERIFY at upload"
+
+# --- Strategy (user-approved 2026-10-13: mechanism-hedged portfolio) ------------------------
+objective_priority: [agonism, binding, novelty_and_compliance, developability, portfolio_diversity]
+strategy:
+  S1_message_microprotein: de-novo micro/mini (<40-100 aa, linear/disulfide) inserting a de-novo His7-surrogate message into the 7TM vestibule to stabilize the active state   # PRIMARY
+  S2_two_domain_mini_agonist: de-novo ECD-address + 7TM-message mini-agonist, both parts de-novo   # best novelty x mechanism
+  S3_exoframe_ago_pam: TM-exoframe allosteric mini-protein (GEM-style)   # method-novelty moonshot
+  S4_ecd_clamp_control: active-state ECD/ECL clamp   # LOW / antagonist-trap; <=1-2 long-shot slots only

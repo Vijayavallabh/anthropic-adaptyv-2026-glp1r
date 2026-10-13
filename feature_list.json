@@ -1,0 +1,89 @@
+{
+  "project": "anthropic-adaptyv-2026-glp1r",
+  "challenge": "Anthropic x Adaptyv 2026 Challenge 3 (Track 3) - de novo human GLP1R AGONIST",
+  "updated": "2026-10-13",
+  "active": "F0",
+  "note": "STATE=INITIALIZING. Research wave COMPLETE (8 streams + synthesis report; strategy = mechanism-hedged portfolio S1-S4, user-approved 2026-10-13). Harness being scaffolded. Feasibility: FRONTIER/MOONSHOT - no standalone designed protein has ever agonized a class B GPCR; only direct GLP1R-agonist precedent is EvoBind cyclic peptides (preprint, n=3). Win condition = ACTIVATION, not binding; no in-silico score proves agonism. NO GPU design job run yet (all 8xH100 idle).",
+  "features": [
+    {
+      "id": "F0",
+      "title": "Repo + harness + env (uv, GPU cap, validator gate, secrets hygiene)",
+      "status": "active",
+      "deps": [],
+      "done_when": "AGENTS.md/CLAUDE.md/feature_list/progress/session-handoff/init.sh present; configs/{target,filters,tools}.yaml; src validator + tests; .gitignore blocks secrets+weights+run CSVs; init.sh gate PASSES (uv sync+compile+pytest+validator); private GitHub repo created + pushed (repo-local identity)",
+      "evidence": "pending: init.sh PASS + first commit md5/sha"
+    },
+    {
+      "id": "F1",
+      "title": "Research + evidence register (8-stream wave + cited synthesis)",
+      "status": "done",
+      "deps": [],
+      "done_when": "reports/ + research_notes/ cover all 8 dimensions, cited; load-bearing claims (Baker class-B-antagonist-only; EvoBind) verified first-hand; strategy chosen",
+      "evidence": "reports/'GLP1R de novo agonist design.md' (26-row evidence register, 80 citations); research_notes/'GLP1R de novo agonist design'/01-08; Baker bioRxiv 2025.03.23.644666 + EvoBind 2025.06.06.658268 verified 2026-10-13; strategy = mechanism-hedged portfolio"
+    },
+    {
+      "id": "F2",
+      "title": "Stage 0 - target prep (6X18 active-state target + construct model + hotspots + controls)",
+      "status": "planned",
+      "deps": ["F0"],
+      "done_when": "6X18 chain R cleaned to a full-atom ACTIVE-state design target (gaps noted); WT/apo 24-432 construct model for binding-assay scoring; hotspot residue selections (ECD groove + 7TM vestibule) dumped; positive (GLP-1(7-36)/exendin-4/orforglipron/Boc5) + scramble control complexes assembled; glycan/tag exclusion zones recorded; all under data/target + data/controls",
+      "evidence": "pending"
+    },
+    {
+      "id": "F3",
+      "title": "Stage 1 - generation (S1 message micro/mini + S2 two-domain + S3 exoframe + S4 clamp)",
+      "status": "planned",
+      "deps": ["F2"],
+      "done_when": "active-state-conditioned, vestibule-hotspot-targeted de-novo backbones/designs per strategy, with provenance (tool/version/seed); GPU runs recorded; de-novo/eligibility pre-screened",
+      "evidence": "pending (GPU - user-authorized run)"
+    },
+    {
+      "id": "F4",
+      "title": "Stage 2 - sequence design (ProteinMPNN/LigandMPNN; 0 unpaired Cys)",
+      "status": "planned",
+      "deps": ["F3"],
+      "done_when": "sequences for backbones; natural AAs; unpaired-Cys-free unless intended; recorded",
+      "evidence": "pending"
+    },
+    {
+      "id": "F5",
+      "title": "Stage 3 - binding fold/score (Boltz-2/Protenix-v0.5.0/Chai-1/af2ig; ipSAE_min calibrated vs controls)",
+      "status": "planned",
+      "deps": ["F4"],
+      "done_when": "per-design BINDING scorecard vs positive/negative controls on the construct model; recorded",
+      "evidence": "pending"
+    },
+    {
+      "id": "F6",
+      "title": "Stage 4 - agonism-hypothesis gate (active-state co-fold vs 6X18 + message-in-vestibule + optional GaMD TM6)",
+      "status": "planned",
+      "deps": ["F5"],
+      "done_when": "per-design AGONISM-HYPOTHESIS scorecard (LOW-confidence, explicitly labeled; active-state compatibility + vestibule-message contacts); recorded",
+      "evidence": "pending"
+    },
+    {
+      "id": "F7",
+      "title": "Stage 5 - novelty + liabilities (FoldSeek/MMseqs2 + ESMFold monomer + SAP/Cys + ANARCI if Ab)",
+      "status": "planned",
+      "deps": ["F5"],
+      "done_when": "novelty (seq<=30% + struct TM<0.5) + developability scorecards; eligibility (de-novo, not GLP-1/exendin/semaglutide) confirmed; recorded",
+      "evidence": "pending"
+    },
+    {
+      "id": "F8",
+      "title": "Stage 6 - rank + select <=20 (5 scorecards; mechanism/fold/method diversity, cap 2/lineage)",
+      "status": "planned",
+      "deps": ["F6", "F7"],
+      "done_when": "ranked portfolio <=20, best-first, justified per design; validator PASS (Track 3); md5 recorded; internal ranking weights disclosed (not presented as organizer's)",
+      "evidence": "pending"
+    },
+    {
+      "id": "F9",
+      "title": "Submission package (CSV + dossier + provenance + manifests/checksums)",
+      "status": "planned",
+      "deps": ["F8"],
+      "done_when": "validate_submission exits 0; docs (methods/provenance/novelty/predictions/ranking/uncertainty/repro/tool-license) complete; large artifacts out-of-git with checksums; USER-GATED upload",
+      "evidence": "pending (USER-GATED)"
+    }
+  ]
+}

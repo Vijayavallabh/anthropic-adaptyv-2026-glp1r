@@ -1,0 +1,46 @@
+# Tool matrix — reconciled to the local 8xH100 install (research note 07).
+# output_release_ok = safe to publish the resulting SEQUENCES under ODC-BY (tested designs are published).
+# Avoid AF3 / Protenix-v2 / ESM-3 / ESMC-600M in any SUBMITTED-design provenance (license conflicts).
+
+generate:
+  - {name: RFdiffusion,        stage: S1/S2, license: BSD-3, weights: BSD-3,  installed: yes, output_release_ok: yes}
+  - {name: RFdiffusion3,       stage: S1/S2, license: BSD-3, weights: BSD-3,  installed: yes, output_release_ok: yes}
+  - {name: RFpeptides,         stage: S1,    license: BSD-3, weights: BSD-3,  installed: yes, output_release_ok: yes, note: macrocycle mode; use linear/disulfide outputs}
+  - {name: BindCraft,          stage: S1/S2, license: MIT,   weights: "AF2 CC-BY-4.0", installed: yes, output_release_ok: yes, needs: "AF2 params + DSSP"}
+  - {name: BoltzGen,           stage: S1/S2, license: MIT,   weights: present, installed: yes, output_release_ok: yes}
+  - {name: Genie3,             stage: S1/S2, license: Apache-2.0, weights: present, installed: yes, output_release_ok: yes}
+  - {name: PXDesign,           stage: S1/S2, license: Apache-2.0, weights: "Protenix Apache", installed: yes, output_release_ok: yes}
+  - {name: EvoBind,            stage: S1,    license: check,  weights: n/a, installed: UNCONFIRMED, output_release_ok: check, note: "top generator for blind peptide agonists; CONFIRM/INSTALL + verify linear mode + license"}
+
+sequence:
+  - {name: ProteinMPNN,  license: MIT, installed: yes, output_release_ok: yes}
+  - {name: LigandMPNN,   license: MIT, installed: yes, output_release_ok: yes}
+  - {name: Caliby,       license: Apache-2.0, installed: yes, output_release_ok: yes}
+
+fold_score:
+  - {name: AF2_initial_guess, license: "Apache + AF2 CC-BY", installed: yes, output_release_ok: yes}
+  - {name: Boltz-2,     license: MIT, weights: MIT, installed: yes, version: 2.2.1, output_release_ok: yes}
+  - {name: Chai-1,      license: Apache-2.0, weights: Apache-2.0, installed: yes, version: 0.6.1, output_release_ok: yes}
+  - {name: Protenix,    license: Apache-2.0, installed: yes, version: 2.0.0, output_release_ok: "use v0.5.0/PXDesign Apache weights; v2 weights proprietary"}
+  - {name: OpenFold3,   license: Apache-2.0, installed: yes, output_release_ok: yes, note: "AF3-free co-folder"}
+  - {name: AlphaFold3,  license: "gated / non-commercial output terms", installed: no, output_release_ok: NO, note: EXCLUDE from submitted-design provenance}
+  - {name: DockQ,       license: MIT, installed: yes, version: 2.1.3, output_release_ok: yes}
+  - {name: voronota-lt, license: check, installed: yes, version: 1.1.479, output_release_ok: yes}
+
+rank_novelty_dev:
+  - {name: ESM-2,       license: MIT, installed: yes, output_release_ok: yes, use: expression/naturalness ranking}
+  - {name: ESMC-300M,   license: "Cambrian Open", installed: yes, output_release_ok: yes}
+  - {name: ESM-3/ESMC-600M, license: "Cambrian Non-Commercial", installed: partial, output_release_ok: NO}
+  - {name: ESMFold2,    license: MIT, installed: yes, output_release_ok: yes, use: single-seq monomer pLDDT (expression)}
+  - {name: FoldSeek,    license: GPL-3.0, installed: NO, output_release_ok: yes, note: "INSTALL (novelty gate); GPL binds software not outputs"}
+  - {name: MMseqs2,     license: GPL-3.0, installed: NO, output_release_ok: yes, note: "INSTALL (novelty gate)"}
+  - {name: anarcism,    license: core-dep, installed: "core env", use: antibody-format validation}
+
+md_optional:
+  - {name: OpenMM,  license: "MIT+LGPL", installed: yes, use: "explicit-state GaMD TM6-opening proxy (hypothesis-only)"}
+  - {name: PyRosetta, license: "free academic only", installed: yes, output_release_ok: "outputs publishable; confirm non-commercial or substitute OpenMM/Voronota"}
+
+infra:
+  uplifting_kit: third_party/uplifting-biomolecular-modeling   # Anthropic reference; byte-pinned; --det 1 for reproducible submitted artifacts
+  gpus: {count: 8, model: H100-80GB, default_use: 4, burst_to_8: "idle windows only"}
+  weight_caches: ["~/.boltz", "chai_downloads", "protenix_cache", "hf_cache", "hf_home"]

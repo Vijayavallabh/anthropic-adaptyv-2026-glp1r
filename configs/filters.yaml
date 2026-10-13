@@ -1,0 +1,37 @@
+# Scoring / gating thresholds. CALIBRATE against positive controls (GLP-1(7-36), exendin-4,
+# orforglipron, Boc5) and scrambled negatives per-folder — NEVER use absolute cutoffs
+# (community thresholds are soluble-derived and NOT membrane-validated; see research note 04).
+# Every value here is a STARTING POINT to be re-centered on the controls; nothing is a wet-lab truth.
+
+binding:                     # necessary-not-sufficient gate (score vs the WT/apo 24-432 model)
+  ranker: ipSAE_min          # per note 04/06: ipSAE_min > ipTM for designed binders (Dunbrack 2025)
+  ipsae_min_floor: null      # CALIBRATE: set at/above the scramble-negative distribution per folder
+  interface_plddt_floor: null
+  pae_interface_ceiling: null
+  folders: [boltz2, protenix_v0.5.0, chai1, af2_initial_guess]   # ODC-BY-clean; AF3 EXCLUDED (output-license)
+  positive_controls: [GLP-1_7-36, exendin-4, orforglipron, Boc5]
+  negative_control: scramble
+
+agonism_hypothesis:          # HYPOTHESIS gate only — NO in-silico score proves agonism (note 04)
+  active_state_template: 6X18
+  require_message_in_vestibule: true     # designed "message" contacts >=1 of the tm_message_reader hotspots
+  tm6_opening_proxy: optional            # explicit-state GaMD: TM6 outward vs inactive; retrospective-only
+  forbid_ecl3_clamp: true
+  confidence: LOW                        # flagged everywhere; functional assay is the only verdict
+
+novelty:                     # eligibility hard gate; portal is the authority
+  seq_id_max_pct: 30         # MMseqs2 vs SwissProt+PDB+patents+Ab-DBs
+  struct_tm_max: 0.5         # Foldseek/TM-align (sub-moderate); helical bundles may cap at level 3 structurally
+  known_agonist_id_max_pct: 30   # hard-avoid similarity to GLP-1/exendin/glucagon/semaglutide
+  tools: [mmseqs2, foldseek]
+
+developability:              # consensus-drop only when worst-tier on >=2 orthogonal axes (note 06; TNF lesson)
+  unpaired_cys: 0            # prefer 0 free Cys (disulfide pairs OK if intended)
+  esmfold_monomer_plddt_floor: null   # single-seq monomer fold = best de-novo expression predictor (~AUROC 0.72)
+  sap_ceiling: null          # surface aggregation propensity
+  antibody: [TAP_5metric, cdr_liability_motifs]   # only for nanobody/scfv/fab
+
+portfolio:                   # hedge wet-lab risk (feedback-diverse-not-cousins)
+  n_designs_max: 20
+  cap_per_lineage: 2
+  spread_across: [mechanism, fold, generative_method]

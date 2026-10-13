@@ -1,0 +1,48 @@
+# Python
+__pycache__/
+*.py[oc]
+build/
+dist/
+wheels/
+*.egg-info
+
+# Virtual environments (core .venv + isolated per-tool venvs)
+.venv
+.venv-*/
+envs/
+
+# Secrets
+.env
+*.key
+
+# Third-party tools & model weights (bootstrapped by init.sh --tools; license/gated; local-only)
+third_party/
+weights/
+tools/
+model_params/
+
+# Generated design artifacts & run outputs (local-only; submission CSVs are USER-GATED, never auto-committed)
+designs/
+results/
+runs/
+outputs/
+scratchpad/
+data/generated/
+data/raw/
+*.log
+
+# Caches
+.cache/
+hf_home/
+.huggingface/
+.jit/
+logs/
+.ipynb_checkpoints/
+
+# Session scratch + downloads (local-only, untrusted)
+_pdb_raw/
+_scratch/
+_downloads/
+
+# NOTE: data/target/ and data/controls/ (small target refs + control sequences) ARE tracked.
+#       submissions/example_track3.csv (validator fixture) IS tracked.

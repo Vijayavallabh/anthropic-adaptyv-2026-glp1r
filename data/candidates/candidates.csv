@@ -1,0 +1,16 @@
+name,molecule_class,length,arm,metric,value,plddt,instab,eligibility,developability,confidence,sequence
+eb_accv_l14,protein,14,agonism-peptide,if_dist,5.04,65.7,24.9,OK 80%/cov0.36 exendin4,oddCys(1),"LOW: best if_dist, but Cys + short exendin motif",SLFINDWCETFDMM
+eb_prod_l20,protein,20,agonism-peptide,if_dist,5.14,37.6,46.7,OK 44%/cov0.45 exendin4,"oddCys,instab",LOW,GAGIACYDTLQAVTLQLHWT
+eb_accv_l20,protein,20,agonism-peptide,if_dist,5.35,39.0,123.2,OK 75%/cov0.20 GIP,instab123,LOW: very high instab,TYPFNVNQSIQSISEQQPFP
+eb_prod_l14,protein,14,agonism-peptide,if_dist,5.52,46.3,41.7,OK 67%/cov0.43 GLP1,"hydrophobic,instab",LOW,DAVIPWLWKQLVLK
+eb_prod_l26,protein,26,agonism-peptide,if_dist,5.77,57.4,35.6,OK 50%/cov0.31 GLP1,CLEAN,LOW: only fully-clean peptide,DATFKYSQNPGNVAMEHIMSAYWQFF
+eb_prod_l32,protein,32,agonism-peptide,if_dist,5.93,61.3,59.8,OK 36%/cov0.34 GLP1,instab(2Cys),LOW,HIDFSAIHCAVYASDGNQPLQPFVKWVVCKMI
+eb_accv_l26,protein,26,agonism-peptide,if_dist,6.27,38.9,52.4,OK 62%/cov0.31 ex9-39,instab,LOW,IPHNNVKVQVEEIALRAKMTETNGQD
+eb_accv_l32,protein,32,DROP,if_dist,7.65,31.7,69.4,FLAG 44%/cov0.50 GIP,"oddCys,instab",DROP: eligibility FLAG + worst binder,KMGPDSQVRTHYADYCHTMMHKLHGQAKKVSG
+ecd_des_20_7,protein,70,binding-hedge,af2ig_pae,6.22,89.8,18.3,OK 62%/cov0.11 GLP1,CLEAN,binder: strongest + clean,EDERLAALDEATRATGEQMTAAAAAGDWDTAEAEGRSLAEKVEELLGASAGRGMRFVVEQHLAYLKAQAA
+ecd_des_8_7,protein,66,binding-hedge,af2ig_pae,7.03,,27.1,OK 38%/cov0.24 GLP1,lowcplx A39%,binder: poly-Ala,DELAEFEADRQQLLAALAHVEREPGGARFGRQLRATLERQEAAERAALAAAAAAALAAAAALAAAR
+ecd_des_10_6,protein,77,binding-hedge,af2ig_pae,7.68,,36.5,OK 50%/cov0.21 ex9-39,lowcplx A40%,binder: poly-Ala,AAAAAQAAAAAAAAAAAAAAEAERRAAELRAETAARAEERYAEMRQRGLPTGERMRELSKLFDEYEEEVALLRAEAA
+ecd_des_2_4,protein,74,binding-hedge,af2ig_pae,7.82,,17.3,OK 32%/cov0.34 exendin4,CLEAN,binder: clean,DVDKVKEAAKKAVKEVEEAAKKAGEEAKPLAEEMKEMAAVQVAWAKYGLDAKKAIKALEEGAKEILKKIKEAAA
+ecd_des_2_6,protein,74,binding-hedge,af2ig_pae,8.21,,30.4,OK 38%/cov0.18 GLP1,CLEAN,binder: clean,NLNKVREAAERAVREVEEAGKEAGEEAEPLVEEMREAARVMVAWAAYGLDANKAIQLLEEGARAILEAIRERAR
+ecd_des_4_3,protein,64,binding-hedge,af2ig_pae,8.6,,36.2,OK 33%/cov0.28 GLP1,lowcplx A31%,binder: poly-Ala,SLLAAAEARAREKQEALAKLGEEALATMRSSGSLATTAAQINKVLDAEDAFLAEQARTAELAAA
+ecd_des_18_5,protein,76,binding-hedge,af2ig_pae,9.55,,42.1,OK 33%/cov0.28 exendin4,instab>40,binder: borderline,GEFFDRLEAAAIATAALLERDPEAGYAYGLEELEAFRAYAEQLEQNSSGEGDLARALARQFEADIEALYHRRLAAL

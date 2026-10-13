@@ -84,25 +84,35 @@ af2ig floor) and RFd3 (lipid wrap) **fail to make a physical vestibule binder**;
 they can't even gate a lipid-wrap out → **folded-binder→vestibule approach is a dead end.**
 [[lesson-denovo-binder-cant-reach-buried-pocket]]
 
-### IN FLIGHT (2026-10-13, 8 EvoBind runs = the agonism bet)
-- **Deep-vestibule EvoBind** (GPUs 0/5/6/7, len 14/20/26/32): if_dist STUCK ~5.5 Å, NOT converging (deepest
-  interface residues unreachable → mean-dist loss floors). `runs/evobind/prod_l*`.
-- **Accessible-vestibule EvoBind** (GPUs 1-4, len 14/20/26/32): retargeted to the ACCESSIBLE upper vestibule
-  (orforglipron agonist site — agonism-competent AND reachable). The better-targeted agonism attempt. `runs/evobind/accv_l*`.
+### EvoBind agonism bet — DONE (8 runs × 200 iters), in-silico WEAK (honest)
+All 8 complete (watcher `bxji9h2d0` was self-match-stuck → killed; read metrics directly). Best-pose
+`if_dist_peptide` **floored 5.0–7.6 Å** (a genuine inserted contact is <4 Å), peptide plddt LOW (32–66); the
+accessible-vestibule retarget (accv) did **not** beat deep (prod) — both floor ~5 Å. The threading-peptide
+optimizer also cannot insert into this membrane-blind, isolated, inactive vestibule; **no clean in-silico binding
+gate exists here**, and agonism is unprovable in-silico regardless. Best by if_dist: accv_l14 5.04/plddt66
+`SLFINDWCETFDMM`; prod_l20 5.14; prod_l26 5.77 (**only fully-clean developability**). Eligibility 7/8 OK;
+**accv_l32 FLAG** (44% id/cov0.50 vs GIP → dropped). Several carry *short* high-local-id motifs to GLP-1/exendin
+at low coverage (accv_l14 80%/cov0.36 exendin4) → prefer low-id, portal re-check. Developability poor across the
+board (short unoptimized peptides); only eb_prod_l26 clean. **→ Keep a DIVERSE 3–4 as LOW-confidence agonism bets
+(labeled); do NOT scale** (floor is reachability, not iteration count). Full set + metrics/flags/labels in the
+versioned register `data/candidates/{register.md,candidates.csv}` (15 candidates: 8 peptides, 7 ECD binders).
 
-### Next
-1. Read ECD af2ig (does any ECD binder pass pae<10?) + EvoBind convergence (if_dist→<4, peptide plddt up?).
-2. If EvoBind converges: scale/extend promising lengths; af2ig-validate the final peptides (binding) + honest
-   agonism-hypothesis label. If ECD binders pass: keep a few as the binder hedge.
-3. Consider RFd3/all-atom for the vestibule (TNF wall-breaker) ONLY if ECD+EvoBind both disappoint.
-4. F7 novelty/liabilities (vs GLP-1/exendin/glucagon/semaglutide) → F8 rank (5 scorecards) → F9 package. USER-GATED upload.
+### Next (12 days runway to 2026-10-25)
+1. **S2 two-domain agonist = the prize bet with the best mechanism** (GLP-1 is bipartite: C-term address→ECD,
+   N-term message→7TM). Reuse the 7 validated ECD-binder backbones as the address; attempt a single chain that
+   also reaches a vestibule message tip. FIRST devil's-advocate the geometry (ECD-epitope↔vestibule span in 6X18)
+   before committing a wave; agonism stays unprovable in-silico → honest-labeled bets.
+2. Portfolio = 3 clean ECD binders (binding hedge) + diverse EvoBind peptides (agonism bet) + any S2 (best-mechanism
+   bet), diversity-capped (≤2/lineage), best-first, ≤20 designs.
+3. F7 novelty/liabilities (vs GLP-1/exendin/glucagon/semaglutide; FoldSeek structural) → F8 rank (5 scorecards)
+   → F9 package (validator exit 0). **USER-GATED upload.**
 
 ## Compute
 
-**NOT idle right now:** my concurrent **TNF-challenge session** is running `af2ig` across **all 8 GPUs** (~61 GB each,
-`boldA_af2ig`). Only ~15–19 GB free/GPU. RFd (~4 GB) and ProteinMPNN coexist fine and are proceeding; **heavy Boltz-2
-co-fold is QUEUED until the TNF job frees memory** (honors "queue heavy GPU work into idle windows / never clobber").
-Default 4 GPUs; burst to 8 only when genuinely idle.
+**State 2026-10-13 (post-EvoBind):** my 8 EvoBind runs finished and released. GPUs **1,3,6,7 free**; **2,4,5** used
+by my concurrent **SEPIQ session** (`boltz predict` ×4 + an `alchemy_ddg` FEP job, small) — do not clobber. GPU 0
+holds a 4.7 GB orphaned allocation from an already-dead PID (not reclaimable by me; non-blocking). Default 4 GPUs;
+burst to 8 only when genuinely idle. Heavy GPU work → the free 1/3/6/7.
 
 ## Gated (owner OK required)
 

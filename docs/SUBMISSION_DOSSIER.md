@@ -3,8 +3,9 @@
 **Target:** human GLP1R (UniProt P43220), class B GPCR. **Win condition:** *activation* (cell-surface
 GLP1R → Gαs → cAMP → CRE-SEAP), **not** binding. **Deadline:** 2026-10-25 23:59 AoE.
 **Package:** `submissions/glp1r_track3.csv` — 19 designs, `name,sequence,molecule_class`, rows in our
-best-first ranking. Validator: `rows=19 errors=0 warnings=0`, exit 0 (Track 3). **md5
-`be5b7621447eeab3402f409bcec76c9d`.** Repo commit `c69dc93` (private). **Upload is USER-GATED — not uploaded.**
+best-first ranking. Validator: `rows=19 errors=0 warnings=0`, exit 0 (Track 3). **md5 `be5b7621447eeab3402f409bcec76c9d`** is the
+submission's byte identity (stable across the packaging commit `c69dc93` and this dossier's later commit; verify by
+bytes, not by commit). Private repo. **Upload is USER-GATED — not uploaded.**
 
 ## 1. Result in one line (honest)
 
@@ -38,9 +39,12 @@ S1 (vestibule-message micro/mini), S2 (two-domain), S3 (exoframe), S4 (ECD clamp
   ipTM/pTM do not separate binders from scrambles, AUC≈0.5). af2ig `pae_interaction<10` + `plddt_binder>80` +
   `rmsd<2` is the calibrated binder-vs-junk gate. It is membrane-blind, so it **cannot** gate a vestibule contact
   at all — hence the agonism arm has no valid in-silico binding gate and rests on mechanism + the wet-lab assay.
-- **Longer peptides do not help and drift toward the natural incretins.** Threading peptides at 36–44 aa floored
-  *worse* (if_dist 6.5–7.9 vs 5.0–6.3 for 14–26 aa) and converged toward GIP (one 44-mer hit 30% id over 75%
-  coverage → dropped on eligibility). The win-path peptides are short (14–26 aa).
+- **Shorter peptides floor best; longer ones floor worse and drift toward the natural incretins.** 14–26 aa
+  peptides reach if_dist ~5.0–6.0 Å; 36–44 aa floored *worse* (6.3–7.9 Å) and converged toward incretins (one
+  44-mer hit 30% id over 75% coverage → dropped on eligibility). A few CLEAN longer peptides (`accv_l36` 36-mer,
+  `prod_l32`, `prod_l40` 40-mer) are nonetheless KEPT as diversity bets: agonism is in-silico-unrankable, the
+  if_dist proxy is weak, and independent longer threading peptides are legitimate additional wet-lab shots. So the
+  submitted win-path spans 14–40 aa / if_dist 5.0–7.1 Å, not a narrow band.
 - **Structural novelty (FoldSeek vs PDB100):** the 7 ECD binders are sequence-novel but structurally common
   helical bundles (max TM 0.87–0.92; one at 0.70) → expected ~3/4 on the portal novelty axis. Peptides are too
   short for a fold-TM; their novelty is sequence-based.
@@ -78,7 +82,7 @@ is af2ig's interface error. These are **not cross-comparable** across arms.
 The organizer's scoring formula is unspecified; we did not invent it. Our disclosed composite
 (`scripts/rank_portfolio.py`): `0.40·arm_prize + 0.10·binding_norm(within-arm) + 0.25·dev_score + 0.25·elig_safety`.
 `arm_prize` encodes the prize priority (peptides=1, binders=0 — binding-only designs cannot win the functional
-assay). `binding_norm` is deliberately low-weighted (the peptide if_dist band 5.0–6.3 is a weak, floored proxy).
+assay). `binding_norm` is deliberately low-weighted (the submitted peptides span if_dist 5.0–7.1 Å — a weak, floored proxy).
 `dev_score` is graded from numeric developability; `elig_safety` is coverage-gated incretin-resemblance. Rows are
 best-first; diversity cap ≤2/lineage (only the `des_2` backbone has 2 members).
 
@@ -87,12 +91,19 @@ best-first; diversity cap ≤2/lineage (only the `des_2` backbone has 2 members)
 Hard rule: no modifying GLP-1/exendin-4/semaglutide/known binders; no significant identity. Our gate
 (`scripts/eligibility_check.py`): flag if local identity >30% **AND** alignment covers ≥50% of the design.
 **2 designs were dropped** on this gate (a 32-mer and a 44-mer that resembled GIP over ≥50% coverage).
-The 19 submitted all pass. Several peptides show **elevated *raw* local identity** to an incretin over *short*
-stretches (⚠ in the table: glp1r_04 100%/cov0.14 glucagon, glp1r_09 80%/cov0.36 exendin-4, glp1r_12 67%/cov0.43
-GLP-1). These are **short convergent receptor-binding motifs, not derivations** — EvoBind generated each peptide
-by blind optimization against the receptor, and any peptide that binds the GLP1R vestibule will share short motifs
-with the natural incretins that bind there. **The Proteinbase portal is the novelty/eligibility authority — these
-must be re-checked there before upload, and dropped/reordered if flagged.**
+The 19 submitted all pass (re-run on the committed CSV: 0 flags). **Full per-peptide incretin-identity table is
+GENERATED at `submissions/glp1r_track3_eligibility.csv`** (never hand-picked). **9 of 12 peptides carry raw local
+id ≥50% to an incretin** and are marked `recheck`: glp1r_04 (100%/cov0.14 glucagon), glp1r_09 (80%/0.36 exendin-4),
+glp1r_11 (75%/0.20 GIP), glp1r_12 (67%/0.43 GLP-1), glp1r_10 (62.5%/0.31 exendin9-39), glp1r_03 (57%/0.19),
+glp1r_05 (57%/0.39), glp1r_01 (50%/0.25), glp1r_02 (50%/0.31). These are **short convergent receptor-binding
+motifs, not derivations**: the pre-upload audit's decisive check found the **maximum contiguous identical run to
+ANY incretin across ALL 19 designs is just 3 residues** (no 4+ verbatim graft); the elevated raw-ids are either
+tiny-window Smith-Waterman artifacts or the universally-conserved incretin aromatic anchor (FIxWL/LFIEW) that any
+GLP1R-vestibule peptide must converge on. EvoBind generated each peptide by blind optimization, never seeded from
+an incretin. The portal's own eligibility screen uses MMseqs2 (`configs/filters.yaml`), which is insensitive to
+such short motifs. **The Proteinbase portal is the authority — re-check ALL 9 `recheck` peptides there before
+upload; drop/reorder ONLY what the portal actually flags (never pre-emptively drop a win-path peptide over a
+3–6 residue coincidence).**
 
 ## 7. Developability
 
@@ -107,6 +118,17 @@ caveat). Nothing is a hard gate; flags inform rank, not inclusion.
   mechanism-motivated bets; the ECD binders will likely bind but are expected to be antagonist-leaning.
 - The portfolio is a **diversity bet** across the only two viable mechanistic lineages (threading peptides, ECD
   binders); folded-vestibule and two-domain routes are closed. Only the **cAMP/SEAP assay** resolves agonism.
+- **Win-path monoculture (the key residual risk, per the pre-upload audit):** the 12 agonism peptides are ALL from
+  one generator (EvoBind), one topology (linear), one floored proxy — shared failure modes, so the effective number
+  of independent agonism bets is well below 12. The highest-value legitimate move to raise win probability is an
+  **orthogonal peptide sub-arm** from a clean-licensed generator (BoltzGen, MIT, linear-submittable; RFpeptides,
+  BSD-3, disulfide-cyclized — which is closer to the *working* cyclic EvoBind precedent). This needs GPU generation
+  (inside the autonomous mandate; only >4-GPU use and the upload are owner-gated) and is being pursued as an
+  expansion; if it yields eligible peptides they diversify the win-path and fill the unused 20th slot.
+- **glp1r_08_ago (prod_l40)** is the weakest kept peptide (worst if_dist 7.07, 40-mer, 3 unpaired Cys); it is kept
+  as a diversity bet (a free slot, win-path membership unchanged) but is the first candidate to drop if a slot is
+  needed. **glp1r_18_bind** (14-residue poly-Ala run) is an owner judgment call — a harmless hedge in a free slot,
+  but a minor aggregation/optics liability on a published design; drop it only if you prefer the cleaner optics.
 
 ## 9. Provenance, tools & licenses
 
@@ -128,9 +150,15 @@ Single-sourced pipeline, all committed to the private repo (`Vijayavallabh/anthr
 
 ## 11. Pre-upload checklist (USER-GATED)
 
-- [ ] Re-verify the live `molecule_class` dropdown (portal showed **"Single chain"** and accepted our `protein`).
-- [ ] Re-run the portal novelty/eligibility check; **inspect the ⚠ peptides** (glp1r_04/09/12 and any high raw-id)
-      — drop/reorder if the portal flags them.
-- [ ] Confirm EvoBind's CC-BY-NC is acceptable for the competition's publication terms.
-- [ ] Confirm row order = intended ranking; submit `submissions/glp1r_track3.csv` (md5 above) **unchanged** (bytes).
+- [ ] `molecule_class`: CONFIRMED on the live portal (owner's 2026-10-13 paste parsed all 19 as **"Single chain"**,
+      accepted `protein`, 0 needing fixes). Low-risk; glance at the /submit dropdown once more at upload.
+- [ ] **Portal novelty/eligibility re-check: inspect ALL 9 peptides marked `recheck` in
+      `submissions/glp1r_track3_eligibility.csv`** (glp1r_04/09/11/12/10/03/05/01/02) — NOT just 3. Drop/reorder
+      ONLY what the portal actually flags; never pre-emptively drop a win-path peptide over a 3–6 residue motif.
+- [ ] **Package-level gate — EvoBind license:** CC-BY-NC governs the generation method behind ALL 12 win-path
+      peptides. Confirm it is acceptable under the competition's publication terms BEFORE upload (affects the whole
+      agonism arm, not one design).
+- [ ] Confirm row order = intended ranking; submit `submissions/glp1r_track3.csv` (md5 `be5b762…`) **unchanged** (bytes).
+- [ ] Optional: an orthogonal-generator peptide sub-arm (BoltzGen/RFpeptides) may be folded in before upload to
+      diversify the win-path monoculture (see §8) — only if it clears eligibility/developability.
 - [ ] Upload is performed by the owner — never automated.

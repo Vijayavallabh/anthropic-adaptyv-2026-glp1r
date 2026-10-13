@@ -1,0 +1,13 @@
+submission_name,internal_name,raw_id_pct,coverage,nearest_incretin,cov_gated_concern,portal_recheck
+glp1r_04_ago,eb_accv_l22,100.0,0.14,glucagon,28.0,recheck
+glp1r_09_ago,eb_accv_l14,80.0,0.36,exendin_4,57.6,recheck
+glp1r_11_ago,eb_accv_l20,75.0,0.20,GIP_1_42,30.0,recheck
+glp1r_12_ago,eb_prod_l14,66.7,0.43,GLP1_7_37,57.4,recheck
+glp1r_10_ago,eb_accv_l26,62.5,0.31,exendin_9_39,38.8,recheck
+glp1r_03_ago,eb_accv_l36,57.1,0.19,GLP1_7_37,21.7,recheck
+glp1r_05_ago,eb_accv_l18,57.1,0.39,GLP1_7_37,44.5,recheck
+glp1r_01_ago,eb_prod_l24,50.0,0.25,exendin_4,25.0,recheck
+glp1r_02_ago,eb_prod_l26,50.0,0.31,GLP1_7_37,31.0,recheck
+glp1r_07_ago,eb_prod_l20,44.4,0.45,exendin_4,40.0,ok
+glp1r_08_ago,eb_prod_l40,37.5,0.20,exendin_4,15.0,ok
+glp1r_06_ago,eb_prod_l32,36.4,0.34,GLP1_7_37,24.8,ok

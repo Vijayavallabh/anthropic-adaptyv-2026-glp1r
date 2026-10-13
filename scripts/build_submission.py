@@ -31,7 +31,29 @@ def main():
         w = csv.writer(fh)
         w.writerow(["rank", "submission_name", "internal_name", "arm", "binding_metric", "binding_value", "struct_nov_maxTM", "composite"])
         w.writerows(mapping)
+
+    # Incretin-resemblance audit, GENERATED from candidates.csv (root fix: the pre-upload portal
+    # watchlist must be DERIVED, never hand-picked - a hand-picked '3' silently omitted higher-id
+    # peptides). Flag any agonism peptide with raw local id >=50% to a known incretin for portal re-check.
+    cand = {r["name"]: r for r in csv.DictReader(open(os.path.join(REPO, "data/candidates/candidates.csv")))}
+    ELIG = os.path.join(REPO, "submissions/glp1r_track3_eligibility.csv")
+    erows = []
+    for rk, name, internal, arm, *_ in mapping:
+        if arm != "agonism-peptide":
+            continue
+        c = cand[internal]
+        pid = float(c["elig_id_pct"]); cov = float(c["elig_cov"])
+        concern = pid if cov >= 0.50 else pid * cov / 0.50   # same cov-gating as eligibility_check
+        erows.append((name, internal, f"{pid:.1f}", f"{cov:.2f}", c["elig_nearest"], f"{concern:.1f}",
+                      "recheck" if pid >= 50.0 else "ok"))
+    erows.sort(key=lambda r: -float(r[2]))
+    with open(ELIG, "w", newline="") as fh:
+        w = csv.writer(fh)
+        w.writerow(["submission_name", "internal_name", "raw_id_pct", "coverage", "nearest_incretin", "cov_gated_concern", "portal_recheck"])
+        w.writerows(erows)
+    nrc = sum(1 for e in erows if e[6] == "recheck")
     print(f"wrote {OUT} ({len(sub)} designs, rank order) + mapping {MAP}")
+    print(f"wrote {ELIG}: {len(erows)} agonism peptides, {nrc} flagged portal_recheck (raw id>=50%)")
     print(f"{'rank':>4} {'submission_name':<16}{'internal':<14}{'arm':<16}{'metric':<22}comp")
     for rk, nm, intn, arm, bm, bv, nov, comp in mapping:
         print(f"{rk:>4} {nm:<16}{intn:<14}{arm:<16}{bm+'='+bv:<22}{comp}")

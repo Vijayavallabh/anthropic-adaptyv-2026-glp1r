@@ -65,8 +65,9 @@ for Track 3, and the command + key output are recorded as evidence. Never claim 
 ## Submission contract (Challenge 3 — ≤20 designs; deadline 2026-10-25 23:59 AoE)
 
 - CSV `name,sequence,molecule_class`, **rows best-first** (row order = ranking). Natural AAs; Fab = `VH:VL` (heavy first).
-- `molecule_class` **UNRESOLVED CONFLICT**: brief/page = `protein`; live TNF portal (2026-10) = `single_chain`.
-  Validator accepts both; emits `protein`. **RE-VERIFY the live GLP1R /submit dropdown before upload.**
+- `molecule_class` **RESOLVED (2026-10-13)**: the live GLP1R /submit portal parsed all 19 submitted designs as
+  **"Single chain"** and accepted our emitted `protein` (owner's live portal paste, "0 needing fixes"). Validator
+  emits `protein`. Low-risk; glance at the dropdown once more at upload.
 - Names published verbatim → no PII/prompt-like text. Unique names + sequences. De-novo + zero-shot (hard gate).
 - Candidate CSVs live in `runs/` (gitignored). **Upload is USER-GATED** (portal account) — never auto-upload.
 
@@ -77,7 +78,7 @@ Repo-local identity **Vijayavallabh** + noreply (id 88388452). Descriptive messa
 
 ## Open questions / must re-verify before upload
 
-- `molecule_class` live value (`protein` vs `single_chain`).
+- ~~`molecule_class` live value (`protein` vs `single_chain`)~~ — RESOLVED 2026-10-13 (live portal = "Single chain", accepts `protein`).
 - Macrocycle / non-canonical policy (working assumption: linear/disulfide, natural-AA only).
 - Whether de-novo *motif scaffolding* of a novel (non-GLP-1) message is permitted (a sibling Adaptyv comp forbade motif scaffolding) — prefer fully-generated/blind-search designs.
 - Organizer-unspecified: EC50/affinity/agonism thresholds, the reference agonist, the selection-prompt weighting.

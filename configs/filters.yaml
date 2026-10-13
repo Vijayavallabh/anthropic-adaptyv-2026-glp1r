@@ -3,14 +3,20 @@
 # (community thresholds are soluble-derived and NOT membrane-validated; see research note 04).
 # Every value here is a STARTING POINT to be re-centered on the controls; nothing is a wet-lab truth.
 
-binding:                     # necessary-not-sufficient gate (score vs the WT/apo 24-432 model)
-  ranker: ipSAE_min          # per note 04/06: ipSAE_min > ipTM for designed binders (Dunbrack 2025)
-  ipsae_min_floor: null      # CALIBRATE: set at/above the scramble-negative distribution per folder
-  interface_plddt_floor: null
-  pae_interface_ceiling: null
-  folders: [boltz2, protenix_v0.5.0, chai1, af2_initial_guess]   # ODC-BY-clean; AF3 EXCLUDED (output-license)
-  positive_controls: [GLP-1_7-36, exendin-4, orforglipron, Boc5]
-  negative_control: scramble
+binding_engagement:          # CALIBRATED 2026-10-13 on 4 agonists vs 8 scrambles x3 seeds (Boltz-2, construct 24-432)
+  # KEY CALIBRATION RESULT: global ipTM/pTM do NOT discriminate (scramble ties native, AUC~0.5) -> NOT a gate.
+  # Native-agonist-LIKE engagement IS separated by BIPARTITE ECD-groove anchoring + interface PAE.
+  discriminators:
+    ecd_groove_anchor_count: {ge: 5}   # AUC=1.00 (4 pos all >=6.0; 8 neg all <=4.7). PRIMARY gate.
+    iPAE_min: {le: 4.0}                # AUC=0.88 (lower=agonist-like). SECONDARY.
+  ipTM: not_a_gate                     # scr_s0 ipTM 0.957 ~ GLP-1 0.965; record, never rank on it
+  note: >
+    Gates NATIVE-LIKE binding MODE (necessary), NOT agonism: an ECD-anchoring binder can still be an
+    antagonist (groove without a productive message). No in-silico score proves agonism (research note 04).
+  folders: [boltz2]                    # calibrated on Boltz-2; cross-check chai1/protenix_v0.5.0 as orthogonal votes (AF3 excluded, output-license)
+  controls: {positive: [GLP1_7_36, GLP1_7_37, exendin_4, liraglutide_bb], negative: [scr_s0_through_s7]}
+  scorer: scripts/iface_score.py
+  message_site_hotspots: [190, 194, 233, 234, 237]   # compact TM2/TM3 vestibule cluster (<=10.3A) from 6X18 GLP-1 message contacts
 
 agonism_hypothesis:          # HYPOTHESIS gate only — NO in-silico score proves agonism (note 04)
   active_state_template: 6X18

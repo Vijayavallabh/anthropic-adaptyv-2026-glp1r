@@ -138,14 +138,17 @@ binding gate but lean antagonist, not agonist. All de-novo (eligibility OK; cove
 
 {_md_table(ecd, "af2ig pae")}
 
-## Arm C — two-domain agonist (S2) — PLANNED, not yet generated
+## Arm C — two-domain agonist (S2) — TESTED, NO-GO (a folded binder won't span to the vestibule)
 
-Mechanistically the strongest agonism bet (GLP-1 is bipartite: C-term address→ECD, N-term message→7TM).
-Geometry gate (6X18, canonical hotspots): the accessible upper vestibule (R197/R299 — the region the oral
-agonist orforglipron engages) sits ~14–20 Å from the ECD-groove anchor (R32) → reachable by a ~10–14-residue
-extension; the deep orthosteric message pocket (R363/364/394) is 35–38 Å away **and buried** → NOT reachable
-(same wall as Arm A). Plan: extend/scaffold from the clean Arm-B binders toward the accessible vestibule;
-af2ig-gate the ECD contact; the vestibule reach stays a labeled mechanistic bet.
+Mechanistically the strongest agonism idea (GLP-1 is bipartite: C-term address→ECD, N-term message→7TM), and the
+geometry is permissive (accessible vestibule R197/R299 ~14–20 Å from the ECD anchor R32; deep pocket R363/364/394
+35–38 Å + buried = unreachable). But a pilot of 24 RFdiffusion binders conditioned on a bridging ECD↔vestibule
+hotspot set (R32,R197,R299; 80–140 aa) produced **0/24 two-site** designs (`scripts/check_s2_geom.py`): the binder
+binds the large convex ECD surface and leaves the concave vestibule untouched (≤1 vestibule contact, ever). This is
+the 4th independent confirmation of the reachability wall (RFd1 rim-perch, RFd3 lipid-wrap, EvoBind if_dist floor,
+now S2 span) — a folded de-novo protein cannot engage this vestibule. NO-GO; not scaled. The agonism bet rests on
+the Arm-A threading peptides (LOW-confidence); Arm-B is the binding hedge. (The pilot's 6 ecd_only designs are a
+distinct large-ECD-binder lineage, available to af2ig-validate for hedge diversity if F8 wants it.)
 """
     with open(os.path.join(OUT_DIR, "register.md"), "w") as fh:
         fh.write(txt)

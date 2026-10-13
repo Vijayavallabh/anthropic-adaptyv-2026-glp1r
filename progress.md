@@ -102,21 +102,27 @@ board (short unoptimized peptides); only eb_prod_l26 clean. **→ Keep a DIVERSE
 (labeled); do NOT scale** (floor is reachability, not iteration count). Full set + metrics/flags/labels in the
 versioned register `data/candidates/{register.md,candidates.csv}` (15 candidates: 8 peptides, 7 ECD binders).
 
-### S2 two-domain agonist — GEOMETRY GATE DONE (GO to accessible vestibule), BUILDING NOW
-Geometry gate (6X18 chain R, canonical `hotspots.json`): the **accessible upper vestibule (R197/R299 — the
-orforglipron oral-agonist region) sits ~14–20 Å from the ECD-groove anchor (R32)** → reachable by a ~10–14-residue
-extension; the **deep orthosteric message pocket (R363/364/394) is 35–38 Å away AND buried → NOT reachable** (same
-wall as the peptide/RFd arms). So S2 = **ECD-anchor + accessible-vestibule reach** (an orforglipron-grounded, best-
-mechanism agonism bet, distinct from the pure-ECD binders and the threading peptides). GLP-1 is bipartite (C-term
-address→ECD, N-term message→7TM); S2 mimics that on one chain. Building by extending/scaffolding from the clean
-Arm-B ECD binders toward the accessible vestibule; af2ig-gate the ECD contact; vestibule reach = labeled bet.
+### S2 two-domain agonist — TESTED, NO-GO (0/24 two-site; 4th confirmation of the reachability wall)
+Geometry gate was permissive (accessible vestibule R197/R299 ~14–20 Å from ECD anchor R32; deep pocket R363/364/394
+35–38 Å + buried = unreachable). Pilot: 24 RFd binders on a bridging hotspot set (R32,R197,R299; 80–140 aa),
+`scripts/check_s2_geom.py` (contacts to ECD 29-129 AND accessible vestibule separately, since af2ig is membrane-blind
+and can't gate a vestibule contact). **Result: 0/24 TWO_SITE** (6 ecd_only, 18 neither; **max 1 vestibule contact,
+ever**). The large binder binds the convex ECD surface and ignores the concave vestibule — the same wall as RFd1
+(rim), RFd3 (lipid-wrap), EvoBind (if_dist floor). Config-independent (convex face vs concave pocket) → **NO-GO, not
+scaled.** The pilot's 6 ecd_only are a distinct large-ECD-binder lineage (af2ig-validate later only if F8 wants hedge
+diversity). [[lesson-denovo-binder-cant-reach-buried-pocket]]
 
-### Next
-1. Finish S2 generation → LigandMPNN → af2ig(ECD gate) → eligibility + developability → register (regenerate).
-2. Portfolio = 3 clean ECD binders (binding hedge) + diverse EvoBind peptides (agonism bet) + S2 (best-mechanism
-   bet), diversity-capped (≤2/lineage), best-first, ≤20 designs.
-3. F7 novelty/liabilities (vs GLP-1/exendin/glucagon/semaglutide; FoldSeek structural) → F8 rank (5 scorecards)
-   → F9 package (validator exit 0). **USER-GATED upload.**
+**Agonism arm therefore = EvoBind threading peptides only (LOW-confidence, labeled); ECD binders = binding hedge.**
+This is the honest in-silico ceiling: no folded de-novo protein engages this vestibule, and no in-silico score
+proves agonism regardless. Remaining work is to finalize the submission from the candidates in hand.
+
+### Next (deliverables)
+1. **F7 structural novelty** — FoldSeek (single-seq fold max TM vs PDB/AFDB; safe TM<~0.80) on the keep candidates;
+   eligibility (sequence) + developability already done. Proteinbase portal is the authority.
+2. **F8 rank + select ≤20** — 5 scorecards, rank WITHIN arm (binding_value not cross-comparable), cap ≤2/lineage,
+   best-first. Input `data/candidates/candidates.csv` (status==keep & eligible==True).
+3. **F9 package** — build submission CSV (`name,sequence,molecule_class`), `validate_submission.py` exit 0, md5,
+   dossier. **USER-GATED upload** (re-verify the live molecule_class dropdown first).
 
 ## Compute
 

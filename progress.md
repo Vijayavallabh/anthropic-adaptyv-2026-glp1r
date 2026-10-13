@@ -131,16 +131,24 @@ binding_norm (within-arm; low weight — the peptide if_dist band 5.0–6.3 is a
 (clean de-novo `eb_prod_l26` #1), then 7 ECD binders (clean strong `ecd_des_20_7` #8). 3 peptides carry elevated
 local id to an incretin (accv_l14 80%/exendin, accv_l20 75%/GIP, prod_l14 67%/GLP1) → **portal re-check**.
 
-### F9 package — BUILT + VALIDATES (upload USER-GATED)
-`scripts/build_submission.py` → `submissions/glp1r_track3.csv` (14 rows, `name,sequence,molecule_class=protein`, rank
-order) + `_mapping.csv`. **Validator: rows=14 errors=0 warnings=0, exit 0 (Track 3).** md5
-`764d71240bb80dee050781d307a561cc`; submit==register sequences byte-identical 14/14; names+sequences unique.
+### Agonism expansion (owner: "dominate at all costs") — 3 EvoBind waves, maxed by diversity
+Agonism is unprovable in-silico, so the only lever is MORE diverse independent wet-lab shots. Ran 2 more EvoBind
+waves beyond the original 8: **longer threading (36/40/44 aa)** → floored WORSE (if_dist 6.5–7.9) and drift toward
+incretins (accv_l44 dropped, GIP 30%/cov0.75) → length doesn't beat the geometric floor; **fill at good short
+lengths (18/22/24 aa)** → floored in the healthy range (5.3–5.8), 3 kept. Net agonism arm = **12 peptides**.
+
+### F9 package — FINAL, VALIDATES + dossier (upload USER-GATED)
+`submissions/glp1r_track3.csv` = **19 designs** (12 agonism peptides + 7 ECD binders), rank order. **Validator
+rows=19 errors=0 warnings=0 exit 0 (Track 3).** md5 `be5b7621447eeab3402f409bcec76c9d`; submit==register
+byte-identical 19/19. **Live portal format-check PASSED all 19** ("Single chain" accepts our `protein`). Dossier:
+`docs/SUBMISSION_DOSSIER.md` (methods/findings/ranking/novelty/eligibility/developability/uncertainty/provenance/
+licenses/repro/pre-upload checklist).
 
 ### Remaining (USER-GATED / pre-upload)
-1. **Re-verify on the live portal before upload:** the `molecule_class` dropdown (`protein` vs `single_chain`);
-   novelty/eligibility (esp. the 3 elevated-local-id peptides) — drop/reorder if the portal flags them.
-2. Optional: a short submission dossier (methods/provenance/ranking/uncertainty) for the record.
-3. **UPLOAD IS USER-GATED — never auto-upload.** The package is ready for the owner to review and submit.
+1. **Re-check the portal novelty/eligibility** for the elevated-raw-local-id peptides (glp1r_04 100%/cov0.14
+   glucagon, glp1r_09 80%/cov0.36 exendin, glp1r_12 67%/cov0.43 GLP-1 — short convergent motifs, pass our
+   cov-gated gate) — drop/reorder if the portal flags them. molecule_class already confirmed ("Single chain").
+2. **UPLOAD IS USER-GATED — never auto-upload.** Package + dossier are staged for the owner to review and submit.
 
 ## Compute
 

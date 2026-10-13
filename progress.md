@@ -60,12 +60,28 @@ RFd rim-binder lineage. `runs/rfd_val_tm5tip.log`.
   linear peptides steered to the deep vestibule message site (`receptor_if_residues`, fasta idx = UniProt-23).
   **Needs a genuinely FREE GPU** (full AF2 on ~430 res); deferred until the TNF job frees memory.
 
+### FIRST SCORED WAVE (2026-10-13, af2ig = primary gate) — vestibule RFd arm is NON-VIABLE
+- **Full control re-score** (runs/boltz_panel/out, seed-mean): ECD-anchor>=5 AND iPAE_min<=4 → agonists 3/4,
+  antagonists 1/3, **scrambles 0/8** = validated binder-vs-junk filter *for two-domain/ECD designs*. But
+  vestibule_hits does NOT separate (Boltz over-docks) → **af2ig is the primary gate** for 7TM-only binders.
+- **af2ig on RFd vestibule binders (pass_v1 = 6 geometry-passers x8 MPNN):** **BEST pae_interaction 23.5, ALL
+  fail the <10 gate.** Binders FOLD well (plddt ~90, rmsd 0.4) but make NO confident interface. The RFd
+  folded-binder→vestibule arm **floors af2ig** → NON-VIABLE as-is (matches TNF `lesson-denovo-wall-flat-polar-target`
+  + the buried-pocket geometry). Do NOT scale RFd vestibule binders.
+- MPNN caveat confirmed: small-interface rim binders → degenerate poly-Ala seqs at temp 0.2.
+
+### IN FLIGHT (2026-10-13, GPUs idle after TNF finished)
+- **ECD-arm af2ig** (GPUs 1-4): 192 ecd_mini variants vs R29-129 target. The ECD is a soluble domain (normal PPI
+  target) — best shot at a folded binder that actually binds (antagonist/diversity hedge). `runs/af2/ecd_mini/sharded`.
+- **EvoBind agonism production** (GPUs 0/5/6/7): lengths 14/20/26/32, 200 iters, steered to the vestibule. The
+  agonism bet (threading peptides). Smoke VERIFIED end-to-end (metrics.csv, ~50s/iter). `runs/evobind/prod_l*`.
+
 ### Next
-1. Finish sweep → geometry-filter → MPNN passers → `variants.csv`.
-2. **When GPUs free:** (a) Boltz-2 co-fold pilot (`val_tm5tip` passers) + production variants → engagement gate;
-   (b) EvoBind pilot (smoke test then production). **Recalibrate a VESTIBULE-engagement gate** (iPAE_min +
-   7TM-contact) for 7TM-only binders — the ECD-anchor gate is for two-domain designs only (see below).
-3. F7 novelty/liabilities → F8 rank (5 scorecards) → F9 package.
+1. Read ECD af2ig (does any ECD binder pass pae<10?) + EvoBind convergence (if_dist→<4, peptide plddt up?).
+2. If EvoBind converges: scale/extend promising lengths; af2ig-validate the final peptides (binding) + honest
+   agonism-hypothesis label. If ECD binders pass: keep a few as the binder hedge.
+3. Consider RFd3/all-atom for the vestibule (TNF wall-breaker) ONLY if ECD+EvoBind both disappoint.
+4. F7 novelty/liabilities (vs GLP-1/exendin/glucagon/semaglutide) → F8 rank (5 scorecards) → F9 package. USER-GATED upload.
 
 ## Compute
 

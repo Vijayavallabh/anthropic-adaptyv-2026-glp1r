@@ -17,6 +17,20 @@ binding_engagement:          # CALIBRATED 2026-10-13 on 4 agonists vs 8 scramble
     scrambles 4%. So it REJECTS non-binders but CANNOT separate agonist from antagonist (an ECD/core-anchoring
     antagonist passes). Agonism must rest on mechanism rationale + the wet-lab assay; no in-silico score proves
     agonism (research note 04). Only GLP-1(15-36) address-only fails (too few core contacts).
+  revalidation_2026_10_13_fullpanel: >
+    FULL-PANEL seed-mean re-score (runs/boltz_panel/out, 15 designs x3 seeds, scripts/iface_score.py): the
+    combined gate ECD-anchor>=5 AND iPAE_min<=4 gives agonists 3/4 (liraglutide_bb fails iPAE, lipid backbone
+    folds poorly), antagonists 1/3, SCRAMBLES 0/8 (closest scr_s0 ecd=4.7). -> ECD-anchor+iPAE is a VALIDATED
+    binder-vs-junk filter for TWO-DOMAIN / ECD designs. CRITICAL GAP: vestibule_hits alone does NOT separate
+    (scramble 4.2 ~ antagonist 3.1; scr_s0/s3/s4 have agonist-like vestibule contact -> Boltz OVER-DOCKS). So
+    there is NO reliable Boltz gate for 7TM-ONLY de-novo vestibule binders (ecd_anchor~0 by design). USE af2ig
+    (below) as the PRIMARY binding gate for those; Boltz ECD-anchor is an orthogonal vote for two-domain/ECD only.
+
+af2ig_binding:               # PRIMARY de-novo binder gate (Baker standard; site-agnostic; Boltz over-docks the vestibule)
+  tool: uplifting-af2ig       # third_party/uplifting-biomolecular-modeling/af2ig (reuse TNF install)
+  metrics: {pae_interaction: {le: 10}, plddt_binder: {ge: 80}, binder_rmsd: {le: 2.0}}   # starting points; recenter on a DE-NOVO positive control
+  positive_control: REQUIRED  # must be a DE-NOVO binder (natural GLP-1 folds to garbage single-seq); source a Baker dGl1-class de-novo GLP1R binder if available (lesson-af2ig-positive-control-must-be-denovo)
+  note: gold-standard for "does the designed binder fold+bind as intended"; still NOT agonism. GPU-gated behind the TNF af2ig job.
   folders: [boltz2]                    # calibrated on Boltz-2 ONLY; cutoffs do NOT transfer -> per-folder recalibration needed before using chai1/protenix as orthogonal votes (AF3 excluded, output-license)
   controls:
     positive_agonist: [GLP1_7_36, GLP1_7_37, exendin_4, liraglutide_bb]

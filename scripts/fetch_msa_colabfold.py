@@ -76,8 +76,11 @@ def main():
         raise SystemExit("[msa] no a3m in result tar")
     # prefer a single merged a3m; colabfold returns uniref.a3m (+ bfd.mgnify...). Concatenate unique.
     merged = max(a3ms, key=lambda kv: len(kv[1]))  # the largest a3m = the full MSA
+    body = merged[1].replace("\x00", "")  # ColabFold appends a NUL terminator; AF2's a3m parser chokes on it
+    if not body.endswith("\n"):
+        body += "\n"
     with open(out, "w") as f:
-        f.write(merged[1])
+        f.write(body)
     nseq = merged[1].count(">")
     print(f"[msa] wrote {out} from {merged[0]} ({nseq} sequences). members={[a[0] for a in a3ms]}", flush=True)
     os.remove(tgz)

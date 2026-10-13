@@ -70,18 +70,25 @@ RFd rim-binder lineage. `runs/rfd_val_tm5tip.log`.
   + the buried-pocket geometry). Do NOT scale RFd vestibule binders.
 - MPNN caveat confirmed: small-interface rim binders → degenerate poly-Ala seqs at temp 0.2.
 
-### ECD arm: MARGINALLY VIABLE (partial af2ig, re-scoring)
-- ECD af2ig (first run truncated by a cuBLAS-init race, now fixed w/ stagger): **best pae_interaction 10.38**
-  (des_3_7, plddt 91.6, rmsd 0.88) — right at the binding threshold; several in 10-18. The soluble ECD IS a
-  designable target (unlike the vestibule). BUT an ECD-only binder = ANTAGONIST (blocks address, no message) →
-  a binding hedge, not agonism. Re-scoring the full 192 (`runs/af2/ecd_mini/sharded`, staggered GPUs 1-3).
+### ECD arm: VIABLE binder hedge — 7 designs PASS af2ig (full 192, complete)
+**BEST pae_interaction 6.22** (des_20_7, plddt 89.8, rmsd 0.59 = STRONG de-novo binder); 7 PASS (pae<10,plddt>80,
+rmsd<2): des_20_7(6.22) des_8_7(7.03) des_10_6(7.68) des_2_4(7.82) des_2_6(8.21) des_4_3(8.60) des_18_5(9.55);
+several more 10-14. The soluble ECD IS designable. **These are ANTAGONIST-leaning (ECD-only, no message) → the
+BINDING hedge**, not agonism. (The earlier "best 10.4" was a cuBLAS-race-truncated run; staggered re-run complete.)
+`runs/af2/ecd_mini/sharded`.
 
-### IN FLIGHT (2026-10-13, idle window, all 8 GPUs on GLP1R)
-- **EvoBind agonism production** (GPUs 0/5/6/7): lengths 14/20/26/32, 200 iters, steered to the deep vestibule.
-  THE agonism bet (threading peptides). Viability VERIFIED (smoke). `runs/evobind/prod_l*`; early, converging.
-- **RFd3 all-atom vestibule** (GPU 4): `specs/rfd3/glp1r_vestibule_deep.json`, deep cluster {190,194,233,234,237}
-  RFd1 could not reach. The TNF-proven wall-breaker for the af2ig-floor pattern. `runs/rfd3/vestdeep`.
-- **ECD af2ig re-run** (GPUs 1-3): full 192, staggered.
+### RFd3 all-atom vestibule — DEAD (non-physical)
+32 backbones, huge interfaces (45-58 contacts) BUT only 30-39% of contacts on GLP-1's physical extracellular
+face → CIRCUMFERENTIAL LIPID-FACING WRAP of the membrane-blind TM bundle (non-physical). Both RFd1 (rim perch,
+af2ig floor) and RFd3 (lipid wrap) **fail to make a physical vestibule binder**; af2ig/AF2 are membrane-blind so
+they can't even gate a lipid-wrap out → **folded-binder→vestibule approach is a dead end.**
+[[lesson-denovo-binder-cant-reach-buried-pocket]]
+
+### IN FLIGHT (2026-10-13, 8 EvoBind runs = the agonism bet)
+- **Deep-vestibule EvoBind** (GPUs 0/5/6/7, len 14/20/26/32): if_dist STUCK ~5.5 Å, NOT converging (deepest
+  interface residues unreachable → mean-dist loss floors). `runs/evobind/prod_l*`.
+- **Accessible-vestibule EvoBind** (GPUs 1-4, len 14/20/26/32): retargeted to the ACCESSIBLE upper vestibule
+  (orforglipron agonist site — agonism-competent AND reachable). The better-targeted agonism attempt. `runs/evobind/accv_l*`.
 
 ### Next
 1. Read ECD af2ig (does any ECD binder pass pae<10?) + EvoBind convergence (if_dist→<4, peptide plddt up?).

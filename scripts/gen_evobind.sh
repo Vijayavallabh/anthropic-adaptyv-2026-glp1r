@@ -12,14 +12,16 @@ set -uo pipefail
 REPO="$(cd "$(dirname "$0")/.." && pwd)"
 EB="$REPO/third_party/EvoBind"
 OUTSUB=${1:?outsub}; PLEN=${2:?peptide_length}; NITER=${3:?niter}; GPU=${4:?gpu}; RECYC=${5:-8}
+# IFRES (fasta index = UniProt-23) default = deep vestibule message site. Override with $6 to
+# target the ACCESSIBLE upper vestibule (orforglipron agonist site) which a peptide can reach
+# (a mean-distance loss floors on unreachable buried residues). See lesson-denovo-binder-cant-reach-buried-pocket.
+DEEP_IFRES="167,171,174,178,181,182,187,188,191,192,198,207,210,211,214,218,272,275,276,277,283,286,287,290"
+IFRES=${6:-$DEEP_IFRES}
 FASTA="$EB/data/glp1r/glp1r_construct.fasta"
 MSA="$EB/data/glp1r/glp1r_construct.a3m"
 [ -s "$FASTA" ] || { echo "no receptor fasta $FASTA" >&2; exit 2; }
 [ -s "$MSA" ]   || { echo "no receptor MSA $MSA" >&2; exit 2; }
 OUT="$REPO/runs/evobind/$OUTSUB"; mkdir -p "$OUT"
-# vestibule message-site interface residues: UniProt {190,194,197,201,204,205,210,211,214,215,
-# 221,230,233,234,237,241,295,298,299,300,306,309,310,313} -> fasta index (U-23), 1-based
-IFRES="167,171,174,178,181,182,187,188,191,192,198,207,210,211,214,218,272,275,276,277,283,286,287,290"
 # shellcheck disable=SC1091
 source /home/prachh/miniconda3/etc/profile.d/conda.sh
 conda activate evobind

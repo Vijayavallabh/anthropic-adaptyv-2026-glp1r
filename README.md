@@ -38,7 +38,8 @@ uv run python scripts/validate_submission.py <designs.csv> --track 3   # submiss
 - `AGENTS.md` / `CLAUDE.md` — working contract + invariants (start here)
 - `configs/` — `target.yaml` (target, hotspots, controls), `filters.yaml` (thresholds), `tools.yaml` (stack + licenses)
 - `src/adaptyv_glp1r/` — stage skeleton + the submission contract/validator
-- `scripts/` — pipeline + `validate_submission.py` (the gate) + `novelty_check.sh`
+- `scripts/` — pipeline + `validate_submission.py` (the gate) + `novelty_check.sh` + `build_candidate_register.py`
+- `data/candidates/` — **the candidate register**: `candidates.csv` (machine-readable authority; filter `status==keep` & `eligible==True`) + `register.md`, both generated from the tool outputs
 - `docs/` — `PLAN_GLP1R.md` (the 10-deliverable dossier), `METHODS.md`, `TOOLS.md`
 - `reports/` + `research_notes/` — the cited research synthesis + per-topic notes
 - `runs/`, `results/`, `envs/`, `weights/`, `third_party/` — local-only (gitignored)

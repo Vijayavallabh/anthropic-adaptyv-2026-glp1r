@@ -5,23 +5,25 @@
 
 ## Status
 
-- **F1 Research — DONE.** 8-stream research wave + cited synthesis (`reports/GLP1R de novo agonist design.md`;
-  `research_notes/.../01-08`). Load-bearing claims verified first-hand (Baker class-B→antagonists-only;
-  EvoBind cyclic-peptide GLP1R agonist). **Strategy chosen (user-approved): mechanism-hedged portfolio S1–S4.**
-- **F0 Harness + env — ACTIVE.** Scaffold written (AGENTS/CLAUDE/feature_list/configs/src/tests/init.sh).
-  Remaining: run the `init.sh` gate, install the FoldSeek/MMseqs2 novelty gate, create + push the private GitHub repo.
+- **F1 Research — DONE.** 8-stream wave + cited synthesis (`reports/`, `research_notes/`); load-bearing claims
+  verified first-hand. Strategy (user-approved): **mechanism-hedged portfolio S1–S4**.
+- **F0 Harness + env — DONE.** `init.sh` gate PASSES (uv sync + compile + 12 tests + validator). FoldSeek/MMseqs2
+  installed. Private repo pushed: `Vijayavallabh/anthropic-adaptyv-2026-glp1r` (commit `91ded84`).
+- **F2 Stage 0 target prep — DONE.** 6X18 active-state target (chain R; gaps 130–135 + 339–343 confirmed) + GLP-1(7–36)
+  message geometry (chain P) extracted; WT `24–432` construct model (409 aa); hotspots + positive controls + checksummed
+  `data/target/manifest.json`. CPU/light; **no GPU used.**
 
 ## Feasibility (honest)
 
-**Frontier moonshot.** No standalone designed protein/antibody has ever agonized a class B GPCR; the only direct
-GLP1R-agonist precedent is EvoBind (preprint, n=3, cyclic). **Win = activation (cAMP/SEAP), not binding.**
-No in-silico score proves agonism. Value rests on Track-3 novelty + a mechanism-hedged 20-design bet.
+**Frontier moonshot.** No standalone designed protein has agonized a class B GPCR; only direct GLP1R-agonist precedent
+is EvoBind (preprint, n=3, cyclic). **Win = activation (cAMP/SEAP), not binding.** No in-silico score proves agonism.
 
-## Next step
+## Next step — F3 generation (USER-GATED)
 
-1. Finish **F0**: `./init.sh` gate PASS → install novelty gate → create private repo `anthropic-adaptyv-2026-glp1r` + first commit.
-2. **F2 (Stage 0 target prep):** build the 6X18 active-state design target + WT/apo 24-432 construct model + hotspot
-   selections + positive/negative control complexes (CPU/light; no generation GPU yet). **Report before any generation.**
+**Owner asked to report before any generation — holding here.** F3 is the first GPU step: generate de-novo, active-state-
+conditioned, 7TM-vestibule-targeted designs per S1–S4 (EvoBind-linear / RFdiffusion / RFpeptides / Baker-style mini-protein
++ ProteinMPNN), heavily filtered. Will propose the concrete generation plan (tools, GPU shards, counts, provenance) and
+await go-ahead.
 
 ## Compute
 
@@ -29,11 +31,4 @@ No in-silico score proves agonism. Value rests on Track-3 novelty + a mechanism-
 
 ## Gated (owner OK required)
 
-Portal upload; using >4 GPUs; any further environment/setup change beyond the approved init.
-
-## Key facts (see configs/target.yaml)
-
-- Target P43220; active-state ref **6X18** (clean, no thermostab mutations) — design/validate agonism here, NOT the construct.
-- Construct Sino 13944-H18H-DD = 24–432, DDM/CHS, **proprietary (likely inactive-biasing) mutations** → score binding here, agonism against 6X18.
-- Agonism needs a **7TM-vestibule "message"** (His7-charge logic) → TM6 kink. ECD-only binder = antagonist.
-- `molecule_class` conflict (`protein` vs `single_chain`) — validator accepts both, emits `protein`, **verify at upload**.
+Launching generation (F3); using >4 GPUs; portal upload; env/setup changes beyond the approved init.

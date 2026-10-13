@@ -2,40 +2,40 @@
   "project": "anthropic-adaptyv-2026-glp1r",
   "challenge": "Anthropic x Adaptyv 2026 Challenge 3 (Track 3) - de novo human GLP1R AGONIST",
   "updated": "2026-10-13",
-  "active": "F0",
-  "note": "STATE=INITIALIZING. Research wave COMPLETE (8 streams + synthesis report; strategy = mechanism-hedged portfolio S1-S4, user-approved 2026-10-13). Harness being scaffolded. Feasibility: FRONTIER/MOONSHOT - no standalone designed protein has ever agonized a class B GPCR; only direct GLP1R-agonist precedent is EvoBind cyclic peptides (preprint, n=3). Win condition = ACTIVATION, not binding; no in-silico score proves agonism. NO GPU design job run yet (all 8xH100 idle).",
+  "active": "F3",
+  "note": "STATE=PREP COMPLETE (F0+F1+F2 done); generation is the NEXT step and is USER-GATED (owner asked to report before any generation). Repo pushed (commit 91ded84, private). 6X18 active-state target extracted (gaps 130-135 + 339-343 CONFIRMED; peptide chain P = GLP-1(7-36)); WT 24-432 construct model (409 aa); hotspots + positive controls + checksummed manifest written. Strategy = mechanism-hedged portfolio S1-S4. Feasibility = FRONTIER/MOONSHOT (no standalone designed protein has agonized a class B GPCR; only direct precedent EvoBind cyclic, preprint). Win = ACTIVATION not binding; no in-silico score proves agonism. All 8xH100 idle; NO GPU design job run yet.",
   "features": [
     {
       "id": "F0",
       "title": "Repo + harness + env (uv, GPU cap, validator gate, secrets hygiene)",
-      "status": "active",
+      "status": "done",
       "deps": [],
-      "done_when": "AGENTS.md/CLAUDE.md/feature_list/progress/session-handoff/init.sh present; configs/{target,filters,tools}.yaml; src validator + tests; .gitignore blocks secrets+weights+run CSVs; init.sh gate PASSES (uv sync+compile+pytest+validator); private GitHub repo created + pushed (repo-local identity)",
-      "evidence": "pending: init.sh PASS + first commit md5/sha"
+      "done_when": "AGENTS/CLAUDE/feature_list/progress/session-handoff/init.sh + configs + src validator + tests present; .gitignore blocks secrets+weights+run CSVs; init.sh gate PASSES; private GitHub repo created + pushed",
+      "evidence": "init.sh PASS (uv sync + compile + 12 pytest + validator rows=2 errors=0); FoldSeek/MMseqs2 installed (tools/); private repo Vijayavallabh/anthropic-adaptyv-2026-glp1r pushed, commit 91ded84 (repo-local identity Vijayavallabh/noreply)"
     },
     {
       "id": "F1",
       "title": "Research + evidence register (8-stream wave + cited synthesis)",
       "status": "done",
       "deps": [],
-      "done_when": "reports/ + research_notes/ cover all 8 dimensions, cited; load-bearing claims (Baker class-B-antagonist-only; EvoBind) verified first-hand; strategy chosen",
-      "evidence": "reports/'GLP1R de novo agonist design.md' (26-row evidence register, 80 citations); research_notes/'GLP1R de novo agonist design'/01-08; Baker bioRxiv 2025.03.23.644666 + EvoBind 2025.06.06.658268 verified 2026-10-13; strategy = mechanism-hedged portfolio"
+      "done_when": "reports/ + research_notes/ cover all 8 dimensions, cited; load-bearing claims verified first-hand; strategy chosen",
+      "evidence": "reports/'GLP1R de novo agonist design.md' (26-row evidence register, 80 citations); research_notes/01-08; Baker bioRxiv 2025.03.23.644666 + EvoBind 2025.06.06.658268 verified 2026-10-13; strategy = mechanism-hedged portfolio (user-approved)"
     },
     {
       "id": "F2",
       "title": "Stage 0 - target prep (6X18 active-state target + construct model + hotspots + controls)",
-      "status": "planned",
+      "status": "done",
       "deps": ["F0"],
-      "done_when": "6X18 chain R cleaned to a full-atom ACTIVE-state design target (gaps noted); WT/apo 24-432 construct model for binding-assay scoring; hotspot residue selections (ECD groove + 7TM vestibule) dumped; positive (GLP-1(7-36)/exendin-4/orforglipron/Boc5) + scramble control complexes assembled; glycan/tag exclusion zones recorded; all under data/target + data/controls",
-      "evidence": "pending"
+      "done_when": "6X18 chain R active-state target + chain P message geometry extracted (gaps noted); WT/apo 24-432 construct model; hotspot selections; positive + scramble controls; glycan/tag exclusions; data/target + data/controls + checksummed manifest",
+      "evidence": "src/adaptyv_glp1r/stage0_target_prep.py; data/target/manifest.json (md5s); 6X18 R modeled gaps 130-135 + 339-343 CONFIRMED; chain P = GLP-1(7-36); construct 409 aa (starts Arg24); positive controls GLP-1(7-36)/exendin-4; hotspots.json from target.yaml"
     },
     {
       "id": "F3",
-      "title": "Stage 1 - generation (S1 message micro/mini + S2 two-domain + S3 exoframe + S4 clamp)",
+      "title": "Stage 1 - generation (S1 message micro/mini + S2 two-domain + S3 exoframe + S4 clamp) [USER-GATED: report before launch]",
       "status": "planned",
       "deps": ["F2"],
       "done_when": "active-state-conditioned, vestibule-hotspot-targeted de-novo backbones/designs per strategy, with provenance (tool/version/seed); GPU runs recorded; de-novo/eligibility pre-screened",
-      "evidence": "pending (GPU - user-authorized run)"
+      "evidence": "pending (GPU - OWNER-AUTHORIZED run; report before launch)"
     },
     {
       "id": "F4",

@@ -1,0 +1,69 @@
+{
+  "stage": "S0_target_prep",
+  "date": "2026-10-13",
+  "active_state_reference": {
+    "pdb": "6X18",
+    "receptor_chain": "R",
+    "receptor_modeled_range": [
+      29,
+      423
+    ],
+    "receptor_gaps": [
+      [
+        129,
+        136
+      ],
+      [
+        338,
+        344
+      ]
+    ],
+    "peptide_chain_P_range": [
+      7,
+      36
+    ],
+    "note": "clean human active-state (DN-Gs + Nb35); NO thermostabilizing mutations, NO BRIL/T4L."
+  },
+  "binding_construct_model": {
+    "uniprot": "P43220",
+    "range": [
+      24,
+      432
+    ],
+    "length": 409,
+    "note": "WT 24-432; the vendor construct's thermostabilizing mutations are PROPRIETARY/unknown (not applied). Use for binding-assay passage scoring; score AGONISM against 6X18."
+  },
+  "controls": {
+    "positive": [
+      "GLP1_7_36_NH2",
+      "exendin_4"
+    ],
+    "negative": "scramble (generated at scoring, fixed seed)"
+  },
+  "files": {
+    "data/raw/6X18.cif": {
+      "md5": "b89fa16b8f01e7537ebb9808fa972689",
+      "bytes": 1181090
+    },
+    "data/raw/6X18_receptorR.pdb": {
+      "md5": "33911e316c76eeb0d57d5a6bcf29345f",
+      "bytes": 255887
+    },
+    "data/raw/6X18_peptideP.pdb": {
+      "md5": "6e5fcf0d43bfde8b4befbc9a59b97c51",
+      "bytes": 19367
+    },
+    "data/target/construct_24_432.fasta": {
+      "md5": "d3eb6a2c0fb50b0f78573b75e79d7f21",
+      "bytes": 439
+    },
+    "data/controls/positive_agonists.fasta": {
+      "md5": "33243c7c0b6b495acaedb870de45d9b1",
+      "bytes": 97
+    },
+    "data/target/hotspots.json": {
+      "md5": "81d0d04d5bff8c03ca698eca7a10eaa4",
+      "bytes": 458
+    }
+  }
+}

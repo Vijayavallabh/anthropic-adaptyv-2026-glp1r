@@ -1,0 +1,37 @@
+{
+  "ecd_groove": [
+    32,
+    69,
+    88,
+    89,
+    90,
+    121,
+    127,
+    128
+  ],
+  "tm_message_reader": [
+    145,
+    190,
+    197,
+    299,
+    363,
+    364,
+    388,
+    392,
+    394
+  ],
+  "central_polar_network": [
+    190,
+    240,
+    363,
+    364,
+    394
+  ],
+  "primary_design_site": "7TM_vestibule_plus_ecd_anchor",
+  "avoid": [
+    "stable_ECL3_contacts",
+    "deep_cytoplasmic_TM6_contacts",
+    "glycan_clash",
+    "tag_binding"
+  ]
+}

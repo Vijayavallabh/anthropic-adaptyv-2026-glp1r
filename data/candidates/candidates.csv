@@ -1,16 +1,16 @@
-name,molecule_class,length,arm,metric,value,plddt,instab,eligibility,developability,confidence,sequence
-eb_accv_l14,protein,14,agonism-peptide,if_dist,5.04,65.7,24.9,OK 80%/cov0.36 exendin4,oddCys(1),"LOW: best if_dist, but Cys + short exendin motif",SLFINDWCETFDMM
-eb_prod_l20,protein,20,agonism-peptide,if_dist,5.14,37.6,46.7,OK 44%/cov0.45 exendin4,"oddCys,instab",LOW,GAGIACYDTLQAVTLQLHWT
-eb_accv_l20,protein,20,agonism-peptide,if_dist,5.35,39.0,123.2,OK 75%/cov0.20 GIP,instab123,LOW: very high instab,TYPFNVNQSIQSISEQQPFP
-eb_prod_l14,protein,14,agonism-peptide,if_dist,5.52,46.3,41.7,OK 67%/cov0.43 GLP1,"hydrophobic,instab",LOW,DAVIPWLWKQLVLK
-eb_prod_l26,protein,26,agonism-peptide,if_dist,5.77,57.4,35.6,OK 50%/cov0.31 GLP1,CLEAN,LOW: only fully-clean peptide,DATFKYSQNPGNVAMEHIMSAYWQFF
-eb_prod_l32,protein,32,agonism-peptide,if_dist,5.93,61.3,59.8,OK 36%/cov0.34 GLP1,instab(2Cys),LOW,HIDFSAIHCAVYASDGNQPLQPFVKWVVCKMI
-eb_accv_l26,protein,26,agonism-peptide,if_dist,6.27,38.9,52.4,OK 62%/cov0.31 ex9-39,instab,LOW,IPHNNVKVQVEEIALRAKMTETNGQD
-eb_accv_l32,protein,32,DROP,if_dist,7.65,31.7,69.4,FLAG 44%/cov0.50 GIP,"oddCys,instab",DROP: eligibility FLAG + worst binder,KMGPDSQVRTHYADYCHTMMHKLHGQAKKVSG
-ecd_des_20_7,protein,70,binding-hedge,af2ig_pae,6.22,89.8,18.3,OK 62%/cov0.11 GLP1,CLEAN,binder: strongest + clean,EDERLAALDEATRATGEQMTAAAAAGDWDTAEAEGRSLAEKVEELLGASAGRGMRFVVEQHLAYLKAQAA
-ecd_des_8_7,protein,66,binding-hedge,af2ig_pae,7.03,,27.1,OK 38%/cov0.24 GLP1,lowcplx A39%,binder: poly-Ala,DELAEFEADRQQLLAALAHVEREPGGARFGRQLRATLERQEAAERAALAAAAAAALAAAAALAAAR
-ecd_des_10_6,protein,77,binding-hedge,af2ig_pae,7.68,,36.5,OK 50%/cov0.21 ex9-39,lowcplx A40%,binder: poly-Ala,AAAAAQAAAAAAAAAAAAAAEAERRAAELRAETAARAEERYAEMRQRGLPTGERMRELSKLFDEYEEEVALLRAEAA
-ecd_des_2_4,protein,74,binding-hedge,af2ig_pae,7.82,,17.3,OK 32%/cov0.34 exendin4,CLEAN,binder: clean,DVDKVKEAAKKAVKEVEEAAKKAGEEAKPLAEEMKEMAAVQVAWAKYGLDAKKAIKALEEGAKEILKKIKEAAA
-ecd_des_2_6,protein,74,binding-hedge,af2ig_pae,8.21,,30.4,OK 38%/cov0.18 GLP1,CLEAN,binder: clean,NLNKVREAAERAVREVEEAGKEAGEEAEPLVEEMREAARVMVAWAAYGLDANKAIQLLEEGARAILEAIRERAR
-ecd_des_4_3,protein,64,binding-hedge,af2ig_pae,8.6,,36.2,OK 33%/cov0.28 GLP1,lowcplx A31%,binder: poly-Ala,SLLAAAEARAREKQEALAKLGEEALATMRSSGSLATTAAQINKVLDAEDAFLAEQARTAELAAA
-ecd_des_18_5,protein,76,binding-hedge,af2ig_pae,9.55,,42.1,OK 33%/cov0.28 exendin4,instab>40,binder: borderline,GEFFDRLEAAAIATAALLERDPEAGYAYGLEELEAFRAYAEQLEQNSSGEGDLARALARQFEADIEALYHRRLAAL
+name,arm,status,molecule_class,length,binding_model,binding_metric,binding_value,plddt,rmsd,instability,gravy,net_charge,cys,max_aa_frac,elig_id_pct,elig_cov,elig_nearest,eligible,dev_flags,sequence
+eb_prod_l14,agonism-peptide,keep,protein,14,evobind,if_dist_peptide,5.52,46.3,,41.7,0.56,1,0,0.21,66.7,0.43,GLP1_7_37,True,"hydrophobic,instab>40",DAVIPWLWKQLVLK
+eb_prod_l20,agonism-peptide,keep,protein,20,evobind,if_dist_peptide,5.14,37.6,,46.7,0.46,-1,1,0.15,44.4,0.45,exendin_4,True,"oddCys(1),instab>40",GAGIACYDTLQAVTLQLHWT
+eb_prod_l26,agonism-peptide,keep,protein,26,evobind,if_dist_peptide,5.77,57.4,,35.6,-0.37,-1,0,0.12,50.0,0.31,GLP1_7_37,True,clean,DATFKYSQNPGNVAMEHIMSAYWQFF
+eb_prod_l32,agonism-peptide,keep,protein,32,evobind,if_dist_peptide,5.93,61.3,,59.8,0.40,0,2,0.12,36.4,0.34,GLP1_7_37,True,instab>40,HIDFSAIHCAVYASDGNQPLQPFVKWVVCKMI
+eb_accv_l14,agonism-peptide,keep,protein,14,evobind,if_dist_peptide,5.04,65.7,,24.9,0.27,-3,1,0.14,80.0,0.36,exendin_4,True,oddCys(1),SLFINDWCETFDMM
+eb_accv_l20,agonism-peptide,keep,protein,20,evobind,if_dist_peptide,5.35,39.0,,123.2,-0.74,-1,0,0.20,75.0,0.20,GIP_1_42,True,instab>40,TYPFNVNQSIQSISEQQPFP
+eb_accv_l26,agonism-peptide,keep,protein,26,evobind,if_dist_peptide,6.27,38.9,,52.4,-0.75,-1,0,0.12,62.5,0.31,exendin_9_39,True,instab>40,IPHNNVKVQVEEIALRAKMTETNGQD
+eb_accv_l32,agonism-peptide,drop,protein,32,evobind,if_dist_peptide,7.65,31.7,,69.4,-0.98,3,1,0.12,43.8,0.50,GIP_1_42,False,"oddCys(1),instab>40",KMGPDSQVRTHYADYCHTMMHKLHGQAKKVSG
+ecd_des_20_7,binding-hedge,keep,protein,70,af2ig,pae_interaction,6.22,89.8,0.59,18.3,-0.34,-7,0,0.26,62.5,0.11,GLP1_7_37,True,clean,EDERLAALDEATRATGEQMTAAAAAGDWDTAEAEGRSLAEKVEELLGASAGRGMRFVVEQHLAYLKAQAA
+ecd_des_8_7,binding-hedge,keep,protein,66,af2ig,pae_interaction,7.03,85.9,1.62,27.1,-0.01,-2,0,0.39,37.5,0.24,GLP1_7_37,True,lowcplx(A39%),DELAEFEADRQQLLAALAHVEREPGGARFGRQLRATLERQEAAERAALAAAAAAALAAAAALAAAR
+ecd_des_10_6,binding-hedge,keep,protein,77,af2ig,pae_interaction,7.68,90.2,0.78,36.5,-0.34,-4,0,0.40,50.0,0.21,exendin_9_39,True,lowcplx(A40%),AAAAAQAAAAAAAAAAAAAAEAERRAAELRAETAARAEERYAEMRQRGLPTGERMRELSKLFDEYEEEVALLRAEAA
+ecd_des_2_4,binding-hedge,keep,protein,74,af2ig,pae_interaction,7.82,91.7,0.62,17.3,-0.53,1,0,0.26,32.0,0.34,exendin_4,True,clean,DVDKVKEAAKKAVKEVEEAAKKAGEEAKPLAEEMKEMAAVQVAWAKYGLDAKKAIKALEEGAKEILKKIKEAAA
+ecd_des_2_6,binding-hedge,keep,protein,74,af2ig,pae_interaction,8.21,92.1,0.67,30.4,-0.48,-5,0,0.23,38.5,0.18,GLP1_7_37,True,clean,NLNKVREAAERAVREVEEAGKEAGEEAEPLVEEMREAARVMVAWAAYGLDANKAIQLLEEGARAILEAIRERAR
+ecd_des_4_3,binding-hedge,keep,protein,64,af2ig,pae_interaction,8.60,86.7,1.08,36.2,-0.03,-3,0,0.31,33.3,0.28,GLP1_7_37,True,lowcplx(A31%),SLLAAAEARAREKQEALAKLGEEALATMRSSGSLATTAAQINKVLDAEDAFLAEQARTAELAAA
+ecd_des_18_5,binding-hedge,keep,protein,76,af2ig,pae_interaction,9.55,89.8,0.37,42.1,-0.28,-9,0,0.24,33.3,0.28,exendin_4,True,instab>40,GEFFDRLEAAAIATAALLERDPEAGYAYGLEELEAFRAYAEQLEQNSSGEGDLARALARQFEADIEALYHRRLAAL

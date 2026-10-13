@@ -14,16 +14,12 @@ def find_sc(p):
         return [p]
     return glob.glob(os.path.join(p, "**", "*.sc"), recursive=True) + glob.glob(os.path.join(p, "*.sc"))
 
-def main():
-    p = sys.argv[1]
-    pae_cut = float(sys.argv[2]) if len(sys.argv) > 2 else 10.0
-    plddt_cut = float(sys.argv[3]) if len(sys.argv) > 3 else 80.0
-    rmsd_cut = float(sys.argv[4]) if len(sys.argv) > 4 else 2.0
-    scs = find_sc(p)
-    if not scs:
-        print(f"no scorefile under {p}"); return
+
+def parse_scores(p):
+    """Single source of truth: return [{desc,pae_i,plddt_b,rmsd}] from af2ig .sc file(s),
+    sorted by pae_i ascending. Reused by scripts/build_candidate_register.py."""
     rows, hdr = [], None
-    for sc in scs:
+    for sc in find_sc(p):
         for ln in open(sc):
             if not ln.startswith("SCORE:"):
                 continue
@@ -42,9 +38,20 @@ def main():
                 })
             except (KeyError, ValueError):
                 continue
+    rows.sort(key=lambda r: r["pae_i"])
+    return rows
+
+
+def main():
+    p = sys.argv[1]
+    pae_cut = float(sys.argv[2]) if len(sys.argv) > 2 else 10.0
+    plddt_cut = float(sys.argv[3]) if len(sys.argv) > 3 else 80.0
+    rmsd_cut = float(sys.argv[4]) if len(sys.argv) > 4 else 2.0
+    if not find_sc(p):
+        print(f"no scorefile under {p}"); return
+    rows = parse_scores(p)
     if not rows:
         print("no SCORE rows parsed"); return
-    rows.sort(key=lambda r: r["pae_i"])
     npass = 0
     print(f"{'design':<42}{'pae_int':>8}{'plddt_b':>9}{'rmsd':>7}  gate")
     for r in rows:

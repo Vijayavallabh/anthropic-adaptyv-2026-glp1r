@@ -24,7 +24,8 @@ from eligibility_check import build_scorer, score_design  # noqa: E402
 from parse_af2ig import parse_scores                     # noqa: E402
 
 PEP_RUNS = ["prod_l14", "prod_l20", "prod_l26", "prod_l32",
-            "accv_l14", "accv_l20", "accv_l26", "accv_l32"]
+            "accv_l14", "accv_l20", "accv_l26", "accv_l32",
+            "accv_l36", "accv_l44", "prod_l40"]   # 2nd wave: longer threading peptides (36-44 aa)
 ECD_CSV = os.path.join(REPO, "runs/portfolio/ecd_binders.csv")
 AF2_DIR = os.path.join(REPO, "runs/af2/ecd_mini")
 OUT_DIR = os.path.join(REPO, "data/candidates")

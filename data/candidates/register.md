@@ -28,7 +28,10 @@ rows failed the de-novo eligibility gate (local id to a known agonist >30% over 
 | eb_prod_l26 | keep | 26 | 5.77 | 57.4 | - | 35.6 | OK 50.0%/cov0.31/GLP1_7_37 | - | clean |
 | eb_prod_l32 | keep | 32 | 5.93 | 61.3 | - | 59.8 | OK 36.4%/cov0.34/GLP1_7_37 | - | instab>40 |
 | eb_accv_l26 | keep | 26 | 6.27 | 38.9 | - | 52.4 | OK 62.5%/cov0.31/exendin_9_39 | - | instab>40 |
+| eb_accv_l36 | keep | 36 | 6.45 | 66.1 | - | 24.3 | OK 57.1%/cov0.19/GLP1_7_37 | - | clean |
+| eb_prod_l40 | keep | 40 | 7.07 | 46.9 | - | 35.9 | OK 37.5%/cov0.20/exendin_4 | - | oddCys(3) |
 | eb_accv_l32 | drop | 32 | 7.65 | 31.7 | - | 69.4 | FLAG 43.8%/cov0.50/GIP_1_42 | - | oddCys(1),instab>40 |
+| eb_accv_l44 | drop | 44 | 7.86 | 29.3 | - | 18.8 | FLAG 30.3%/cov0.75/GIP_1_42 | - | clean |
 
 ## Arm B — binding hedge: ECD miniprotein binders (antagonist-leaning)
 

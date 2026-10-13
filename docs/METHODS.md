@@ -22,10 +22,13 @@ Grows as stages run; each claim lands here with its command + evidence. Governin
 - **S1 generate (F3):** vestibule-hotspot-targeted, active-state-conditioned de-novo per S1–S4; provenance (tool/version/seed); eligibility pre-screen.
 - **S2 sequence (F4):** ProteinMPNN/LigandMPNN; 0 unpaired Cys unless intended.
 - **S3 binding (F5):** multi-folder co-fold + the CALIBRATED engagement gate vs controls on the construct model.
-  - **Calibration (2026-10-13, `scripts/iface_score.py` on 4 agonists vs 8 scrambles x3 seeds, Boltz-2):**
-    global **ipTM/pTM FAIL** (scramble ties native, AUC~0.5 — never rank on them). The discriminators that
-    separate native-agonist-LIKE engagement: **ECD-groove anchor count >=5 (AUC 1.00)** and **iPAE_min <=4.0
-    (AUC 0.88)**. Gates binding MODE, not agonism. Compact message-site hotspots from 6X18 = {190,194,233,234,237}.
+  - **Calibration (2026-10-13, `scripts/iface_score.py`, Boltz-2):** global **ipTM/pTM FAIL** (scramble ties
+    native, AUC~0.5 — never rank on them). **ECD-groove anchor count (>=5)** + **iPAE_min (<=4.0)** separate
+    native-like binders from SCRAMBLES at **per-seed 83% sens / 96% spec** (the AUC=1.00 I first quoted was a
+    3-seed-MEAN artifact — corrected). **Antagonist test** (exendin(9-39), GLP-1(9-37), GLP-1(15-36)): antagonists
+    **PASS** (56% vs agonists 83%, scrambles 4%) → the gate is a **SPECIFIC-BINDER-vs-JUNK filter, NOT an agonism
+    selector**. Use it to reject non-binders; agonism rests on mechanism rationale + the wet-lab assay. Compact
+    RFd generation target cluster from 6X18 = {190,194,233,234,237}.
 - **S4 agonism hypothesis (F6):** active-state co-fold vs 6X18; message-in-vestibule contacts; optional GaMD TM6-opening.
 - **S5 novelty + liabilities (F7):** FoldSeek/MMseqs2 (seq≤30% / TM<0.5); ESMFold-monomer pLDDT; SAP/Cys; ANARCI for antibodies.
 - **S6 rank + select (F8):** five scorecards → ≤20, best-first, diversity-capped; validator exit 0; md5 recorded.

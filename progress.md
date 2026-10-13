@@ -12,10 +12,16 @@
 - **F2 Stage 0 target prep — DONE.** 6X18 active-state target (chain R; gaps 130–135 + 339–343 confirmed) + GLP-1(7–36)
   message geometry (chain P) extracted; WT `24–432` construct model (409 aa); hotspots + positive controls + checksummed
   `data/target/manifest.json`. CPU/light.
-- **Scoring CALIBRATION — DONE (key result).** Boltz-2 co-fold of 4 native agonists vs 8 scrambles ×3 seeds:
-  global **ipTM/pTM do NOT discriminate** (AUC~0.5); **ECD-groove-anchor count (AUC 1.00)** + **iPAE_min (AUC 0.88)**
-  do. Gate locked in `configs/filters.yaml` (`scripts/iface_score.py`). Gates native-like binding MODE, not agonism.
-  Compact message-site hotspots {190,194,233,234,237} derived from 6X18.
+- **Scoring CALIBRATION — DONE (key result, corrected after /code-review).** Boltz-2 co-fold: global
+  **ipTM/pTM do NOT discriminate** (AUC~0.5). **ECD-groove-anchor (>=5) + iPAE_min (<=4.0)** separate native-like
+  binders from scrambles (per-seed **83% sens / 96% spec**; the AUC=1.00 was a 3-seed-MEAN artifact). **Antagonist
+  test: exendin(9-39)/GLP-1(9-37) PASS the gate (56%)** → it's a **binder-vs-JUNK filter, NOT an agonism selector**.
+  Gate in `configs/filters.yaml`; `scripts/iface_score.py`. Agonism rests on mechanism + wet-lab. Compact RFd
+  target cluster {190,194,233,234,237} from 6X18.
+- **/code-review hardening — DONE.** 15 findings; the 2 scientific ones (mean-vs-per-seed overclaim; scramble≠
+  antagonist negative) corrected above; code bugs fixed (scorer emits `ecd_groove_anchor_count` + distance-gated
+  nterm + bool/round casts; shard script: fail-loud on empty input, clear stale inputs, OMP cap, set-u-safe, accept
+  name/design); stale docs reconciled (ipSAE_min → the engagement gate). cofold_boltz.sh now a thin wrapper.
 
 ## Feasibility (honest)
 

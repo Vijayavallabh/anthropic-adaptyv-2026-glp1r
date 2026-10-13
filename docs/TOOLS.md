@@ -13,7 +13,7 @@ GPL (FoldSeek/MMseqs2) binds the software, not the outputs → results are fine 
 - **Generate** (S1/S2): RFdiffusion, RFdiffusion3, RFpeptides (use linear/disulfide outputs), BindCraft, BoltzGen,
   Genie3, PXDesign. **EvoBind** — top generator for blind peptide agonists; **CONFIRM/INSTALL + verify a linear mode + license** before use.
 - **Sequence:** ProteinMPNN, LigandMPNN, Caliby (MIT/Apache).
-- **Fold/score (binding):** AF2-initial-guess, Boltz-2 (2.2.1), Chai-1 (0.6.1), OpenFold3, **Protenix v0.5.0/PXDesign weights** (NOT v2), DockQ (2.1.3), voronota-lt (1.1.479). Rank by **ipSAE_min**, calibrated vs controls.
+- **Fold/score (binding):** AF2-initial-guess, Boltz-2 (2.2.1), Chai-1 (0.6.1), OpenFold3, **Protenix v0.5.0/PXDesign weights** (NOT v2), DockQ (2.1.3), voronota-lt (1.1.479). Score with the **calibrated engagement gate** (ECD-groove anchor count + iPAE_min, `iface_score.py`), per-folder vs controls; **ipTM is NOT a ranker** (calibration showed it fails to separate agonist from scramble here).
 - **Agonism hypothesis:** active-state co-fold on **6X18**; optional explicit-state **GaMD (OpenMM)** for TM6-opening — hypothesis-only.
 - **Novelty/dev:** **FoldSeek + MMseqs2** (installed to `tools/`), ESMFold2 (monomer pLDDT = expression), ESM-2 / ESMC-300M (naturalness), anarcism (antibody format).
 

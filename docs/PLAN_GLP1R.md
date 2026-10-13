@@ -73,7 +73,7 @@ monomeric). **User-approved plan (2026-10-13): mechanism-hedged portfolio across
 ## 6 · Staged workflow + separate binding/agonism ranking
 
 **Pipeline.** S0 target prep → S1 generate (vestibule-hotspot-targeted, active-state-conditioned) → S2 sequence
-(ProteinMPNN/LigandMPNN) → S3 **binding** fold/score (Boltz-2/Protenix-v0.5.0/Chai-1/af2ig; ipSAE_min vs controls) →
+(ProteinMPNN/LigandMPNN) → S3 **binding** fold/score (Boltz-2/Protenix-v0.5.0/Chai-1/af2ig; the calibrated **ECD-anchor + iPAE_min** engagement gate — NOT ipTM — vs controls) →
 S4 **agonism-hypothesis** gate (active-state co-fold + message-in-vestibule + optional GaMD TM6; LOW-confidence) →
 S5 novelty+liabilities (FoldSeek/MMseqs2 + ESMFold-monomer + SAP/Cys + ANARCI) → S6 rank & pick ≤20 for diversity.
 

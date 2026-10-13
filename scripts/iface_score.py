@@ -49,18 +49,17 @@ def score_one(cif, pae_npz, conf_json):
     B = [r for r in chains[rID] if r.id[0] == " "]
 
     # heavy-atom contacts A<->B
-    import numpy as _np
-    Bres_heavy = {r.id[1]: _np.array([at.coord for at in heavy_atoms(r)]) for r in B}
+    Bres_heavy = {r.id[1]: np.array([at.coord for at in heavy_atoms(r)]) for r in B}
     contacted_uni = set()
     nterm_min_uni, nterm_min_d = None, 1e9
     for i, ra in enumerate(A):
-        aco = _np.array([at.coord for at in heavy_atoms(ra)])
+        aco = np.array([at.coord for at in heavy_atoms(ra)])
         if len(aco) == 0:
             continue
         for bnum, bco in Bres_heavy.items():
             if len(bco) == 0:
                 continue
-            d = _np.sqrt(((aco[:, None, :] - bco[None, :, :]) ** 2).sum(-1)).min()
+            d = np.sqrt(((aco[:, None, :] - bco[None, :, :]) ** 2).sum(-1)).min()
             if d <= CONTACT_A:
                 contacted_uni.add(bnum + OFFSET)
             if i == 0 and d < nterm_min_d:  # peptide N-terminal residue (the "message" tip)
@@ -76,16 +75,20 @@ def score_one(cif, pae_npz, conf_json):
             # inter-chain block mean (A rows vs B cols and vice versa), interface-focused = min over B per A then mean
             ab = pae[:na, na:na + nb]
             ba = pae[na:na + nb, :na]
-            iPAE = float(round((ab.min(axis=1).mean() + ba.min(axis=1).mean()) / 2, 2))
+            iPAE = round(float((ab.min(axis=1).mean() + ba.min(axis=1).mean()) / 2), 2)
     conf = json.load(open(conf_json))
+    # N-term "message tip" counts as inserted only if it is >=TM1 AND actually in contact (not a far near-miss).
+    nterm_inserted = bool(nterm_min_uni is not None and nterm_min_uni >= 140 and float(nterm_min_d) <= CONTACT_A)
     return {
         "iptm": round(conf.get("iptm", 0), 3),
         "n_contacts": n,
         "vestibule_hits": sorted(contacted_uni & VESTIBULE),
         "ecd_groove_hits": sorted(contacted_uni & ECD_GROOVE),
+        "ecd_groove_anchor_count": len(contacted_uni & ECD_GROOVE),  # scalar the gate (filters.yaml) reads
         "frac_7TM": round(in7tm / n, 2) if n else 0.0,
         "nterm_nearest_uni": nterm_min_uni,
-        "nterm_in_7TM": (nterm_min_uni is not None and nterm_min_uni >= 140),
+        "nterm_min_dist": round(float(nterm_min_d), 2) if nterm_min_uni is not None else None,
+        "nterm_in_7TM": nterm_inserted,
         "iPAE_min": iPAE,
     }
 

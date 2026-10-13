@@ -35,6 +35,20 @@ S1 (vestibule-message micro/mini), S2 (two-domain), S3 (exoframe), S4 (ECD clamp
   (binders bind the convex ECD, ignore the concave vestibule). Cause is geometric and config-independent: a convex
   binder face cannot fill a concave pocket. **The deep orthosteric "message" pocket is unreachable by any folded
   de-novo design; only a flexible threading peptide even approaches it.**
+- **The threading peptides DO engage the activation-critical message-reader — a signal the mean `if_dist` hides.**
+  `if_dist` is a *mean* distance to the whole GLP-1 interface; it does not reveal whether a peptide reaches
+  **R299** (the ECL2 arginine that reads GLP-1's His7 — the contact most tied to activation). Measuring the actual
+  predicted poses across **two independent folds** (the EvoBind design pose + a fresh fixed-seed `predict_only`
+  fold): **7/12 peptides place a residue within 4.5 Å of R299 in ≥1 fold, and 4/12 do so robustly in both**
+  (`eb_accv_l22` ≈2.5 Å, `eb_prod_l20`, `eb_prod_l40`, `eb_accv_l14`). Independently, **AF2 spontaneously forms a
+  clean intramolecular disulfide in 4/12** (`eb_prod_l24` C9–C21, `eb_accv_l22` C7–C18, `eb_prod_l32` C9–C29,
+  `eb_prod_l40`): these are **self-pre-organized** in the bound state — closer to the one de-novo form that actually
+  worked (the cyclic EvoBind precedent) than to floppy linear peptides. `eb_accv_l22` is the most precedent-like
+  (robust R299 reach **and** clean self-disulfide). This is mechanism *plausibility*, hardened to two folds — still
+  **LOW-confidence, single-engine (AF2), inactive-biased receptor; no in-silico score proves agonism** (only the
+  cAMP/SEAP assay does). Table: `data/candidates/agonism_reader_engagement.csv` (`scripts/score_reader_engagement.py`).
+  **The submitted row order is unchanged** — agonism is in-silico-unrankable and a 2-fold metric is too noisy to
+  re-rank a portal-confirmed CSV; this is evidence, not a new ranking.
 - **Binding gate = af2ig, not Boltz-2.** Boltz-2 *over-docks* this isolated, membrane-blind receptor (global
   ipTM/pTM do not separate binders from scrambles, AUC≈0.5). af2ig `pae_interaction<10` + `plddt_binder>80` +
   `rmsd<2` is the calibrated binder-vs-junk gate. It is membrane-blind, so it **cannot** gate a vestibule contact
@@ -76,6 +90,11 @@ is af2ig's interface error. These are **not cross-comparable** across arms.
 | 17 | glp1r_17_bind | ecd_des_4_3 | 64 | ECD binder | pae 8.60 | poly-Ala (A31%), TM 0.90 |
 | 18 | glp1r_18_bind | ecd_des_10_6 | 77 | ECD binder | pae 7.68 | poly-Ala (A40%), TM 0.92 |
 | 19 | glp1r_19_bind | ecd_des_18_5 | 76 | ECD binder | pae 9.55 | instab>40, TM 0.87 |
+
+Per-peptide mechanism annotations (His7-reader R299 reach, self-disulfide) are in
+`data/candidates/agonism_reader_engagement.csv` (see §3): `eb_accv_l22`, `eb_prod_l20`, `eb_prod_l40`,
+`eb_accv_l14` robustly reach R299 in both folds; `eb_prod_l24`/`eb_accv_l22`/`eb_prod_l32`/`eb_prod_l40`
+self-form a disulfide. **Row order is composite-based and deliberately unchanged** (agonism is in-silico-unrankable).
 
 ## 5. Ranking methodology (OUR internal weights — NOT the organizer's)
 

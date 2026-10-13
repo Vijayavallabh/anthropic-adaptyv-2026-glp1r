@@ -164,6 +164,28 @@ disulfide-cyclized) would diversify it — pursuing as an expansion (autonomous 
 → **The submission has passed every known gate (format + novelty + license). Nothing blocks upload except the
 owner's action. UPLOAD IS USER-GATED — never auto-upload.** Submit `submissions/glp1r_track3.csv` (md5 above) unchanged.
 
+## Session 2026-10-13b — "in-silico levers exhausted" re-challenged per the standing goal (NO CSV change)
+
+Re-opened the prior conclusion under the autonomous-to-deadline goal; stress-tested with 2 research subagents +
+GPU pose analysis. Submission UNCHANGED (md5 `be5b7621447eeab3402f409bcec76c9d`, validator PASS 19/0).
+
+- **EvoBind cyclic = head-to-tail macrocycle** (Rettie cyclic-offset; confirmed in `src/mc_design.py` + the
+  precedent's 1-Cys 18-mer) → non-submittable. The working GLP1R precedent's *exact* form is off-limits here.
+- **Orthogonal gene-encodable generators exist** (DiffPepBuilder/UniMoMo, MIT, disulfide-capable) but are ALL
+  surface-trained → they would diversify the BINDING hedge, not add vestibule-threading agonism bets (Baker
+  *Nature* 2026: folded class-B binders = antagonists). Win-path EvoBind threading is irreducible — corroborated
+  a 5th way. Installing one = an env-setup change = **OWNER-GATED**; surfaced as a recommendation, not run.
+- **pLDDT re-selection is lateral** (trades threading-depth for fold-confidence on an unrankable axis) → no churn.
+- **NEW committed evidence — message-reader engagement** (`scripts/score_reader_engagement.py` →
+  `data/candidates/agonism_reader_engagement.csv`): across the EvoBind design pose + a fresh fixed-seed
+  `predict_only` fold, **7/12 agonism peptides reach R299 (His7 reader) <4.5 Å in ≥1 fold, 4/12 robustly in both**
+  (`accv_l22`/`prod_l20`/`prod_l40`/`accv_l14`); **4/12 self-form a clean intramolecular disulfide**
+  (`prod_l24`/`accv_l22`/`prod_l32`/`prod_l40`) → pre-organized, precedent-like. `accv_l22` is the most
+  precedent-like. Dossier §3 updated. **Row order UNCHANGED** (agonism unrankable; 2-fold metric too noisy to
+  re-rank a portal-confirmed CSV; this is evidence, not a ranking).
+- Designed-staple #20 **SKIPPED** as redundant (4 self-staplers already present in the submitted set).
+- Compute: used free GPUs **4 & 6** for 12 `predict_only` folds (~15 min), then released. No foreign job clobbered.
+
 ## Compute
 
 **State 2026-10-13 (post-EvoBind):** my 8 EvoBind runs finished and released. GPUs **1,3,6,7 free**; **2,4,5** used

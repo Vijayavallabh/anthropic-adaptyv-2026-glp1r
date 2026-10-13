@@ -1,0 +1,16 @@
+{
+  "glp1r_vestdeep": {
+    "dialect": 2,
+    "infer_ori_strategy": "hotspots",
+    "input": "/home/prachh/v/anthropic-adaptyv-2026-glp1r/data/raw/6X18_receptorR.pdb",
+    "contig": "60-90,/0,R140-338",
+    "select_hotspots": {
+      "R190": "CZ,NH1,NH2",
+      "R194": "CG1,CG2",
+      "R233": "SD,CE",
+      "R234": "OE1,NE2",
+      "R237": "CG1,CG2"
+    },
+    "is_non_loopy": true
+  }
+}

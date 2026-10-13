@@ -17,6 +17,9 @@ for i in $(seq 0 $((NG-1))); do
   g=${G[$i]}
   nohup bash "$FOLD" "$g" "$OUTB/shard$i/in" "$OUTB/shard$i/out" exact > "$OUTB/shard$i.log" 2>&1 &
   pids+=($!)
+  # STAGGER: cuBLAS init races when many af2ig/jax procs start together
+  # ("Failed to initialize BLAS support"); let each finish CUDA init before the next.
+  [ "$i" -lt "$((NG-1))" ] && sleep 25
 done
 for p in "${pids[@]}"; do wait "$p" || true; done
 echo "AF2IG_SHARDED_DONE $(date -u +%FT%TZ) | score files: $(find "$OUTB" -name '*.sc' | wc -l)"

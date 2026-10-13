@@ -123,12 +123,24 @@ are sequence-novel but **structurally common helical bundles** (max TM 0.87–0.
 novelty is sequence-based (eligibility). AFDB skipped (disk ~93%); **Proteinbase portal is the authority** (it also
 compares AFDB) — re-check pre-upload. Numbers in `data/candidates/candidates.csv` (`struct_nov_maxTM`).
 
-### Next (deliverables)
-1. **F8 rank + select ≤20** — 5 scorecards, rank WITHIN arm (binding_value not cross-comparable), cap ≤2/lineage,
-   best-first. Input `data/candidates/candidates.csv` (status==keep & eligible==True). Novelty barely differentiates
-   the ECD binders (all ~0.9 TM) → rank them on binding (pae) + developability; diversify arm/mechanism.
-2. **F9 package** — build submission CSV (`name,sequence,molecule_class`), `validate_submission.py` exit 0, md5,
-   dossier. **USER-GATED upload** (re-verify the live molecule_class dropdown first).
+### F8 rank — DONE
+`scripts/rank_portfolio.py` → `data/candidates/ranked.csv`. 14 keep-eligible ranked best-first (≤20; cap ≤2/lineage,
+only des_2 has 2). **Disclosed composite (OUR internal weights, NOT the organizer's):** 0.40 arm_prize + 0.10
+binding_norm (within-arm; low weight — the peptide if_dist band 5.0–6.3 is a weak floored proxy) + 0.25 dev_score
+(graded, numeric) + 0.25 elig_safety (coverage-gated incretin-resemblance). **Prize-first:** 7 agonism peptides lead
+(clean de-novo `eb_prod_l26` #1), then 7 ECD binders (clean strong `ecd_des_20_7` #8). 3 peptides carry elevated
+local id to an incretin (accv_l14 80%/exendin, accv_l20 75%/GIP, prod_l14 67%/GLP1) → **portal re-check**.
+
+### F9 package — BUILT + VALIDATES (upload USER-GATED)
+`scripts/build_submission.py` → `submissions/glp1r_track3.csv` (14 rows, `name,sequence,molecule_class=protein`, rank
+order) + `_mapping.csv`. **Validator: rows=14 errors=0 warnings=0, exit 0 (Track 3).** md5
+`764d71240bb80dee050781d307a561cc`; submit==register sequences byte-identical 14/14; names+sequences unique.
+
+### Remaining (USER-GATED / pre-upload)
+1. **Re-verify on the live portal before upload:** the `molecule_class` dropdown (`protein` vs `single_chain`);
+   novelty/eligibility (esp. the 3 elevated-local-id peptides) — drop/reorder if the portal flags them.
+2. Optional: a short submission dossier (methods/provenance/ranking/uncertainty) for the record.
+3. **UPLOAD IS USER-GATED — never auto-upload.** The package is ready for the owner to review and submit.
 
 ## Compute
 

@@ -23,9 +23,12 @@ rows failed the de-novo eligibility gate (local id to a known agonist >30% over 
 |---|---|---|---|---|---|---|---|---|---|
 | eb_accv_l14 | keep | 14 | 5.04 | 65.7 | - | 24.9 | OK 80.0%/cov0.36/exendin_4 | - | oddCys(1) |
 | eb_prod_l20 | keep | 20 | 5.14 | 37.6 | - | 46.7 | OK 44.4%/cov0.45/exendin_4 | - | oddCys(1),instab>40 |
+| eb_prod_l24 | keep | 24 | 5.30 | 40.8 | - | 39.5 | OK 50.0%/cov0.25/exendin_4 | - | hydrophobic |
 | eb_accv_l20 | keep | 20 | 5.35 | 39.0 | - | 123.2 | OK 75.0%/cov0.20/GIP_1_42 | - | instab>40 |
 | eb_prod_l14 | keep | 14 | 5.52 | 46.3 | - | 41.7 | OK 66.7%/cov0.43/GLP1_7_37 | - | hydrophobic,instab>40 |
+| eb_accv_l22 | keep | 22 | 5.72 | 38.9 | - | 56.0 | OK 100.0%/cov0.14/glucagon | - | instab>40 |
 | eb_prod_l26 | keep | 26 | 5.77 | 57.4 | - | 35.6 | OK 50.0%/cov0.31/GLP1_7_37 | - | clean |
+| eb_accv_l18 | keep | 18 | 5.79 | 39.1 | - | 9.8 | OK 57.1%/cov0.39/GLP1_7_37 | - | clean |
 | eb_prod_l32 | keep | 32 | 5.93 | 61.3 | - | 59.8 | OK 36.4%/cov0.34/GLP1_7_37 | - | instab>40 |
 | eb_accv_l26 | keep | 26 | 6.27 | 38.9 | - | 52.4 | OK 62.5%/cov0.31/exendin_9_39 | - | instab>40 |
 | eb_accv_l36 | keep | 36 | 6.45 | 66.1 | - | 24.3 | OK 57.1%/cov0.19/GLP1_7_37 | - | clean |

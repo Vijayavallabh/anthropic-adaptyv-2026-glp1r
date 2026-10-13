@@ -25,7 +25,8 @@ from parse_af2ig import parse_scores                     # noqa: E402
 
 PEP_RUNS = ["prod_l14", "prod_l20", "prod_l26", "prod_l32",
             "accv_l14", "accv_l20", "accv_l26", "accv_l32",
-            "accv_l36", "accv_l44", "prod_l40"]   # 2nd wave: longer threading peptides (36-44 aa)
+            "accv_l36", "accv_l44", "prod_l40",    # wave 2: longer threading peptides (36-44 aa)
+            "accv_l18", "accv_l22", "prod_l24"]    # wave 3: fill at good short lengths (18-24 aa)
 ECD_CSV = os.path.join(REPO, "runs/portfolio/ecd_binders.csv")
 AF2_DIR = os.path.join(REPO, "runs/af2/ecd_mini")
 OUT_DIR = os.path.join(REPO, "data/candidates")

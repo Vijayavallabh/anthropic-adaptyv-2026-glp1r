@@ -46,7 +46,9 @@ for r in keep:
     m = f"{PRED}/ppv2_{name}/metrics.csv"
     plddt = ifd = float("nan")
     if os.path.exists(m):
-        row = list(csv.DictReader(open(m)))[-1]; plddt = float(row["plddt"]); ifd = float(row["if_dist_peptide"])
+        mrows = list(csv.DictReader(open(m)))
+        if mrows:  # guard: a header-only metrics.csv (fold crashed/timed out after writing the header) has no data row
+            row = mrows[-1]; plddt = float(row["plddt"]); ifd = float(row["if_dist_peptide"])
     # self-disulfide in this fold
     cys = [(i+1, res[pep[i]].get("SG")) for i in range(L) if seq[i] == "C" and res[pep[i]].get("SG")]
     ss = [dd(cys[a][1], cys[b][1]) for a in range(len(cys)) for b in range(a+1, len(cys)) if cys[a][1] and cys[b][1]]

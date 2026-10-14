@@ -21,8 +21,9 @@ T3 = {'ALA':'A','ARG':'R','ASN':'N','ASP':'D','CYS':'C','GLN':'Q','GLU':'E','GLY
 def dd(a, b): return math.sqrt((a[0]-b[0])**2+(a[1]-b[1])**2+(a[2]-b[2])**2)
 
 def parse(pdb):
-    """chain A peptide (seq + heavy atoms), chain B R299 heavy atoms, chain B per-residue heavy atoms."""
-    pepseq = {}; pep_atoms = []; r299 = []; bres = {}
+    """chain A peptide (seq + heavy atoms), chain B R299 heavy atoms, chain B per-residue heavy atoms,
+    and the set of chain-B Arg residue numbers (R299 must be the sole Arg in the crop for minD_R299 to mean R299)."""
+    pepseq = {}; pep_atoms = []; r299 = []; bres = {}; arg_rs = set()
     for ln in open(pdb):
         if not ln.startswith("ATOM"): continue
         ch = ln[21]; atom = ln[12:16].strip(); rs = int(ln[22:26]); rn = ln[17:20].strip()
@@ -33,17 +34,21 @@ def parse(pdb):
         elif ch == "B":
             if not atom.startswith("H"):
                 bres.setdefault(rs, []).append(c)
-                if rn == "ARG": r299.append(c)   # R299 is the unique Arg in this pocket (renumbered in output)
+                if rn == "ARG": r299.append(c); arg_rs.add(rs)   # R299 = the unique Arg in this pocket (renumbered in output)
     seq = "".join(pepseq[k] for k in sorted(pepseq))
-    return seq, pep_atoms, r299, bres
+    return seq, pep_atoms, r299, bres, arg_rs
 
 refs, aligner = build_scorer()
 rows = []
 seen = set()
 for pdb in sorted(glob.glob(f"{RUNS}/*/glp1rvest2/length_*/*.pdb")):
-    seq, pep, r299, bres = parse(pdb)
+    seq, pep, r299, bres, arg_rs = parse(pdb)
     if not seq or seq in seen: continue
     seen.add(seq)
+    if len(arg_rs) != 1:   # headline minD_R299 is only meaningful when R299 is the sole Arg in the crop
+        sys.exit(f"ABORT {pdb}: chain-B crop has {len(arg_rs)} Arg residues {sorted(arg_rs)}, expected exactly 1 "
+                 "(R299). minD_R299 would silently measure the nearest Arg, not R299 -- re-crop with a single "
+                 "Arg, or change the R299 selector to key on residue number.")
     minR299 = min((dd(p, a) for p in pep for a in r299), default=999) if r299 else 999
     ncontact = sum(1 for rs, atoms in bres.items()
                    if min((dd(p, a) for p in pep for a in atoms), default=999) <= 4.5)
@@ -58,6 +63,18 @@ for pdb in sorted(glob.glob(f"{RUNS}/*/glp1rvest2/length_*/*.pdb")):
 
 rows.sort(key=lambda r: r["minD_R299"])
 for i, r in enumerate(rows): r["name"] = f"dpbv2_{i:03d}"
+# Provenance guard: names are POSITIONAL (by minD_R299 rank), so a changed input set or a tie reorder could
+# silently remap them. The committed submission slot-20 cites dpbv2_029 and its swap cites dpbv2_043 -- if
+# either anchor stops mapping to its committed sequence, fail loud so submit==folded provenance is re-checked
+# before the dpbv2_* names are trusted downstream (the runs/evobind_predict/ppv2_<name> join and the dossier).
+PROV_ANCHORS = {"dpbv2_029": "EYGAQAYETARTF", "dpbv2_043": "LEQIIDYLLDALYR"}
+_by_name = {r["name"]: r["sequence"] for r in rows}
+for _nm, _want in PROV_ANCHORS.items():
+    _got = _by_name.get(_nm)
+    if _got is not None and _got != _want:
+        sys.exit(f"ABORT: provenance anchor {_nm} now maps to {_got!r} but the committed submission cites "
+                 f"{_want!r}. The vest2 input set or sort order changed -- update the submission/dossier "
+                 "references before trusting dpbv2_* names.")
 cols = ["name", "length", "n_cys", "minD_R299", "reaches_R299", "pocket_contacts",
         "elig_pid", "elig_cov", "elig_nearest", "dev_flags", "keep", "has_ss", "sequence"]
 with open(OUT, "w", newline="") as f:

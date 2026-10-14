@@ -21,10 +21,21 @@ def parse(pdb):
             seq.append(T3.get(ln[17:20].strip(), "X"))
     return "".join(seq), ss
 
+# This harvest's scope = the original vestibule + ECD exploration. The corrected-vestibule run
+# (glp1rvest2) is harvested/evaluated separately by diffpep_vest2_eval.py, so it is skipped here.
+# An unrecognized target dir is a HARD error: that stops a re-run from mislabeling it 'unknown' and
+# overwriting this committed evidence CSV with a mislabeled superset.
+KNOWN_TARGETS = ("glp1rvest", "glp1rvest2", "glp1recd")
+HARVEST_TARGETS = ("glp1rvest", "glp1recd")
 rows = []
 for pdb in sorted(glob.glob(f"{RUNS}/*/*/length_*/*.pdb")):
     parts = pdb.split("/")
-    tgt = next((p for p in parts if p in ("glp1rvest", "glp1recd")), "unknown")
+    tgt = next((p for p in parts if p in KNOWN_TARGETS), None)
+    if tgt is None:
+        sys.exit(f"ABORT: {pdb} sits under no known target dir {KNOWN_TARGETS}; refusing to mislabel it "
+                 "'unknown' and overwrite committed evidence. Add the new target to KNOWN_TARGETS explicitly.")
+    if tgt not in HARVEST_TARGETS:
+        continue  # glp1rvest2 -> handled by diffpep_vest2_eval.py, not this harvest
     # only the full probe run has lengths other than 14-only smokes; keep all, dedupe by seq below
     seq, ss = parse(pdb)
     if not seq:

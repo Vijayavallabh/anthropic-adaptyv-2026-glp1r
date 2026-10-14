@@ -28,6 +28,41 @@
   CSV is the machine-readable authority: filter `status==keep` & `eligible==True`; `binding_model`/`binding_metric`
   columns disambiguate the arm-specific, non-cross-comparable `binding_value`/`plddt`. (Commit `d720fbd`.)
 
+## Session 2026-10-14e — moonshot re-examination (deep-research ×4 + prior-work map) + orthogonal 2-folder engagement validation (M4: Boltz + Chai); NO CSV change
+
+Owner reframed to "moonshots to dominate at all costs, even reject all 20." Ran the full moonshot re-examination
+under the autonomous goal. **Submission UNCHANGED** (v3 `glp1r_track3_v3.csv`, md5 `1fbbbb23…` stands); this
+session is a VALIDATION + defensibility gain, not a re-cut. Owner lifted the compute ceiling to **8 H100s + 500 GB**.
+
+- **Methods sweep (deep-research ×4)** → `reports/De novo GPCR agonist design methods.md` +
+  `research_notes/De novo GPCR agonist design methods/`. Verdict: **no de novo class-B GPCR agonist exists**
+  (Baker *Nature* 2026 pursued GLP1R as an **antagonist**; the only de novo GPCR agonist is class-A MRGPRX1).
+  Deep-pocket reachability ≈ **2 hits / 26,000** for an *easier* class-A pocket; class-B deep insertion unprecedented.
+  No predictor ranks class-B agonism; co-folders are inactive-state-biased + memorize naturals. Enhanced-sampling MD
+  = **NO-GO for the timeline** (~2–5 µs/ligand, 2–4 wk per control panel). All-atom generator licenses:
+  **RFdiffusion3 + RFdiffusionAA = BSD-3 (code+weights), provenance-clean**; **ODesign = AVOID** (web-only, AF3-derived).
+- **Prior-work map: the two headline moonshots were ALREADY tried here and are dead.** M1 two-domain ECD+vestibule
+  bridge (`runs/rfd/s2_bridge_pilot`, **0/24** reached both sites) + M2 RFd3 all-atom vestibule (`runs/rfd3/vestdeep`,
+  **non-physical lipid-wrap** of the membrane-blind bundle), on top of buried-hotspot (<20 Å² SASA) + rim-perch
+  af2ig floor (pae 23.5). Folded-binder→pocket = dead **4 ways**.
+- **NEW orthogonal validation (the genuinely-undone lever) — M4: Boltz-2 + Chai 2-folder engagement calibration**
+  of every win-path peptide (first time scored by anything but EvoBind's own AF2). Evidence:
+  `data/candidates/boltz_winpath_calibration.csv`, `data/candidates/chai_consensus.csv`; new reusable tools
+  `scripts/chai_fold_adapt.py` + `scripts/chai_consensus.py` (`scripts/iface_score.py` UNCHANGED; byte-reproduces).
+  - Boltz-2: **0/16 v3 agonists agonist-like**; one UNSELECTED pool design (`dpbv2_030`) the only agonist-like de novo hit.
+  - Chai cross-fold (breaks the known `scr_s3` Boltz false positive): **`dpbv2_030` is scramble-like in Chai**
+    (iPAE 12.0 / iptm 0.36, *worse than the decoy*) → the Boltz lead was a single-folder artifact.
+    **2-folder consensus: no de novo design shows confirmed agonist-like engagement.** `dpbv2_030` is
+    clean/eligible/graft-free but has no engagement basis to promote → **v3 unchanged.**
+  - Caveat: both folders memorize natural incretin:GLP1R complexes (fold even the antagonists confidently), so Chai's
+    value = scramble-breaking negative control, not a positive de-novo oracle; necessary-condition only, no agonism proof.
+- **Firewall confirmed from 4 independent directions** (literature + own prior attempts + Boltz + Chai). No in-silico
+  moonshot changes the picks; the win is the wet-lab cAMP/SEAP assay. Optional new-generator long-shot
+  (PepFlow/PepGLAD) rated **very low-EV, NOT run**.
+- **Portal re-check watchlist (owner, at upload):** `eb_accv_l22` (glucagon raw id) and `dpbv2_040` = `glp1r_14`
+  (eligibility flag 45.5% id / 0.50 cov to GLP-1). Fallback pool `dpbv2_007/017/048` (048 has an instability flag).
+- Compute: GPU 0 only (1–7 foreign jobs 93–95 %); M4 Boltz **114 folds ~3.5 min** + Chai Stage-2 **30 folds ~40 min**, released.
+
 ## Session 2026-10-14d — brutal stress test + best-20 rebuild → v3 (owner: "dominate at all costs, even reject all")
 
 Adversarially stress-tested all 20 v2 designs; produced a materially stronger **v3**
@@ -296,11 +331,12 @@ GPU pose analysis. Submission UNCHANGED (md5 `be5b7621447eeab3402f409bcec76c9d`,
 
 ## Compute
 
-**State 2026-10-13 (post-EvoBind):** my 8 EvoBind runs finished and released. GPUs **1,3,6,7 free**; **2,4,5** used
-by my concurrent **SEPIQ session** (`boltz predict` ×4 + an `alchemy_ddg` FEP job, small) — do not clobber. GPU 0
-holds a 4.7 GB orphaned allocation from an already-dead PID (not reclaimable by me; non-blocking). Default 4 GPUs;
-burst to 8 only when genuinely idle. Heavy GPU work → the free 1/3/6/7.
+**State 2026-10-14e:** owner lifted the ceiling to **8 H100s + 500 GB disk** (use as many of 0–7 as are genuinely
+free). This session only GPU **0** was free (4.7 GB dead-PID orphan, 0 % util, usable); GPUs **1–7** held foreign
+jobs at 93–95 % util — never touched. M4 Boltz-2 (114 folds) + Chai Stage-2 (30 folds) ran on GPU 0 and released.
+Concurrent SEPIQ/TNF/AMP sessions often hold several GPUs; one process per GPU; never clobber a running job.
 
 ## Gated (owner OK required)
 
-Launching generation (F3); using >4 GPUs; portal upload; env/setup changes beyond the approved init.
+Portal upload; creating/altering the GitHub repo or its visibility; env/setup changes beyond the approved init.
+(GPU ceiling raised to 8 by the owner on 2026-10-14, so >4 GPUs is no longer gated — but still use only free ones.)

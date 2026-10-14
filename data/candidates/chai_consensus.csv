@@ -1,0 +1,11 @@
+name,role,boltz_class,chai_class,consensus,boltz_nterm_frac,boltz_vest,boltz_frac7TM,boltz_iPAE,boltz_iptm,chai_nterm_frac,chai_vest,chai_frac7TM,chai_iPAE,chai_iptm,n_seeds
+dpbv2_030,design,agonist-like,scramble-like,SPLIT:boltz=agonist-like/chai=scramble-like,1.0,8,0.85,3.21,0.959,0.667,3,0.67,12.03,0.356,3
+dpbv2_048,design,weak,scramble-like,SPLIT:boltz=weak/chai=scramble-like,0.667,4,0.66,2.83,0.975,0.0,3,0.65,8.38,0.442,3
+dpbv2_049,design,weak,scramble-like,SPLIT:boltz=weak/chai=scramble-like,1.0,4,0.78,4.6,0.908,0.667,5,0.73,10.63,0.288,3
+dpbv2_040,design,weak,scramble-like,SPLIT:boltz=weak/chai=scramble-like,0.667,4,0.69,3.93,0.9,1.0,5,0.67,12.26,0.258,3
+eb_prod_l26,design,weak,scramble-like,SPLIT:boltz=weak/chai=scramble-like,0.667,5,0.74,2.53,0.967,0.0,3,0.3,12.93,0.268,3
+GLP1_7_36,control-positive,agonist-like,agonist-like,AGREE:agonist-like,1.0,6,0.59,2.23,0.961,1.0,6,0.53,4.54,0.69,3
+exendin_4,control-positive,agonist-like,weak,SPLIT:boltz=agonist-like/chai=weak,1.0,6,0.58,3.81,0.898,1.0,5,0.46,3.65,0.795,3
+exendin_9_39,control-antagonist,antagonist-like,weak,SPLIT:boltz=antagonist-like/chai=weak,0.333,0,0.31,3.93,0.915,1.0,3,0.3,4.24,0.747,3
+GLP1_15_36_addr,control-antagonist,antagonist-like,weak,SPLIT:boltz=antagonist-like/chai=weak,0.0,3,0.64,3.82,0.916,1.0,3,0.36,3.11,0.774,3
+scr_s3,control-scramble,agonist-like,scramble-like,SPLIT:boltz=agonist-like/chai=scramble-like,1.0,6,0.52,3.12,0.914,1.0,3,0.37,8.24,0.429,3

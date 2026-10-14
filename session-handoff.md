@@ -10,16 +10,17 @@ action is the owner's USER-GATED upload — never auto-upload.** Autonomous-to-d
     **ZERO-RISK FALLBACK** — the only fully portal-novelty-cleared set (12 EvoBind peptides + 7 ECD binders).
   - **v2** `submissions/glp1r_track3_v2.csv` — **20 designs**, md5 `924a30807086c94e993b78392e9766e8`.
     v1 + slot-20 DiffPepBuilder hedge (dpbv2_029). Portal-parsed clean (all 20 "Single chain/Passed").
-  - **v3** `submissions/glp1r_track3_v3.csv` — **20 designs**, md5 `3fbdb2b0d148f1012ef0e40a5aead191`.
+  - **v3** `submissions/glp1r_track3_v3.csv` — **20 designs**, md5 `1fbbbb23ba8bbec2912aff7bf274d188`.
     **RECOMMENDED "best-20"** from the stress test: 7 developability drops + win-path rebalanced to a diverse
-    **7 EvoBind : 9 DiffPepBuilder** (was 12:1 monoculture) + hedge trimmed to the 4 best. 13 clean/5/2 liability
-    (vs v2 7/9/3/1); graft-free; lengths 12–76. Report: `reports/GLP1R submission stress test and best-20 rebuild.md`.
+    **7 EvoBind : 9 DiffPepBuilder** (was 12:1 monoculture) + hedge trimmed to the 4 best. 8 clean/10/2 liability
+    (vs v2 7/9/3/1); graft-free; lengths 13–76. **All 9 DPB are from the corrected-target (R299) run** (post-review
+    fix — the first v3 `3fbdb2b0…` wrongly used 5 mis-centered-target DPB). Report: `reports/GLP1R submission stress test and best-20 rebuild.md`.
 - **v3 is a DIVERSITY + developability + eligibility gain, NOT a demonstrated agonism gain** (agonism unrankable
   in-silico; both generators floor at the reachability wall). **COST: the 9 new DiffPepBuilder designs are NOT
   portal-novelty-cleared** — the owner must run portal novelty on them at upload (binary, un-self-verifiable).
-  5/9 are from the earlier mis-centered-target DPB run (valid de-novo; no reader proxy). A fallback DPB pool is
-  staged (`dpb_vest_006`, `dpbv2_030`, …). `eb_accv_l22` (v3 rank 4) = best mechanistic bet but 100% raw id to
-  glucagon (cov 0.14; portal-cleared in v1) — re-check first.
+  **All 9 DPB are from the corrected-target (R299) run** (post-review fix); fallback pool = remaining vest2
+  keepers (`dpbv2_007/017/048`). `eb_accv_l22` (v3 rank 4) = best mechanistic bet but 100% raw id to glucagon
+  (cov 0.14; portal-cleared in v1) — re-check first.
 - **Agonism is UNPROVABLE in-silico** (confirmed 5×): no activation oracle; folded de-novo proteins can't reach
   the 7TM vestibule; only threading peptides approach it; af2ig is membrane-blind. Win = the wet-lab cAMP/SEAP assay.
 
@@ -30,9 +31,9 @@ action is the owner's USER-GATED upload — never auto-upload.** Autonomous-to-d
    - **v2** if minimizing new portal checks to one (only slot-20 is new).
    - **v1 (zero-risk)** if avoiding any new portal check (all 19 already cleared).
    The upload click is USER-GATED — never auto-upload.
-2. **Before uploading v3:** run portal novelty on the 9 DPB (`dpbv2_021/043/013/049`, `dpb_vest_020/051/036/002/032`)
-   + re-check `eb_accv_l22`. If any DPB fails, substitute from the fallback pool and re-run
-   `scripts/assemble_portfolio.py data/candidates/portfolio_v3_order.txt submissions/` (byte-reproduces `3fbdb2b0…`).
+2. **Before uploading v3:** run portal novelty on the 9 DPB (`dpbv2_021/043/013/015/049/034/040/054/024`)
+   + re-check `eb_accv_l22`. If any DPB fails, substitute from the fallback pool (`dpbv2_007/017/048`) and re-run
+   `scripts/assemble_portfolio.py data/candidates/portfolio_v3_order.txt submissions/` (byte-reproduces `1fbbbb23…`).
 3. **No build work pending.** Optional, only if the owner asks: re-MPNN salvage of `ecd_des_8_7`'s novel backbone for
    a 5th hedge binder (GPU); a more-aggressive 5:11 win-path split; or portfolio re-ordering.
 

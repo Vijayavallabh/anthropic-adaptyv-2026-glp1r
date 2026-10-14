@@ -2,9 +2,21 @@
 
 **Date:** 2026-10-14 · **Scope:** adversarially stress-test every design in the submission and
 produce the strongest possible 20, willing to reject any/all. **Outcome:** a materially improved
-**v3** (`submissions/glp1r_track3_v3.csv`, md5 `3fbdb2b0d148f1012ef0e40a5aead191`, validator
+**v3** (`submissions/glp1r_track3_v3.csv`, md5 `1fbbbb23ba8bbec2912aff7bf274d188`, validator
 rows=20 errors=0 warnings=0 PASS). **Upload remains USER-GATED; nothing uploaded.** v1 (19,
 portal-cleared, md5 `be5b762…`) is preserved as the zero-risk fallback; v2 (20, `924a3080…`) also intact.
+
+> **Correction (post-review, 2026-10-14d):** the first v3 (`3fbdb2b0…`) filled 5 of the 9 DiffPepBuilder
+> slots from an earlier **mis-centered-target** DPB run, justified by "aim doesn't matter because activation
+> is unrankable." That reasoning was wrong: the **generative target is a legitimate, rankable PRIOR on how a
+> design was made** — a peptide shaped to a mis-placed pocket is plausibly biased *away* from the real R299
+> activation residue even though the finished peptide's activation can't be scored. "Can't measure the
+> difference" ≠ "no difference." Fixed: **all 9 DPB are now from the corrected-target (R299) run** (the vest2
+> pool proved deep enough — 13 distinct acceptable candidates — so no mis-centered peptide is needed and no
+> GPU generation was required). Honest cost of the fix: correct-aim trades a little developability cosmetics
+> (8 fully-clean/10 one-mild-flag/2 two-flag vs the flawed v3's 13/5/2 — the extra flags are mostly weak
+> ProtParam instability on short SYNTHETIC peptides) + a slightly higher eligibility surface. Correct aim is
+> the better prior; the trade is deliberate.
 
 ## Tiering (project invariant)
 [measured] = computed this session on the same pipeline · [PR]/[pre] = literature · [HYP] = hypothesis.
@@ -46,15 +58,17 @@ ECD binders that pass the af2ig gate were exactly the 7 submitted (no better unu
 **#1 structural fix — the method monoculture:** the win-path was **12:1 EvoBind : DiffPepBuilder**. For an
 unrankable win-path, method-correlated failure is the single biggest fixable risk. v3 rebalances to **7 EvoBind
 : 9 DiffPepBuilder** across two orthogonal generators (EvoBind = AF2-gradient threading; DiffPepBuilder = SE(3)
-diffusion + ESM-2, MIT-licensed). The 9 DPB were chosen clean + low-eligibility + cousin-free (coverage-gated),
-length-diverse (12–23 aa).
+diffusion + ESM-2, MIT-licensed). The 9 DPB were chosen **all from the corrected-target (R299) run**,
+clean-first + low-eligibility + cousin-free (coverage-gated), length-diverse (13–23 aa).
 
 ## v3 composition (20)
 - **16 agonism (win-path):** 7 EvoBind (portal-cleared: eb_prod_l32/l26/l20/l24, eb_accv_l22/l18/l26) +
-  9 DiffPepBuilder (NEW: dpbv2_021/043/013/049, dpb_vest_020/051/036/002/032).
+  9 DiffPepBuilder (NEW, ALL corrected-target R299 run: dpbv2_021/043/013/015/049/034/040/054/024).
 - **4 binding hedge:** ecd_des_20_7 (best binder pae 6.22), ecd_des_18_5 (cleanest comp, stable pose),
   ecd_des_4_3 (dispersed-Ala, unique des_4 lineage, stable pose), ecd_des_2_4 (single des_2 representative).
-- **Liability profile [measured]: 13 fully clean / 5 one-flag / 2 two-flag** — vs v2's 7 / 9 / 3 / 1.
+- **Liability profile [measured]: 8 fully clean / 10 one-flag / 2 two-flag** — vs v2's 7 / 9 / 3 / 1.
+  The extra one-flags vs the flawed first v3 (13/5/2) are mostly weak ProtParam instability on short
+  SYNTHETIC peptides — the deliberate cost of choosing correct-target over mis-centered-but-clean.
   Graft-free (lcs ≤3 all 20). 20 unique sequences + names.
 
 ## Honest risk accounting (what this is and is NOT)
@@ -63,9 +77,9 @@ length-diverse (12–23 aa).
   mechanism plausibility + the wet-lab assay. [measured/invariant]
 - **The 9 new DPB designs are NOT portal-novelty-cleared.** Portal novelty is a binary pass/fail the owner must
   run at upload (it cannot be self-verified here). v1's original designs were portal-cleared; v3 trades some of
-  that cleared status for diversity. 5 of the 9 DPB come from an earlier, geometrically mis-centered target run
-  — still valid de-novo peptides (target-centering is irrelevant to an unrankable win-path) but with no reader
-  proxy. A fallback DPB pool (`dpb_vest_006`, `dpbv2_030`, etc.) is staged if any pick fails the portal.
+  that cleared status for diversity. **All 9 DPB are now from the corrected-target (R299) run** (the earlier
+  mis-centered picks were removed — see the Correction note). A fallback DPB pool (remaining corrected-target
+  vest2 keepers, e.g. `dpbv2_007/017/048`) is staged if any pick fails the portal.
 - `eb_accv_l22` (rank 4) is the best mechanistic bet (robust reader-reacher, disulfide-stapled) but carries the
   arm's **highest eligibility surface (100% raw id to glucagon, cov 0.14)**; portal-cleared in v1 — re-check first.
 
@@ -85,5 +99,5 @@ length-diverse (12–23 aa).
 ## Reproducibility
 `scripts/stress_liab.py` (hard liability audit) + `scripts/assemble_portfolio.py` (reproducible builder) +
 `data/candidates/portfolio_v3_order.txt` (the ranked roster). Rebuild: `uv run python scripts/assemble_portfolio.py
-data/candidates/portfolio_v3_order.txt submissions/` → byte-identical md5 `3fbdb2b0…`. Gate:
+data/candidates/portfolio_v3_order.txt submissions/` → byte-identical md5 `1fbbbb23…`. Gate:
 `uv run python scripts/validate_submission.py submissions/glp1r_track3_v3.csv --track 3` → PASS.

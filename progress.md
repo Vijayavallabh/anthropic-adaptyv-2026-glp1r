@@ -31,7 +31,8 @@
 ## Session 2026-10-14d — brutal stress test + best-20 rebuild → v3 (owner: "dominate at all costs, even reject all")
 
 Adversarially stress-tested all 20 v2 designs; produced a materially stronger **v3**
-(`submissions/glp1r_track3_v3.csv`, md5 `3fbdb2b0d148f1012ef0e40a5aead191`, validator rows=20 errors=0 PASS).
+(`submissions/glp1r_track3_v3.csv`, md5 `1fbbbb23ba8bbec2912aff7bf274d188`, validator rows=20 errors=0 PASS;
+corrected post-review — see below). 
 v1 (`be5b762…`, 19, portal-cleared) + v2 (`924a3080…`, 20) UNCHANGED as fallbacks. **Upload USER-GATED — not uploaded.**
 Full report: `reports/GLP1R submission stress test and best-20 rebuild.md`.
 
@@ -49,9 +50,15 @@ Full report: `reports/GLP1R submission stress test and best-20 rebuild.md`.
   graft-free (lcs≤3 all 20); lengths 12–76.
 - **Honest limits:** this is a DIVERSITY + developability + eligibility gain, NOT a demonstrated agonism gain
   (both generators floor at the reachability wall; agonism unrankable). **The 9 new DPB are NOT portal-cleared**
-  — owner must run portal novelty at upload (un-self-verifiable); 5/9 from the earlier mis-centered-target run;
-  fallback DPB pool staged. `eb_accv_l22` kept at rank 4 = best mechanistic bet but 100% raw id to glucagon
-  (cov 0.14; portal-cleared v1) — re-check first.
+  — owner must run portal novelty at upload (un-self-verifiable); fallback DPB pool staged. `eb_accv_l22` kept at
+  rank 4 = best mechanistic bet but 100% raw id to glucagon (cov 0.14; portal-cleared v1) — re-check first.
+- **CORRECTION (post-review, same day):** the first v3 (`3fbdb2b0…`) filled 5/9 DPB slots from the earlier
+  **mis-centered-target** DPB run, rationalized as "aim doesn't matter (agonism unrankable)". WRONG — the
+  generative target is a legitimate rankable PRIOR; a peptide shaped to a mis-placed pocket is plausibly biased
+  away from R299 even if unmeasurable. **Fixed: all 9 DPB now from the corrected-target (R299) vest2 run** (pool
+  had 13 distinct acceptable candidates → no GPU generation needed). Cost of the fix: correct-aim trades a little
+  developability cosmetics (8 clean/10/2 vs 13/5/2; extra flags = weak instab on short synthetic peptides) + a
+  slightly higher eligibility surface. New md5 `1fbbbb23ba8bbec2912aff7bf274d188`.
 - **Tools promoted + reproducible:** `scripts/stress_liab.py`, `scripts/assemble_portfolio.py`,
   `data/candidates/portfolio_v3_order.txt`; promoted builder reproduces v3 byte-identically. GPU: none
   (only GPU 0 free all session; foreign jobs on 1–7 untouched). Optional/not-run: re-MPNN salvage of

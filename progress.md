@@ -69,7 +69,9 @@ session is a VALIDATION + defensibility gain, not a re-cut. Owner lifted the com
   lcs 2, graft-free)** — the engagement signal is entangled with that resemblance AND it carries portal-novelty risk.
   Evidence: data/candidates/pepglad_longshot{,_consensus}.csv + pepgen_longshot{,_consensus}.csv. **OWNER CALL** whether
   to swap it into v3 (contingent on portal novelty). Owner approved staging → **v4 = `submissions/glp1r_track3_v4.csv`
-  (md5 `25b9d439a93e5478934a5b8f8b1c0e26`)** = v3 with `eb_accv_l18`→`pglad_029` (slot 6); validator PASS, v3 still
+  (md5 `945b30b3b7b577084d9de22e83652ce0`; molecule_class **`single_chain`** not `protein` — owner correction
+  2026-10-14, portal-accepted; builders updated; v1/v2/v3 also regenerated to single_chain = md5
+  `1ce4e943`/`66cefdcf`/`6b846b83`)** = v3 with `eb_accv_l18`→`pglad_029` (slot 6); validator PASS, v3 still
   byte-reproduces, diff vs v3 = that one row. Assembler gained a `pepglad_longshot.csv` source + a version arg
   (default v3, so v3 reproduction is unchanged). Upload + portal novelty still gated.
 - **Portal re-check watchlist (owner, at upload):** `eb_accv_l22` (glucagon raw id) and `dpbv2_040` = `glp1r_14`

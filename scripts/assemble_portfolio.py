@@ -70,7 +70,7 @@ def main():
         seqs[seq] = internal
         tag = "ago" if arm == "agonism-peptide" else "bind"
         subname = f"glp1r_{rank:02d}_{tag}"
-        sub.append((subname, seq, "protein"))
+        sub.append((subname, seq, "single_chain"))
         a = dev.analyze(seq)
         e = elig.score_design(seq, refs, aligner)
         mapping.append((rank, subname, internal, arm, src, len(seq), ",".join(a["flags"]) or "clean",

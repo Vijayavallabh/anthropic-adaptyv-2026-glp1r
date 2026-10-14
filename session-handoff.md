@@ -7,7 +7,11 @@ session did NOT change the submission — v3 stands, now better-validated. The O
 USER-GATED upload — never auto-upload.** Autonomous-to-deadline (deadline 2026-10-25 23:59 AoE). Owner lifted the
 compute ceiling to **8 H100s + 500 GB** (2026-10-14).
 
-- **FOUR submission candidates staged (all validate PASS, all ≤20, molecule_class=`protein`):**
+- **FOUR submission candidates staged (all validate PASS, all ≤20, molecule_class=`single_chain`):**
+  - **md5s (2026-10-14e, after the owner's `molecule_class` = `single_chain` correction; portal-accepted via v4):**
+    v1 `1ce4e943d897832965a66b5f3bef9123`, v2 `66cefdcf92e0d2aef2322a2a1442f1ed`,
+    v3 `6b846b831f58c081f55ce0f8f66aad8c`, v4 `945b30b3b7b577084d9de22e83652ce0` (v4 = the portal-checked file).
+    All byte-reproducible via the updated assembler. Any `protein`-era hashes elsewhere in this file predate this change.
   - **v1** `submissions/glp1r_track3.csv` — **19 designs**, md5 `be5b7621447eeab3402f409bcec76c9d`.
     **ZERO-RISK FALLBACK** — the only fully portal-novelty-cleared set (12 EvoBind peptides + 7 ECD binders).
   - **v2** `submissions/glp1r_track3_v2.csv` — **20 designs**, md5 `924a30807086c94e993b78392e9766e8`.

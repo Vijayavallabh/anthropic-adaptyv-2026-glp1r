@@ -70,7 +70,7 @@ def row_for(name, seq, arm, binding_model, binding_metric, binding_value, plddt,
     eligible = not el["flag"]
     return {
         "name": name, "arm": arm, "status": "keep" if eligible else "drop",
-        "molecule_class": "protein", "length": dev["len"],
+        "molecule_class": "single_chain", "length": dev["len"],
         "binding_model": binding_model, "binding_metric": binding_metric,
         "binding_value": f"{binding_value:.2f}",
         "plddt": f"{plddt:.1f}" if plddt is not None else "",

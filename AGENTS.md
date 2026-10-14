@@ -65,9 +65,11 @@ for Track 3, and the command + key output are recorded as evidence. Never claim 
 ## Submission contract (Challenge 3 — ≤20 designs; deadline 2026-10-25 23:59 AoE)
 
 - CSV `name,sequence,molecule_class`, **rows best-first** (row order = ranking). Natural AAs; Fab = `VH:VL` (heavy first).
-- `molecule_class` **RESOLVED (2026-10-13)**: the live GLP1R /submit portal parsed all 19 submitted designs as
-  **"Single chain"** and accepted our emitted `protein` (owner's live portal paste, "0 needing fixes"). Validator
-  emits `protein`. Low-risk; glance at the dropdown once more at upload.
+- `molecule_class` **RESOLVED (2026-10-13; re-confirmed on v2 2026-10-14)**: the live GLP1R /submit portal parsed
+  all submitted designs as **"Single chain"** and accepted our emitted `protein` ("0 needing fixes" — for the 19-row
+  v1 on 2026-10-13 and again for the 20-row v2 incl. slot-20 on 2026-10-14). Validator emits `protein`. Low-risk.
+- **Portal novelty = BINARY pass/fail only** (no score is surfaced). Re-check it at upload for any design not yet
+  cleared (currently only v2's slot-20); the swap `LEQIIDYLLDALYR` is staged if it fails.
 - Names published verbatim → no PII/prompt-like text. Unique names + sequences. De-novo + zero-shot (hard gate).
 - Candidate CSVs live in `runs/` (gitignored). **Upload is USER-GATED** (portal account) — never auto-upload.
 

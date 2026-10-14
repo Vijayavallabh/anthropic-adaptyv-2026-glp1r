@@ -1,7 +1,7 @@
 # progress
 
 **Project:** anthropic-adaptyv-2026-glp1r — de-novo human GLP1R **agonist** (Challenge 3, Track 3)
-**Deadline:** 2026-10-25 23:59 AoE · **Updated:** 2026-10-13
+**Deadline:** 2026-10-25 23:59 AoE · **Updated:** 2026-10-14 · **Latest commit:** `b633b4d`
 
 ## Status
 
@@ -163,6 +163,29 @@ disulfide-cyclized) would diversify it — pursuing as an expansion (autonomous 
 4. **Format/validator: CLEARED** — `rows=19 errors=0`, md5 `be5b7621447eeab3402f409bcec76c9d`, submit==register 19/19.
 → **The submission has passed every known gate (format + novelty + license). Nothing blocks upload except the
 owner's action. UPLOAD IS USER-GATED — never auto-upload.** Submit `submissions/glp1r_track3.csv` (md5 above) unchanged.
+
+## Session 2026-10-14b — v2 portal parse confirmed + 2nd /code-review hardening (commit `b633b4d`)
+
+Owner loaded **v2** into the live `/submit` portal. Reported state captured + **byte-cross-checked** against the
+committed artifact: all **20 designs parsed "Single chain / Passed", "20 included, 0 needing fixes"** (incl.
+slot-20 `glp1r_20_ago`). Every row's length + visible prefix/suffix matches `glp1r_track3_v2.csv`
+(md5 `924a30807086c94e993b78392e9766e8`) exactly → the portal is parsing the correct artifact. **Portal reports
+novelty as BINARY pass/fail only (no score)** → slot-20 is a clean go/no-go; swap `LEQIIDYLLDALYR` (dpbv2_043)
+staged if its gate ever returns fail. **Upload remains USER-GATED** (never auto-upload).
+
+**2nd `/code-review` (scope = the DiffPepBuilder evidence scripts) → 4 findings, all fixed fail-loud + idempotent:**
+- `harvest_diffpep.py`: a re-run would sweep the later `glp1rvest2` run (mislabeled `unknown`) and overwrite the
+  committed `diffpep_raw.csv` with a mislabeled superset → scoped the harvest to its targets + **HARD-ERROR** on an
+  unrecognized target dir.
+- `diffpep_vest2_fullfold_engage.py`: `list(DictReader)[-1]` on a header-only `metrics.csv` (crashed fold) raised
+  `IndexError` and aborted the whole loop → guard the empty-rows case.
+- `diffpep_vest2_eval.py`: assumed R299 is the only Arg in the crop → **assert** exactly one Arg (else `minD_R299`
+  silently measures the nearest Arg); plus a **provenance-anchor guard** pinning slot-20 (`dpbv2_029`) + swap
+  (`dpbv2_043`) so a changed input set fails loud instead of silently remapping positional names.
+- **Verified:** every evidence CSV reproduces **byte-for-byte** (117 harvested / 21 vest2 keepers / 11-of-21 reach
+  R299 all hold); each guard **positive-controlled** to trip on crafted bad input. **Submission bytes UNTOUCHED.**
+  The review also independently re-confirmed v2 md5, validator PASS (20/0/0), slot-20 provenance, no CLAUDE.md
+  violations. Compute: none (CPU-only parse/replay).
 
 ## Session 2026-10-14 — DiffPepBuilder orthogonal-generator probe (owner-approved); v2 staged
 

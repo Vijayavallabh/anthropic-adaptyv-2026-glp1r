@@ -171,8 +171,11 @@ Single-sourced pipeline, all committed to the private repo (`Vijayavallabh/anthr
 
 ## 11. Pre-upload checklist (USER-GATED)
 
-- [ ] `molecule_class`: CONFIRMED on the live portal (owner's 2026-10-13 paste parsed all 19 as **"Single chain"**,
-      accepted `protein`, 0 needing fixes). Low-risk; glance at the /submit dropdown once more at upload.
+- [x] `molecule_class`: CONFIRMED on the live portal — owner's 2026-10-13 paste parsed all 19 (v1) as **"Single
+      chain"**, accepted `protein`, 0 needing fixes; **re-confirmed 2026-10-14 for v2** (all 20 incl. slot-20 parsed
+      "Single chain / Passed", "20 included, 0 needing fixes"), byte-cross-checked row-for-row against the committed v2.
+- [ ] **Portal novelty is BINARY pass/fail (no score surfaced).** Only v2's slot-20 is not yet novelty-cleared → a
+      clean go/no-go at upload; if it fails, swap to `LEQIIDYLLDALYR` (dpbv2_043) and re-parse.
 - [x] **Portal novelty/eligibility: CONFIRMED by owner (2026-10-13)** — all 9 `recheck` peptides in
       `submissions/glp1r_track3_eligibility.csv` (glp1r_04/09/11/12/10/03/05/01/02) are tagged **novel enough** on the
       portal (the authority); the convergent-motif reasoning held, **no drops needed**.
@@ -221,3 +224,17 @@ if the portal flags its exendin-4 short-motif id (50%/cov0.46): **`LEQIIDYLLDALY
 category-error; low-confidence padding on a moonshot arm) is recorded; it does not block a zero-displacement
 free-slot diversity hedge, but its concerns ARE the honest label above. **This is a LOW-confidence diversity bet,
 not a confidence bet — no in-silico score proves agonism; only the cAMP/SEAP assay does.**
+
+**v2 live-portal parse (2026-10-14).** Owner loaded v2 into the `/submit` portal: all **20 designs parsed
+"Single chain / Passed", "20 included, 0 needing fixes"** (incl. slot-20 `glp1r_20_ago`). Every row's length +
+visible prefix/suffix was byte-cross-checked against the committed `glp1r_track3_v2.csv` (md5 `924a3080…`) → the
+portal is parsing the exact validated artifact. Portal **novelty is binary pass/fail** (no score), so slot-20 is a
+clean go/no-go; the swap is ready if it fails. Upload remains USER-GATED.
+
+**Evidence-script hardening (2nd /code-review, commit `b633b4d`).** A code review of the DiffPepBuilder evidence
+scripts surfaced 4 reproducibility/robustness gaps (re-run clobber of `diffpep_raw.csv` via a mislabeled target; an
+`IndexError` on a header-only `metrics.csv`; and two silent assumptions — R299 as the sole crop Arg, and positional
+`dpbv2_*` naming). All fixed **fail-loud + idempotent**: every evidence CSV now reproduces byte-for-byte (117
+harvested / 21 vest2 keepers / 11-of-21 reach R299 unchanged) and each guard was positive-controlled on crafted bad
+input. **No submission bytes changed**; the review independently re-confirmed v2 md5, validator PASS, slot-20
+provenance, and no license/attribution violations.

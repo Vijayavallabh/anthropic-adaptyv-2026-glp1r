@@ -36,7 +36,7 @@ MOLECULE_CLASSES: tuple[str, ...] = ("protein", "single_chain", "nanobody", "scf
 # 'protein' and 'single_chain' are accepted aliases for the single-chain class (see module docstring).
 SINGLE_CHAIN_CLASSES: frozenset[str] = frozenset({"protein", "single_chain"})
 # The value this toolkit EMITS for single-chain designs (override before upload if the live form differs).
-SINGLE_CHAIN_CANONICAL: str = "protein"
+SINGLE_CHAIN_CANONICAL: str = "single_chain"
 FAB_CLASSES: frozenset[str] = frozenset({"fab_kappa", "fab_lambda"})
 ANTIBODY_CLASSES: frozenset[str] = frozenset({"nanobody", "scfv", "fab_kappa", "fab_lambda"})
 AA: frozenset[str] = frozenset("ACDEFGHIKLMNPQRSTVWY")

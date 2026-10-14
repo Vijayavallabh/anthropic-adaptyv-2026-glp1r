@@ -26,9 +26,9 @@ def main():
                         r["binding_value"], r.get("struct_nov_maxTM", ""), r["composite"]))
     os.makedirs(os.path.dirname(OUT), exist_ok=True)
     with open(OUT, "w", newline="") as fh:
-        w = csv.writer(fh); w.writerow(["name", "sequence", "molecule_class"]); w.writerows(sub)
+        w = csv.writer(fh, lineterminator="\n"); w.writerow(["name", "sequence", "molecule_class"]); w.writerows(sub)
     with open(MAP, "w", newline="") as fh:
-        w = csv.writer(fh)
+        w = csv.writer(fh, lineterminator="\n")
         w.writerow(["rank", "submission_name", "internal_name", "arm", "binding_metric", "binding_value", "struct_nov_maxTM", "composite"])
         w.writerows(mapping)
 
@@ -48,7 +48,7 @@ def main():
                       "recheck" if pid >= 50.0 else "ok"))
     erows.sort(key=lambda r: -float(r[2]))
     with open(ELIG, "w", newline="") as fh:
-        w = csv.writer(fh)
+        w = csv.writer(fh, lineterminator="\n")
         w.writerow(["submission_name", "internal_name", "raw_id_pct", "coverage", "nearest_incretin", "cov_gated_concern", "portal_recheck"])
         w.writerows(erows)
     nrc = sum(1 for e in erows if e[6] == "recheck")

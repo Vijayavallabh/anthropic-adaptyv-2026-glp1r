@@ -35,8 +35,8 @@ def test_single_chain_alias_accepted():
 
 
 def test_canonicalize_alias():
-    assert canonicalize_molecule_class("single_chain") == "protein"
-    assert canonicalize_molecule_class("protein") == "protein"
+    assert canonicalize_molecule_class("single_chain") == "single_chain"
+    assert canonicalize_molecule_class("protein") == "single_chain"
     assert canonicalize_molecule_class("nanobody") == "nanobody"
 
 
@@ -86,8 +86,8 @@ def test_write_submission_byte_reproducible(tmp_path: Path):
     p2 = write_submission(rows, tmp_path / "b.csv")
     b1, b2 = p1.read_bytes(), p2.read_bytes()
     assert b1 == b2
-    # canonicalization rewrote the 'single_chain' alias to 'protein'
-    assert b"single_chain" not in b1 and b"protein" in b1
+    # canonicalization rewrote the 'protein' alias to the canonical 'single_chain'
+    assert b"protein" not in b1 and b"single_chain" in b1
     # round-trips through the validator
     assert validate_csv(p1, track=3).ok
 

@@ -1,0 +1,26 @@
+# v4: v3 order with eb_accv_l18 (rank 6; weakest Boltz orthogonal support -- iPAE 12.5, zero vestibule,
+#     no N-term insertion; and none of the stapled/reader-reacher mechanistic value of the other EvoBind picks)
+#     -> pglad_029 (PepGLAD; the ONLY de-novo design to pass the 2-folder Boltz+Chai engagement consensus).
+#     CAVEAT: necessary-condition only (NOT agonism); most incretin-similar survivor (57.1% local id to
+#     oxyntomodulin, graft-free) -> PORTAL-NOVELTY RECHECK before upload. Row position is not an agonism ranking
+#     (win-path unrankable). Build: uv run python scripts/assemble_portfolio.py data/candidates/portfolio_v4_order.txt submissions/ v4
+eb_prod_l32
+eb_prod_l26
+dpbv2_021
+eb_accv_l22
+dpbv2_043
+pglad_029
+dpbv2_013
+eb_prod_l20
+dpbv2_015
+eb_accv_l26
+dpbv2_049
+eb_prod_l24
+dpbv2_034
+dpbv2_040
+dpbv2_054
+dpbv2_024
+ecd_des_20_7
+ecd_des_18_5
+ecd_des_4_3
+ecd_des_2_4

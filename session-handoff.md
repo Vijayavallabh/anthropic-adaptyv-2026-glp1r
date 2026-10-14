@@ -7,7 +7,7 @@ session did NOT change the submission — v3 stands, now better-validated. The O
 USER-GATED upload — never auto-upload.** Autonomous-to-deadline (deadline 2026-10-25 23:59 AoE). Owner lifted the
 compute ceiling to **8 H100s + 500 GB** (2026-10-14).
 
-- **THREE submission candidates staged (all validate PASS, all ≤20, molecule_class=`protein`):**
+- **FOUR submission candidates staged (all validate PASS, all ≤20, molecule_class=`protein`):**
   - **v1** `submissions/glp1r_track3.csv` — **19 designs**, md5 `be5b7621447eeab3402f409bcec76c9d`.
     **ZERO-RISK FALLBACK** — the only fully portal-novelty-cleared set (12 EvoBind peptides + 7 ECD binders).
   - **v2** `submissions/glp1r_track3_v2.csv` — **20 designs**, md5 `924a30807086c94e993b78392e9766e8`.
@@ -16,6 +16,11 @@ compute ceiling to **8 H100s + 500 GB** (2026-10-14).
     **RECOMMENDED "best-20"**: 7 developability drops + win-path rebalanced to **7 EvoBind : 9 DiffPepBuilder**
     (from 12:1) + hedge trimmed to 4. Graft-free; lengths 13–76. All 9 DPB from the corrected-target (R299) run.
     Report: `reports/GLP1R submission stress test and best-20 rebuild.md`.
+  - **v4** `submissions/glp1r_track3_v4.csv` — **20 designs**, md5 `25b9d439a93e5478934a5b8f8b1c0e26`.
+    v3 with the weakest-Boltz-support EvoBind (`eb_accv_l18`, slot 6) swapped for **`pglad_029`** (the only de-novo
+    design to pass the 2-folder Boltz+Chai engagement consensus; necessary-condition only, confounded). Diff vs v3 =
+    exactly that one row; v3 still byte-reproduces. **CONTINGENT on portal novelty** (`pglad_029` = 57.1% local id to
+    oxyntomodulin). Build: `scripts/assemble_portfolio.py data/candidates/portfolio_v4_order.txt submissions/ v4`.
 - **Orthogonal 2-folder engagement validation (this session, M4) — DONE; v3 UNCHANGED.** Boltz-2 + Chai co-fold of
   every win-path peptide (first scoring beyond EvoBind's own AF2). **2-folder consensus: NO de novo design shows
   confirmed agonist-like engagement** — the one Boltz "agonist-like" hit (`dpbv2_030`, unselected) is scramble-like
@@ -33,8 +38,9 @@ compute ceiling to **8 H100s + 500 GB** (2026-10-14).
 
 ## Do next
 
-1. **Owner's call at upload — three options:** **v3 (recommended)** / **v2** (one new design) / **v1 (zero-risk,
-   fully cleared)**. The upload click is USER-GATED — never auto-upload.
+1. **Owner's call at upload — four options:** **v4** (v3 + `pglad_029`, the engagement-validated shot — pick if it
+   clears portal novelty) / **v3** (cleanest best-20, recommended default) / **v2** (one new design) / **v1**
+   (zero-risk, fully portal-cleared). The upload click is USER-GATED — never auto-upload.
 2. **Before uploading v3:** run portal novelty on the 9 DPB (`dpbv2_021/043/013/015/049/034/040/054/024`) + re-check
    the identity-margin designs **`eb_accv_l22`** (glucagon raw id) and **`dpbv2_040` = `glp1r_14`** (eligibility
    45.5% id / 0.50 cov). If any fails, substitute from `dpbv2_007/017/048` and re-run
@@ -45,7 +51,7 @@ compute ceiling to **8 H100s + 500 GB** (2026-10-14).
    necessary-condition only (not agonism); most incretin-similar survivor (57.1% local id to oxyntomodulin, graft-free)
    → portal-novelty RISK + signal confound. **OWNER CALL:** optionally swap `pglad_029` into v3 for the weakest-
    orthogonal-support win-path pick (a Boltz-scramble-like EvoBind, e.g. `eb_accv_l18`), contingent on portal novelty;
-   I can stage a labeled v4 on request. Evidence: data/candidates/pepglad_longshot{,_consensus}.csv.
+   **v4 is now STAGED** (`submissions/glp1r_track3_v4.csv`, md5 `25b9d439…`, validator PASS) with that swap — upload still owner-gated + contingent on `pglad_029` portal novelty. Evidence: data/candidates/pepglad_longshot{,_consensus}.csv.
 
 ## Invariants (full list in AGENTS.md)
 

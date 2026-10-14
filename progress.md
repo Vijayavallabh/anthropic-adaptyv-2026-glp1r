@@ -68,7 +68,10 @@ session is a VALIDATION + defensibility gain, not a re-cut. Owner lifted the com
   pglad_029 under both); and it is the **most incretin-similar survivor (57.1% local id to oxyntomodulin, cov 0.47,
   lcs 2, graft-free)** — the engagement signal is entangled with that resemblance AND it carries portal-novelty risk.
   Evidence: data/candidates/pepglad_longshot{,_consensus}.csv + pepgen_longshot{,_consensus}.csv. **OWNER CALL** whether
-  to swap it into v3 (contingent on portal novelty); NOT auto-added.
+  to swap it into v3 (contingent on portal novelty). Owner approved staging → **v4 = `submissions/glp1r_track3_v4.csv`
+  (md5 `25b9d439a93e5478934a5b8f8b1c0e26`)** = v3 with `eb_accv_l18`→`pglad_029` (slot 6); validator PASS, v3 still
+  byte-reproduces, diff vs v3 = that one row. Assembler gained a `pepglad_longshot.csv` source + a version arg
+  (default v3, so v3 reproduction is unchanged). Upload + portal novelty still gated.
 - **Portal re-check watchlist (owner, at upload):** `eb_accv_l22` (glucagon raw id) and `dpbv2_040` = `glp1r_14`
   (eligibility flag 45.5% id / 0.50 cov to GLP-1). Fallback pool `dpbv2_007/017/048` (048 has an instability flag).
 - Compute: GPU 0 only (1–7 foreign jobs 93–95 %); M4 Boltz **114 folds ~3.5 min** + Chai Stage-2 **30 folds ~40 min**, released.

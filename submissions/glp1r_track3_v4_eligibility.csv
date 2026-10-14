@@ -1,0 +1,17 @@
+submission_name,internal_name,raw_id_pct,coverage,nearest_incretin,cov_gated_concern,portal_recheck
+glp1r_04_ago,eb_accv_l22,100.0,0.14,glucagon,27.3,recheck
+glp1r_15_ago,dpbv2_054,75.0,0.18,GLP1_7_37,27.3,recheck
+glp1r_10_ago,eb_accv_l26,62.5,0.31,exendin_9_39,38.5,recheck
+glp1r_07_ago,dpbv2_013,60.0,0.33,exendin_9_39,40.0,recheck
+glp1r_06_ago,pglad_029,57.1,0.47,oxyntomodulin,53.3,recheck
+glp1r_02_ago,eb_prod_l26,50.0,0.31,GLP1_7_37,30.8,recheck
+glp1r_11_ago,dpbv2_049,50.0,0.40,glucagon,40.0,recheck
+glp1r_12_ago,eb_prod_l24,50.0,0.25,exendin_4,25.0,recheck
+glp1r_14_ago,dpbv2_040,45.5,0.50,GLP1_7_37,45.5,ok
+glp1r_08_ago,eb_prod_l20,44.4,0.45,exendin_4,40.0,ok
+glp1r_13_ago,dpbv2_034,42.9,0.54,glucagon,42.9,ok
+glp1r_05_ago,dpbv2_043,40.0,0.36,GLP1_7_37,28.6,ok
+glp1r_09_ago,dpbv2_015,40.0,0.59,liraglutide_pep,40.0,ok
+glp1r_16_ago,dpbv2_024,37.5,0.40,glucagon,30.0,ok
+glp1r_01_ago,eb_prod_l32,36.4,0.34,GLP1_7_37,25.0,ok
+glp1r_03_ago,dpbv2_021,20.0,0.65,GIP_1_42,20.0,ok

@@ -39,9 +39,13 @@ compute ceiling to **8 H100s + 500 GB** (2026-10-14).
    the identity-margin designs **`eb_accv_l22`** (glucagon raw id) and **`dpbv2_040` = `glp1r_14`** (eligibility
    45.5% id / 0.50 cov). If any fails, substitute from `dpbv2_007/017/048` and re-run
    `scripts/assemble_portfolio.py data/candidates/portfolio_v3_order.txt submissions/` (byte-reproduces `1fbbbb23…`).
-3. **No build work pending; in-silico levers exhausted.** Optional, low-EV, only if the owner asks: a new
-   threading-peptide generator (PepFlow/PepGLAD) for raw portfolio diversity (rated very low-EV — the reachability
-   wall is confirmed); re-MPNN salvage of `ecd_des_8_7` for a 5th hedge binder.
+3. **New-generator long-shot RAN (owner-requested) — one live candidate: `pglad_029`.** PepFlow found nothing (0/8).
+   PepGLAD surfaced **`pglad_029` (MALTSTQQLTNAKYQ, 15 aa, linear, 0 Cys, CLEAN, provenance-clean)** — the only de-novo
+   design to clear the 2-folder Boltz+Chai engagement-consensus bar (Chai iptm 0.71 ≈ GLP-1's 0.69). CAVEAT:
+   necessary-condition only (not agonism); most incretin-similar survivor (57.1% local id to oxyntomodulin, graft-free)
+   → portal-novelty RISK + signal confound. **OWNER CALL:** optionally swap `pglad_029` into v3 for the weakest-
+   orthogonal-support win-path pick (a Boltz-scramble-like EvoBind, e.g. `eb_accv_l18`), contingent on portal novelty;
+   I can stage a labeled v4 on request. Evidence: data/candidates/pepglad_longshot{,_consensus}.csv.
 
 ## Invariants (full list in AGENTS.md)
 

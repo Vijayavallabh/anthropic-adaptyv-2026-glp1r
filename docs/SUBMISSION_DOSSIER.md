@@ -140,10 +140,12 @@ caveat). Nothing is a hard gate; flags inform rank, not inclusion.
 - **Win-path monoculture (the key residual risk, per the pre-upload audit):** the 12 agonism peptides are ALL from
   one generator (EvoBind), one topology (linear), one floored proxy — shared failure modes, so the effective number
   of independent agonism bets is well below 12. The highest-value legitimate move to raise win probability is an
-  **orthogonal peptide sub-arm** from a clean-licensed generator (BoltzGen, MIT, linear-submittable; RFpeptides,
-  BSD-3, disulfide-cyclized — which is closer to the *working* cyclic EvoBind precedent). This needs GPU generation
-  (inside the autonomous mandate; only >4-GPU use and the upload are owner-gated) and is being pursued as an
-  expansion; if it yields eligible peptides they diversify the win-path and fill the unused 20th slot.
+  **orthogonal peptide sub-arm** from a clean-licensed generator. **This was EXECUTED 2026-10-14 (§12):**
+  DiffPepBuilder (MIT + ESM-2, SE(3) diffusion — decorrelated from EvoBind/AF2) yielded orthogonal R299-engaging
+  peptides at a rate comparable to the EvoBind arm (11/21 vs 7/12), refuting the earlier "monoculture is
+  irreducible" claim. One honest-LOW-confidence orthogonal candidate (`glp1r_20_ago`) is staged into the free slot 20
+  of an alternative 20-design submission (`glp1r_track3_v2.csv`); the conservative 19-design v1 is unchanged. Owner
+  chooses v1/v2 at upload.
 - **glp1r_08_ago (prod_l40)** is the weakest kept peptide (worst if_dist 7.07, 40-mer, 3 unpaired Cys); it is kept
   as a diversity bet (a free slot, win-path membership unchanged) but is the first candidate to drop if a slot is
   needed. **glp1r_18_bind** (14-residue poly-Ala run) is an owner judgment call — a harmless hedge in a free slot,
@@ -175,7 +177,47 @@ Single-sourced pipeline, all committed to the private repo (`Vijayavallabh/anthr
       `submissions/glp1r_track3_eligibility.csv` (glp1r_04/09/11/12/10/03/05/01/02) are tagged **novel enough** on the
       portal (the authority); the convergent-motif reasoning held, **no drops needed**.
 - [x] **EvoBind license (CC-BY-NC): CONFIRMED acceptable by owner (2026-10-13)** — covers all 12 win-path peptides.
-- [ ] Confirm row order = intended ranking; submit `submissions/glp1r_track3.csv` (md5 `be5b762…`) **unchanged** (bytes).
-- [ ] Optional: an orthogonal-generator peptide sub-arm (BoltzGen/RFpeptides) may be folded in before upload to
-      diversify the win-path monoculture (see §8) — only if it clears eligibility/developability.
+- [ ] Confirm row order = intended ranking. **OWNER CHOICE of which file to upload (see §12):**
+      **v1** = `submissions/glp1r_track3.csv` (19 designs, md5 `be5b762…`, portal-confirmed) — the conservative option;
+      **v2** = `submissions/glp1r_track3_v2.csv` (20 designs, md5 `924a3080…`, +1 orthogonal agonism hedge) — adds a
+      NEW design that must be novelty-re-checked on the portal. Submit the chosen file **unchanged** (bytes).
+- [x] **Orthogonal-generator sub-arm: DONE (2026-10-14, §12).** DiffPepBuilder (MIT + ESM-2) probe executed; result
+      = orthogonal win-path diversity IS achievable (11/21 reach R299 vs EvoBind 7/12); one honest-LOW-confidence
+      candidate staged into v2 slot 20 (`glp1r_20_ago`). Not folded into v1.
 - [ ] Upload is performed by the owner — never automated.
+
+## 12. Orthogonal-generator probe — DiffPepBuilder (RESULT, 2026-10-14)
+
+Owner-approved probe: can an ORTHOGONAL generator diversify the EvoBind win-path monoculture (§8, the audit's #1
+risk)? Tool: **DiffPepBuilder** (MIT; SE(3) diffusion + ESM-2 — generation fully decorrelated from EvoBind's
+AF2-gradient loop). **Provenance CLEAN:** DiffPepBuilder MIT + **ESM-2** (`fair-esm`, facebook/esm2_t33_650M_UR50D,
+MIT) → ODC-BY-compatible (NOT ESM-3/ESMC). Repro: `scripts/run_diffpep.sh` (with env-fix notes),
+`harvest_diffpep.py`, `diffpep_gate.py`, `diffpep_vest2_eval.py`, `diffpep_vest2_fullfold_engage.py`.
+
+**Method:** two targets (vestibule R299 = His7 reader; ECD groove), lengths 12–24, 4 samples/length, disulfide
+building on. *Target-spec gotcha:* multi-hotspot specs mis-center the crop on the hotspots' centroid; a SINGLE tight
+hotspot (R299) is required (the corrected `vest2` target). 117 unique de-novo peptides → **54 pass the project's
+eligibility + developability gates** (vest 36, ecd 18; 19 disulfide-capable).
+
+**Key result** (agonism-relevance on the IDENTICAL metric used for the EvoBind arm = R299 reach on a full-receptor
+AF2 fold): corrected-vestibule run → 21 clean keepers; **11/21 reach R299 (<4.5 Å) — comparable to the EvoBind
+arm's 7/12.** So orthogonal win-path diversity **is achievable** — this REFINES the prior session's "EvoBind
+monoculture is target-physics-irreducible" (which predated running a correct orthogonal generator; that claim was
+too strong). Evidence: `data/candidates/diffpep_vest2_fullfold.csv`.
+
+**Honest caveats:** DiffPepBuilder R299-reachers have uniformly LOW AF2 plddt (27–37), and R299-reach is
+anti-correlated with plddt — **partly** a cross-method artifact (EvoBind seqs were AF2-optimized, DiffPepBuilder's
+were not, so AF2 penalizes them; the geometric R299-reach is the method-fair signal) but it cannot be ruled out that
+some are genuinely poorly-folded rim-perchers. **af2ig is membrane-blind** (project calibration) → it CANNOT gate a
+vestibule binder, so (as for the whole agonism arm) there is no valid af2ig number for these.
+
+**Decision** (adversarial GO/NO-GO workflow: 3 GO / 1 NO_GO + synthesis): **GO** — add ONE orthogonal agonism bet to
+the free slot 20, honestly labeled LOW confidence, staged as an ALTERNATIVE (`submissions/glp1r_track3_v2.csv`, 20
+designs, md5 `924a30807086c94e993b78392e9766e8`, validator rows=20 errors=0). The portal-confirmed 19-design
+`glp1r_track3.csv` is UNCHANGED. Slot-20 candidate **`glp1r_20_ago = EYGAQAYETARTF`** (dpbv2_029: 13-mer, linear,
+0 Cys, dev-clean; **2-fold robust R299 reach 3.86/3.92 Å**; readers 13/24 — the mechanism-complete pick). Ready swap
+if the portal flags its exendin-4 short-motif id (50%/cov0.46): **`LEQIIDYLLDALYR`** (dpbv2_043: tighter R299
+1.6/1.9 Å, cleaner novelty 40%/cov0.36, but 8 readers + hydrophobic). The lone NO_GO dissent (surface-trained
+category-error; low-confidence padding on a moonshot arm) is recorded; it does not block a zero-displacement
+free-slot diversity hedge, but its concerns ARE the honest label above. **This is a LOW-confidence diversity bet,
+not a confidence bet — no in-silico score proves agonism; only the cAMP/SEAP assay does.**

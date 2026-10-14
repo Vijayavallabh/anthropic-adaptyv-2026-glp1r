@@ -164,6 +164,31 @@ disulfide-cyclized) would diversify it — pursuing as an expansion (autonomous 
 → **The submission has passed every known gate (format + novelty + license). Nothing blocks upload except the
 owner's action. UPLOAD IS USER-GATED — never auto-upload.** Submit `submissions/glp1r_track3.csv` (md5 above) unchanged.
 
+## Session 2026-10-14 — DiffPepBuilder orthogonal-generator probe (owner-approved); v2 staged
+
+Ran the orthogonal peptide-generator sub-arm flagged in dossier §8 (the audit's #1 lever: break the EvoBind win-path
+monoculture). Tool: **DiffPepBuilder** (MIT; SE(3) diffusion + ESM-2 = decorrelated from EvoBind/AF2). Provenance
+CLEAN (ESM-2 via fair-esm, NOT ESM-3/ESMC -> ODC-BY-ok). Install was a saga (documented in `scripts/run_diffpep.sh`):
+OpenMM GLIBCXX fixed via LD_PRELOAD of a saved GCC-12 libstdc++ (do NOT `conda install -c conda-forge libstdcxx-ng`
+into a pytorch-channel env -> cascades torch->CPU + MKL iJIT_NotifyEvent); PyRosetta wheel needs its PEP-427 name;
+run_inference needs num_loader_workers=0 (+ a prefetch_factor=None fix) and ONE target per invocation.
+
+- Target-spec gotcha: multi-hotspot specs mis-center the pocket on the centroid -> use a SINGLE tight hotspot
+  (R299) = the corrected `vest2` target.
+- 117 unique de-novo peptides -> **54 pass eligibility+developability** (vest 36, ecd 18; 19 disulfide-capable).
+- **Key result:** corrected-vestibule (R299) full-receptor AF2 fold (SAME metric as the EvoBind arm): **11/21 clean
+  keepers reach R299 <4.5A -- comparable to EvoBind's 7/12.** => orthogonal win-path diversity IS achievable;
+  REFUTES the prior "monoculture is target-physics-irreducible" claim (it predated running a correct orthogonal gen).
+- Caveat: DiffPepBuilder reachers have LOW AF2 plddt (27-37), anti-correlated with reach -- partly a cross-method
+  artifact (DPB seqs never saw AF2). af2ig is membrane-blind -> cannot gate a vestibule binder (no valid af2ig here).
+- Adversarial GO/NO-GO workflow (3 GO / 1 NO_GO + synthesis) -> **GO**: stage ONE orthogonal agonism bet into the
+  free slot 20, honest LOW confidence. **`submissions/glp1r_track3_v2.csv`** (20 designs, md5
+  `924a30807086c94e993b78392e9766e8`, validator rows=20 errors=0). v1 (`glp1r_track3.csv`, be5b762, 19) UNCHANGED.
+  Slot-20 = `glp1r_20_ago = EYGAQAYETARTF` (dpbv2_029; 2-fold robust R299 3.86/3.92A, readers 13/24, clean, linear).
+  Swap if portal flags: `LEQIIDYLLDALYR` (dpbv2_043; R299 1.6/1.9A, cleaner novelty). OWNER picks v1/v2 at upload
+  (v2's new design needs a portal novelty re-check). Evidence: data/candidates/diffpep_*.csv; full detail dossier §12.
+- Compute: GPU 0 only (1-7 busy with concurrent sessions); DiffPepBuilder gen + ~23 AF2 predict_only folds, released.
+
 ## Session 2026-10-13b — "in-silico levers exhausted" re-challenged per the standing goal (NO CSV change)
 
 Re-opened the prior conclusion under the autonomous-to-deadline goal; stress-tested with 2 research subagents +

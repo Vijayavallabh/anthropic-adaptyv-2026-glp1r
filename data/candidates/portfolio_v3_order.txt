@@ -1,0 +1,22 @@
+# v3 best-20: 7 EvoBind (portal-cleared) + 9 DiffPepBuilder (NEW, need portal check) + 4 hedge (portal-cleared)
+# win-path first (the prize), hedge last; interleaved by developability + eligibility-safety (binding is unrankable)
+eb_prod_l32
+eb_prod_l26
+dpbv2_021
+eb_accv_l22
+dpb_vest_020
+eb_accv_l18
+dpb_vest_051
+eb_prod_l20
+dpbv2_043
+eb_accv_l26
+dpb_vest_036
+eb_prod_l24
+dpb_vest_002
+dpbv2_013
+dpbv2_049
+dpb_vest_032
+ecd_des_20_7
+ecd_des_18_5
+ecd_des_4_3
+ecd_des_2_4

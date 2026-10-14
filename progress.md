@@ -28,6 +28,35 @@
   CSV is the machine-readable authority: filter `status==keep` & `eligible==True`; `binding_model`/`binding_metric`
   columns disambiguate the arm-specific, non-cross-comparable `binding_value`/`plddt`. (Commit `d720fbd`.)
 
+## Session 2026-10-14d — brutal stress test + best-20 rebuild → v3 (owner: "dominate at all costs, even reject all")
+
+Adversarially stress-tested all 20 v2 designs; produced a materially stronger **v3**
+(`submissions/glp1r_track3_v3.csv`, md5 `3fbdb2b0d148f1012ef0e40a5aead191`, validator rows=20 errors=0 PASS).
+v1 (`be5b762…`, 19, portal-cleared) + v2 (`924a3080…`, 20) UNCHANGED as fallbacks. **Upload USER-GATED — not uploaded.**
+Full report: `reports/GLP1R submission stress test and best-20 rebuild.md`.
+
+- **Method:** hard quantitative liability layer (`scripts/stress_liab.py` — adds longest-CONTIGUOUS-run poly-X
+  detector, oxidation load, longest-common-substring graft detector) + a 6-agent adversarial workflow
+  (4 skeptic prosecutors → defender steelman → portfolio architect). Every architect pick independently
+  re-audited; DPB backfills re-selected by coverage-gated cousin filter + lowest-eligibility-first.
+- **7 developability DROPS** (genuine wet-lab defects): `eb_accv_l36` (vicinal 4-Cys CC..CC scrambler),
+  `eb_prod_l40` (vicinal Cys on 40-mer), `eb_accv_l14` (free-thiol+Met-Met+Trp on 80%-exendin surface),
+  `eb_prod_l14` (WLW aggregation hotspot), `eb_accv_l20` (QSIQSIS low-cplx + pLDDT 38); hedge `ecd_des_8_7`
+  (poly-Ala run 7) + `ecd_des_10_6` (poly-Ala×14 + tgt_rmsd 14.49 unstable + least-novel) + `ecd_des_2_6`
+  (cousin of `ecd_des_2_4`).
+- **#1 fix = method monoculture:** win-path rebalanced 12:1 EvoBind→ **7 EvoBind : 9 DiffPepBuilder** (MIT,
+  orthogonal). Hedge trimmed 7→4 best (des_20/18/4/2). Liability profile 13 clean/5/2 (vs v2 7/9/3/1);
+  graft-free (lcs≤3 all 20); lengths 12–76.
+- **Honest limits:** this is a DIVERSITY + developability + eligibility gain, NOT a demonstrated agonism gain
+  (both generators floor at the reachability wall; agonism unrankable). **The 9 new DPB are NOT portal-cleared**
+  — owner must run portal novelty at upload (un-self-verifiable); 5/9 from the earlier mis-centered-target run;
+  fallback DPB pool staged. `eb_accv_l22` kept at rank 4 = best mechanistic bet but 100% raw id to glucagon
+  (cov 0.14; portal-cleared v1) — re-check first.
+- **Tools promoted + reproducible:** `scripts/stress_liab.py`, `scripts/assemble_portfolio.py`,
+  `data/candidates/portfolio_v3_order.txt`; promoted builder reproduces v3 byte-identically. GPU: none
+  (only GPU 0 free all session; foreign jobs on 1–7 untouched). Optional/not-run: re-MPNN salvage of
+  `ecd_des_8_7`'s backbone for a 5th hedge binder.
+
 ## Feasibility (honest)
 
 **Frontier moonshot.** No standalone designed protein has agonized a class B GPCR; only direct GLP1R-agonist precedent

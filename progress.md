@@ -164,6 +164,30 @@ disulfide-cyclized) would diversify it — pursuing as an expansion (autonomous 
 → **The submission has passed every known gate (format + novelty + license). Nothing blocks upload except the
 owner's action. UPLOAD IS USER-GATED — never auto-upload.** Submit `submissions/glp1r_track3.csv` (md5 above) unchanged.
 
+## Session 2026-10-14c — first-principles lever sweep (deep-research ×5 + empirical tests): 2 NO-GOs + 1 license flag
+
+Standing-goal research push (effort=max, Ultracode). Generated 4 cross-domain levers from first principles,
+researched each (5 parallel deep-research agents; 1 dropped on the `[bio]` classifier), tested the two cheap
+ones empirically. Evidence: `research_notes/GLP1R agonism first principles levers/` (5 notes incl.
+`empirical_lever_tests.md`) + `reports/` synthesis. **No submission bytes changed** (v1 `be5b762…`, v2 `924a3080…`).
+
+- **L1 two-state differential** (efficacy = ΔΔG(active−inactive); MWC/ternary-complex; Costanzi β2AR docking AUC 0.98
+  precedent) — **TESTED → NO-GO.** Boltz-2 template-FORCED co-folds of 4 controls × {active 6X18 templ F, inactive
+  6LN2 templ A}, force+threshold (Boltz keys on LABEL asym ids, not auth — F/A). Interface-iptm differential ranks
+  **binding, not agonism**: orthosteric antagonist exendin(9-39) scored HIGHEST (+0.735) vs agonists +0.62/+0.65,
+  scramble +0.42. Pre-registered control gate failed. Not escalated to MM/GBSA (NAM-occluded inactive pocket + no
+  activation readout → same cause recurs). Reusable two-state cofold infra: `runs/boltz_l1/`.
+- **L2 allosteric normal-mode (ENM/PRS)** — **TESTED → NO-GO.** Active−inactive Cα vector correct (TM6-tip 18.8 Å
+  @res346), but numpy Cα-ANM of 6X18 does NOT encode activation as a soft mode (best low-mode overlap 0.26). Class-B
+  TM6 kink is localized, not a global breathing mode → wrong physics. Killed before the gated ProDy install.
+- **L3 two-domain mini-agonist** — DOWNGRADE (de-novo ECD→TM register control unprecedented/unsolved).
+- **L4 pharmacophore abstraction** — DROPPED (research agent hit `[bio]` classifier; highest eligibility risk; not retried).
+- **Provenance flag (OWNER DECISION, affects user-gated submission):** EvoBind (top-12 agonism arm) has **no LICENSE
+  file**; published protocol reported **CC-BY-NC** → conflicts with the ODC-BY-release invariant. Clean installed
+  alternatives: DiffPepBuilder (MIT, the v2 slot-20 generator), RFdiffusion (BSD). Nothing changed in the submission.
+- **Net:** all 4 cross-domain levers fail to break the agonism-unprovable-in-silico wall → **firewall holds**;
+  portfolio ordering stands on current evidence. Inactive templates fetched to `data/raw/` (6LN2/5VEW; gitignored).
+
 ## Session 2026-10-14b — v2 portal parse confirmed + 2nd /code-review hardening (commit `b633b4d`)
 
 Owner loaded **v2** into the live `/submit` portal. Reported state captured + **byte-cross-checked** against the

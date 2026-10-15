@@ -1,6 +1,6 @@
 # session handoff
 
-## Where things stand (2026-10-15 — cross-domain extension pass → v5c; PICK = v5c)
+## Where things stand (2026-10-15 — moonshot re-attack confirms v5c; PICK = v5c)
 
 **Pipeline F0–F9 COMPLETE. The submission has converged to v5c.** A deep cross-domain extension pass this session
 (abstract math / chemistry / physics, per the standing request) rejected the two bigger levers on evidence and
@@ -33,13 +33,29 @@ USER-GATED upload — never auto-upload.** Autonomous-to-deadline (deadline 2026
   `dpbss_*`) → one swapped into v5c.
 - **Agonism is UNPROVABLE/UNRANKABLE in-silico** (class-B GLP1R) — v5→v5c improvements are RANKABLE-PRIOR + coverage
   only, NOT agonism gains. Win = the wet-lab cAMP/CRE-SEAP assay, the ONLY verdict.
+- **2026-10-15b moonshot re-attack (8-agent adversarial vetting + 2026 SOTA sweep):** the firewall HELD against the
+  whole sweep (no new activation oracle survives as a ranker; no new generator breaches the reachability wall;
+  nothing post-2026-10-01 changes the board). M2 (structural-novelty max) + M4 (fly-casting/low-pLDDT rescue) KILLED
+  on byte-verified evidence. **M1 (principled diversity selection) EXECUTED** → `scripts/diversity_certificate.py`
+  + `reports/GLP1R diversity selection certificate.md`: firewall-guarded (GUARD-A no engagement/aim in the kernel),
+  TRIPWIRE confirms the band rejects all PepFlow rows, and **v5c is Pareto-efficient / diversity-consistent** under
+  the fixed 4/6/1/6/3 matroid. One within-eligibility coverage-only swap (`dpbv2_005`→slot 6) found, NOT adopted
+  (marginal; portal has no novelty score; don't de-frost v5c). Firewall citations added to docs/METHODS.md
+  (Muratspahić/Baker Nature 2026; Junker & Schoeder PLoS One 2026; Fonteyne RSC Dig. Disc. 2026 — all verified first-hand).
 
 ## Do next
 
 1. **Owner's call at upload — PICK = `v5c` (recommended); `v5b` is the byte-frozen fallback; `v1` the zero-risk set.**
    The upload click is **USER-GATED** — never auto-upload. v5c and v5b both parse 20/20 at the portal.
-2. **No further build/verification is pending.** v5c is fully verified (validator PASS, 17/3/0, byte-regression-safe,
-   portal-parsed, 0 PDB hits). The in-silico levers are exhausted; remaining gains are **wet-lab only**.
+2. **No submission change is pending.** v5c is fully verified (validator PASS, 17/3/0, byte-regression-safe,
+   portal-parsed, 0 PDB hits) and now additionally certified Pareto-efficient/diversity-consistent (M1). The
+   in-silico win-path levers are exhausted; remaining *agonism* gains are **wet-lab only**.
+   **Queued / owner-gated diversity hedges (not launched — GPUs were 8/8 busy with a foreign job):**
+   (a) BoltzGen 5th-lineage pilot — install present cross-project (`anthropic-adaptyv-2026-tnf/{envs,weights}/...boltzgen`),
+   NOT env-gated; needs an idle GPU + a provenance check; adds a folded (antagonist-leaning) arm, so a diversity/ticket
+   hedge only. (b) **PepMLM** (Nat Biotechnol 2026, MIT, ESM-2) — ABSENT locally → env-install is OWNER-GATED.
+   (c) NeoPep/PPI-Diff — owner-gated release-check. A one-slot `v5d` (adopt the `dpbv2_005` coverage swap) is a
+   one-command rebuild if ever wanted; v5c stays the frozen pick.
 3. If a future reason to change the roster arises: `assemble_portfolio.py` now resolves `dpbss_*` (disulfide pool) +
    `dpbv2_*`/`pglad_*`/`eb_*`/`ecd_*`; rebuild from an order file under `data/candidates/portfolio_*_order.txt`
    (byte-reproducible; v5b/v5c/… all rebuild identically).

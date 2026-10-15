@@ -13,6 +13,30 @@ Grows as stages run; each claim lands here with its command + evidence. Governin
 4. **Re-validate the exact submitted sequence** end-to-end (submit == folded == scored); natural AAs; linear/disulfide.
 5. **Devil's-advocate each design:** does the message truly reach the vestibule, or does it drift to the ECD (→ antagonist)? Is it de-novo? Will it open TM6?
 
+## External evidence for the firewall (peer-reviewed, 2026; verified first-hand)
+
+These three independent 2026 papers externally corroborate the two load-bearing firewall claims — *(i)* folded
+de-novo binders at this receptor class default to antagonism, and *(ii)* a confident co-fold is a
+necessary-condition at best, never proof of correct engagement or agonism. They are cited as evidence for
+why no in-silico score ranks agonism; **none is paraphrased into an activation claim.**
+
+- **Muratspahić, Feldman, Baker et al., "De novo design of miniproteins targeting GPCRs," *Nature* 2026,
+  DOI 10.1038/s41586-026-10656-8** (PubMed 42168559). De-novo miniprotein designs yielded **agonists for
+  itch/pain receptors but antagonists for the metabolic (diabetes/obesity) receptors** — i.e. the GLP1R-class
+  designs were antagonists, confirmed by cryo-EM for five complexes. External support for our folded-binder /
+  ECD-binder **antagonist-leaning demerit**; de-novo agonism of a class-B metabolic GPCR like GLP1R remains
+  unachieved by a standalone designed protein.
+- **Junker & Schoeder, "Assessment of generative de novo peptide design methods for GPCRs," *PLoS One* 2026,
+  DOI 10.1371/journal.pone.0355549.** Generative de-novo peptide design for GPCRs is subpar on simultaneous
+  sequence generation (partially recoverable with ProteinMPNN), and **incorrectly placed peptides are not
+  reliably detectable from model confidence values** → confidence is a necessary-condition signal, not proof
+  of correct placement.
+- **Fonteyne et al., "Molecular docking versus co-folding for protein–peptide pose prediction: effects of
+  protein flexibility and training-set overlap," *RSC Digital Discovery* 2026, DOI 10.1039/d6dd00242k.**
+  Co-folding pose-quality prediction **degrades substantially on peptide-/complex-level non-redundant
+  benchmarks** → the training-set-overlap (memorization) confound behind "confident co-fold ≠ correct pose,"
+  the basis for treating a confident incretin-like co-fold as a CONFOUND rather than evidence.
+
 ## Stage methods (filled on execution)
 
 - **S0 target prep (F2) — DONE:** fetched 6X18; cleaned chain R → full-atom **active-state design target** (gaps

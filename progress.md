@@ -1,7 +1,7 @@
 # progress
 
 **Project:** anthropic-adaptyv-2026-glp1r — de-novo human GLP1R **agonist** (Challenge 3, Track 3)
-**Deadline:** 2026-10-25 23:59 AoE · **Updated:** 2026-10-14 · **Latest commit:** `d89ec4a`
+**Deadline:** 2026-10-25 23:59 AoE · **Updated:** 2026-10-15 · **Latest commit:** moonshot campaign (diversity certificate + firewall citations); see `git log`
 
 ## Status
 
@@ -27,6 +27,42 @@
   (`parse_af2ig.parse_scores` + `developability.analyze` + `eligibility.score_design`) — no hand-transcription.
   CSV is the machine-readable authority: filter `status==keep` & `eligible==True`; `binding_model`/`binding_metric`
   columns disambiguate the arm-specific, non-cross-comparable `binding_value`/`plddt`. (Commit `d720fbd`.)
+
+## Session 2026-10-15b — moonshot re-attack (8-agent adversarial vetting + 2026 SOTA sweep) → M1 diversity certificate + firewall citations; NO submission change
+
+Owner: "11 days left — what more moonshots to dominate at all costs?" Launched a fresh adversarial vetting workflow
+(distinct from the 2026-10-14e / 15a passes): 4 red-team agents (diversity-selection / structural-novelty /
+new-generator / fly-casting) + 3 SOTA-sweep agents (2026 methods / generators / activation oracles) + synthesis.
+**Submission UNCHANGED** (v5c md5 `61c2d9e4` stays the pick); this is a rankable-axis + defensibility gain.
+
+- **The firewall HELD against the entire 2026 sweep.** No new activation oracle survives as a ranker (DSQ /
+  PromptGPCR / GPCRdb-activation / Dynamic-GLEP all = binding/engagement proxies or two-state-ddG re-skins =
+  firewall-barred). No new generator breaches the reachability wall (BindCraft / Genie3 / BoltzGen / Chroma /
+  Proteus / FrameFlow / Pallatom / ProteinGenerator = folded→rim-perch, or dirty-provenance / wrong-modality).
+  Nothing post-2026-10-01 changes the board.
+- **M2 (structural-novelty max) KILLED on byte-verified evidence:** 17/20 already at the struct_nov_maxTM floor;
+  novelty is sequence-governed; the one level-3-novel ECD (`ecd_des_8_7`) is already in. **M4 (fly-casting /
+  low-pLDDT rescue) KILLED + premise FALSE:** no pLDDT gate exists in developability.py / diffpep_gate.py /
+  stress_liab.py, so no threader was ever lost to rescue.
+- **M1 (principled diversity selection) EXECUTED** — `scripts/diversity_certificate.py` →
+  `reports/GLP1R diversity selection certificate.md` + `data/candidates/diversity_certificate.csv`. Firewall-guarded
+  (GUARD-A: clean seq/physchem/novelty features ONLY in the kernel — no minD_R299 / engagement / iPAE / ipTM;
+  GUARD-B: rankable coverage/decorrelation, never agonism). Win-path band pre-filter TRIPWIRE confirmed it rejects
+  all 8 PepFlow/pepx low-complexity rows. Verdict: within the fixed lineage matroid (4/6/1/6/3), **v5c is
+  Pareto-efficient and diversity-consistent**. The only strict-Pareto swap found (`dpbv2_005`→slot 6) is a
+  within-eligibility coverage-only delta (0.25 vs 0.33; both already pass the id/cov gate; portal has NO novelty
+  score) that does not clear the bar for de-frosting the byte-frozen portal-verified submission → **not adopted;
+  v5c frozen** (a one-slot v5d is a one-command rebuild if the owner wants the marginally-more-novel variant).
+- **Firewall citations hardened (verified first-hand; one agent misattribution corrected):** docs/METHODS.md now
+  cites Muratspahić/Baker *Nature* 2026 (`10.1038/s41586-026-10656-8` — de-novo metabolic-GPCR designs were
+  ANTAGONISTS), Junker & Schoeder *PLoS One* 2026 (`10.1371/journal.pone.0355549` — mis-placed peptides not flagged
+  by confidence), Fonteyne et al. *RSC Digital Discovery* 2026 (`10.1039/d6dd00242k` — co-fold pose quality drops on
+  non-redundant benchmarks = the memorization confound).
+- **Queued / owner-gated (GPUs 8/8 busy with a foreign job all session → nothing launched):** BoltzGen 5th-lineage
+  pilot (install verified present cross-project at `anthropic-adaptyv-2026-tnf/{envs,weights}/...boltzgen` = NOT
+  env-gated; needs an idle GPU + a provenance check) and **PepMLM** (Nat Biotechnol 2026, MIT, ESM-2; ABSENT locally
+  → env-install is OWNER-GATED). Both are diversity / ticket hedges, NOT win-path breaches (BoltzGen adds another
+  folded, antagonist-leaning arm). NeoPep / PPI-Diff = owner-gated release-check only.
 
 ## Session 2026-10-14e — moonshot re-examination (deep-research ×4 + prior-work map) + orthogonal 2-folder engagement validation (M4: Boltz + Chai); NO CSV change
 

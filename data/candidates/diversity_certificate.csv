@@ -1,0 +1,6 @@
+lineage,budget,pool_alts,v5c_minpair,frontier_minpair,gap_eps_pct,v5c_logdet,frontier_logdet
+EvoBind,4,4,2.8699,3.5677,19.56,8.5734,9.3227
+DiffPep-linear,6,54,2.6052,5.1185,49.10,12.2481,16.1392
+DiffPep-ss,1,12,inf,5.4692,0.00,2.3751,5.0721
+PepGLAD,6,47,2.1258,4.5774,53.56,10.9167,14.6008
+ECD,3,0,4.8739,4.8739,0.00,10.8447,10.8447

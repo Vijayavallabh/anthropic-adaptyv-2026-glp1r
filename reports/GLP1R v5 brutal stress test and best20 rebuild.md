@@ -95,8 +95,15 @@ against the existing `runs/novelty/pdb_db` (same pipeline that scored the ECDs).
 - **Conclusion: no roster change.** The one unmeasured rankable sub-axis is now measured and clean.
 
 ## Residual pre-upload items (upload is USER-GATED)
-1. Portal-novelty **recheck `pglad_029`** (cov0.47/id57→oxyntomodulin, just under the 0.5 gate). Clean
-   fallback: `pglad_011`/`pglad_032` (preserve the ~15-mer slot) — on novelty/diversity only.
+0. **The Challenge-3 portal has NO novelty score (owner, 2026-10-15)** — it only runs a format/parse gate
+   ("Single chain / Passed"). There is no portal recheck to catch an incretin-similar design at upload, so
+   novelty is locked up-front with the local screens, not deferred. v5 parsed 20/20 Passed at the portal.
+1. ~~Portal-novelty recheck `pglad_029`~~ → **RESOLVED in v5b.** With no portal backstop and its only rationale
+   (the firewall-barred AGREE confound) carrying ~0 evidence, the highest-id design `pglad_029`
+   (glp1r_11_ago, cov0.47/id57 oxyntomodulin) was swapped for the len-matched clean `pglad_034` (id33.3/cov0.40
+   glucagon, lcs2). **v5b** (`submissions/glp1r_track3_v5b.csv`, md5 `b10571b40613d32ad36cbc9859890df7`,
+   validator PASS, 17 clean/3 soft/0 FATAL, no graft) is v5 with that one swap = the recommended pick; v5 stays
+   as the portal-parsed file.
 2. `dpbv2_021` cov0.65 (highest) but id20 (lowest → passes Adaptyv ≤30% id). Naive-raw-coverage fallback:
    `pglad_034` (cov0.40) or `dpbv2_047` (cov0.33, instab>40).
 3. ~~Structural-TM blind spot for the 17 peptides~~ → **CLOSED** (0/17 match any PDB fold; see above).

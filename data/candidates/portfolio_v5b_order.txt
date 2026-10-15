@@ -1,0 +1,34 @@
+# v5b = v5 with ONE swap (2026-10-15): slot 11 pglad_029 -> pglad_034.
+# Rationale: the owner confirmed the Challenge-3 portal has NO novelty score (format/parse "Passed" only), so
+# there is no portal recheck to catch an incretin-similar design at upload -> novelty must be locked up-front.
+# pglad_029's sole rationale was the 2-folder "AGREE" engagement label, which the firewall establishes as a
+# miscalibrated-gate CONFOUND (a real agonist, exendin_4, fails the same gate) = ~0 agonism evidence; and it is
+# the single highest incretin-similarity design in v5 (cov0.47/id57 oxyntomodulin). pglad_034 is a len-matched
+# (15), same-generator, CLEAN, eligible PepGLAD with far lower identity (id33.3/cov0.40 glucagon, lcs2) -> a
+# free rankable-axis (novelty) improvement at zero real cost. Everything else is identical to v5.
+# Build: uv run python scripts/assemble_portfolio.py data/candidates/portfolio_v5b_order.txt submissions/ v5b
+#
+# --- EvoBind win-path (4) ---
+eb_prod_l26
+eb_accv_l18
+eb_accv_l26
+eb_prod_l32
+# --- DiffPepBuilder (vest2, R299-aimed) win-path (6) ---
+dpbv2_030
+dpbv2_013
+dpbv2_043
+dpbv2_049
+dpbv2_029
+dpbv2_021
+# --- PepGLAD (codesign, R299) win-path (7): pglad_034 replaces pglad_029 ---
+pglad_034
+pglad_046
+pglad_053
+pglad_010
+pglad_048
+pglad_026
+pglad_001
+# --- ECD binding hedge (3) ---
+ecd_des_20_7
+ecd_des_2_6
+ecd_des_8_7

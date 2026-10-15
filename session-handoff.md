@@ -51,22 +51,23 @@ USER-GATED upload — never auto-upload.** Autonomous-to-deadline (deadline 2026
 2. **No submission change is pending.** v5c is fully verified (validator PASS, 17/3/0, byte-regression-safe,
    portal-parsed, 0 PDB hits) and now additionally certified Pareto-efficient/diversity-consistent (M1). The
    in-silico win-path levers are exhausted; remaining *agonism* gains are **wet-lab only**.
-   **Owner-approved pilots — prepped, provenance-clean, GPU-blocked, auto-resume armed:** PepMLM + BoltzGen were both
-   fully prepped and provenance-VERIFIED clean (PepMLM HF weights MIT & `gated=False` — a subagent's restrictive-license
-   claim was a FALSE ALARM, corrected via HF+GitHub APIs; BoltzGen MIT + base Boltz-2 MIT, no ESM-3/ESMC/Protenix/AF3),
-   but neither ran: a foreign job held all 8 GPUs (91-98% util) through both ~30-min polls and the agents refused to
-   clobber it (0 candidates, no fabrication). A **bounded idle-GPU watcher** (`scratchpad/pilot_watcher*.sh`) auto-runs
-   both when a GPU in {2..7} frees (util<10%/mem<1200MiB ×2 consecutive polls = durably idle, never a transient dip),
-   gates via the committed scripts, and writes ONLY to `data/candidates/` (never `submissions/`). **Cycle 1**
-   (`baopxnp26`, 4h@180s) ran its full window 15:21→19:21 UTC 2026-10-15 and reported `no_window` (foreign job — 8 PIDs,
-   uniform ~586 MiB, 94% util — held all 8 GPUs throughout; 0 candidates, nothing clobbered). **Cycle 2 re-armed**
-   (`brc0ev2tb`, 12h@600s) for the persistent long-running blocker; if it also returns `no_window`, the machine is
-   simply saturated and v5c stands (the pilots are diversity hedges, NOT the win-path). Structural bound: only the 7 aim-less slots (4 EvoBind + 3
-   ECD) are Pareto-reachable; realistically only the 4 EvoBind slots (slots 3/4 instab-flagged = the one narrow
-   improvement path). Staged for manual resume too: `scratchpad/{pepmlm_pilot,bg_pilot}/`. NeoPep/PPI-Diff CLOSED on
-   license. **v5d** (owner-approved) refuted on inspection (swap-in `dpbv2_005` is a 2-disulfide design, not a clean
-   upgrade) and removed. v5c stays the frozen Pareto-optimal pick; any dominating pilot candidate is lead-verified
-   before any slate change.
+   **Owner-approved pilots — BOTH RAN, lead-verified, 0 dominators (COMPLETE 2026-10-15).** PepMLM + BoltzGen were
+   provenance-VERIFIED clean (PepMLM HF weights MIT & `gated=False` — a subagent's restrictive-license claim was a FALSE
+   ALARM, corrected via HF+GitHub APIs; BoltzGen MIT + base Boltz-2 MIT, no ESM-3/ESMC/Protenix/AF3). GPU-blocked through
+   watcher cycle 1 (`baopxnp26`, 4h@180s → `no_window`); cycle 2 (`brc0ev2tb`, 12h@600s) caught a durable idle window
+   ~21:05 UTC when the foreign job finished and **ran both pilots to completion** (one process/GPU, nothing clobbered).
+   Outcome (COMMITTED to `data/candidates/`: `pepmlm_pilot.csv`+`_report.md`, `boltzgen_pilot.csv`+`_report.md`):
+   **PepMLM** 105 raw → 89 eligible → 21 band-passing → **0 strict-Pareto dominators vs v5c**; **BoltzGen** 30 raw →
+   29 eligible → 3 band-passing → **0 dominators**. Both gates reuse the committed `diversity_certificate`
+   (featurize/passes_band/pareto_dominates/load_v5c/AIM) verbatim; I **independently re-drove** those committed
+   functions from the raw sequences in my own loop (`scratchpad/verify_pilots_pareto.py`) → confirmed **0 dominators**
+   in both pools (0 even among ALL eligible, incl. non-band — no hidden dominator the band masked), and confirmed
+   `load_v5c()` returns the frozen 20-member v5c (dpbss_010 at slot 13). **v5c stands UNCHANGED**, now additionally
+   stress-tested against 135 fresh de-novo candidates from two independent SOTA lineages (ESM-2 + Boltz-2). The pilots
+   were diversity/clean-ticket hedges, NOT a win-path — and no swap is justified (none dominates). **Watcher mission
+   COMPLETE — do not re-arm** (both pilots have now executed). NeoPep/PPI-Diff CLOSED on license. **v5d** (owner-approved)
+   refuted on inspection (swap-in `dpbv2_005` is a 2-disulfide design, not a clean upgrade) and removed. In-silico
+   win-path levers are now fully exhausted; remaining *agonism* gains are wet-lab only (cAMP/CRE-SEAP).
 3. If a future reason to change the roster arises: `assemble_portfolio.py` now resolves `dpbss_*` (disulfide pool) +
    `dpbv2_*`/`pglad_*`/`eb_*`/`ecd_*`; rebuild from an order file under `data/candidates/portfolio_*_order.txt`
    (byte-reproducible; v5b/v5c/… all rebuild identically).

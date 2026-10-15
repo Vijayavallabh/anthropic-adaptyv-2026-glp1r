@@ -51,13 +51,18 @@ USER-GATED upload — never auto-upload.** Autonomous-to-deadline (deadline 2026
 2. **No submission change is pending.** v5c is fully verified (validator PASS, 17/3/0, byte-regression-safe,
    portal-parsed, 0 PDB hits) and now additionally certified Pareto-efficient/diversity-consistent (M1). The
    in-silico win-path levers are exhausted; remaining *agonism* gains are **wet-lab only**.
-   **Queued / owner-gated diversity hedges (not launched — GPUs were 8/8 busy with a foreign job):**
-   (a) BoltzGen 5th-lineage pilot — install present cross-project (`anthropic-adaptyv-2026-tnf/{envs,weights}/...boltzgen`),
-   NOT env-gated; needs an idle GPU + a provenance check; adds a folded (antagonist-leaning) arm, so a diversity/ticket
-   hedge only. (b) **PepMLM** (Nat Biotechnol 2026, MIT, ESM-2) — ABSENT locally → env-install is OWNER-GATED.
-   (c) NeoPep/PPI-Diff — CLOSED on license (NeoPep not found; PPI-Diff repo has NO LICENSE = unusable for ODC-BY).
-   v5d (owner-approved build) was refuted on inspection (swap-in is a 2-disulfide design, not a clean upgrade) and
-   removed; v5c stays the frozen pick.
+   **Owner-approved pilots — prepped, provenance-clean, GPU-blocked, auto-resume armed:** PepMLM + BoltzGen were both
+   fully prepped and provenance-VERIFIED clean (PepMLM HF weights MIT & `gated=False` — a subagent's restrictive-license
+   claim was a FALSE ALARM, corrected via HF+GitHub APIs; BoltzGen MIT + base Boltz-2 MIT, no ESM-3/ESMC/Protenix/AF3),
+   but neither ran: a foreign job held all 8 GPUs (91-98% util) through both ~30-min polls and the agents refused to
+   clobber it (0 candidates, no fabrication). A **bounded idle-GPU watcher** (`scratchpad/pilot_watcher.sh`, bg
+   `baopxnp26`) auto-runs both when a GPU in {2..7} frees (util<10%/mem<1200MiB ×2), gates via the committed scripts, and
+   writes ONLY to `data/candidates/` (never `submissions/`). Structural bound: only the 7 aim-less slots (4 EvoBind + 3
+   ECD) are Pareto-reachable; realistically only the 4 EvoBind slots (slots 3/4 instab-flagged = the one narrow
+   improvement path). Staged for manual resume too: `scratchpad/{pepmlm_pilot,bg_pilot}/`. NeoPep/PPI-Diff CLOSED on
+   license. **v5d** (owner-approved) refuted on inspection (swap-in `dpbv2_005` is a 2-disulfide design, not a clean
+   upgrade) and removed. v5c stays the frozen Pareto-optimal pick; any dominating pilot candidate is lead-verified
+   before any slate change.
 3. If a future reason to change the roster arises: `assemble_portfolio.py` now resolves `dpbss_*` (disulfide pool) +
    `dpbv2_*`/`pglad_*`/`eb_*`/`ecd_*`; rebuild from an order file under `data/candidates/portfolio_*_order.txt`
    (byte-reproducible; v5b/v5c/… all rebuild identically).

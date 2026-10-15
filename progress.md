@@ -65,6 +65,21 @@ new-generator / fly-casting) + 3 SOTA-sweep agents (2026 methods / generators / 
   env-gated; needs an idle GPU + a provenance check) and **PepMLM** (Nat Biotechnol 2026, MIT, ESM-2; ABSENT locally
   → env-install is OWNER-GATED). Both are diversity / ticket hedges, NOT win-path breaches (BoltzGen adds another
   folded, antagonist-leaning arm). NeoPep / PPI-Diff = owner-gated release-check only.
+- **Pilots EXECUTED-ATTEMPTED (2026-10-15c; owner green-lit PepMLM + BoltzGen + NeoPep/PPI-Diff + build-v5d):**
+  **NeoPep/PPI-Diff CLOSED on license** (NeoPep not found; `SijiaLi1996/PPI-Diff` has NO LICENSE -> unusable for ODC-BY).
+  **PepMLM + BoltzGen** each fully prepped + provenance-VERIFIED clean — PepMLM HF weights are MIT & `gated=False`
+  (HF + GitHub APIs; a subagent's "restrictive gated terms" claim was a FALSE ALARM, corrected); BoltzGen = MIT weights
+  + base Boltz-2 MIT, no ESM-3/ESMC/Protenix/AF3 in the gen path (hotspot numbering solved: author 190/194/233/234/237
+  -> BoltzGen 1-indexed `156,160,199,200,203`). BOTH blocked — a foreign job held all 8 GPUs at 91-98% util through both
+  ~30-min polls; both agents refused to clobber it and produced **0 candidates (no fabrication)**. Structural bound (both
+  agents, vs the committed firewall): only **7/20** v5c slots (4 aim-less EvoBind + 3 ECD) are Pareto-reachable by an
+  aim-less candidate; realistically only the 4 EvoBind slots, and slots 3/4 (`eb_accv_l26`/`eb_prod_l32`) carry `instab`
+  soft-flags = the one narrow improvement path (a cleaner equal-novelty peptide). Staged for one-command resume
+  (`scratchpad/pepmlm_pilot/` + `bg_pilot/`); a **bounded idle-GPU watcher** (`scratchpad/pilot_watcher.sh`, bg `baopxnp26`)
+  will auto-run both the moment a GPU in {2..7} frees (util<10%/mem<1200MiB x2) then gate via the committed scripts. Pilots
+  write ONLY to `data/candidates/` (never `submissions/`); any Pareto-dominating candidate is lead-verified before any
+  slate change. **v5c unchanged; v5d (owner-approved build) refuted on inspection — swap-in `dpbv2_005` is a 2-disulfide
+  design, not a clean upgrade — and removed.**
 
 ## Session 2026-10-14e — moonshot re-examination (deep-research ×4 + prior-work map) + orthogonal 2-folder engagement validation (M4: Boltz + Chai); NO CSV change
 

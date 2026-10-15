@@ -49,10 +49,12 @@ new-generator / fly-casting) + 3 SOTA-sweep agents (2026 methods / generators / 
   (GUARD-A: clean seq/physchem/novelty features ONLY in the kernel — no minD_R299 / engagement / iPAE / ipTM;
   GUARD-B: rankable coverage/decorrelation, never agonism). Win-path band pre-filter TRIPWIRE confirmed it rejects
   all 8 PepFlow/pepx low-complexity rows. Verdict: within the fixed lineage matroid (4/6/1/6/3), **v5c is
-  Pareto-efficient and diversity-consistent**. The only strict-Pareto swap found (`dpbv2_005`→slot 6) is a
-  within-eligibility coverage-only delta (0.25 vs 0.33; both already pass the id/cov gate; portal has NO novelty
-  score) that does not clear the bar for de-frosting the byte-frozen portal-verified submission → **not adopted;
-  v5c frozen** (a one-slot v5d is a one-command rebuild if the owner wants the marginally-more-novel variant).
+  Pareto-efficient and diversity-consistent**. An initial pass flagged one candidate (`dpbv2_005`→slot 6, +coverage
+  novelty); on building the owner-approved v5d and inspecting it, `dpbv2_005` proved to be a **2-disulfide design**
+  (`has_ss=True`, 4 Cys) — NOT the clean linear upgrade the coarse liability check implied. The certificate's
+  Cys-count gate was hardened (a candidate may not ADD cysteines over the member it would displace); the re-run
+  finds **0 valid strict-Pareto swaps** → **v5c is confirmed Pareto-optimal**. v5d was refuted and removed (not
+  shipped); v5c stays the byte-frozen pick.
 - **Firewall citations hardened (verified first-hand; one agent misattribution corrected):** docs/METHODS.md now
   cites Muratspahić/Baker *Nature* 2026 (`10.1038/s41586-026-10656-8` — de-novo metabolic-GPCR designs were
   ANTAGONISTS), Junker & Schoeder *PLoS One* 2026 (`10.1371/journal.pone.0355549` — mis-placed peptides not flagged

@@ -39,8 +39,9 @@ USER-GATED upload — never auto-upload.** Autonomous-to-deadline (deadline 2026
   on byte-verified evidence. **M1 (principled diversity selection) EXECUTED** → `scripts/diversity_certificate.py`
   + `reports/GLP1R diversity selection certificate.md`: firewall-guarded (GUARD-A no engagement/aim in the kernel),
   TRIPWIRE confirms the band rejects all PepFlow rows, and **v5c is Pareto-efficient / diversity-consistent** under
-  the fixed 4/6/1/6/3 matroid. One within-eligibility coverage-only swap (`dpbv2_005`→slot 6) found, NOT adopted
-  (marginal; portal has no novelty score; don't de-frost v5c). Firewall citations added to docs/METHODS.md
+  the fixed 4/6/1/6/3 matroid. An initial flag (`dpbv2_005`→slot 6) was REFUTED on build — `dpbv2_005` is a
+  2-disulfide design (`has_ss`, 4 Cys), not a clean linear upgrade; the Cys-count-hardened certificate now finds
+  **0 valid swaps** → v5c confirmed Pareto-optimal (v5d built on owner request, refuted, removed). Firewall citations added to docs/METHODS.md
   (Muratspahić/Baker Nature 2026; Junker & Schoeder PLoS One 2026; Fonteyne RSC Dig. Disc. 2026 — all verified first-hand).
 
 ## Do next
@@ -54,8 +55,9 @@ USER-GATED upload — never auto-upload.** Autonomous-to-deadline (deadline 2026
    (a) BoltzGen 5th-lineage pilot — install present cross-project (`anthropic-adaptyv-2026-tnf/{envs,weights}/...boltzgen`),
    NOT env-gated; needs an idle GPU + a provenance check; adds a folded (antagonist-leaning) arm, so a diversity/ticket
    hedge only. (b) **PepMLM** (Nat Biotechnol 2026, MIT, ESM-2) — ABSENT locally → env-install is OWNER-GATED.
-   (c) NeoPep/PPI-Diff — owner-gated release-check. A one-slot `v5d` (adopt the `dpbv2_005` coverage swap) is a
-   one-command rebuild if ever wanted; v5c stays the frozen pick.
+   (c) NeoPep/PPI-Diff — CLOSED on license (NeoPep not found; PPI-Diff repo has NO LICENSE = unusable for ODC-BY).
+   v5d (owner-approved build) was refuted on inspection (swap-in is a 2-disulfide design, not a clean upgrade) and
+   removed; v5c stays the frozen pick.
 3. If a future reason to change the roster arises: `assemble_portfolio.py` now resolves `dpbss_*` (disulfide pool) +
    `dpbv2_*`/`pglad_*`/`eb_*`/`ecd_*`; rebuild from an order file under `data/candidates/portfolio_*_order.txt`
    (byte-reproducible; v5b/v5c/… all rebuild identically).

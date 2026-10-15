@@ -313,7 +313,13 @@ def pareto_dominates(c, m):
         # aim is a NOT-WORSE GATE ONLY — a lower minD_R299 never JUSTIFIES a swap, because ranking a
         # design in or out by aim is exactly the in-silico agonism ranking the firewall bars. The strict
         # improvement must come from a rankable quality axis (novelty id / coverage / lcs / struct-TM / liabilities).
-    # developability: c's liabilities must be a subset of m's
+    # developability: Cys count must not INCREASE. More Cys = more disulfide-pairing / oxidation /
+    # synthesis risk and a topology-class change (Cys arrangement IS a developability axis); a clean
+    # low-Cys member is NOT strictly dominated by a multi-Cys one even if it is more novel by coverage.
+    if c["n_cys"] > m["n_cys"]:
+        return False
+    better_any |= c["n_cys"] < m["n_cys"]
+    # c's liabilities must be a subset of m's
     if not c["liab"].issubset(m["liab"]):
         return False
     better_any |= len(c["liab"]) < len(m["liab"])

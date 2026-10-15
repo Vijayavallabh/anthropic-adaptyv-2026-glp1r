@@ -22,11 +22,8 @@ _The 'frontier' column is a greedy max-min / log-det **upper bound that is outli
 
 _Gated axes (a dominator must be no worse on every one, strictly better on >=1): sequence-novelty id, coverage, graft lcs, structural-novelty TM (when known), **correct-aim minD_R299 prior** (geometric, not agonism; a member with verified aim cannot be displaced by one without it), and developability liability-set (subset). Aim is used ONLY here, never in the diversity kernel._
 
-| lineage | v5c member (slot) | dominated by | margin |
-|---|---|---|---|
-| DiffPep-linear | glp1r_06_ago (slot 6) | dpbv2_005 | id 60<= 60, cov 0.25<= 0.33, lcs 2<= 2, liab []⊆[] |
-
-**Assessment (not an auto-adopt):** the swap(s) above are non-harmful strict improvements, but each must clear the cost of re-opening the byte-frozen, portal-parsed-20/20 v5c submission. A swap whose ONLY strict gain is a within-eligibility coverage delta (both members already pass the id<=30%/cov<0.5 novelty gate, and the upload portal has NO novelty score) is a marginal local-screen gain, not a portal- or prize-visible one; the convergent portfolio math puts same-lineage member reshuffling at <0.03 of P(>=1 hit) with sign-uncertain direction. Recommend KEEPING v5c frozen unless the owner wants the marginally-more-novel variant built (v5d), in which case it is a one-slot rebuild + full re-validation, with v5c retained as fallback.
+**None.** No gated pool member strictly Pareto-dominates any v5c member on all rankable axes.
+Within the fixed lineage budgets, **v5c is Pareto-efficient and diversity-consistent** (no non-harmful swap available); it ships unchanged as the max-diversity-consistent pick.
 
 ## Band-marginal v5c members (audit transparency)
 

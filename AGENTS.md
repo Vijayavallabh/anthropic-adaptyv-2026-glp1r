@@ -40,7 +40,7 @@ the portfolio is a mechanism-hedged bet.
   **Linear or disulfide-cyclized only** (gene-encodable; no head-to-tail macrocycles); natural AAs only.
 - **uv only** for env work; heavy tools in isolated `envs/` venvs (reuse sibling repos' venvs + the Anthropic
   `third_party/uplifting-biomolecular-modeling` kit; `--det 1` for byte-reproducible submitted artifacts). See `configs/tools.yaml`.
-- **Local multi-GPU**, run CUDA directly (no SSH). One process per GPU; shard sweeps; **default 4 GPUs, burst to 8
+- **Local multi-GPU**, run CUDA directly (no SSH). One process per GPU; shard sweeps; **up to 8 GPUs (owner-authorized 2026-10-14, +500 GB),
   only in idle windows**; verify idle with `nvidia-smi`; never clobber a foreign job; cap `OMP_NUM_THREADS`.
 - **License hygiene for public release.** Submitted sequences are published under **ODC-BY**. Keep
   **AF3 / Protenix-v2 / ESM-3 / ESMC-600M OUT of submitted-design provenance**; use the permissive stack.

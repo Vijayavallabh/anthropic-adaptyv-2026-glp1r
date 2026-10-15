@@ -22,4 +22,4 @@ GPL (FoldSeek/MMseqs2) binds the software, not the outputs → results are fine 
 `uv` only for the core env; **heavy tools live in isolated per-tool venvs** (reuse the sibling repos' `.venv-*`
 and the Anthropic `third_party/uplifting-biomolecular-modeling` kit — byte-pinned, `--det 1` for reproducible
 submitted artifacts). Reuse weight caches (`~/.boltz`, `chai_downloads`, `protenix_cache`, `hf_cache`). One process
-per GPU; default 4 GPUs; burst to 8 only in idle windows.
+per GPU; up to 8 GPUs (owner-authorized 2026-10-14); use only genuinely-idle GPUs.

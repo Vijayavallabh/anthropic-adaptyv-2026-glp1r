@@ -67,7 +67,7 @@ monomeric). **User-approved plan (2026-10-13): mechanism-hedged portfolio across
   gitignore weights/runs/envs/third_party/data-raw; submission CSVs user-gated.
 - **Env:** uv core (CPU); heavy tools in isolated venvs reusing sibling repos + the Anthropic uplifting kit; clean
   ODC-BY stack (AF3/Protenix-v2/ESM-3 excluded from submitted-design provenance).
-- **GPU:** 8× H100 (idle). Default **4**; one process/GPU; `OMP` capped; **burst to 8 only in idle windows**; `nvidia-smi`
+- **GPU:** 8× H100 (idle). up to **8** (owner-authorized 2026-10-14, +500 GB); one process/GPU; `OMP` capped; **use only genuinely-idle GPUs**; `nvidia-smi`
   before launch; never clobber foreign jobs. **No GPU design job runs without a specific owner OK.**
 
 ## 6 · Staged workflow + separate binding/agonism ranking
@@ -110,7 +110,7 @@ methods + provenance (tool/version/seed), novelty evidence, **actual** computed 
 
 Organizer-unspecified (never invented): scoring formula/weights, affinity & activation thresholds, reference agonist,
 binding-assay modality. To confirm at the portal: `molecule_class` string, macrocycle/motif-scaffolding policy. Owner-gated
-inputs: portal upload + team name (submission time); authorization for >4 GPUs; any setup change beyond the approved init.
+inputs: portal upload + team name (submission time); any setup change beyond the approved init (GPU budget = 8 H100 + 500 GB, authorized 2026-10-14).
 
 ## 10 · Bounded research-refresh plan
 

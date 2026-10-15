@@ -3,7 +3,7 @@
 **Target:** human GLP1R (UniProt P43220), class B GPCR. **Win condition:** *activation* (cell-surface
 GLP1R → Gαs → cAMP → CRE-SEAP), **not** binding. **Deadline:** 2026-10-25 23:59 AoE.
 **Package:** `submissions/glp1r_track3.csv` — 19 designs, `name,sequence,molecule_class`, rows in our
-best-first ranking. Validator: `rows=19 errors=0 warnings=0`, exit 0 (Track 3). **md5 `be5b7621447eeab3402f409bcec76c9d`** is the
+best-first ranking. Validator: `rows=19 errors=0 warnings=0`, exit 0 (Track 3). **md5 `1ce4e943d897832965a66b5f3bef9123`** is the
 submission's byte identity (stable across the packaging commit `c69dc93` and this dossier's later commit; verify by
 bytes, not by commit). Private repo. **Upload is USER-GATED — not uploaded.**
 
@@ -66,7 +66,7 @@ S1 (vestibule-message micro/mini), S2 (two-domain), S3 (exoframe), S4 (ECD clamp
 ## 4. The portfolio (19 designs, best-first)
 
 Agonism peptides lead (the only win-path); ECD binders follow (competence/novelty/partial-credit hedge). All are
-`molecule_class=protein` (single chain). `if_dist` (lower=better) is EvoBind's weak internal binding proxy; `pae`
+`molecule_class=single_chain` (single chain). `if_dist` (lower=better) is EvoBind's weak internal binding proxy; `pae`
 is af2ig's interface error. These are **not cross-comparable** across arms.
 
 | rank | name | internal | len | arm | binding proxy | notes |
@@ -167,7 +167,7 @@ Single-sourced pipeline, all committed to the private repo (`Vijayavallabh/anthr
 `build_candidate_register.py` (joins af2ig `.sc` + EvoBind `metrics.csv` + developability + eligibility →
 `data/candidates/{candidates.csv,register.md}`), `rank_portfolio.py` → `ranked.csv`, `build_submission.py` →
 `submissions/glp1r_track3.csv` + mapping, `validate_submission.py` (the gate). Each stage recorded in
-`progress.md`; md5 of the submission is `be5b7621447eeab3402f409bcec76c9d`.
+`progress.md`; md5 of the submission is `1ce4e943d897832965a66b5f3bef9123`.
 
 ## 11. Pre-upload checklist (USER-GATED)
 
@@ -182,7 +182,7 @@ Single-sourced pipeline, all committed to the private repo (`Vijayavallabh/anthr
 - [x] **EvoBind license (CC-BY-NC): CONFIRMED acceptable by owner (2026-10-13)** — covers all 12 win-path peptides.
 - [ ] Confirm row order = intended ranking. **OWNER CHOICE of which file to upload (see §12):**
       **v1** = `submissions/glp1r_track3.csv` (19 designs, md5 `be5b762…`, portal-confirmed) — the conservative option;
-      **v2** = `submissions/glp1r_track3_v2.csv` (20 designs, md5 `924a3080…`, +1 orthogonal agonism hedge) — adds a
+      **v2** = `submissions/glp1r_track3_v2.csv` (20 designs, md5 `66cefdcf…`, +1 orthogonal agonism hedge) — adds a
       NEW design that must be novelty-re-checked on the portal. Submit the chosen file **unchanged** (bytes).
 - [x] **Orthogonal-generator sub-arm: DONE (2026-10-14, §12).** DiffPepBuilder (MIT + ESM-2) probe executed; result
       = orthogonal win-path diversity IS achievable (11/21 reach R299 vs EvoBind 7/12); one honest-LOW-confidence
@@ -216,7 +216,7 @@ vestibule binder, so (as for the whole agonism arm) there is no valid af2ig numb
 
 **Decision** (adversarial GO/NO-GO workflow: 3 GO / 1 NO_GO + synthesis): **GO** — add ONE orthogonal agonism bet to
 the free slot 20, honestly labeled LOW confidence, staged as an ALTERNATIVE (`submissions/glp1r_track3_v2.csv`, 20
-designs, md5 `924a30807086c94e993b78392e9766e8`, validator rows=20 errors=0). The portal-confirmed 19-design
+designs, md5 `66cefdcf92e0d2aef2322a2a1442f1ed`, validator rows=20 errors=0). The portal-confirmed 19-design
 `glp1r_track3.csv` is UNCHANGED. Slot-20 candidate **`glp1r_20_ago = EYGAQAYETARTF`** (dpbv2_029: 13-mer, linear,
 0 Cys, dev-clean; **2-fold robust R299 reach 3.86/3.92 Å**; readers 13/24 — the mechanism-complete pick). Ready swap
 if the portal flags its exendin-4 short-motif id (50%/cov0.46): **`LEQIIDYLLDALYR`** (dpbv2_043: tighter R299
@@ -227,7 +227,7 @@ not a confidence bet — no in-silico score proves agonism; only the cAMP/SEAP a
 
 **v2 live-portal parse (2026-10-14).** Owner loaded v2 into the `/submit` portal: all **20 designs parsed
 "Single chain / Passed", "20 included, 0 needing fixes"** (incl. slot-20 `glp1r_20_ago`). Every row's length +
-visible prefix/suffix was byte-cross-checked against the committed `glp1r_track3_v2.csv` (md5 `924a3080…`) → the
+visible prefix/suffix was byte-cross-checked against the committed `glp1r_track3_v2.csv` (md5 `66cefdcf…`) → the
 portal is parsing the exact validated artifact. Portal **novelty is binary pass/fail** (no score), so slot-20 is a
 clean go/no-go; the swap is ready if it fails. Upload remains USER-GATED.
 

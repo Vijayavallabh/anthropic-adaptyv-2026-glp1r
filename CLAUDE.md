@@ -7,12 +7,12 @@ verification, definition of done, submission contract). This file adds the worki
 
 - **Autonomous to the deadline.** Do not ask for step-by-step approval; make progress, record
   evidence, surface blockers. The gated exceptions are explicit: **creating/altering the GitHub
-  repo, environment setup changes, using >4 GPUs, and any portal upload** — those need the owner's OK.
+  repo, environment setup changes, and any portal upload** — those need the owner's OK.
 - **Agonism is the prize; binding is only the gate.** Never let a strong binding prediction stand in
   for activation. Score agonism against the **6X18 active state**, binding against the inactive `24–432`
   construct model, and keep them separate. No in-silico score proves agonism.
 - **Queue heavy GPU work into idle windows.** Verify idle GPUs with `nvidia-smi`, one process per GPU,
-  cap CPU threads, never clobber a foreign job. Default 4 GPUs; burst to 8 only when idle.
+  cap CPU threads, never clobber a foreign job. Up to 8 GPUs (owner-authorized 2026-10-14, +500 GB disk); use only genuinely-idle GPUs.
 - **Adopt the latest SOTA** where it adds an orthogonal signal or real gain, after verifying availability
   + license (ODC-BY-clean for submitted designs). **Never claim a tool ran unless it actually ran.**
 - **Devil's-advocate, then revise** every design and every metric before spending compute.

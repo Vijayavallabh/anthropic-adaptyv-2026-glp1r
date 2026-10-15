@@ -12,15 +12,15 @@ compute ceiling to **8 H100s + 500 GB** (2026-10-14).
     v1 `1ce4e943d897832965a66b5f3bef9123`, v2 `66cefdcf92e0d2aef2322a2a1442f1ed`,
     v3 `6b846b831f58c081f55ce0f8f66aad8c`, v4 `945b30b3b7b577084d9de22e83652ce0` (v4 = the portal-checked file).
     All byte-reproducible via the updated assembler. Any `protein`-era hashes elsewhere in this file predate this change.
-  - **v1** `submissions/glp1r_track3.csv` — **19 designs**, md5 `be5b7621447eeab3402f409bcec76c9d`.
+  - **v1** `submissions/glp1r_track3.csv` — **19 designs**, md5 `1ce4e943d897832965a66b5f3bef9123`.
     **ZERO-RISK FALLBACK** — the only fully portal-novelty-cleared set (12 EvoBind peptides + 7 ECD binders).
-  - **v2** `submissions/glp1r_track3_v2.csv` — **20 designs**, md5 `924a30807086c94e993b78392e9766e8`.
+  - **v2** `submissions/glp1r_track3_v2.csv` — **20 designs**, md5 `66cefdcf92e0d2aef2322a2a1442f1ed`.
     v1 + slot-20 DiffPepBuilder hedge (dpbv2_029). Portal-parsed clean (all 20 "Single chain/Passed").
-  - **v3** `submissions/glp1r_track3_v3.csv` — **20 designs**, md5 `1fbbbb23ba8bbec2912aff7bf274d188`.
+  - **v3** `submissions/glp1r_track3_v3.csv` — **20 designs**, md5 `6b846b831f58c081f55ce0f8f66aad8c`.
     **RECOMMENDED "best-20"**: 7 developability drops + win-path rebalanced to **7 EvoBind : 9 DiffPepBuilder**
     (from 12:1) + hedge trimmed to 4. Graft-free; lengths 13–76. All 9 DPB from the corrected-target (R299) run.
     Report: `reports/GLP1R submission stress test and best-20 rebuild.md`.
-  - **v4** `submissions/glp1r_track3_v4.csv` — **20 designs**, md5 `25b9d439a93e5478934a5b8f8b1c0e26`.
+  - **v4** `submissions/glp1r_track3_v4.csv` — **20 designs**, md5 `945b30b3b7b577084d9de22e83652ce0`.
     v3 with the weakest-Boltz-support EvoBind (`eb_accv_l18`, slot 6) swapped for **`pglad_029`** (the only de-novo
     design to pass the 2-folder Boltz+Chai engagement consensus; necessary-condition only, confounded). Diff vs v3 =
     exactly that one row; v3 still byte-reproduces. **CONTINGENT on portal novelty** (`pglad_029` = 57.1% local id to
@@ -48,14 +48,14 @@ compute ceiling to **8 H100s + 500 GB** (2026-10-14).
 2. **Before uploading v3:** run portal novelty on the 9 DPB (`dpbv2_021/043/013/015/049/034/040/054/024`) + re-check
    the identity-margin designs **`eb_accv_l22`** (glucagon raw id) and **`dpbv2_040` = `glp1r_14`** (eligibility
    45.5% id / 0.50 cov). If any fails, substitute from `dpbv2_007/017/048` and re-run
-   `scripts/assemble_portfolio.py data/candidates/portfolio_v3_order.txt submissions/` (byte-reproduces `1fbbbb23…`).
+   `scripts/assemble_portfolio.py data/candidates/portfolio_v3_order.txt submissions/` (byte-reproduces `6b846b83…`).
 3. **New-generator long-shot RAN (owner-requested) — one live candidate: `pglad_029`.** PepFlow found nothing (0/8).
    PepGLAD surfaced **`pglad_029` (MALTSTQQLTNAKYQ, 15 aa, linear, 0 Cys, CLEAN, provenance-clean)** — the only de-novo
    design to clear the 2-folder Boltz+Chai engagement-consensus bar (Chai iptm 0.71 ≈ GLP-1's 0.69). CAVEAT:
    necessary-condition only (not agonism); most incretin-similar survivor (57.1% local id to oxyntomodulin, graft-free)
    → portal-novelty RISK + signal confound. **OWNER CALL:** optionally swap `pglad_029` into v3 for the weakest-
    orthogonal-support win-path pick (a Boltz-scramble-like EvoBind, e.g. `eb_accv_l18`), contingent on portal novelty;
-   **v4 is now STAGED** (`submissions/glp1r_track3_v4.csv`, md5 `25b9d439…`, validator PASS) with that swap — upload still owner-gated + contingent on `pglad_029` portal novelty. Evidence: data/candidates/pepglad_longshot{,_consensus}.csv.
+   **v4 is now STAGED** (`submissions/glp1r_track3_v4.csv`, md5 `945b30b3…`, validator PASS) with that swap — upload still owner-gated + contingent on `pglad_029` portal novelty. Evidence: data/candidates/pepglad_longshot{,_consensus}.csv.
 
 ## Invariants (full list in AGENTS.md)
 

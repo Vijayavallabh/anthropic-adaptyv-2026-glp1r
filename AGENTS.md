@@ -55,7 +55,7 @@ the portfolio is a mechanism-hedged bet.
 - `uv run pytest -q`: tests (schema, length, format, uniqueness, byte-repro).
 - `uv run python -m compileall -q src scripts`: compile check.
 - `uv run python scripts/validate_submission.py <csv> --track 3`: **submission gate** (rows/format/length/uniqueness/ANARCI). Record md5 + `rows=N errors=0`.
-- `bash scripts/novelty_check.sh <csv>`: sequence+structure novelty pre-screen (FoldSeek/MMseqs2). The **Proteinbase portal is the novelty authority** — always re-check before upload.
+- `bash scripts/novelty_check.sh <csv>`: sequence+structure novelty pre-screen (FoldSeek/MMseqs2). The **Challenge-3 upload portal has NO novelty score** (format/parse "Single chain / Passed" only) — lock novelty up-front with these local screens; there is no portal recheck to defer to.
 
 ## Definition of done
 
@@ -68,8 +68,9 @@ for Track 3, and the command + key output are recorded as evidence. Never claim 
 - `molecule_class` **RESOLVED (2026-10-13; re-confirmed on v2 2026-10-14)**: the live GLP1R /submit portal parsed
   all submitted designs as **"Single chain"** and accepted our emitted `protein` ("0 needing fixes" — for the 19-row
   v1 on 2026-10-13 and again for the 20-row v2 incl. slot-20 on 2026-10-14). Builders/validator now emit `single_chain` (owner directive 2026-10-14; portal accepts both values). Low-risk.
-- **Portal novelty = BINARY pass/fail only** (no score is surfaced). Re-check it at upload for any design not yet
-  cleared (currently only v2's slot-20); the swap `LEQIIDYLLDALYR` is staged if it fails.
+- **The upload portal has NO novelty score** — it only runs a format/parse gate returning per-row "Single chain /
+  Passed". Novelty is locked up-front with the local screens (coverage-gated id, FoldSeek structural TM, graft LCS);
+  there is no portal recheck. Current pick **v5c** (md5 `61c2d9e4`); **v5b** (`b10571b4`) + **v1** (`1ce4e943`) fallbacks.
 - Names published verbatim → no PII/prompt-like text. Unique names + sequences. De-novo + zero-shot (hard gate).
 - Candidate CSVs live in `runs/` (gitignored). **Upload is USER-GATED** (portal account) — never auto-upload.
 

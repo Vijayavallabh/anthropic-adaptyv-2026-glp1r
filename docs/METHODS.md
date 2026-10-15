@@ -48,8 +48,8 @@ Grows as stages run; each claim lands here with its command + evidence. Governin
   dropped. **developability** (`developability.py`: unpaired Cys, low-complexity/poly-X, GRAVY, instability index) —
   3 clean ECD binders + 1 clean peptide. **Structural novelty** (FoldSeek vs PDB100, `runs/novelty/pdb_hits.m8`, query
   = af2ig binder fold): 7/7 ECD binders are sequence-novel but structurally common helical bundles (max TM 0.87–0.92;
-  `des_8_7` most novel 0.70) → ~3/4 on the portal novelty axis. AFDB skipped (disk); the Proteinbase portal is the
-  authority (it also compares AFDB) — re-check before upload.
+  `des_8_7` most novel 0.70) → ~3/4 on the novelty axis. AFDB skipped (disk). NOTE (2026-10-15): the Challenge-3
+  upload portal has NO novelty score (format/parse only) — novelty is locked up-front with these local screens, not a portal recheck.
 - **S6 rank + select (F8):** five scorecards → ≤20, best-first, diversity-capped (≤2/lineage); validator exit 0; md5
   recorded. Input = `data/candidates/candidates.csv` (filter `status==keep` & `eligible==True`; rank WITHIN arm, since
   `binding_value`/`plddt` are arm-specific and not cross-comparable).

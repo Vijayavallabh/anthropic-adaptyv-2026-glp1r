@@ -7,6 +7,15 @@ best-first ranking. Validator: `rows=19 errors=0 warnings=0`, exit 0 (Track 3). 
 submission's byte identity (stable across the packaging commit `c69dc93` and this dossier's later commit; verify by
 bytes, not by commit). Private repo. **Upload is USER-GATED — not uploaded.**
 
+> **CURRENT STATE (2026-10-15):** this dossier documents the original **v1** package (19 designs, md5 `1ce4e943`),
+> retained as the zero-risk fallback. The submission has since converged through v2–v5c. The **recommended pick is
+> now `v5c`** (`submissions/glp1r_track3_v5c.csv`, 20 designs, md5 `61c2d9e4`) — a brutal-gauntlet best-20 rebuild
+> (v5) then two single-row swaps (v5b novelty, v5c disulfide-topology); **v5b** (`b10571b4`) is the byte-frozen
+> fallback. Current-state detail: `session-handoff.md`, `feature_list.json`, `progress.md`, and reports
+> `reports/GLP1R v5 brutal stress test and best20 rebuild.md` + `reports/GLP1R agonist portfolio and topology.md`.
+> **The Challenge-3 upload portal has NO novelty score** (format/parse "Single chain / Passed" only) — novelty is
+> locked up-front with local screens, never a portal recheck. Upload remains USER-GATED.
+
 ## 1. Result in one line (honest)
 
 This is a **frontier moonshot**: no standalone designed protein has ever agonized a class B GPCR, and the only
@@ -120,9 +129,10 @@ ANY incretin across ALL 19 designs is just 3 residues** (no 4+ verbatim graft); 
 tiny-window Smith-Waterman artifacts or the universally-conserved incretin aromatic anchor (FIxWL/LFIEW) that any
 GLP1R-vestibule peptide must converge on. EvoBind generated each peptide by blind optimization, never seeded from
 an incretin. The portal's own eligibility screen uses MMseqs2 (`configs/filters.yaml`), which is insensitive to
-such short motifs. **The Proteinbase portal is the authority — re-check ALL 9 `recheck` peptides there before
-upload; drop/reorder ONLY what the portal actually flags (never pre-emptively drop a win-path peptide over a
-3–6 residue coincidence).**
+such short motifs. **The Challenge-3 upload portal has NO novelty screen — it only format/parse-gates ("Single chain / Passed").**
+Novelty is therefore a judgment locked up-front with these local screens (coverage-gated id + the ≤3-residue
+max-contiguous-graft check), never a portal recheck; we do not pre-emptively drop a win-path peptide over a
+3–6 residue convergent-motif coincidence.
 
 ## 7. Developability
 
@@ -174,11 +184,11 @@ Single-sourced pipeline, all committed to the private repo (`Vijayavallabh/anthr
 - [x] `molecule_class`: CONFIRMED on the live portal — owner's 2026-10-13 paste parsed all 19 (v1) as **"Single
       chain"**, accepted `protein`, 0 needing fixes; **re-confirmed 2026-10-14 for v2** (all 20 incl. slot-20 parsed
       "Single chain / Passed", "20 included, 0 needing fixes"), byte-cross-checked row-for-row against the committed v2.
-- [ ] **Portal novelty is BINARY pass/fail (no score surfaced).** Only v2's slot-20 is not yet novelty-cleared → a
-      clean go/no-go at upload; if it fails, swap to `LEQIIDYLLDALYR` (dpbv2_043) and re-parse.
+- [x] **The upload portal has NO novelty score** — format/parse gate only (per-row "Single chain / Passed").
+      Novelty is locked up-front via local screens; there is no portal recheck. (Supersedes the earlier "BINARY pass/fail" note.)
 - [x] **Portal novelty/eligibility: CONFIRMED by owner (2026-10-13)** — all 9 `recheck` peptides in
-      `submissions/glp1r_track3_eligibility.csv` (glp1r_04/09/11/12/10/03/05/01/02) are tagged **novel enough** on the
-      portal (the authority); the convergent-motif reasoning held, **no drops needed**.
+      `submissions/glp1r_track3_eligibility.csv` (glp1r_04/09/11/12/10/03/05/01/02) are tagged **novel enough** by owner
+      judgment (the portal has no novelty screen); the convergent-motif reasoning held, **no drops needed**.
 - [x] **EvoBind license (CC-BY-NC): CONFIRMED acceptable by owner (2026-10-13)** — covers all 12 win-path peptides.
 - [ ] Confirm row order = intended ranking. **OWNER CHOICE of which file to upload (see §12):**
       **v1** = `submissions/glp1r_track3.csv` (19 designs, md5 `be5b762…`, portal-confirmed) — the conservative option;

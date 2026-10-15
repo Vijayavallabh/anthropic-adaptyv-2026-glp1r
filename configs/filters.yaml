@@ -46,7 +46,7 @@ agonism_hypothesis:          # HYPOTHESIS gate only — NO in-silico score prove
   forbid_ecl3_clamp: true
   confidence: LOW                        # flagged everywhere; functional assay is the only verdict
 
-novelty:                     # eligibility hard gate; portal is the authority
+novelty:                     # eligibility hard gate (local screens; the upload portal has NO novelty score — format/parse only)
   seq_id_max_pct: 30         # MMseqs2 vs SwissProt+PDB+patents+Ab-DBs
   struct_tm_max: 0.5         # Foldseek/TM-align (sub-moderate); helical bundles may cap at level 3 structurally
   known_agonist_id_max_pct: 30   # hard-avoid similarity to GLP-1/exendin/glucagon/semaglutide

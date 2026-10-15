@@ -1,0 +1,57 @@
+# v5 = brutal stress-test rebuild (2026-10-15). 13-agent adversarial gauntlet (6 prosecutors ->
+#   3 defenders -> 3 architects -> 1 judge); roster cross-validated by 2 independent architects
+#   (18/20 and 19/20 overlap with the judge) and byte-verified against the source pools.
+#
+# DROPS vs v4 (11, all pure RANKABLE-axis own-goals): eb_prod_l20 (free thiol / odd Cys -> disulfide
+#   dimers, readout confound); dpbv2_015/034/040 (the only 3 to trip the repo elig_flag: cov 0.59/0.54/
+#   0.50 -> liraglutide/glucagon/GLP1_7_37, all pool keep==FALSE); eb_accv_l22 (instab56 + N-term-Gln
+#   pyroGlu + raw-100%id-glucagon optics); eb_prod_l24 (GRAVY0.69 + 2M1W oxidation); dpbv2_054 (instab75
+#   + strained i,i+4 disulfide); dpbv2_024 (most generic DPB mode + instab); and 3 weakest/ homogeneous
+#   ECDs (ecd_des_18_5 worst binder pae9.55+instab; ecd_des_4_3 lowcplx; ecd_des_2_4 TM0.910).
+# ADDS vs v4 (11): eb_accv_l18 (cleanest EvoBind, replaces the free thiol in-lineage); dpbv2_030, dpbv2_029
+#   (clean keep=True, best-novelty DiffPep); pglad_046/053/010/048/026/001 (clean eligible best-in-pool
+#   novelty cov0.17-0.36, PepGLAD lineage); ecd_des_2_6 (clean best-novelty ECD), ecd_des_8_7 (only
+#   structurally-novel ECD TM0.705).
+#
+# FIREWALL (non-negotiable): agonism is UNPROVABLE/UNRANKABLE in-silico for class-B GLP1R; the wet-lab
+#   cAMP/SEAP assay is the only verdict. ROW ORDER IS NOT AN AGONISM RANKING. The win-path (slots 1-17)
+#   is grouped by generator lineage, not scored by any binding/engagement number. pglad_029's 2-folder
+#   AGREE is a probable co-fold/memorization CONFOUND on a miscalibrated gate (a real agonist, exendin_4,
+#   fails it) -> kept as a documented necessary-condition HYPOTHESIS ONLY, never as evidence or a ranker.
+#   DiffPep peptides aim at R299 and reach ~5A (the de-novo reachability wall, reaches_R299=False at the
+#   contact cutoff); PepGLAD peptides sit ~26-33A from R299 -> included on NOVELTY + clean dev + lineage
+#   diversity ONLY, not on verified aim.
+#
+# RESIDUAL (pre-upload): (a) portal-novelty RECHECK pglad_029 (cov0.47/id57.1 oxyntomodulin, just under
+#   the 0.5 gate); clean sibling fallback pglad_011/032 if it fails live. (b) dpbv2_021 cov0.65 is highest
+#   coverage but id20 (lowest) -> passes Adaptyv <=30% id; naive-raw-coverage fallback pglad_034/dpbv2_047.
+#   (c) structural-TM UNMEASURED for the 17 peptides (blind spot; single-seq fold + max-TM<~0.80 check).
+#   (d) ecd_des_8_7 carries one accepted soft lowcplx(A39%) flag; clean fallback ecd_des_2_4.
+#   (e) disulfide picks eb_prod_l32 (C9/C29) + pglad_048 (C1/C24): one formable non-vicinal pairing each,
+#   specify at synthesis.
+# Build: uv run python scripts/assemble_portfolio.py data/candidates/portfolio_v5_order.txt submissions/ v5
+#
+# --- EvoBind win-path (4): direct de-novo GLP1R-agonist precedent lineage ---
+eb_prod_l26
+eb_accv_l18
+eb_accv_l26
+eb_prod_l32
+# --- DiffPepBuilder (vest2, R299-aimed) win-path (6): reach ~5A, the correct-aim arm ---
+dpbv2_030
+dpbv2_013
+dpbv2_043
+dpbv2_049
+dpbv2_029
+dpbv2_021
+# --- PepGLAD (codesign, R299) win-path (7): best portal-novelty + method/lineage diversity ---
+pglad_029
+pglad_046
+pglad_053
+pglad_010
+pglad_048
+pglad_026
+pglad_001
+# --- ECD binding hedge (3): only validated-binding arm (af2ig pae 6.22-8.21), antagonist-leaning ---
+ecd_des_20_7
+ecd_des_2_6
+ecd_des_8_7

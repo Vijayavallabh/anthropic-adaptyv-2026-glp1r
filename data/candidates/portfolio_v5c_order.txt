@@ -1,0 +1,45 @@
+# v5c = v5b with ONE swap (2026-10-15): slot 13 pglad_053 -> dpbss_010.
+# Rationale (convergent across a 3-agent extension analysis: portfolio-probability math + topology/
+# pre-organization chemistry + reachability-wall re-challenge). The single firewall-compatible, verified
+# improvement found: raise the CONSTRAINED-topology count of the win-path from 2 to 3 by promoting one
+# clean, model-validated disulfide-stapled R299-aimer into the win-path, funded from the weakest-novelty
+# no-verified-aim PepGLAD hedge (pglad_053, cov0.21/id67). dpbss_010 (RNAAYYAYCEIDCIDQLLLAAYF, L23,
+# intramolecular disulfide Cys9-Cys13 internal = both threading termini free, minD_R299 4.76A in
+# DiffPepBuilder's own pose, id42.9/cov0.30, lcs=3 no graft, developability CLEAN) was generated fresh
+# (DiffPepBuilder v1 SE3 + SSbuilder, glp1rvest2 R299 target, run 15D_10M_2026Y_14h_27m) and hard-gated.
+#
+# FIREWALL (unchanged): agonism is UNPROVABLE/UNRANKABLE in-silico for class-B GLP1R; the cAMP/CRE-SEAP
+# assay is the only verdict. ROW ORDER IS NOT AN AGONISM RANKING. The disulfide constraint and R299 aim
+# are RANKABLE PRIORS (pre-organization, proteolytic robustness, correct-aim, topology mirroring the sole
+# cyclic de-novo precedent EvoBind) and a diversity/coverage hedge -- NOT evidence of activation.
+# Generators: EvoBind 4 / DiffPepBuilder linear 6 / DiffPepBuilder disulfide 1 / PepGLAD 6 / ECD 3 = 20.
+# Max single-generator share 7/20 = 35% (unchanged). Constrained-topology count 2 -> 3.
+# Everything else is byte-identical to v5b. Examined-and-REJECTED this round: PepFlow 5th-method cell
+# (low-complexity outlier vs the accepted band), deep-pocket insertion (reachability wall holds),
+# non-orthosteric/ago-PAM peptide (sites intracellular/membrane -> closed).
+# Build: uv run python scripts/assemble_portfolio.py data/candidates/portfolio_v5c_order.txt submissions/ v5c
+#
+# --- EvoBind win-path (4) ---
+eb_prod_l26
+eb_accv_l18
+eb_accv_l26
+eb_prod_l32
+# --- DiffPepBuilder (vest2, R299-aimed) linear win-path (6) ---
+dpbv2_030
+dpbv2_013
+dpbv2_043
+dpbv2_049
+dpbv2_029
+dpbv2_021
+# --- PepGLAD (codesign, R299) win-path (6): pglad_053 dropped (weakest-novelty hedge) ---
+pglad_034
+pglad_046
+dpbss_010
+pglad_010
+pglad_048
+pglad_026
+pglad_001
+# --- ECD binding hedge (3) ---
+ecd_des_20_7
+ecd_des_2_6
+ecd_des_8_7

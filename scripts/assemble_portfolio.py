@@ -7,6 +7,7 @@ versioned candidate registers, emits the submission CSV (name,sequence,molecule_
 Sources (single source of truth, no hand-transcription):
   - data/candidates/candidates.csv         (EvoBind eb_* peptides, ecd_des_* ECD binders)
   - data/candidates/diffpep_vest2_eval.csv  (DiffPepBuilder dpbv2_* orthogonal-method peptides)
+  - data/candidates/diffpep_ss_vest2.csv    (DiffPepBuilder dpbss_* disulfide-stapled R299 peptides)
   - data/candidates/pepglad_longshot.csv    (PepGLAD pglad_* orthogonal-method peptides; long-shot)
 
 Usage: uv run python assemble_portfolio.py <order.txt> <out_dir> [version=v3]
@@ -30,10 +31,12 @@ def load_sources():
     dpbg = {r["name"]: r for r in csv.DictReader(open(os.path.join(REPO, "data/candidates/diffpep_gated.csv")))}
     pglad_p = os.path.join(REPO, "data/candidates/pepglad_longshot.csv")
     pglad = {r["name"]: r for r in csv.DictReader(open(pglad_p))} if os.path.exists(pglad_p) else {}
-    return cand, dpb, dpbg, pglad
+    dpss_p = os.path.join(REPO, "data/candidates/diffpep_ss_vest2.csv")
+    dpss = {r["name"]: r for r in csv.DictReader(open(dpss_p))} if os.path.exists(dpss_p) else {}
+    return cand, dpb, dpbg, pglad, dpss
 
 
-def resolve(name, cand, dpb, dpbg, pglad):
+def resolve(name, cand, dpb, dpbg, pglad, dpss):
     """Return (sequence, arm, source, metrics) or raise. DiffPepBuilder + PepGLAD peptides = agonism-peptide."""
     if name in cand:
         r = cand[name]
@@ -47,7 +50,10 @@ def resolve(name, cand, dpb, dpbg, pglad):
     if name in pglad:
         r = pglad[name]
         return r["sequence"].strip().upper(), "agonism-peptide", "pepglad_longshot", r
-    raise SystemExit(f"FATAL: internal name '{name}' not found in candidates.csv / diffpep_vest2_eval.csv / diffpep_gated.csv / pepglad_longshot.csv")
+    if name in dpss:
+        r = dpss[name]
+        return r["sequence"].strip().upper(), "agonism-peptide", "diffpep_ss", r
+    raise SystemExit(f"FATAL: internal name '{name}' not found in candidates.csv / diffpep_vest2_eval.csv / diffpep_gated.csv / pepglad_longshot.csv / diffpep_ss_vest2.csv")
 
 
 def main():
@@ -58,13 +64,13 @@ def main():
         raise SystemExit("FATAL: duplicate internal name in order file")
     if len(names) > 20:
         raise SystemExit(f"FATAL: {len(names)} designs > 20 cap")
-    cand, dpb, dpbg, pglad = load_sources()
+    cand, dpb, dpbg, pglad, dpss = load_sources()
     refs, aligner = elig.build_scorer()
     os.makedirs(out_dir, exist_ok=True)
 
     sub, mapping, elig_rows, seqs = [], [], [], {}
     for rank, internal in enumerate(names, 1):
-        seq, arm, src, r = resolve(internal, cand, dpb, dpbg, pglad)
+        seq, arm, src, r = resolve(internal, cand, dpb, dpbg, pglad, dpss)
         if seq in seqs:
             raise SystemExit(f"FATAL: duplicate sequence {internal} == {seqs[seq]}")
         seqs[seq] = internal

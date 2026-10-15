@@ -344,6 +344,36 @@ GPU pose analysis. Submission UNCHANGED (md5 `be5b7621447eeab3402f409bcec76c9d`,
 - Designed-staple #20 **SKIPPED** as redundant (4 self-staplers already present in the submitted set).
 - Compute: used free GPUs **4 & 6** for 12 `predict_only` folds (~15 min), then released. No foreign job clobbered.
 
+## 2026-10-15 — cross-domain extension pass → v5c (one disulfide-topology swap)
+
+- Request: deep SOTA + first-principles / cross-domain (math/physics/chem) pass to maximize real odds. 3 prior
+  reports already covered lit-SOTA + physics levers (all NO-GO); researched only the delta via 3 agents
+  (portfolio-probability math / topology-preorg chemistry / reachability re-challenge). Notes:
+  `research_notes/GLP1R agonist portfolio and topology/`; report: `reports/GLP1R agonist portfolio and topology.md`.
+- VERDICTS: (a) portfolio math — **don't churn 4/6/7/3** (<0.03, sign-uncertain); only regime-robust lever =
+  lineage/topology-cell count. (b) **PepFlow 5th-method cell EXAMINED→REJECTED** (all `pepx_*` are low-complexity
+  outliers vs v5b band: A+G up to 50-60% vs cap 35.7%, runs 3-4 vs 2, entropy to 2.57 vs floor 2.81; firewall
+  bars crediting their minD_R299 → not a strict trade-up). (c) **reachability wall HOLDS; non-orthosteric /
+  ago-PAM / exoframe CLOSED** (sites intracellular/membrane; deep-insertion routes infeasible/ineligible).
+  (d) topology — promote 1 clean disulfide R299-aimer (Agent 1 fallback + Agent 2 primary + Agent 3 hedge).
+- EXPERIMENT (idle GPUs, zero cost): fresh DiffPepBuilder disulfide-staple gen (run `15D_10M_2026Y_14h_27m`,
+  glp1rvest2 R299, len 14-26): **+232 samples, +24 stapled (27 total)**; scored OUT-OF-BAND (protects the
+  positional `dpbv2_*` names + provenance guard) → **16 clean-gated, all graft-free (lcs≤3), aim 3.3-4.8 Å**.
+  New pool `data/candidates/diffpep_ss_vest2.csv` (`dpbss_000-015`). NOTE: first launch crashed on a
+  `GPUtil`(physical)-vs-`CUDA_VISIBLE_DEVICES` device-mask bug → fixed by exposing all idle GPUs (identity map).
+- **v5c = v5b with ONE swap: slot 13 `pglad_053` → `dpbss_010`** (`RNAAYYAYCEIDCIDQLLLAAYF`, L23, disulfide
+  Cys9-Cys13 internal = threading termini free, minD_R299 4.76 Å, id42.9/cov0.30, lcs3 no graft, dev CLEAN).
+  Composition EvoBind4 / DiffPep-linear6 / DiffPep-ss1 / PepGLAD6 / ECD3 = 20; max share 35%; constrained 2→3.
+  md5 **`61c2d9e4d806b799a278efe7efb31063`**. Validator PASS exit0; stress **17 clean / 3 soft / 0 FATAL**;
+  **v5b REGRESSION byte-identical** (assembler edit safe); v5c-vs-v5b diff = slot 13 only; ESMFold+FoldSeek on
+  dpbss_010 = pLDDT 0.68, **0 PDB hits** (novelty holds, `runs/v5c_newfold/`).
+- **PICK = v5c (recommended); v5b (md5 `b10571b4…`) retained as byte-frozen fallback.** Firewall unchanged:
+  rankable-prior + coverage improvement, **NOT** an agonism gain; cAMP/CRE-SEAP is the only verdict. Upload USER-GATED.
+- Assembler extended: `scripts/assemble_portfolio.py` now resolves `dpbss_*` from `diffpep_ss_vest2.csv` (+1 pool);
+  v5b rebuild confirmed byte-identical, so the edit is backward-safe.
+- Compute: DiffPep gen on GPU 0, ESMFold on GPU 1; both released. GPU 0 showed a transient foreign 1.1 GB/93 %
+  mid-pass (avoided — used GPU 1 for the fold). Zero cost; no foreign job touched.
+
 ## Compute
 
 **State 2026-10-14e:** owner lifted the ceiling to **8 H100s + 500 GB disk** (use as many of 0–7 as are genuinely

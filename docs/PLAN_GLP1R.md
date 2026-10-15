@@ -92,15 +92,16 @@ research-refresh (below) flags a superior method.
 Fab `VH:VL` (heavy first); antibody formats ANARCI-parseable; biosecurity-screened; ODC-BY publication; eligibility
 (jurisdiction) — user has submitted prior challenges. **Validator (`scripts/validate_submission.py --track 3`) enforces
 format/length/uniqueness/ANARCI and exits 0 as the definition-of-done gate.**
-⚠ **Must re-verify at upload:** `molecule_class` live value (`protein` vs `single_chain` — validator accepts both,
-emits `protein`); macrocycle/non-canonical policy (assume linear/disulfide); de-novo motif-scaffolding permissibility.
+⚠ **Must re-verify at upload:** macrocycle/non-canonical policy (assume linear/disulfide); de-novo motif-scaffolding
+permissibility. (`molecule_class` RESOLVED 2026-10-13/14 — the live portal parsed every design as "Single chain" and
+accepted both values; builders/validator now emit `single_chain` per owner directive.)
 
 ## 8 · Submission outline + placeholder CSV
 
 Ranked CSV, rows best-first (template — **not a candidate**):
 ```csv
 name,sequence,molecule_class
-DESIGN_PLACEHOLDER,SEQUENCE_PLACEHOLDER,protein
+DESIGN_PLACEHOLDER,SEQUENCE_PLACEHOLDER,single_chain
 ```
 Dossier (in-repo; large artifacts out-of-git with manifests+checksums): per-design mechanism & activation rationale,
 methods + provenance (tool/version/seed), novelty evidence, **actual** computed predictions, the internal ranking

@@ -55,9 +55,13 @@ USER-GATED upload — never auto-upload.** Autonomous-to-deadline (deadline 2026
    fully prepped and provenance-VERIFIED clean (PepMLM HF weights MIT & `gated=False` — a subagent's restrictive-license
    claim was a FALSE ALARM, corrected via HF+GitHub APIs; BoltzGen MIT + base Boltz-2 MIT, no ESM-3/ESMC/Protenix/AF3),
    but neither ran: a foreign job held all 8 GPUs (91-98% util) through both ~30-min polls and the agents refused to
-   clobber it (0 candidates, no fabrication). A **bounded idle-GPU watcher** (`scratchpad/pilot_watcher.sh`, bg
-   `baopxnp26`) auto-runs both when a GPU in {2..7} frees (util<10%/mem<1200MiB ×2), gates via the committed scripts, and
-   writes ONLY to `data/candidates/` (never `submissions/`). Structural bound: only the 7 aim-less slots (4 EvoBind + 3
+   clobber it (0 candidates, no fabrication). A **bounded idle-GPU watcher** (`scratchpad/pilot_watcher*.sh`) auto-runs
+   both when a GPU in {2..7} frees (util<10%/mem<1200MiB ×2 consecutive polls = durably idle, never a transient dip),
+   gates via the committed scripts, and writes ONLY to `data/candidates/` (never `submissions/`). **Cycle 1**
+   (`baopxnp26`, 4h@180s) ran its full window 15:21→19:21 UTC 2026-10-15 and reported `no_window` (foreign job — 8 PIDs,
+   uniform ~586 MiB, 94% util — held all 8 GPUs throughout; 0 candidates, nothing clobbered). **Cycle 2 re-armed**
+   (`brc0ev2tb`, 12h@600s) for the persistent long-running blocker; if it also returns `no_window`, the machine is
+   simply saturated and v5c stands (the pilots are diversity hedges, NOT the win-path). Structural bound: only the 7 aim-less slots (4 EvoBind + 3
    ECD) are Pareto-reachable; realistically only the 4 EvoBind slots (slots 3/4 instab-flagged = the one narrow
    improvement path). Staged for manual resume too: `scratchpad/{pepmlm_pilot,bg_pilot}/`. NeoPep/PPI-Diff CLOSED on
    license. **v5d** (owner-approved) refuted on inspection (swap-in `dpbv2_005` is a 2-disulfide design, not a clean

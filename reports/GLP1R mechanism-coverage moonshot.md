@@ -58,3 +58,23 @@ distinct-backbone reader-proximal designs `glp1r_21_ago` (= des_0039_m7) + `glp1
 
 Both are valid 20-design single_chain submissions. v5c remains the frozen fallback regardless. If Track-C or an
 optional Wave-B yields a higher-confidence filler before upload, v6 can be rebuilt from the better candidate.
+
+## Track-C resolution (2026-10-16) → NEGATIVE; v6 unchanged
+
+The bounded watcher caught a GPU window and ran one DiffPepBuilder L30–40 lane (the 2-SS zone) + the prepared
+post-filter. The post-filter flagged 3 "grenade" candidates (`dpbss2_004/007/009`) as clean + band + eligible
+with `n_ss_realized=2`. **First-hand verification refutes the double-staple premise:**
+
+- The post-filter's `n_ss_realized`/`staple_spans` are a **naive sequential Cys-pairing** `(c0,c1),(c2,c3)` — it
+  never read disulfide connectivity. Measuring actual Sγ–Sγ distances in the built structures shows all three
+  "grenades" realize only **one** real disulfide (Sγ–Sγ ≈ 2.0 Å), leaving **2 unpaired free-thiol cysteines** each
+  — a developability liability the sequence-level scorer cannot see, and *worse* than the existing clean single-SS
+  member `dpbss_010` (2 Cys, 1 SS, no spare thiols), whose topology class they merely duplicate.
+- A full scan of all 42 built structures: only **2** realize two real disulfides, and **both fail the committed
+  gates** (band / eligibility; one carries a vicinal `ICC` pair). So **no clean, eligible, band-passing
+  double-stapled design exists** — the 2-SS realization rate is ≈ 0, exactly as this track's low-yield prediction.
+
+No independent 2-fold fold was warranted (the non-circular test was contingent on a clean, distinct double-staple
+existing; none does). **Track-C yields no v7.** All owner-approved moonshot tracks (A / B / C / D) are now
+resolved; v6 stands as the owner-adopted pick, v5c the frozen fallback, upload USER-GATED. Verification artifacts:
+`scratchpad/moonshot/track-c-disulfide/{verify_grenades.py, stage2_dpbss_grenade.csv, watcher_C.log}`.

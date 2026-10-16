@@ -7,15 +7,17 @@ produced v6, which the owner ADOPTED as the recommended pick (2026-10-16).** **T
 owner's USER-GATED upload of v6 — never auto-upload.** Autonomous-to-deadline (deadline 2026-10-25 23:59 AoE).
 Compute ceiling = **8 H100s + 500 GB**. **PICK = v6** `submissions/glp1r_track3_v6.csv` (md5
 `398bfb3006464811e8ce9ab57afb4dad`, validator PASS 20/0/0); **v5c** (`61c2d9e4…`) byte-frozen fallback; **v5b**
-(`b10571b4…`) + **v1** (`1ce4e943…`) deeper fallbacks. Track-C watcher `bem3nan8r` may still yield a bonus
-disulfide filler → an optional v7 (surface, never auto-adopt).
+(`b10571b4…`) + **v1** (`1ce4e943…`) deeper fallbacks. **Track-C (watcher `bem3nan8r`) has RUN and resolved
+NEGATIVE — no v7**; all owner-approved moonshot tracks (A/B/C/D) are now resolved and no GPU work is pending.
 
 - **2026-10-16 MECHANISM-COVERAGE MOONSHOT (owner: "full push A+B+C+D") → candidate v6 built + validated.**
   Report: `reports/GLP1R mechanism-coverage moonshot.md`. D(SOTA)=no-go; B(coverage axis)=built (v5c covers 3/4
   approach bins, reader-proximal <4.5Å bin EMPTY); A(RFd3 message-address)=384 backbones → 31 clean+novel → 20
   folded → **3 reproduce consensus <4.5Å to R299 under independent Boltz+Chai** (lead-verified clean; the RFd3
   placement reach is CIRCULAR and not counted; 17/20 fail the non-circular test = reachability wall, valid
-  negative); C(2-SS)=queued, GPU-blocked (watcher armed). **v6** `submissions/glp1r_track3_v6.csv` md5
+  negative); C(2-SS)=RAN→**NEGATIVE** (watcher caught a GPU-6 window; of 42 built structures only 2 realize two
+  real disulfides and both fail the committed gates; the 3 clean+band+eligible ones realize only 1 real SS + 2
+  free thiols, duplicating `dpbss_010` — no clean double-staple exists; no v7). **v6** `submissions/glp1r_track3_v6.csv` md5
   `398bfb3006464811e8ce9ab57afb4dad`, validator PASS 20/0/0, 17/20 clean (same forced 3-liability floor) =
   v5c minus slots 11(`pglad_034`)+17(`pglad_001`) (most-redundant outer PepGLAD) plus `glp1r_21_ago`
   (des_0039_m7, DFYFDAAMVYLYTKLANPDPKVLEELKKQIALSLIVD) + `glp1r_22_ago` (des_0047_m6,
@@ -25,8 +27,10 @@ disulfide filler → an optional v7 (surface, never auto-adopt).
   agonism still unprovable (assay-only). Candidates committed: `data/candidates/msgaddr_waveA_candidates.csv`.
   **OWNER ADOPTED v6 as the recommended pick (2026-10-16 via AskUserQuestion); v5c (`61c2d9e4`) byte-frozen
   fallback.** Firewall held (minD_R299/2-fold consensus = necessary-condition coverage filter only, never an
-  agonism rank). If Track-C (watcher `bem3nan8r`) yields a higher-confidence reader-proximal filler, surface an
-  optional v7 — never auto-adopt; v6 stays the pick unless the owner elects otherwise.
+  agonism rank). **Track-C (watcher `bem3nan8r`) has since RUN and resolved NEGATIVE** — first-hand Sγ–Sγ
+  verification shows no clean double-stapled "grenade" exists (2-SS realization ≈ 0; the clean candidates carry
+  unpaired free thiols and duplicate the `dpbss_010` topology class); v6 unchanged, no v7. Full write-up in the
+  Track-C resolution section of `reports/GLP1R mechanism-coverage moonshot.md`.
 
 - **2026-10-16 BRUTAL STRESS TEST (owner: "reject all 20 if a better set exists") → `v5c_stands`, independently
   verified.** A 48-agent adversarial workflow (`glp1r-brutal-stress-test`) attacked every design + the selection

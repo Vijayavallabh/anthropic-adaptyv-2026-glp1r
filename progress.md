@@ -1,7 +1,7 @@
 # progress
 
 **Project:** anthropic-adaptyv-2026-glp1r — de-novo human GLP1R **agonist** (Challenge 3, Track 3)
-**Deadline:** 2026-10-25 23:59 AoE · **Updated:** 2026-10-15 · **Latest commit:** moonshot campaign (diversity certificate + firewall citations); see `git log`
+**Deadline:** 2026-10-25 23:59 AoE · **Updated:** 2026-10-16 · **Latest commit:** v6 adopted (mechanism-coverage moonshot) + Track-C disulfide resolved negative; see `git log`
 
 ## Status
 
@@ -27,6 +27,44 @@
   (`parse_af2ig.parse_scores` + `developability.analyze` + `eligibility.score_design`) — no hand-transcription.
   CSV is the machine-readable authority: filter `status==keep` & `eligible==True`; `binding_model`/`binding_metric`
   columns disambiguate the arm-specific, non-cross-comparable `binding_value`/`plddt`. (Commit `d720fbd`.)
+
+## Session 2026-10-16 — brutal stress test → v5c confirmed; mechanism-coverage moonshot → **v6 adopted**; Track-C disulfide → negative
+
+Owner: "brutally stress-test every design … produce the best 20 that dominate at all costs" then "what more
+moonshots to exploit?" → chose **full push (A+B+C+D)** and, via AskUserQuestion, **adopt v6**.
+
+- **BRUTAL 48-agent stress test → v5c CONFIRMED, 0 rejects.** 66 findings / 33 firewall-safe; every per-slot
+  finding = KEEP; 2 pro-change claims REFUTED; all 5 pivotal claims re-verified first-hand (md5 `61c2d9e4`
+  intact; validator 20/0/0; certificate 0 Pareto swaps; 17/20 dev-clean = 3 liabilities at slots 3,4,20).
+  **CLEAN-FLOOR = 17**: max dev-clean assemblable from ALL pools (incl. pilots, under 35 %/generator caps) =
+  PepGLAD 7 + DiffPep 7 + EvoBind 2 + ECD 1 = 17 < 20 → a fully-clean 20 is mathematically impossible; v5c's
+  3 liabilities are the FORCED floor. Report `reports/GLP1R brutal stress test v5c confirmation.md` (commit `7eb3eb4`).
+- **Mechanism-coverage moonshot (full push A+B+C+D) → v6.** Coverage probe: v5c covers 3/4 approach-geometry
+  bins; the reader-proximal (<4.5 Å to R299) bin was EMPTY. **D (clean-SOTA sweep)=no-go** (9 methods rejected,
+  no install warranted). **A (RFd3 message-address)**: 384 backbones (GPUs 4–7, foreign job isolated 0–3) → 48
+  MPNN → band-pass 187 → dev-clean 49 → 31 clean+novel → 20 folded → **3 reproduce <4.5 Å to R299 under
+  INDEPENDENT Boltz+Chai** (17/20 fail = the reachability wall, a valid negative; RFd3's own placement is
+  CIRCULAR and excluded). **v6** = v5c − 2 most-redundant outer PepGLAD (slots 11/17) + 2 distinct-backbone
+  reader-proximal fillers (`glp1r_21_ago`, `glp1r_22_ago`): mechanism coverage 3/4→**4/4**, generative priors
+  4→**5**, PepGLAD 6→4, same forced 3-liability floor (additions CLEAN / 0-Cys / eligible).
+  `submissions/glp1r_track3_v6.csv` md5 `398bfb3006464811e8ce9ab57afb4dad`, validator **PASS 20/0/0**. A
+  coverage/robustness TRADE, not a strict-Pareto win. **Owner ADOPTED v6** as recommended pick; v5c byte-frozen
+  fallback. Report `reports/GLP1R mechanism-coverage moonshot.md` (commits `ee6c343`, `52c0c7f`). HONEST CAVEAT:
+  the 2 fillers have weak/mixed interface confidence + possible co-fold memorization confound — geometry
+  reproduces, binding confidence does not uniformly; **no agonism claim**.
+- **Track-C (2-disulfide "grenade") → NEGATIVE (no v7).** A bounded watcher caught a GPU-6 window, ran one
+  DiffPep L30-40 lane + the prepared post-filter. First-hand verification (Sγ–Sγ distances in the built
+  structures + committed scorers re-run): of 42 built structures only **2** realize two REAL disulfides, and
+  **both fail the committed gates** (band / eligibility; one has a vicinal `ICC` pair); the 3 that pass
+  clean+band+eligible each realize only **1** real disulfide + 2 unpaired free thiols (worse than, and
+  topology-duplicating, the existing single-SS `dpbss_010`). ∴ **zero clean double-stapled grenade exists** —
+  the 2-SS realization rate is ~0, as predicted. No fold warranted; **v6 unchanged**. (Postfilter's
+  `n_ss_realized`/`staple_spans` were a naive sequential Cys-pairing, not measured connectivity — corrected
+  here; artifacts in `scratchpad/moonshot/track-c-disulfide/`.)
+
+**PICK = v6 (owner-adopted); v5c (`61c2d9e4`) byte-frozen fallback. Upload USER-GATED.** The in-silico frontier
+is exhausted — coverage/diversity/priors maxed, provable agonism remains unmovable in-silico, the cAMP/SEAP
+assay is the only verdict. All owner-approved moonshot tracks (A/B/C/D) are now resolved.
 
 ## Session 2026-10-15b — moonshot re-attack (8-agent adversarial vetting + 2026 SOTA sweep) → M1 diversity certificate + firewall citations; NO submission change
 

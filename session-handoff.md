@@ -1,10 +1,26 @@
 # session handoff
 
-## Where things stand (2026-10-16 — 48-agent brutal stress test CONFIRMS v5c; PICK = v5c)
+## Where things stand (2026-10-16 — mechanism-coverage moonshot built candidate v6; OWNER DECISION v5c vs v6 pending)
 
-**Pipeline F0–F9 COMPLETE. The submission has converged to v5c and survived a brutal reject-everything audit.**
-**The ONLY remaining action is the owner's USER-GATED upload — never auto-upload.** Autonomous-to-deadline
-(deadline 2026-10-25 23:59 AoE). Compute ceiling = **8 H100s + 500 GB** (owner, 2026-10-14).
+**Pipeline F0–F9 COMPLETE; v5c survived a brutal reject-everything audit; a mechanism-coverage moonshot then
+produced candidate v6.** **The remaining action is the owner's USER-GATED upload pick (v5c vs v6) — never
+auto-upload.** Autonomous-to-deadline (deadline 2026-10-25 23:59 AoE). Compute ceiling = **8 H100s + 500 GB**.
+
+- **2026-10-16 MECHANISM-COVERAGE MOONSHOT (owner: "full push A+B+C+D") → candidate v6 built + validated.**
+  Report: `reports/GLP1R mechanism-coverage moonshot.md`. D(SOTA)=no-go; B(coverage axis)=built (v5c covers 3/4
+  approach bins, reader-proximal <4.5Å bin EMPTY); A(RFd3 message-address)=384 backbones → 31 clean+novel → 20
+  folded → **3 reproduce consensus <4.5Å to R299 under independent Boltz+Chai** (lead-verified clean; the RFd3
+  placement reach is CIRCULAR and not counted; 17/20 fail the non-circular test = reachability wall, valid
+  negative); C(2-SS)=queued, GPU-blocked (watcher armed). **v6** `submissions/glp1r_track3_v6.csv` md5
+  `398bfb3006464811e8ce9ab57afb4dad`, validator PASS 20/0/0, 17/20 clean (same forced 3-liability floor) =
+  v5c minus slots 11(`pglad_034`)+17(`pglad_001`) (most-redundant outer PepGLAD) plus `glp1r_21_ago`
+  (des_0039_m7, DFYFDAAMVYLYTKLANPDPKVLEELKKQIALSLIVD) + `glp1r_22_ago` (des_0047_m6,
+  WWLEPSDDPKLQELHAQALADWADVIFEETIDFILSLVVRVLLYL) = 2 distinct-backbone RFd3 reader-proximal fillers.
+  v6 raises mechanism-coverage 3/4→4/4 + generative priors 4→5 (PepGLAD 6→4). **It is a coverage/robustness
+  TRADE, not a strict Pareto win**; caveats = weak/mixed interface confidence + co-fold memorization confound;
+  agonism still unprovable (assay-only). Candidates committed: `data/candidates/msgaddr_waveA_candidates.csv`.
+  **v5c (`61c2d9e4`) remains the byte-frozen fallback; owner picks v5c vs v6 at upload.** Firewall held
+  (minD_R299/2-fold consensus = necessary-condition coverage filter only, never an agonism rank).
 
 - **2026-10-16 BRUTAL STRESS TEST (owner: "reject all 20 if a better set exists") → `v5c_stands`, independently
   verified.** A 48-agent adversarial workflow (`glp1r-brutal-stress-test`) attacked every design + the selection

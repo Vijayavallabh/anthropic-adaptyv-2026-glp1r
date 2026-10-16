@@ -1,12 +1,29 @@
 # session handoff
 
-## Where things stand (2026-10-15 — moonshot re-attack confirms v5c; PICK = v5c)
+## Where things stand (2026-10-16 — 48-agent brutal stress test CONFIRMS v5c; PICK = v5c)
 
-**Pipeline F0–F9 COMPLETE. The submission has converged to v5c.** A deep cross-domain extension pass this session
-(abstract math / chemistry / physics, per the standing request) rejected the two bigger levers on evidence and
-produced exactly one verified, firewall-compatible improvement → **v5c**. **The ONLY remaining action is the owner's
-USER-GATED upload — never auto-upload.** Autonomous-to-deadline (deadline 2026-10-25 23:59 AoE). Compute ceiling =
-**8 H100s + 500 GB** (owner, 2026-10-14).
+**Pipeline F0–F9 COMPLETE. The submission has converged to v5c and survived a brutal reject-everything audit.**
+**The ONLY remaining action is the owner's USER-GATED upload — never auto-upload.** Autonomous-to-deadline
+(deadline 2026-10-25 23:59 AoE). Compute ceiling = **8 H100s + 500 GB** (owner, 2026-10-14).
+
+- **2026-10-16 BRUTAL STRESS TEST (owner: "reject all 20 if a better set exists") → `v5c_stands`, independently
+  verified.** A 48-agent adversarial workflow (`glp1r-brutal-stress-test`) attacked every design + the selection
+  logic on 6 fronts (per-design teardown / composition challenge / full-pool re-optimization incl. PepMLM+BoltzGen
+  / aggregation-synthesizability / novelty hardening / firewall red-team+SOTA), then refuted + firewall-checked
+  every finding. 66 findings, 33 CONFIRMED+firewall-safe, **every per-slot finding = KEEP; 0 designs rejected;
+  2 pro-change claims REFUTED**. Coordinator re-ran the committed scorers first-hand (not on the agents' word):
+  md5 `61c2d9e4` ✓; validate PASS 20/0/0 ✓; certificate **0 Pareto swaps** ✓; **17/20 dev-clean, 3 forced
+  liabilities = slots 3/4 (instab) + 20 (POLYRUN)** ✓; **CLEAN-FLOOR = 17** (max dev-clean 20 assemblable from
+  ALL clean pools incl. pilots, under the 35%/generator cap, is only 17: PepGLAD 7 + DiffPepBuilder 7 + EvoBind 2
+  + ECD 1 + PepMLM 0 + BoltzGen 0) → **a fully-clean 20 is mathematically impossible; v5c's 3 liabilities are the
+  FORCED FLOOR, not a defect** ✓. Report: `reports/GLP1R brutal stress test v5c confirmation.md`. Record-hygiene:
+  `data/candidates/v5c_struct_novelty.csv` written (corrected for the ACTUAL v5c slots 11=pglad_034 pLDDT60 /
+  13=dpbss_010 pLDDT68, both maxTM 0.000 novel; stale v5_struct_novelty.csv mislabeled those two). **One genuine
+  decision point surfaced + DECLINED (F2-07):** iff owner re-opens the submission, trim slots 8/11/17 + add 3
+  PepMLM (priors 4→5, min-pair 1.88→2.22) — but it WORSENS developability (liab 3→6; 0/21 PepMLM band-passers
+  clean), is not a strict Pareto win, and PepMLM shares ESM-2 with DiffPepBuilder (non-orthogonal). KEEP v5c.
+  Firewall held: minD_R299 used only as the not-worse gate (all 6 DiffPep-linear aimers miss the 4.5Å gate → did
+  no selection work); no agonism/binding signal touched the verdict.
 
 - **SEVEN submission files staged (all validate PASS, all ≤20, all `molecule_class=single_chain`):**
   - **PICK = v5c** `submissions/glp1r_track3_v5c.csv` — **20 designs**, md5 `61c2d9e4d806b799a278efe7efb31063`.

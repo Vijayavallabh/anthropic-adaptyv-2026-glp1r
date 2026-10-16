@@ -1,0 +1,21 @@
+subname,internal,arm,len,esmfold_plddt,struct_nov_maxTM_pdb,nov_target,read
+glp1r_01_ago,eb_prod_l26,win,26,62.0,0.000,,no PDB match
+glp1r_02_ago,eb_accv_l18,win,18,66.0,0.000,,short peptide: no PDB match; seq-id governs novelty (passed)
+glp1r_03_ago,eb_accv_l26,win,26,68.0,0.000,,no PDB match
+glp1r_04_ago,eb_prod_l32,win,32,53.0,0.000,,no PDB match
+glp1r_05_ago,dpbv2_030,win,14,74.0,0.000,,short peptide: no PDB match; seq-id governs novelty (passed)
+glp1r_06_ago,dpbv2_013,win,15,81.0,0.000,,short peptide: no PDB match; seq-id governs novelty (passed)
+glp1r_07_ago,dpbv2_043,win,14,87.0,0.000,,short peptide: no PDB match; seq-id governs novelty (passed)
+glp1r_08_ago,dpbv2_049,win,15,72.0,0.000,,short peptide: no PDB match; seq-id governs novelty (passed)
+glp1r_09_ago,dpbv2_029,win,13,80.0,0.000,,short peptide: no PDB match; seq-id governs novelty (passed)
+glp1r_10_ago,dpbv2_021,win,23,68.0,0.000,,no PDB match
+glp1r_11_ago,pglad_034,win,15,60.0,0.000,,short peptide: no PDB match (FoldSeek default+loose both empty); seq-id governs novelty (passed) [v5c re-fold 2026-10-16]
+glp1r_12_ago,pglad_046,win,23,64.0,0.000,,no PDB match
+glp1r_13_ago,dpbss_010,win,23,68.0,0.000,,disulfide C9-C13: no PDB match (FoldSeek default empty; loose surfaced 8pi9 below TM0.5 gate); seq-id governs novelty (passed) [v5c]
+glp1r_14_ago,pglad_010,win,21,69.0,0.000,,no PDB match
+glp1r_15_ago,pglad_048,win,25,53.0,0.000,,no PDB match
+glp1r_16_ago,pglad_026,win,21,88.0,0.000,,"confident fold, no PDB match = structurally novel"
+glp1r_17_ago,pglad_001,win,22,70.0,0.000,,no PDB match
+glp1r_18_bind,ecd_des_20_7,hedge,70,90.0,0.924,7opb-assembly2_E,"ECD hedge: helical-bundle TM0.92 (cap 3/4 novelty, passes binary de-novo; positive control)"
+glp1r_19_bind,ecd_des_2_6,hedge,74,89.0,0.913,8rz0-assembly4_G,"ECD hedge: helical-bundle TM0.91 (cap 3/4 novelty, passes binary de-novo; positive control)"
+glp1r_20_bind,ecd_des_8_7,hedge,66,86.0,0.699,8kbb-assembly1_A,"ECD hedge: helical-bundle TM0.70 (cap 3/4 novelty, passes binary de-novo; positive control)"

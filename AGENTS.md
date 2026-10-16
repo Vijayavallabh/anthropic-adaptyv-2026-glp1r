@@ -70,7 +70,9 @@ for Track 3, and the command + key output are recorded as evidence. Never claim 
   v1 on 2026-10-13 and again for the 20-row v2 incl. slot-20 on 2026-10-14). Builders/validator now emit `single_chain` (owner directive 2026-10-14; portal accepts both values). Low-risk.
 - **The upload portal has NO novelty score** — it only runs a format/parse gate returning per-row "Single chain /
   Passed". Novelty is locked up-front with the local screens (coverage-gated id, FoldSeek structural TM, graft LCS);
-  there is no portal recheck. Current pick **v5c** (md5 `61c2d9e4`); **v5b** (`b10571b4`) + **v1** (`1ce4e943`) fallbacks.
+  there is no portal recheck. Current pick **v6** (md5 `398bfb30`, owner-adopted 2026-10-16) = v5c − 2 redundant
+  outer PepGLAD + 2 RFd3 reader-proximal coverage-fillers; **v5c** (`61c2d9e4`) byte-frozen fallback; **v5b**
+  (`b10571b4`) + **v1** (`1ce4e943`) deeper fallbacks.
 - Names published verbatim → no PII/prompt-like text. Unique names + sequences. De-novo + zero-shot (hard gate).
 - Candidate CSVs live in `runs/` (gitignored). **Upload is USER-GATED** (portal account) — never auto-upload.
 

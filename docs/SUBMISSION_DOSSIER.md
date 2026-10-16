@@ -7,12 +7,16 @@ best-first ranking. Validator: `rows=19 errors=0 warnings=0`, exit 0 (Track 3). 
 submission's byte identity (stable across the packaging commit `c69dc93` and this dossier's later commit; verify by
 bytes, not by commit). Private repo. **Upload is USER-GATED — not uploaded.**
 
-> **CURRENT STATE (2026-10-15):** this dossier documents the original **v1** package (19 designs, md5 `1ce4e943`),
-> retained as the zero-risk fallback. The submission has since converged through v2–v5c. The **recommended pick is
-> now `v5c`** (`submissions/glp1r_track3_v5c.csv`, 20 designs, md5 `61c2d9e4`) — a brutal-gauntlet best-20 rebuild
-> (v5) then two single-row swaps (v5b novelty, v5c disulfide-topology); **v5b** (`b10571b4`) is the byte-frozen
-> fallback. Current-state detail: `session-handoff.md`, `feature_list.json`, `progress.md`, and reports
-> `reports/GLP1R v5 brutal stress test and best20 rebuild.md` + `reports/GLP1R agonist portfolio and topology.md`.
+> **CURRENT STATE (2026-10-16):** this dossier documents the original **v1** package (19 designs, md5 `1ce4e943`),
+> retained as the zero-risk fallback. The submission has since converged v2–v5c → **v6**. The **recommended pick is
+> now `v6`** (`submissions/glp1r_track3_v6.csv`, 20 designs, md5 `398bfb30`), **owner-adopted 2026-10-16** — it is
+> v5c minus the 2 most-redundant outer PepGLAD designs plus 2 distinct-backbone RFd3 reader-proximal
+> coverage-fillers (mechanism coverage 3/4→4/4, generative priors 4→5, same forced 3-liability developability
+> floor; the 2 additions are clean/0-Cys/eligible). **v5c** (`61c2d9e4`) is the byte-frozen fallback; **v5b**
+> (`b10571b4`) + **v1** (`1ce4e943`) are deeper fallbacks. All owner-approved moonshot tracks A/B/C/D are now
+> resolved — the 2026-10-16 Track-C 2-disulfide "grenade" probe RAN → **NEGATIVE** (no clean double-stapled design
+> exists; no v7). Current-state detail: `session-handoff.md`, `feature_list.json`, `progress.md`, and reports
+> `reports/GLP1R mechanism-coverage moonshot.md` + `reports/GLP1R brutal stress test v5c confirmation.md`.
 > **The Challenge-3 upload portal has NO novelty score** (format/parse "Single chain / Passed" only) — novelty is
 > locked up-front with local screens, never a portal recheck. Upload remains USER-GATED.
 

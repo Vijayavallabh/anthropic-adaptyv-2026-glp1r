@@ -51,9 +51,15 @@ NEGATIVE — no v7**; all owner-approved moonshot tracks (A/B/C/D) are now resol
   Firewall held: minD_R299 used only as the not-worse gate (all 6 DiffPep-linear aimers miss the 4.5Å gate → did
   no selection work); no agonism/binding signal touched the verdict.
 
-- **SEVEN submission files staged (all validate PASS, all ≤20, all `molecule_class=single_chain`):**
-  - **PICK = v5c** `submissions/glp1r_track3_v5c.csv` — **20 designs**, md5 `61c2d9e4d806b799a278efe7efb31063`.
-    = v5b with ONE swap (slot 13 `pglad_053` → `dpbss_010`, a fresh clean DiffPepBuilder disulfide-stapled
+- **EIGHT submission files staged (all validate PASS, all ≤20, all `molecule_class=single_chain`):**
+  - **PICK = v6** `submissions/glp1r_track3_v6.csv` — **20 designs**, md5 `398bfb3006464811e8ce9ab57afb4dad`,
+    **OWNER-ADOPTED 2026-10-16**. = v5c − slots 11/17 (most-redundant outer PepGLAD) + 2 distinct-backbone RFd3
+    reader-proximal coverage-fillers `glp1r_21_ago` + `glp1r_22_ago`; mechanism coverage 3/4→4/4, generative
+    priors 4→5, same forced 3-liability floor (the 2 additions clean/0-Cys/eligible). Validator PASS 20/0/0.
+    Report `reports/GLP1R mechanism-coverage moonshot.md`.
+  - **v5c** `submissions/glp1r_track3_v5c.csv` — **20 designs**, md5 `61c2d9e4d806b799a278efe7efb31063`.
+    **Byte-frozen FALLBACK** (brutal-tested Pareto-optimal, portal-parsed 20/20). = v5b with ONE swap (slot 13
+    `pglad_053` → `dpbss_010`, a fresh clean DiffPepBuilder disulfide-stapled
     R299-aimer: `RNAAYYAYCEIDCIDQLLLAAYF`, Cys9-Cys13 internal, minD_R299 4.76 Å, id42.9/cov0.30, lcs3, dev CLEAN).
     Raises win-path constrained-topology count 2→3; max generator share 35% (unchanged). Validator PASS; stress
     17 clean/3 soft/0 FATAL; v5b rebuilds byte-identical (assembler edit backward-safe); diff vs v5b = slot 13 only;

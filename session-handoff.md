@@ -1,10 +1,14 @@
 # session handoff
 
-## Where things stand (2026-10-16 — mechanism-coverage moonshot built candidate v6; OWNER DECISION v5c vs v6 pending)
+## Where things stand (2026-10-16 — PICK = v6, OWNER-ADOPTED; v5c byte-frozen fallback; upload USER-GATED)
 
 **Pipeline F0–F9 COMPLETE; v5c survived a brutal reject-everything audit; a mechanism-coverage moonshot then
-produced candidate v6.** **The remaining action is the owner's USER-GATED upload pick (v5c vs v6) — never
-auto-upload.** Autonomous-to-deadline (deadline 2026-10-25 23:59 AoE). Compute ceiling = **8 H100s + 500 GB**.
+produced v6, which the owner ADOPTED as the recommended pick (2026-10-16).** **The remaining action is the
+owner's USER-GATED upload of v6 — never auto-upload.** Autonomous-to-deadline (deadline 2026-10-25 23:59 AoE).
+Compute ceiling = **8 H100s + 500 GB**. **PICK = v6** `submissions/glp1r_track3_v6.csv` (md5
+`398bfb3006464811e8ce9ab57afb4dad`, validator PASS 20/0/0); **v5c** (`61c2d9e4…`) byte-frozen fallback; **v5b**
+(`b10571b4…`) + **v1** (`1ce4e943…`) deeper fallbacks. Track-C watcher `bem3nan8r` may still yield a bonus
+disulfide filler → an optional v7 (surface, never auto-adopt).
 
 - **2026-10-16 MECHANISM-COVERAGE MOONSHOT (owner: "full push A+B+C+D") → candidate v6 built + validated.**
   Report: `reports/GLP1R mechanism-coverage moonshot.md`. D(SOTA)=no-go; B(coverage axis)=built (v5c covers 3/4
@@ -19,8 +23,10 @@ auto-upload.** Autonomous-to-deadline (deadline 2026-10-25 23:59 AoE). Compute c
   v6 raises mechanism-coverage 3/4→4/4 + generative priors 4→5 (PepGLAD 6→4). **It is a coverage/robustness
   TRADE, not a strict Pareto win**; caveats = weak/mixed interface confidence + co-fold memorization confound;
   agonism still unprovable (assay-only). Candidates committed: `data/candidates/msgaddr_waveA_candidates.csv`.
-  **v5c (`61c2d9e4`) remains the byte-frozen fallback; owner picks v5c vs v6 at upload.** Firewall held
-  (minD_R299/2-fold consensus = necessary-condition coverage filter only, never an agonism rank).
+  **OWNER ADOPTED v6 as the recommended pick (2026-10-16 via AskUserQuestion); v5c (`61c2d9e4`) byte-frozen
+  fallback.** Firewall held (minD_R299/2-fold consensus = necessary-condition coverage filter only, never an
+  agonism rank). If Track-C (watcher `bem3nan8r`) yields a higher-confidence reader-proximal filler, surface an
+  optional v7 — never auto-adopt; v6 stays the pick unless the owner elects otherwise.
 
 - **2026-10-16 BRUTAL STRESS TEST (owner: "reject all 20 if a better set exists") → `v5c_stands`, independently
   verified.** A 48-agent adversarial workflow (`glp1r-brutal-stress-test`) attacked every design + the selection

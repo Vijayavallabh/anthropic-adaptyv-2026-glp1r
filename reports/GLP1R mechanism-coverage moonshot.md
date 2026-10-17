@@ -47,6 +47,11 @@ distinct-backbone reader-proximal designs `glp1r_21_ago` (= des_0039_m7) + `glp1
 - **Generative priors: 4 → 5** (adds RFd3 message-address).
 - **Developability: 17/20 clean**, same forced 3-liability floor (slots 3/4 instab, slot 20 polyrun; the two
   additions are CLEAN). PepGLAD 6 → 4 (still well-represented); all other diversity preserved.
+- **Structural novelty (CPU ESMFold → FoldSeek vs local PDB DB; red-team audit 2026-10-17):** on the portal
+  structural-novelty axis (distinct from the approach-bin *coverage* 3/4→4/4 above), `glp1r_22_ago` = **4-of-4**
+  (0 PDB hits, no fold template) and `glp1r_21_ago` = **3-of-4** (top template 7m13, alnTM 0.85 / qTM 0.73 —
+  same tier as the ECD helical-bundle hedges; still ≥3/4, passes). Previously unmeasured for the two v6
+  additions; now recorded in `data/candidates/v6_filler_struct_novelty.csv`.
 
 ## The decision (v5c vs v6)
 
@@ -78,3 +83,16 @@ No independent 2-fold fold was warranted (the non-circular test was contingent o
 existing; none does). **Track-C yields no v7.** All owner-approved moonshot tracks (A / B / C / D) are now
 resolved; v6 stands as the owner-adopted pick, v5c the frozen fallback, upload USER-GATED. Verification artifacts:
 `scratchpad/moonshot/track-c-disulfide/{verify_grenades.py, stage2_dpbss_grenade.csv, watcher_C.log}`.
+
+## Red-team + novelty audit (2026-10-17) → v6 stands
+
+An adversarial workflow tasked only with breaking the "frontier exhausted / keep v6" conclusion returned **no
+win-path lever.** Its own verifier refuted the one developability lever (the deamidation/isomerization motifs it
+flagged are *surfaced-only* fields in `scripts/stress_liab.py`, not gated by `n_liab`). The sole real finding was
+that the two v6 additions' **structural** novelty was unmeasured — now closed (see the "Structural novelty"
+bullet above; `glp1r_22_ago` 4-of-4, `glp1r_21_ago` 3-of-4, within the ≥3/4 gate, no forced swap).
+
+**Optional Wave-B (user-approved, idle-GPU-gated):** RFd3 motif-extension off the two proven reacher backbones
+(des_0039/des_0047), armed as a no-clobber idle-window watcher. As of 2026-10-17 the DGX's 8 GPUs are held by a
+foreign job (94% util); the watcher waits and never clobbers it. Wave-B is pure optional upside — it cannot change
+v6 without the owner's explicit swap call. v6 (`398bfb30`) and the v5c fallback (`61c2d9e4`) are unchanged.

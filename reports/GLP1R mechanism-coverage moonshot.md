@@ -92,7 +92,14 @@ flagged are *surfaced-only* fields in `scripts/stress_liab.py`, not gated by `n_
 that the two v6 additions' **structural** novelty was unmeasured — now closed (see the "Structural novelty"
 bullet above; `glp1r_22_ago` 4-of-4, `glp1r_21_ago` 3-of-4, within the ≥3/4 gate, no forced swap).
 
-**Optional Wave-B (user-approved, idle-GPU-gated):** RFd3 motif-extension off the two proven reacher backbones
-(des_0039/des_0047), armed as a no-clobber idle-window watcher. As of 2026-10-17 the DGX's 8 GPUs are held by a
-foreign job (94% util); the watcher waits and never clobbers it. Wave-B is pure optional upside — it cannot change
-v6 without the owner's explicit swap call. v6 (`398bfb30`) and the v5c fallback (`61c2d9e4`) are unchanged.
+**Optional Wave-B (user-approved) → executed 2026-10-17 → NEGATIVE.** The idle-window watcher caught a window
+(the foreign job cleared ~16:32Z) and ran RFd3 motif-extension off des_0039/des_0047 on GPUs 0–3: 192 backbones,
+`rc=0`. All 192 are **non-physical** — the fixed `A1-37`/`A1-45` motif was not anchored: chain-A Rg ~82–93 Å (vs
+the seed motif's compact 9.5 Å) with ~150 Å intra-chain discontinuities in every design, while the receptor folded
+correctly (Rg 20.5 Å). Confirmed in the raw cif (not a conversion artifact). Likely cause: fast-mode +
+`infer_ori_strategy:hotspots` + an atomworks chain-R polymer/non-polymer split failed to hold the motif rigid
+(Wave-A succeeded because it was *de-novo*, not motif-scaffolded). Not folded (non-physical input). **Dispositive
+point: even a correctly-anchored motif-extension of des_0039/des_0047 is a cousin of the existing fillers
+glp1r_21/22 — no diversity gain — and "higher co-fold confidence" is a known folder-pessimism artifact, not an
+agonism signal; so Wave-B cannot improve the portfolio regardless of generation quality.** Wave-B is CLOSED. v6
+(`398bfb30`) and the v5c fallback (`61c2d9e4`) are unchanged; upload USER-GATED.

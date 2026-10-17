@@ -157,10 +157,10 @@ Regular commits/pushes to the existing private repo are the normal checkpoint wo
 - **(B) red-team: DONE → keep v6.** No win-path lever; the one real finding (unmeasured *structural* novelty of the
   two v6 additions) is now measured and within-gate — `glp1r_22_ago` 4-of-4, `glp1r_21_ago` 3-of-4
   (`data/candidates/v6_filler_struct_novelty.csv`; detail in `reports/GLP1R mechanism-coverage moonshot.md`).
-- **(A) Wave-B: ARMED, waiting.** A no-clobber idle-window watcher (GPUs 0–3, dual util+mem guard,
-  `scratchpad/moonshot/track-a-message-address/waveB/wave_b_watcher.sh`) is running; the DGX's 8 GPUs are held by a
-  foreign job (94% util), so no window yet. This is a DIFFERENT, user-approved task from the old DiffPepBuilder
-  "do not re-arm" watcher — re-arming it IS authorized. On a durable idle window it generates backbones; then verify
-  by bytes → idle-gated downstream (MPNN → CPU gates → Boltz+Chai consensus both<4.5) → offer a swap ONLY if a
-  new-lineage candidate beats v6 slots 21/22 on 2-folder reader-proximity. **No agonism claim ever; v6 unchanged
-  without the owner's call.**
+- **(A) Wave-B: EXECUTED 2026-10-17 → NEGATIVE → CLOSED (do not re-arm).** The watcher caught a window (~16:33Z)
+  and generated 192 RFd3 motif-extension backbones; all are non-physical — the fixed motif was not anchored
+  (chain-A Rg ~82–93 Å vs seed 9.5 Å, ~150 Å intra-chain breaks; receptor fine at 20.5 Å; confirmed in the raw
+  cif). Not folded. Even a corrected regen is a cousin of glp1r_21/22 (no diversity gain; co-fold-confidence is
+  folder pessimism, not agonism), so Wave-B cannot improve the portfolio → CLOSED. Fix hypothesis if ever
+  revisited: rebuild the seed without HETATM in chain R, drop `infer_ori_strategy:hotspots`, verify the dialect-2
+  fixed-motif contig, and use standard (not fast) mode. **v6 unchanged; no agonism claim.**

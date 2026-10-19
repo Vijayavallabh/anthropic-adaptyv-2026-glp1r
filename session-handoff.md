@@ -1,6 +1,6 @@
 # session handoff
 
-## Where things stand (2026-10-19 — PICK = v6, OWNER-ADOPTED + 2-folder reach-validated; v5c byte-frozen fallback; upload USER-GATED)
+## Where things stand (2026-10-19 — PICK = v6, OWNER-ADOPTED; 2-folder reach-validated + active-state generation arm tried→REJECTED on the 2-folder bar; v5c byte-frozen fallback; upload USER-GATED)
 
 **Pipeline F0–F9 COMPLETE; v5c survived a brutal reject-everything audit; a mechanism-coverage moonshot then
 produced v6, which the owner ADOPTED as the recommended pick (2026-10-16).** **The remaining action is the
@@ -220,3 +220,30 @@ Regular commits/pushes to the existing private repo are the normal checkpoint wo
   `data/candidates/v6_twofolder_reach_2026-10-19.csv` (+ `_foldset_`). `/code-review` found 0 correctness bugs; its
   2 nits fixed (persist derived tables to tracked path; `.gitignore` the `stress_liab.json`/`data/af2ig_targets/`
   transients). **v6 (`398bfb30`) UNCHANGED; upload USER-GATED; no GPU work pending.**
+
+## 2026-10-19b — BindCraft2/2026-tools deep-research + construct probes + BoltzGen active-state arm → HOLD v6 (2-folder NEGATIVE)
+
+Owner "dominate at all costs" → "utilize all the free GPUs extensively" → (AskUserQuestion) "push further on GPUs
+first". The one genuinely-new on-mechanism lever — **active-state *generation*** — was tried at full 8-GPU scale and
+**REJECTED on the 2-folder cross-predictor bar**; **v6 (`398bfb30`) UNCHANGED**.
+
+- **Firewall re-confirmed** by a BindCraft2 v1.0.4 + 2026-toolscape deep-research pass (report `reports/BindCraft2
+  and 2026 agonist design tools.md`, notes `research_notes/BindCraft2 and 2026 agonist design tools/`): BindCraft2
+  induced-fit is binder-side, not activation; no eligible 2026 tool induces/scores class-B agonism; Baker *Nature*
+  2026 (PMID 42168559) = de-novo class-B designs are antagonists.
+- **Production reality folded into AGENTS.md as an invariant** (organizer-clarified): cell-free expression, retained
+  (f)Met, C-term GFP11/Twin-Strep tag ON in the assay, disulfide UNCONFIRMED → the message must be **INTERNAL**, both
+  termini disposable, **no design may depend on a disulfide**; fold the REAL construct before trusting reach.
+  Construct probes show most of v6's reach is tag-fragile (only `glp1r_06/09` Boltz-robust); reach is a positive
+  indicator, never a disqualifier. Evidence: `data/candidates/v6_{met,construct}_probe_2026-10-19.csv`.
+- **BoltzGen active-state arm → v7 PROPOSED then REJECTED.** ~700 designs → 41 deep-inserters → 21 cross-fold → 3
+  production-robust (glp1r_23/24/25) → proposed v7 (md5 `f38c06df`, `runs/glp1r_track3_v7_PROPOSED.csv`, gitignored).
+  **2-folder (Chai) check: 0/21 clear the Boltz∧Chai construct bar that GLP-1(7-36) clears (iPAE 4.63)** → a
+  Boltz-family artifact (glp1r_23 bare-only iPAE 4.14 vs in-construct 8.64; 24/25 Chai-unconfirmed 15–19). **HOLD v6.**
+  Evidence: `reports/GLP1R active-state generation and construct probes 2026-10-19.md` (§6) +
+  `data/candidates/boltzgen_{sweep_depthgate,validated,posestab,2folder_chai}_2026-10-19.csv`. Commits `0cc6ec9`,
+  `817c793`. Env-reuse (no rebuild; TNF kit `envs/` wiped by disk cleanup): Boltz = `sepiq/.venv-boltz` (2.2.1) +
+  `$HOME/.boltz`; Chai = `sepiq/.venv-chai` + `CHAI_DOWNLOADS_DIR=/home/prachh/v/chai_downloads`; BoltzGen fresh in
+  `third_party/boltzgen/.venv`. [[lesson-boltzgen-deep-insertion-fails-2folder]] [[adaptyv-glp1r-production-constraints]]
+- **No GPU work pending.** The active-state lever is now tried + closed; further generation would be fishing against
+  the standing firewall. v6 remains the adopted, byte-frozen pick; upload USER-GATED.

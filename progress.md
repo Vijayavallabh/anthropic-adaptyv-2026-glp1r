@@ -1,7 +1,7 @@
 # progress
 
 **Project:** anthropic-adaptyv-2026-glp1r — de-novo human GLP1R **agonist** (Challenge 3, Track 3)
-**Deadline:** 2026-10-25 23:59 AoE · **Updated:** 2026-10-16 · **Latest commit:** v6 adopted (mechanism-coverage moonshot) + Track-C disulfide resolved negative; see `git log`
+**Deadline:** 2026-10-25 23:59 AoE · **Updated:** 2026-10-19 · **Latest commit:** `817c793` — BoltzGen active-state arm tried → **REJECTED** on the 2-folder (Chai) bar; **v6 (`398bfb30`) UNCHANGED**; see `git log`
 
 ## Status
 
@@ -27,6 +27,48 @@
   (`parse_af2ig.parse_scores` + `developability.analyze` + `eligibility.score_design`) — no hand-transcription.
   CSV is the machine-readable authority: filter `status==keep` & `eligible==True`; `binding_model`/`binding_metric`
   columns disambiguate the arm-specific, non-cross-comparable `binding_value`/`plddt`. (Commit `d720fbd`.)
+
+## Session 2026-10-19b — BindCraft2/2026-tools deep-research + construct-reality probes + BoltzGen active-state arm → **HOLD v6** (2-folder NEGATIVE)
+
+Owner: "what more moonshots to dominate at all costs" → "utilize all the free GPUs extensively" → (AskUserQuestion)
+"push further on GPUs first". A full 8-GPU push; **v6 (`398bfb30`) UNCHANGED** — the one genuinely-new on-mechanism
+lever (active-state *generation*) was tried rigorously and REJECTED on the 2-folder cross-predictor bar.
+
+- **Deep research (BindCraft2 v1.0.4 + 2026 toolscape) → firewall re-confirmed.** BindCraft2 v1.0.4 (AF2+ProteinMPNN,
+  ODC-BY-clean) "induced_fit" is **binder-side**, not receptor activation; the whole eligible 2026 stack (BoltzGen
+  MIT, RFdiffusion3 BSD-3, BoltzDesign1 MIT, PXDesign Apache; NO-GO = anything AF3/ESM-3-in-loop, Chai-2, AlphaProteo)
+  conditions on a supplied ~rigid target — none induces or scores activation. Baker *Nature* 2026 (PMID 42168559):
+  de-novo miniprotein agonists only for class-A MRGPRX1; GLP1R + all class-B → antagonists. Report
+  `reports/BindCraft2 and 2026 agonist design tools.md` + `research_notes/BindCraft2 and 2026 agonist design tools/`.
+- **Construct-reality probes (organizer-clarified production facts; new AGENTS.md invariant).** Adaptyv cell-free
+  expresses designs: initiator (f)Met added & NOT removed; C-term linker–GFP11–linker–Twin-Strep tag ON during the
+  activation assay; disulfide UNCONFIRMED ("linear only"). Probing v6 with +Met then +full-construct tag: most of
+  v6's vestibule reach is construct-fragile; only `glp1r_06/09` survive as Boltz-robust reader-engagers (weak,
+  fold-fragile). Reach is a positive indicator, NEVER a disqualifier (exendin-4/glucagon/oxyntomodulin also score
+  reach=False). Evidence: `data/candidates/v6_met_probe_2026-10-19.csv`, `v6_construct_probe_2026-10-19.csv`.
+- **BoltzGen active-state generation arm (ODC-BY-clean; `third_party/boltzgen` + `runs/` gitignored).** ~700 designs
+  vs the active-state 6X18 vestibule (deep-cluster / central-polar-net / reader / short) → depth-gate **41**
+  N-term-deep inserters → independent sepiq-Boltz cross-fold **21/41** reach R299 → novelty all ≤30% → 5-pose
+  stability → **3 production-robust** candidates (glp1r_23 LDLSNEMSEVLERKAVRRVLEMRRA, 24 MFDELELVIG, 25 DFDELRHYIY).
+  Proposed v7 = v6 − {glp1r_03/12/14} + {23/24/25}, validator **PASS 20/0/0** (md5 `f38c06df`,
+  `runs/glp1r_track3_v7_PROPOSED.csv`, gitignored, **NOT adopted**).
+- **2-folder (Chai) cross-predictor check → NEGATIVE (decisive).** Restored Chai (reused `sepiq/.venv-chai` +
+  cached weights; no rebuild) and re-ran candidates + controls on the identical Boltz∧Chai bar v6 cleared.
+  **Calibration OK:** GLP-1(7-36) reaches in Chai (iPAE 4.63, R299 ✓). **0/21 candidates clear the 2-folder
+  construct bar** — glp1r_23 confirms **bare** reach in Chai (iPAE 4.14) but NOT in-construct (8.64); 24/25
+  Chai-unconfirmed (iPAE 15–19). The BoltzGen deep-insertion signal is **Boltz-family-specific (a tool artifact)**;
+  multi-pose stability on ONE predictor family is NOT a substitute for the second predictor. **VERDICT: HOLD v6;
+  v7 REJECTED.** An honest negative from a rigorously-executed push; the cross-predictor guard worked as designed.
+  Evidence: `data/candidates/boltzgen_{sweep_depthgate,validated,posestab,2folder_chai}_2026-10-19.csv`;
+  `reports/GLP1R active-state generation and construct probes 2026-10-19.md` (§6). Commits `0cc6ec9`, `817c793`.
+- **Env-reuse (no rebuild; TNF kit `envs/` was wiped by disk-pressure cleanup):** Boltz = `sepiq/.venv-boltz`
+  (2.2.1, has `cuequivariance_torch`) + `$HOME/.boltz` weights; Chai = `sepiq/.venv-chai` +
+  `CHAI_DOWNLOADS_DIR=/home/prachh/v/chai_downloads`; BoltzGen installed fresh to `third_party/boltzgen/.venv`
+  (gitignored). `scripts/chai_fold_adapt.py` adapts Chai output to Boltz filenames for `scripts/iface_score.py`
+  (needs the `uv` biopython env). [[lesson-boltzgen-deep-insertion-fails-2folder]]
+
+**PICK = v6 (`398bfb30`), UNCHANGED. The in-silico frontier is exhausted again — now including the active-state
+*generation* lever; the win rides on the wet-lab cAMP/SEAP assay. Upload USER-GATED.**
 
 ## Session 2026-10-16 — brutal stress test → v5c confirmed; mechanism-coverage moonshot → **v6 adopted**; Track-C disulfide → negative
 

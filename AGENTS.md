@@ -37,7 +37,15 @@ the portfolio is a mechanism-hedged bet.
   Boc5) + scrambled negatives. Controls are **calibration only — NEVER design seeds**.
 - **De-novo / zero-shot only.** Never start from or modify a known binder or a native agonist–receptor complex.
   **No significant identity to GLP-1 / exendin-4 / glucagon / semaglutide**; generated-not-grafted scaffold.
-  **Linear or disulfide-cyclized only** (gene-encodable; no head-to-tail macrocycles); natural AAs only.
+  **Linear or intramolecular-disulfide only** (gene-encodable; no head-to-tail macrocycles); natural AAs only.
+  **Do NOT depend on a disulfide forming** — Adaptyv cell-free expression is "linear only" with redox UNCONFIRMED
+  (organizer-clarified 2026-10-19); treat a disulfide as a bonus topology, never a load-bearing assumption.
+- **Production reality (organizer-clarified 2026-10-19).** Adaptyv **cell-free expresses** Track-3 designs (not
+  chemically synthesized): an initiator **(f)Met is added and NOT removed**, and the C-terminus carries a
+  **linker–GFP11–linker–Twin-Strep tag that stays ON during the activation assay**. ⇒ the activating "message" must be
+  **internal** (not a free N-terminal tip); **both termini are disposable/compromised**; **no design may depend on a
+  disulfide** (redox unconfirmed). Fold the REAL construct (±Met, +tag) before trusting any reach number; reach is a
+  **positive indicator, never a disqualifier**. No self wet-lab; the ranked ≤20 go to a Claude selection workflow.
 - **uv only** for env work; heavy tools in isolated `envs/` venvs (reuse sibling repos' venvs + the Anthropic
   `third_party/uplifting-biomolecular-modeling` kit; `--det 1` for byte-reproducible submitted artifacts). See `configs/tools.yaml`.
 - **Local multi-GPU**, run CUDA directly (no SSH). One process per GPU; shard sweeps; **up to 8 GPUs (owner-authorized 2026-10-14, +500 GB),
@@ -74,7 +82,10 @@ for Track 3, and the command + key output are recorded as evidence. Never claim 
   Boltz+Chai reach-validated 2026-10-19 → confirmed sound, UNCHANGED**) = v5c − 2 redundant outer PepGLAD + 2 RFd3
   reader-proximal coverage-fillers; **v5c** (`61c2d9e4`) byte-frozen fallback; **v5b** (`b10571b4`) + **v1**
   (`1ce4e943`) deeper fallbacks. No GPU work pending; the in-silico frontier is exhausted (the agonist proxy
-  cannot separate agonists — firewall); the win now rides on the wet-lab cAMP/SEAP assay.
+  cannot separate agonists — firewall); the win now rides on the wet-lab cAMP/SEAP assay. A later **BoltzGen
+  active-state generation arm (2026-10-19)** produced deep-vestibule inserters that passed Boltz multi-pose but
+  **FAILED the 2-folder Boltz∧Chai bar GLP-1(7-36) clears (0/21)** → a Boltz-specific artifact; the proposed v7 was
+  **REJECTED, v6 UNCHANGED** (see `reports/GLP1R active-state generation and construct probes 2026-10-19.md`).
 - Names published verbatim → no PII/prompt-like text. Unique names + sequences. De-novo + zero-shot (hard gate).
 - Candidate CSVs live in `runs/` (gitignored). **Upload is USER-GATED** (portal account) — never auto-upload.
 

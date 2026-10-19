@@ -87,6 +87,25 @@ linear peptides (minor free-thiol note only).
   **v6 (`398bfb30`) kept byte-frozen as fallback.** De-risks the staple + honors the invariant; cost = one minor
   topology-diversity hedge (agonism unrankable). Upload USER-GATED. [[adaptyv-glp1r-production-constraints]]
 
+### 2026-10-19d — production-viability screen (new production facts) → v6b confirmed; one watch-item
+Executed the one legitimately-unexploited lever the organizer production facts opened: a sequence-based
+production-VIABILITY screen (`scripts/prod_viability.py` → `data/candidates/v6b_production_viability_2026-10-19.csv`)
+of all 20 v6b designs AS the real expressed construct (M + design + GGSGG–GFP11–GGSGG–TwinStrep×2). Necessary-condition
+developability only (solubility/aggregation via Uversky charge-hydrophobicity margin + hydrophobic-window + poly-run,
+proteolytic site density, fusion-context solubility) — **NOT agonism, never a ranker.** GFP11 is a split-GFP expression
+reporter, so solubility/expression is a first-order "gets-a-shot" axis.
+- **Staple-swap doubly justified:** the new glp1r_13 (`pglad_053`) beats the removed staple design (dpbss_010) on
+  every viability axis (ch_margin −0.02 vs −0.27, hphobW5 1.04 vs 3.0, poly-run 4 vs 7, protease-density 0.21 vs 0.35).
+- **Win-path not churnable:** most flags are the expected hydrophobicity/near-neutrality of vestibule-engaging de-novo
+  peptides → threshold-sensitive, not actionable (churning them = the small-n noise-chasing the lessons forbid).
+- **One genuine, non-arbitrary item (WATCH → recommend KEEP):** `glp1r_20_bind` = `ecd_des_8_7` carries a 20-residue
+  poly-Ala run (worst viability of the 7 af2ig-PASS ECD binders) — the known forced-floor POLYRUN. The production
+  facts mildly escalate it (aggregation → low GFP11 signal), and clean alternatives exist (`ecd_des_2_4` run4 /
+  `ecd_des_18_5` run5). BUT ecd_des_8_7 is the ONLY structurally-novel ECD binder (maxTM 0.70); the trade
+  (novelty↔expression on an antagonist-leaning hedge slot) is low-EV + sign-uncertain → **recommend KEEP** (poly-Ala
+  helical bundles usually express; don't trade a verified novelty asset for a speculative expression gain). Owner can
+  swap ecd_des_8_7 → ecd_des_2_4 (→ v6c) on request. **v6b (`32819e6f`) UNCHANGED; no agonism claim.**
+
 ## Session 2026-10-16 — brutal stress test → v5c confirmed; mechanism-coverage moonshot → **v6 adopted**; Track-C disulfide → negative
 
 Owner: "brutally stress-test every design … produce the best 20 that dominate at all costs" then "what more

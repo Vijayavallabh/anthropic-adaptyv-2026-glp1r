@@ -256,3 +256,10 @@ first". The one genuinely-new on-mechanism lever — **active-state *generation*
   thiols); glp1r_04/15 have **incidental** Cys pairs whose reach/engagement value survives linear (kept). **v6b** =
   v6 with glp1r_13 → clean linear `pglad_053` (`GHGKIAAYPWNYTA`, 0 Cys); `submissions/glp1r_track3_v6b.csv` md5
   `32819e6f`, validator PASS 20/0/0, diff vs v6 = one row. **v6 (`398bfb30`) byte-frozen fallback.** Upload USER-GATED.
+- **2026-10-19d production-viability screen → v6b confirmed.** `scripts/prod_viability.py` scored all 20 v6b designs
+  as the real construct (M+design+GFP11/TwinStrep tail; necessary-condition solubility/aggregation/protease, NOT
+  agonism — GFP11 is a split-GFP expression reporter). Staple-swap doubly justified (pglad_053 ≫ dpbss_010 on every
+  axis); win-path flags are expected vestibule-peptide hydrophobicity (not churnable); one watch-item
+  `glp1r_20_bind`/ecd_des_8_7 (poly-Ala run 20, the forced-floor POLYRUN) — **recommend KEEP** (only structurally-novel
+  binder; novelty↔expression trade low-EV/sign-uncertain; owner can swap → ecd_des_2_4 = v6c on request). Evidence
+  `data/candidates/v6b_production_viability_2026-10-19.csv`. **v6b UNCHANGED.**

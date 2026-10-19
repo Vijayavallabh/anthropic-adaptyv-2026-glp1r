@@ -78,9 +78,11 @@ for Track 3, and the command + key output are recorded as evidence. Never claim 
   v1 on 2026-10-13 and again for the 20-row v2 incl. slot-20 on 2026-10-14). Builders/validator now emit `single_chain` (owner directive 2026-10-14; portal accepts both values). Low-risk.
 - **The upload portal has NO novelty score** — it only runs a format/parse gate returning per-row "Single chain /
   Passed". Novelty is locked up-front with the local screens (coverage-gated id, FoldSeek structural TM, graft LCS);
-  there is no portal recheck. Current pick **v6** (md5 `398bfb30`, owner-adopted 2026-10-16; **uniform 2-folder
-  Boltz+Chai reach-validated 2026-10-19 → confirmed sound, UNCHANGED**) = v5c − 2 redundant outer PepGLAD + 2 RFd3
-  reader-proximal coverage-fillers; **v5c** (`61c2d9e4`) byte-frozen fallback; **v5b** (`b10571b4`) + **v1**
+  there is no portal recheck. Current pick **v6b** (md5 `32819e6f`, owner-approved 2026-10-19) = **v6** with its lone staple-dependent slot
+  (glp1r_13 = dpbss_010, Cys9–Cys13) swapped for the clean linear peptide `pglad_053` (`GHGKIAAYPWNYTA`, 0 Cys) —
+  Adaptyv cell-free "linear only" expression likely won't form the staple (leaving 2 free thiols), per the
+  Production-reality invariant. **v6** (md5 `398bfb30`, owner-adopted 2026-10-16; 2-folder Boltz+Chai
+  reach-validated 2026-10-19) is the byte-frozen fallback; **v5c** (`61c2d9e4`) + **v5b** (`b10571b4`) + **v1**
   (`1ce4e943`) deeper fallbacks. No GPU work pending; the in-silico frontier is exhausted (the agonist proxy
   cannot separate agonists — firewall); the win now rides on the wet-lab cAMP/SEAP assay. A later **BoltzGen
   active-state generation arm (2026-10-19)** produced deep-vestibule inserters that passed Boltz multi-pose but

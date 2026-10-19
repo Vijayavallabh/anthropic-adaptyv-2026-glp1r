@@ -1,6 +1,6 @@
 # session handoff
 
-## Where things stand (2026-10-19 — PICK = v6, OWNER-ADOPTED; 2-folder reach-validated + active-state generation arm tried→REJECTED on the 2-folder bar; v5c byte-frozen fallback; upload USER-GATED)
+## Where things stand (2026-10-19 — PICK = v6b (de-risked slot-13 staple swap, md5 `32819e6f`); v6 (`398bfb30`) byte-frozen fallback; 2-folder reach-validated + active-state generation arm tried→REJECTED; upload USER-GATED)
 
 **Pipeline F0–F9 COMPLETE; v5c survived a brutal reject-everything audit; a mechanism-coverage moonshot then
 produced v6, which the owner ADOPTED as the recommended pick (2026-10-16).** **The remaining action is the
@@ -105,8 +105,10 @@ re-confirmed, no in-silico re-ranking is valid. **v6 UNCHANGED.** Evidence:
 
 ## Do next
 
-1. **Owner's call at upload — PICK = `v5c` (recommended); `v5b` is the byte-frozen fallback; `v1` the zero-risk set.**
-   The upload click is **USER-GATED** — never auto-upload. v5c and v5b both parse 20/20 at the portal.
+1. **Owner's call at upload — PICK = `v6b` (recommended, de-risked); `v6` (`398bfb30`) byte-frozen fallback; `v5c`/`v1` deeper.**
+   The upload click is **USER-GATED** — never auto-upload. v6b = v6 with the one staple-dependent slot
+   (glp1r_13/dpbss_010, Cys9–Cys13) swapped for clean linear `pglad_053` (`GHGKIAAYPWNYTA`, 0 Cys); md5 `32819e6f`,
+   validator PASS 20/0/0, diff vs v6 = one row.
 2. **No submission change is pending.** v5c is fully verified (validator PASS, 17/3/0, byte-regression-safe,
    portal-parsed, 0 PDB hits) and now additionally certified Pareto-efficient/diversity-consistent (M1). The
    in-silico win-path levers are exhausted; remaining *agonism* gains are **wet-lab only**.
@@ -246,4 +248,11 @@ first". The one genuinely-new on-mechanism lever — **active-state *generation*
   `$HOME/.boltz`; Chai = `sepiq/.venv-chai` + `CHAI_DOWNLOADS_DIR=/home/prachh/v/chai_downloads`; BoltzGen fresh in
   `third_party/boltzgen/.venv`. [[lesson-boltzgen-deep-insertion-fails-2folder]] [[adaptyv-glp1r-production-constraints]]
 - **No GPU work pending.** The active-state lever is now tried + closed; further generation would be fishing against
-  the standing firewall. v6 remains the adopted, byte-frozen pick; upload USER-GATED.
+  the standing firewall.
+- **2026-10-19c slot-13 staple de-risk → v6b (owner-approved).** A side-agent review (relayed by owner) caught that
+  v6 still held a design chosen purely for a disulfide staple (glp1r_13 = dpbss_010, Cys9–Cys13) that the new
+  Production-reality invariant says not to depend on — added without re-checking v6. Verified by bytes: only
+  glp1r_13 depends on the staple (reach fails 2-folder; cell-free "linear only" likely won't form it → 2 free
+  thiols); glp1r_04/15 have **incidental** Cys pairs whose reach/engagement value survives linear (kept). **v6b** =
+  v6 with glp1r_13 → clean linear `pglad_053` (`GHGKIAAYPWNYTA`, 0 Cys); `submissions/glp1r_track3_v6b.csv` md5
+  `32819e6f`, validator PASS 20/0/0, diff vs v6 = one row. **v6 (`398bfb30`) byte-frozen fallback.** Upload USER-GATED.

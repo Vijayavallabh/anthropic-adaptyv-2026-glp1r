@@ -1,7 +1,7 @@
 # progress
 
 **Project:** anthropic-adaptyv-2026-glp1r — de-novo human GLP1R **agonist** (Challenge 3, Track 3)
-**Deadline:** 2026-10-25 23:59 AoE · **Updated:** 2026-10-19 · **Latest commit:** `817c793` — BoltzGen active-state arm tried → **REJECTED** on the 2-folder (Chai) bar; **v6 (`398bfb30`) UNCHANGED**; see `git log`
+**Deadline:** 2026-10-25 23:59 AoE · **Updated:** 2026-10-19 · **Latest:** slot-13 staple de-risk → **PICK = v6b (`32819e6f`)** owner-approved; **v6 (`398bfb30`) byte-frozen fallback**; BoltzGen active-state arm tried→REJECTED on 2-folder; see `git log`
 
 ## Status
 
@@ -67,8 +67,25 @@ lever (active-state *generation*) was tried rigorously and REJECTED on the 2-fol
   (gitignored). `scripts/chai_fold_adapt.py` adapts Chai output to Boltz filenames for `scripts/iface_score.py`
   (needs the `uv` biopython env). [[lesson-boltzgen-deep-insertion-fails-2folder]]
 
-**PICK = v6 (`398bfb30`), UNCHANGED. The in-silico frontier is exhausted again — now including the active-state
-*generation* lever; the win rides on the wet-lab cAMP/SEAP assay. Upload USER-GATED.**
+**PICK = v6 (`398bfb30`), UNCHANGED [superseded 2026-10-19c → v6b below]. The in-silico frontier is exhausted again
+— now including the active-state *generation* lever; the win rides on the wet-lab cAMP/SEAP assay. Upload USER-GATED.**
+
+### 2026-10-19c — slot-13 staple de-risk → v6b (owner-approved swap)
+A side-agent review (relayed by owner) flagged that v6 still contained a design chosen **specifically for a disulfide
+staple** that the new Production-reality invariant says not to depend on — and that I'd added the invariant without
+re-checking v6. Verified by bytes: v6 has 3 Cys-pair designs but only **glp1r_13 (= dpbss_010,
+`RNAAYYAYCEIDCIDQLLLAAYF`, Cys9–Cys13)** *depends* on the staple — it was swapped into v5c purely to add a
+disulfide-stapled topology lineage, and its reach does NOT survive 2-folder validation (not one of v6's 4 robust
+reachers; `dpbss_*` reach collapses under independent folders). Under Adaptyv's cell-free "linear only" expression the
+staple likely won't form → a linear 23-mer with 2 free thiols (stickiness/oxidation), no distinguishing value left.
+The other two Cys-pair designs are **incidental** and stay: **glp1r_04** (Cys9/29) is a top 2-folder R299 reacher
+(liraglutide-level) and **glp1r_15** (Cys1/24, PepGLAD) is an engagement/novelty pick — both keep their value as
+linear peptides (minor free-thiol note only).
+- **Owner approved the swap (AskUserQuestion).** **v6b** = v6 with glp1r_13 → the clean linear peptide it displaced
+  **`pglad_053` (`GHGKIAAYPWNYTA`, 14-mer, 0 Cys, CLEAN, eligible)**. `submissions/glp1r_track3_v6b.csv`, md5
+  **`32819e6fd0b55c31fadc29298ef050c7`**, validator **PASS 20/0/0**; diff vs v6 = exactly the slot-13 sequence.
+  **v6 (`398bfb30`) kept byte-frozen as fallback.** De-risks the staple + honors the invariant; cost = one minor
+  topology-diversity hedge (agonism unrankable). Upload USER-GATED. [[adaptyv-glp1r-production-constraints]]
 
 ## Session 2026-10-16 — brutal stress test → v5c confirmed; mechanism-coverage moonshot → **v6 adopted**; Track-C disulfide → negative
 

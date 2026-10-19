@@ -46,3 +46,7 @@ _downloads/
 
 # NOTE: data/target/ and data/controls/ (small target refs + control sequences) ARE tracked.
 #       submissions/example_track3.csv (validator fixture) IS tracked.
+
+# Local-only regenerable liability/target transients — NEVER stage (code-review 2026-10-19)
+/stress_liab.json
+data/af2ig_targets/

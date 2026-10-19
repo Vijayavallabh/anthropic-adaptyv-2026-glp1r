@@ -4,8 +4,11 @@
 (Boltz-2 + Chai-1, single-seq, 1 seed each) cofold of the EXACT v6 twenty + 15 top non-v6 "reach" candidates
 (DiffPepBuilder linear/disulfide, strongest existing minD_R299) + 8 native controls, all vs the 409-res 24–432
 construct (scorer-compatible numbering), scored by the UNCHANGED `scripts/iface_score.py`
-(N-term-in-7TM-vestibule, vestibule hits, R299 contact, iPAE). Inputs: `scratchpad/dominate/{foldset.csv,
-boltz_scores.json, chai_scores.json}`; folds `runs/boltz_domfold3/`, `scratchpad/dominate/chai_out/`.
+(N-term-in-7TM-vestibule, vestibule hits, R299 contact, iPAE). Inputs (retained, tracked): per-design 2-folder table `data/candidates/v6_twofolder_reach_2026-10-19.csv`
++ the exact input set `data/candidates/v6_twofolder_foldset_2026-10-19.csv` — every control-calibration and
+robust-reacher claim below is reproducible from these committed tables. Raw Boltz folds persist at
+`runs/boltz_domfold3/` (gitignored, on-disk); the per-seed score JSONs were session-scratch, now superseded
+by the committed table.
 
 ## Firewall (upheld)
 Agonism is unprovable/unrankable in-silico; the cAMP/SEAP assay is the only verdict. Reach/vestibule geometry is

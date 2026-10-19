@@ -7,6 +7,13 @@ best-first ranking. Validator: `rows=19 errors=0 warnings=0`, exit 0 (Track 3). 
 submission's byte identity (stable across the packaging commit `c69dc93` and this dossier's later commit; verify by
 bytes, not by commit). Private repo. **Upload is USER-GATED — not uploaded.**
 
+> **CURRENT STATE (2026-10-19):** the final upload artifact is **`submissions/glp1r_track3_v6b_ranked.csv`**
+> (md5 `1571a3d4`, 20 designs, validator PASS 20/0/0) — the **v6b** composition (v6 with its one staple-dependent
+> slot de-risked to a clean linear peptide) in firewall-clean prize-tier order. See
+> **`docs/SUBMISSION_RATIONALE_v6b.md`** for the ranked per-design rationale written for the Claude selection
+> workflow. `v6c` (md5 `643f3fe6`) is the expression-weighted binder-swap alternative; `v6` (`398bfb30`) and
+> `v6b`-unordered (`32819e6f`) are fallbacks. Everything below is retained methods/history. Upload USER-GATED.
+>
 > **CURRENT STATE (2026-10-16):** this dossier documents the original **v1** package (19 designs, md5 `1ce4e943`),
 > retained as the zero-risk fallback. The submission has since converged v2–v5c → **v6**. The **recommended pick is
 > now `v6`** (`submissions/glp1r_track3_v6.csv`, 20 designs, md5 `398bfb30`), **owner-adopted 2026-10-16** — it is

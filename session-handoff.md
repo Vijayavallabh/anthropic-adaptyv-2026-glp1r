@@ -1,6 +1,6 @@
 # session handoff
 
-## Where things stand (2026-10-19 — PICK = v6b (de-risked slot-13 staple swap, md5 `32819e6f`); v6 (`398bfb30`) byte-frozen fallback; 2-folder reach-validated + active-state generation arm tried→REJECTED; upload USER-GATED)
+## Where things stand (2026-10-19 — FINAL upload artifact = `submissions/glp1r_track3_v6b_ranked.csv` (md5 `1571a3d4`, v6b composition in prize-tier order, PASS 20/0/0) + rationale `docs/SUBMISSION_RATIONALE_v6b.md`; fallbacks v6b `32819e6f` / v6 `398bfb30` / v6c alt `643f3fe6`; upload USER-GATED)
 
 **Pipeline F0–F9 COMPLETE; v5c survived a brutal reject-everything audit; a mechanism-coverage moonshot then
 produced v6, which the owner ADOPTED as the recommended pick (2026-10-16).** **The remaining action is the
@@ -105,10 +105,10 @@ re-confirmed, no in-silico re-ranking is valid. **v6 UNCHANGED.** Evidence:
 
 ## Do next
 
-1. **Owner's call at upload — PICK = `v6b` (recommended, de-risked); `v6` (`398bfb30`) byte-frozen fallback; `v5c`/`v1` deeper.**
-   The upload click is **USER-GATED** — never auto-upload. v6b = v6 with the one staple-dependent slot
-   (glp1r_13/dpbss_010, Cys9–Cys13) swapped for clean linear `pglad_053` (`GHGKIAAYPWNYTA`, 0 Cys); md5 `32819e6f`,
-   validator PASS 20/0/0, diff vs v6 = one row.
+1. **Upload the FINAL package — `submissions/glp1r_track3_v6b_ranked.csv`** (md5 `1571a3d4`, PASS 20/0/0) +
+   supporting rationale `docs/SUBMISSION_RATIONALE_v6b.md`. This is the v6b composition (recommended) in prize-tier
+   order (17 agonism designs, then 3 binders). The upload click is **USER-GATED** — never auto-upload. Fallbacks:
+   `v6b` unordered (`32819e6f`), `v6` (`398bfb30`), `v6c` expression-weighted alt (`643f3fe6`), `v5c`/`v1` deeper.
 2. **No submission change is pending.** v5c is fully verified (validator PASS, 17/3/0, byte-regression-safe,
    portal-parsed, 0 PDB hits) and now additionally certified Pareto-efficient/diversity-consistent (M1). The
    in-silico win-path levers are exhausted; remaining *agonism* gains are **wet-lab only**.
@@ -271,3 +271,9 @@ first". The one genuinely-new on-mechanism lever — **active-state *generation*
   prize-tier grouping `01 02 03 04 05 06 07 08 09 10 12 13 14 15 16 21 22 | 18 19 20` (all agonism before the 3
   binders; current order has 21/22 after the binders). Do NOT order within the agonism arm (reach≠agonism = firewall).
   Materialized at the user-gated upload once composition is locked. **PICK = v6b; v6c = expression-weighted alt.**
+- **2026-10-19f owner "do whatever is required to win at all costs" → FINAL package LOCKED + upload-ready.**
+  Composition DECIDED = v6b. Final artifact `submissions/glp1r_track3_v6b_ranked.csv` (md5 `1571a3d4`, PASS 20/0/0)
+  = v6b in prize-tier order (17 agonism, then 3 binders; no within-arm reach ordering = firewall). Selection-workflow
+  rationale `docs/SUBMISSION_RATIONALE_v6b.md` (honest per-design necessary-condition evidence, firewall caveat, no
+  prompt-injection). "At all costs" = maximal LEGITIMATE effort; the firewall, forbidden techniques, and USER-GATED
+  upload are NOT overridden; no GPU fishing launched. **Only remaining action = the owner's USER-GATED upload.**

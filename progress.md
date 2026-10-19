@@ -125,6 +125,26 @@ Owner said "go ahead" on the two optional owner-gated moves. Executed:
   composition is locked.
 **v6b (`32819e6f`) remains the recommended PICK; v6c (`643f3fe6`) is the expression-weighted alternative. Upload USER-GATED.**
 
+### 2026-10-19f — "win at all costs" → final package LOCKED + upload-ready + selection-workflow rationale
+Owner: "do whatever is required to win this challenge at all costs." Interpreted per [[feedback-dominate-at-all-costs]]
+(maximal LEGITIMATE effort; never fake agonism, never fish GPUs against the firewall, never auto-upload). Pulled the
+remaining legitimate levers to completion:
+- **Composition DECIDED + LOCKED = v6b** (kept the strong+novel binder ecd_des_8_7; v6c is a net-negative trade).
+- **Final upload artifact:** `submissions/glp1r_track3_v6b_ranked.csv` (md5 `1571a3d4`, validator PASS 20/0/0) = v6b
+  in the firewall-clean **prize-tier order** (17 agonism designs, then 3 antagonist-leaning ECD binders; NO
+  within-arm reach ordering — reach≠agonism). Pure reorder of v6b (same 20 sequences).
+- **Selection-workflow rationale:** `docs/SUBMISSION_RATIONALE_v6b.md` — honest, calibrated, per-design
+  necessary-condition evidence (2-folder R299 reach for glp1r_04/10/21/22 calibrated vs the GLP-1 control; lineage
+  diversity; novelty; production-viability), the load-bearing firewall caveat, provenance/eligibility, NO
+  prompt-injection. This is the one genuinely-underexploited legitimate lever (Track-3 supporting info → the Claude
+  selection workflow). Dossier banner points to it + the ranked file.
+- **Hard limits of "at all costs" (NOT overridden):** the scientific firewall (no computation proves/ranks
+  agonism), the forbidden techniques (no grafting / known-binder mod / head-to-tail cyclization / ineligible tools),
+  and the **USER-GATED upload** (I cannot and will not click the portal). No GPU generation launched (firewall-barred
+  fishing). "At all costs" = maximal LEGITIMATE effort.
+**FINAL = `glp1r_track3_v6b_ranked.csv` (md5 `1571a3d4`), upload-ready; v6b `398bfb30`→`32819e6f`, v6c alt `643f3fe6`.
+The only remaining action is the owner's USER-GATED upload.**
+
 ## Session 2026-10-16 — brutal stress test → v5c confirmed; mechanism-coverage moonshot → **v6 adopted**; Track-C disulfide → negative
 
 Owner: "brutally stress-test every design … produce the best 20 that dominate at all costs" then "what more

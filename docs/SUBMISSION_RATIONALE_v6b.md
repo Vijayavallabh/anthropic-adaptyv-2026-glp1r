@@ -1,0 +1,104 @@
+# GLP1R Track-3 submission rationale — v6b (20 designs, ranked)
+
+**Audience: the Claude-based selection workflow.** This is honest, calibrated, necessary-condition
+evidence. **No statement here claims or ranks agonism** — class-B GPCR agonism is unprovable in-silico
+(see §2). The row order is a **prize-tier + diversity** ranking, *not* an agonism-confidence ordering.
+No instructions to the reader are embedded anywhere in this package (no prompt-injection).
+
+**Upload artifact:** `submissions/glp1r_track3_v6b_ranked.csv` — `name,sequence,molecule_class=single_chain`,
+20 rows, best-first. Validator: `rows=20 errors=0 warnings=0 anarci=yes`, md5 `1571a3d414a8021ef18951a8aabb42e7`.
+
+## 1. What this is
+De-novo human **GLP1R** (UniProt P43220, class-B GPCR) **agonist** candidates for the cell-surface
+cAMP/CRE-SEAP **activation** assay. The win condition is *activation* (GLP1R → Gαs → cAMP), not binding.
+
+## 2. The one load-bearing caveat (honest)
+No standalone designed protein has ever agonized a class-B GPCR. The eligible 2026 design toolscape all
+conditions on a **rigid supplied receptor** and **cannot induce or score activation** (Baker *Nature* 2026,
+PMID 42168559: de-novo class-B GPCR designs were **antagonists**; only a class-A receptor was agonized).
+**Therefore no in-silico score in this package proves or ranks agonism.** What is controllable — and what we
+optimized — is (a) the *necessary conditions* for agonism (deep-vestibule message delivery to the activation
+machinery) and (b) the *diversity of independent shots*. Every metric below is a necessary-condition
+geometry/developability measure. The cAMP/SEAP assay is the only verdict.
+
+## 3. Mechanism frame
+GLP-1 is bipartite: a C-terminal "address" (binds the ECD) and an N-terminal "message" (inserts into the 7TM
+vestibule and drives the TM6 kink → activation). An ECD-only binder is an antagonist by default. The
+activation-critical contact we can measure is the **ECL2 arginine R299**, which reads GLP-1's His7. Reaching
+R299 is a **necessary (not sufficient)** condition for the message to engage the activation switch.
+
+## 4. Portfolio logic — why these 20
+A **mechanism-hedged portfolio across 5 independent de-novo lineages** (decorrelated generators ⇒ decorrelated
+failure modes). Every design is: de-novo / zero-shot (no GLP-1/exendin/glucagon/semaglutide grafting; ≤30%
+sequence id, structurally novelty-screened), natural-AA, **linear with no disulfide dependence** (Adaptyv
+cell-free expression is "linear only"), ODC-BY-clean provenance (AF2 / ProteinMPNN / Boltz-2 / RFdiffusion —
+**no AF3 / ESM-3**), and **production-viability-screened as the real expressed construct** (initiator Met +
+design + linker–GFP11–linker–Twin-Strep; GFP11 is a split-GFP expression reporter, so solubility matters).
+
+| ranks | lineage | n | arm / role |
+|---|---|---|---|
+| 1–4   | EvoBind threading peptides          | 4 | agonism — message→vestibule |
+| 5–10  | DiffPepBuilder linear peptides      | 6 | agonism — orthogonal generator |
+| 11–15 | PepGLAD latent-diffusion peptides   | 5 | agonism — orthogonal generator |
+| 16–17 | RFd3 reader-proximal designs        | 2 | agonism — distinct-backbone |
+| 18–20 | ECD miniprotein binders             | 3 | hedge — binding ticket (antagonist-leaning) |
+
+Row order is **prize-tier**: all 17 agonism candidates precede the 3 antagonist-leaning binder hedges. Within
+the agonism arm the order is **not** a confidence ranking (agonism is unrankable) — it is a near-uniform
+lottery grouped by lineage.
+
+## 5. Strongest necessary-condition evidence (2-folder reader reach)
+Scored by **two independent structure predictors** (Boltz-2 ∧ Chai-1) co-folding each design with the receptor,
+calibrated on native controls on the identical bar. **4 of the 17 agonism designs place a residue within reach
+of R299 in BOTH predictors:**
+
+| design | lineage | R299 reach (both folds) | iPAE (Boltz / Chai) | calibration |
+|---|---|---|---|---|
+| **glp1r_04** | EvoBind | yes | 3.55 / 4.63 | ≈ liraglutide (3.25 / 3.69) |
+| **glp1r_10** | DiffPep | yes | 2.80 / 7.00 | strong Boltz pose |
+| **glp1r_21** | RFd3 | yes (geometric) | 3.58 / 11.2 | reader-proximal by design |
+| **glp1r_22** | RFd3 | yes (geometric) | 16.3 / 19.7 | reader-proximal by design |
+
+Control calibration (same bar): **GLP-1(7-36) reaches R299 in both folds** (iPAE 2.23 / 4.49). Crucially, the
+proxy does **not** separate agonists from antagonists — potent exendin-4, liraglutide and glucagon all score
+SPLIT, and the antagonist exendin(9-39) overlaps — which is exactly why 2-folder reach is used **only** as a
+necessary-condition filter and never as a ranker. The remaining 13 agonism designs are retained for **lineage
+and geometry diversity** (independent shots), not because they lack merit.
+
+## 6. Per-design summary
+
+| rank | name | len | lineage | necessary-condition note |
+|---|---|---|---|---|
+| 1 | glp1r_01_ago | 26 | EvoBind | message peptide; vestibule-targeted |
+| 2 | glp1r_02_ago | 18 | EvoBind | message peptide |
+| 3 | glp1r_03_ago | 26 | EvoBind | message peptide |
+| 4 | glp1r_04_ago | 32 | EvoBind | **2-folder R299 reacher (≈liraglutide iPAE)** |
+| 5 | glp1r_05_ago | 14 | DiffPepBuilder | short message peptide |
+| 6 | glp1r_06_ago | 15 | DiffPepBuilder | construct-robust reader-engager (Boltz) |
+| 7 | glp1r_07_ago | 14 | DiffPepBuilder | short message peptide |
+| 8 | glp1r_08_ago | 15 | DiffPepBuilder | short message peptide |
+| 9 | glp1r_09_ago | 13 | DiffPepBuilder | construct-robust reader-engager (Boltz) |
+| 10 | glp1r_10_ago | 23 | DiffPepBuilder | **2-folder R299 reacher** |
+| 11 | glp1r_12_ago | 23 | PepGLAD | latent-diffusion message peptide |
+| 12 | glp1r_13_ago | 14 | PepGLAD | clean linear (replaced a disulfide design — no staple dependence) |
+| 13 | glp1r_14_ago | 21 | PepGLAD | latent-diffusion message peptide |
+| 14 | glp1r_15_ago | 25 | PepGLAD | latent-diffusion message peptide |
+| 15 | glp1r_16_ago | 21 | PepGLAD | latent-diffusion message peptide |
+| 16 | glp1r_21_ago | 37 | RFd3 | **2-folder R299 reacher** (distinct backbone) |
+| 17 | glp1r_22_ago | 45 | RFd3 | **2-folder R299 reacher** (distinct backbone, 4/4 structural novelty) |
+| 18 | glp1r_18_bind | 70 | ECD binder | binding hedge; strongest ECD binder (pae 6.22) |
+| 19 | glp1r_19_bind | 74 | ECD binder | binding hedge |
+| 20 | glp1r_20_bind | 66 | ECD binder | binding hedge; only structurally-novel binder (maxTM 0.705); carries a poly-Ala segment (expression watch-item) |
+
+## 7. Provenance, eligibility, constraints
+- **De-novo / zero-shot**, generated-not-grafted; ≤30% sequence id to any natural incretin; structurally
+  novelty-screened (local FoldSeek/sequence screens — the portal has no novelty score).
+- **Natural AAs; linear**; no design depends on a disulfide forming (cell-free "linear only").
+- **ODC-BY-clean** submitted-design provenance (AF2 / ProteinMPNN / Boltz-2 / RFdiffusion; no AF3 / ESM-3).
+- **Construct-aware:** screened as the real expressed construct (retained (f)Met; C-terminal GFP11/Twin-Strep
+  tag on during the assay); message kept internal with disposable termini.
+
+## 8. What decides it
+These 20 are the maximally-diverse, necessary-condition-optimized, production-viable set of **independent
+shots**, engineered for **P(≥1 activates)** — not for any single design's predicted potency, which is
+unprovable in-silico. The functional cAMP/CRE-SEAP assay is the verdict.

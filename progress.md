@@ -465,6 +465,38 @@ GPU pose analysis. Submission UNCHANGED (md5 `be5b7621447eeab3402f409bcec76c9d`,
 - Compute: DiffPep gen on GPU 0, ESMFold on GPU 1; both released. GPU 0 showed a transient foreign 1.1 GB/93 %
   mid-pass (avoided — used GPU 1 for the fold). Zero cost; no foreign job touched.
 
+## Session 2026-10-18/19 — Wave-B "try the fix anyway" CLOSED + "dominate at all costs" 2-folder validation → v6 CONFIRMED (NO CSV change)
+
+**Owner "try the fix anyway" → Wave-B RFd3 motif-extension CLOSED NEGATIVE.** The documented fix (strip HETATM +
+drop `infer_ori_strategy:hotspots`) anchors the fixed motif perfectly (last-37 Rg 9.4 Å = seed; contig verified
+in-log `L=249` = 13 grown + 37 motif + 199 receptor), but the grown 13-res extension never forms a connected chain
+or bonds to the motif: grown→motif junction 12–120 Å (closed ≈3.8 Å), extension internally exploded, reproducibly
+across the full realign sweep (no-realign ≈frac 0.0; `allow_realignment=true` frac 0.5 & 1.0; both aggressive and
+default sampler dynamics). Enabling realignment required a local float32 autocast-disable patch to the kit's
+`foundry/utils/alignment.py` (cu130 has no bf16 svd/det kernels and the bf16 AMP autocast re-demotes the Kabsch
+matmuls) — local-only, gitignored, correctness-only. Likely cause: a 37-res fixed motif is 74% of the chain and
+RFd3 won't coherently diffuse a small extension welded to a large held motif. Reports/memory updated; commit `8a431ae`.
+
+**Owner "dominate at all costs" (×2, over a conserve recommendation) → uniform 2-folder reach validation → v6
+CONFIRMED, no change.** First re-verified the in-silico frontier is exhausted (the lone `pglad_029` 2-folder AGREE
+is a KNOWN confound — a GLP-1 scramble also passes the N-term-in-7TM gate; the portfolio is already
+P(≥1)-optimized; a new-SOTA scout returned a robust negative — only Proteina-Complexa, wrong mini-protein/ECD
+regime). Then ran the one clean, firewall-safe campaign on the free 8-GPU window: uniform **2-folder (Boltz-2 +
+Chai-1, single-seed)** cofold of the EXACT v6 twenty + 15 top non-v6 reach-candidates + 8 native controls vs the
+409-res 24–432 construct, scored by the UNCHANGED `scripts/iface_score.py`. **Result:** the controls prove the
+agonist proxy does NOT separate agonists (only native GLP1_7-36 = AGREE:agonist; potent exendin-4 & liraglutide
+miss the 2-folder bar; antagonist exendin(9-39) overlaps) → empirical firewall confirmation. v6 carries **4 robust
+2-folder R299 reachers** (`glp1r_04` at liraglutide level, `glp1r_10/21/22`). **Swap check NEGATIVE** — no non-v6
+candidate dominates; the DiffPepBuilder `dpbss_*`/`dpbv2_*` "reachers" (which aimed <5 Å in their own generator
+pose) collapse under both independent folders (vestibule 0, iPAE 10–20) → the reachability wall holds. **v6
+(`398bfb30`) UNCHANGED; validator PASS 20/0/0.** Evidence: `reports/GLP1R two-folder reach validation
+2026-10-19.md` + `data/candidates/v6_twofolder_reach_2026-10-19.csv` (+ `_foldset_`); commit `a2aae00`. Pipeline
+note for next time: `cofold_boltz_shard.sh` 8-way parallel hits shared-JIT/writer contention (only one shard's
+folds succeed) → **run single-GPU** (folds ~1.3 s each; 43×1-seed ≈ 1 min); `iface_score.py` needs the `uv` env
+(biopython). `/code-review` → 0 correctness bugs; its 2 nits fixed (persist derived tables to a tracked path;
+`.gitignore` the `stress_liab.json` + `data/af2ig_targets/` transients); commit `98693be`. **No GPU work pending;
+upload remains USER-GATED.**
+
 ## Compute
 
 **State 2026-10-14e:** owner lifted the ceiling to **8 H100s + 500 GB disk** (use as many of 0–7 as are genuinely

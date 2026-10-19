@@ -1,6 +1,6 @@
 # session handoff
 
-## Where things stand (2026-10-16 — PICK = v6, OWNER-ADOPTED; v5c byte-frozen fallback; upload USER-GATED)
+## Where things stand (2026-10-19 — PICK = v6, OWNER-ADOPTED + 2-folder reach-validated; v5c byte-frozen fallback; upload USER-GATED)
 
 **Pipeline F0–F9 COMPLETE; v5c survived a brutal reject-everything audit; a mechanism-coverage moonshot then
 produced v6, which the owner ADOPTED as the recommended pick (2026-10-16).** **The remaining action is the
@@ -9,6 +9,16 @@ Compute ceiling = **8 H100s + 500 GB**. **PICK = v6** `submissions/glp1r_track3_
 `398bfb3006464811e8ce9ab57afb4dad`, validator PASS 20/0/0); **v5c** (`61c2d9e4…`) byte-frozen fallback; **v5b**
 (`b10571b4…`) + **v1** (`1ce4e943…`) deeper fallbacks. **Track-C (watcher `bem3nan8r`) has RUN and resolved
 NEGATIVE — no v7**; all owner-approved moonshot tracks (A/B/C/D) are now resolved and no GPU work is pending.
+
+**2026-10-18/19 — owner "try the fix anyway" + "dominate at all costs" (details in the dated sections below):**
+Wave-B RFd3 motif-extension is CLOSED (the documented fix anchors the motif but the diffused extension never bonds
+to it; reproducible NEGATIVE). Then a maximal-effort, free-8-GPU uniform **2-folder (Boltz+Chai) reach validation**
+of the EXACT v6 twenty + 15 non-v6 reach-candidates + 8 native controls **CONFIRMED v6 and justified no change**:
+4 v6 members are robust 2-folder R299 reachers (`glp1r_04` at liraglutide level, `glp1r_10/21/22`); the swap check
+is NEGATIVE (no candidate dominates; DiffPepBuilder "reachers" don't reproduce reach under independent folders);
+and the controls empirically prove the agonist proxy cannot separate agonists from antagonists → the firewall is
+re-confirmed, no in-silico re-ranking is valid. **v6 UNCHANGED.** Evidence:
+`reports/GLP1R two-folder reach validation 2026-10-19.md` + `data/candidates/v6_twofolder_reach_2026-10-19.csv`.
 
 - **2026-10-16 MECHANISM-COVERAGE MOONSHOT (owner: "full push A+B+C+D") → candidate v6 built + validated.**
   Report: `reports/GLP1R mechanism-coverage moonshot.md`. D(SOTA)=no-go; B(coverage axis)=built (v5c covers 3/4
@@ -185,5 +195,28 @@ Regular commits/pushes to the existing private repo are the normal checkpoint wo
   `[[env-bf16-autocast-demotes-linalg]]`. Scripts in `scratchpad/.../waveB/` (`wave_b_realign_*.sh`,
   `ca_gate.py`, `diag_split.py`, `convert_ab.py`, `analyze_realignexact.sh`).
 - **Wave-B remains CLOSED; no GPU work pending.** v6 (`398bfb30`) and v5c (`61c2d9e4`) UNCHANGED; upload USER-GATED.
-- GPU landscape 2026-10-19: foreign vLLM (2×~75 GB) + `mmbu` training (~64 GB) now hold GPUs 0–6 persistently;
-  free slot cycles between GPU 3 and GPU 7 (grab whichever reads 0/0; idle-guard protects).
+- GPU landscape 2026-10-19: foreign vLLM (2×~75 GB) + `mmbu` training (~64 GB) intermittently hold GPUs; grab
+  whichever read 0/0 (idle-guard protects). Later in the day all 8 freed.
+
+## 2026-10-19 — owner "dominate at all costs" (×2, over a conserve recommendation) → uniform 2-folder validation → v6 CONFIRMED, no change
+
+- Interpretation recorded in memory [[feedback-dominate-at-all-costs]]: pull every LEGITIMATE lever with real
+  compute, but never override the firewall or burn GPUs on confounded metrics / cousin theater. First verified the
+  frontier is genuinely exhausted (the lone `pglad_029` 2-folder AGREE is a KNOWN confound — a GLP-1 scramble also
+  passes the N-term-in-7TM gate; portfolio already P(≥1)-optimized; new-SOTA scout negative — only Proteina-Complexa,
+  wrong mini-protein/ECD regime).
+- **Ran the one clean, firewall-safe campaign:** uniform **2-folder (Boltz-2 + Chai-1, single-seed)** cofold of the
+  EXACT v6 twenty + 15 top non-v6 reach-candidates + 8 native controls vs the 409-res 24–432 construct, scored by
+  the UNCHANGED `scripts/iface_score.py`. (Pipeline notes for next time: `cofold_boltz_shard.sh` 8-way parallel
+  hits a shared-JIT/writer contention → only one shard's folds succeed; **run single-GPU** (folds are ~1.3 s each,
+  43×1seed ≈ 1 min). Chai shards fine one-process-per-GPU via `CUDA_VISIBLE_DEVICES`. `iface_score.py` needs the
+  `uv` env (biopython). Target MUST be `data/target/construct_24_432.seq` (409 res) for the scorer's numbering.)
+- **Result → v6 confirmed, NO change justified.** Controls: only native GLP1_7-36 hits AGREE:agonist; potent
+  exendin-4 & liraglutide MISS the 2-folder bar and antagonist exendin(9-39) overlaps → the proxy does NOT separate
+  agonists (empirical firewall). v6 carries 4 robust 2-folder R299 reachers (`glp1r_04`=liraglutide-level,
+  `glp1r_10/21/22`). Swap check NEGATIVE: no non-v6 candidate dominates; the `dpbss_*`/`dpbv2_*` reach-candidates
+  that aimed <5 Å in DiffPepBuilder's own pose collapse under both independent folders (vest 0, iPAE 10–20) — the
+  reachability wall holds. Evidence committed: `reports/GLP1R two-folder reach validation 2026-10-19.md`,
+  `data/candidates/v6_twofolder_reach_2026-10-19.csv` (+ `_foldset_`). `/code-review` found 0 correctness bugs; its
+  2 nits fixed (persist derived tables to tracked path; `.gitignore` the `stress_liab.json`/`data/af2ig_targets/`
+  transients). **v6 (`398bfb30`) UNCHANGED; upload USER-GATED; no GPU work pending.**

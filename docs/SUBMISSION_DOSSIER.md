@@ -252,3 +252,32 @@ scripts surfaced 4 reproducibility/robustness gaps (re-run clobber of `diffpep_r
 harvested / 21 vest2 keepers / 11-of-21 reach R299 unchanged) and each guard was positive-controlled on crafted bad
 input. **No submission bytes changed**; the review independently re-confirmed v2 md5, validator PASS, slot-20
 provenance, and no license/attribution violations.
+
+## 13. Post-adoption validation — Wave-B closed + uniform 2-folder reach validation of v6 (2026-10-18/19)
+
+**Wave-B RFd3 motif-extension (owner "try the fix anyway") → CLOSED NEGATIVE.** The documented fix anchors the
+fixed motif (last-37 Rg 9.4 Å = seed) but the diffused extension never bonds to it (grown→motif junction 12–120 Å
+vs the ~3.8 Å of a closed peptide bond) across the full realign sweep (no-realign ≈frac 0.0; `allow_realignment`
+frac 0.5 & 1.0; aggressive and default sampler dynamics; realignment unblocked by a local, gitignored float32
+autocast-disable patch to the kit `foundry/utils/alignment.py` for cu130's missing bf16 linalg). No portfolio
+effect — a motif-extension of des_0039/des_0047 shares their validated backbone (a cousin of the v6 fillers
+`glp1r_21/22`) regardless of generation quality. See `reports/GLP1R mechanism-coverage moonshot.md`.
+
+**Uniform 2-folder reach validation (owner "dominate at all costs") → v6 CONFIRMED, no change.** The first
+*uniform* Boltz-2 + Chai-1 (single-seed) cofold of the EXACT v6 twenty + 15 top non-v6 reach-candidates + 8 native
+controls vs the 409-res 24–432 construct, scored by the unchanged `scripts/iface_score.py`. **Firewall re-proven
+empirically:** the vestibule / "agonist-like" metric does NOT separate agonists — only native **GLP1_7-36** hits
+`AGREE:agonist`; the potent agonists **exendin-4** and **liraglutide** miss the 2-folder bar and the **antagonist
+exendin(9-39)** overlaps the low end — so no in-silico re-ranking of this portfolio for agonism is valid. **v6
+findings:** 4 robust 2-folder R299 reachers — `glp1r_04` (reaches R299 in both folders with a confident interface,
+matching the liraglutide control), `glp1r_10`, RFd3 `glp1r_21`, `glp1r_22`; the remaining agonism members are
+weaker on the proxy and the 3 ECD binders score scramble-like on the vestibule metric as expected (they bind the
+extracellular domain, not the 7TM). **Swap check NEGATIVE:** no non-v6 candidate dominates; the DiffPepBuilder
+`dpbss_*`/`dpbv2_*` reach-candidates (which aimed <5 Å in their own generator pose) do not reproduce reach under
+either independent folder (vestibule 0, iPAE 10–20) — the reachability wall holds. Caveats: single seed, single
+(inactive 24–432) construct, confounded class → reach is a weak rankable prior only, never an agonism score. **v6
+(`398bfb30`, 20/20, validator PASS) confirmed sound and UNCHANGED.** Evidence:
+`reports/GLP1R two-folder reach validation 2026-10-19.md`, `data/candidates/v6_twofolder_reach_2026-10-19.csv`
+(+ `_foldset_2026-10-19.csv`). `/code-review` found 0 correctness bugs; its 2 provenance/hygiene nits were fixed
+(derived tables persisted to the tracked path above; `stress_liab.json` + `data/af2ig_targets/` gitignored).
+Upload remains USER-GATED.

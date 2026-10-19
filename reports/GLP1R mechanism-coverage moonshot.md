@@ -92,14 +92,23 @@ flagged are *surfaced-only* fields in `scripts/stress_liab.py`, not gated by `n_
 that the two v6 additions' **structural** novelty was unmeasured — now closed (see the "Structural novelty"
 bullet above; `glp1r_22_ago` 4-of-4, `glp1r_21_ago` 3-of-4, within the ≥3/4 gate, no forced swap).
 
-**Optional Wave-B (user-approved) → executed 2026-10-17 → NEGATIVE.** The idle-window watcher caught a window
-(the foreign job cleared ~16:32Z) and ran RFd3 motif-extension off des_0039/des_0047 on GPUs 0–3: 192 backbones,
-`rc=0`. All 192 are **non-physical** — the fixed `A1-37`/`A1-45` motif was not anchored: chain-A Rg ~82–93 Å (vs
-the seed motif's compact 9.5 Å) with ~150 Å intra-chain discontinuities in every design, while the receptor folded
-correctly (Rg 20.5 Å). Confirmed in the raw cif (not a conversion artifact). Likely cause: fast-mode +
-`infer_ori_strategy:hotspots` + an atomworks chain-R polymer/non-polymer split failed to hold the motif rigid
-(Wave-A succeeded because it was *de-novo*, not motif-scaffolded). Not folded (non-physical input). **Dispositive
-point: even a correctly-anchored motif-extension of des_0039/des_0047 is a cousin of the existing fillers
-glp1r_21/22 — no diversity gain — and "higher co-fold confidence" is a known folder-pessimism artifact, not an
-agonism signal; so Wave-B cannot improve the portfolio regardless of generation quality.** Wave-B is CLOSED. v6
+**Optional Wave-B (user-approved) → executed 2026-10-17, re-worked 2026-10-18/19 on "try the fix anyway" →
+NEGATIVE (CLOSED).** RFd3 motif-extension off des_0039/des_0047 (contig `8-14,A1-37,/0,R140-338`). The first run's
+192 non-physical backbones (chain-A Rg ~82–93 Å, ~150 Å breaks) were traced to the `infer_ori_strategy:hotspots`
+NaN-origin bug and **FIXED** by stripping HETATM/waters from the seed + dropping `infer_ori_strategy`: the fixed
+motif then anchors perfectly (last-37 Rg 9.4 Å = seed; receptor Rg 20.5 Å; contig verified in-log `L=249` =
+13 grown + 37 motif + 199 receptor, no chain-split). **But a deeper wall remains:** the grown 13-residue extension
+never forms a connected chain or bonds to the held motif — grown→motif junction 12–120 Å (a closed peptide junction
+is ≈3.8 Å), extension internally exploded (CA–CA 30–120 Å) — reproducibly across the full sweep: no-realign
+(≈frac 0.0), `allow_realignment=true` at frac 0.5 and frac 1.0, under BOTH aggressive (step_scale=3) and DEFAULT
+(step_scale=1.5) sampler dynamics (the step-scale control refuted the "aggressive dynamics" confound). Enabling
+realignment first required a local float32 autocast-disable patch to the kit's `foundry/utils/alignment.py`
+(cu130 has no bf16 svd/det kernels and the bf16 AMP autocast re-demotes the Kabsch matmuls) — local-only,
+gitignored, strictly a correctness fix; realignment then ran 8/8 `rc=0`, so the extension failure is a real
+generation failure, not a crash artifact. Likely cause: a 37-res fixed motif is 74% of the chain and RFd3 will not
+coherently diffuse a small extension welded onto a large held motif (de-novo generation on the same hotspots worked
+— that is how the v6 fillers were made; only motif-scaffolding of a near-complete binder breaks). **Dispositive
+point (unchanged): even a perfectly-formed motif-extension of des_0039/des_0047 shares their validated backbone →
+a cousin of fillers glp1r_21/22, no diversity gain, and co-fold "confidence" is folder-pessimism not an agonism
+signal; so Wave-B cannot improve the portfolio regardless of generation quality.** Wave-B is CLOSED. v6
 (`398bfb30`) and the v5c fallback (`61c2d9e4`) are unchanged; upload USER-GATED.

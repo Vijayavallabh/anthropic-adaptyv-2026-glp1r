@@ -164,3 +164,26 @@ Regular commits/pushes to the existing private repo are the normal checkpoint wo
   folder pessimism, not agonism), so Wave-B cannot improve the portfolio → CLOSED. Fix hypothesis if ever
   revisited: rebuild the seed without HETATM in chain R, drop `infer_ori_strategy:hotspots`, verify the dialect-2
   fixed-motif contig, and use standard (not fast) mode. **v6 unchanged; no agonism claim.**
+
+## 2026-10-18/19 — Wave-B "try the fix anyway" (owner-instructed) → still NEGATIVE, now mechanistically characterized → CLOSED
+
+- Owner said **"try the fix anyway"** (overriding the cousin-value objection). Ran the full documented fix + beyond.
+- **Barrier 1 motif-anchoring = FIXED (fix's central claim confirmed).** Stripping HETATM/waters from the seed +
+  dropping `infer_ori_strategy:hotspots` (the NaN-origin bug) anchors the fixed motif perfectly: last-37 Rg 9.4 Å
+  = seed, receptor Rg 20.5 Å, contig verified in-log `L=249` = 13 grown + 37 motif + 199 receptor. `--mode exact`.
+- **Barrier 2 extension-closure = NEGATIVE (the real wall).** The grown 13-res extension never forms a connected
+  chain or bonds to the motif: junction 12–120 Å (closed ≈3.8 Å), extension internally exploded (CA–CA 30–120 Å),
+  reproducibly across the FULL sweep — no-realign (≈frac 0.0), `allow_realignment=true` frac 0.5 & 1.0, both
+  aggressive (step_scale=3) and default (1.5) dynamics (step-scale control refuted the confound). Likely cause: a
+  37-res fixed motif = 74% of the chain; RFd3 won't coherently diffuse a small extension welded to a large held motif.
+- **bf16 sub-barrier = SOLVED.** Enabling realignment crashed on cu130 (no bf16 svd/det kernels; bf16 AMP autocast
+  re-demotes the Kabsch matmuls). Local float32 **autocast-disable patch** to the TNF kit env's
+  `anthropic-adaptyv-2026-tnf/envs/uplifting-rfd3-kit/.../foundry/utils/alignment.py` (`weighted_rigid_align`).
+  **LOCAL-ONLY, gitignored (TNF `envs/`), never staged; strictly a correctness fix (float32 Kabsch).** Kept (not
+  reverted) — it only makes `weighted_rigid_align` float32, safe for all callers; revert = restore the stock bf16
+  block if pristine vendored code is wanted. Lessons: `[[lesson-rfd3-motif-extension-not-anchored]]`,
+  `[[env-bf16-autocast-demotes-linalg]]`. Scripts in `scratchpad/.../waveB/` (`wave_b_realign_*.sh`,
+  `ca_gate.py`, `diag_split.py`, `convert_ab.py`, `analyze_realignexact.sh`).
+- **Wave-B remains CLOSED; no GPU work pending.** v6 (`398bfb30`) and v5c (`61c2d9e4`) UNCHANGED; upload USER-GATED.
+- GPU landscape 2026-10-19: foreign vLLM (2×~75 GB) + `mmbu` training (~64 GB) now hold GPUs 0–6 persistently;
+  free slot cycles between GPU 3 and GPU 7 (grab whichever reads 0/0; idle-guard protects).

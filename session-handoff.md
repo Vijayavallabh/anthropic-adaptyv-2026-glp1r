@@ -263,3 +263,11 @@ first". The one genuinely-new on-mechanism lever — **active-state *generation*
   `glp1r_20_bind`/ecd_des_8_7 (poly-Ala run 20, the forced-floor POLYRUN) — **recommend KEEP** (only structurally-novel
   binder; novelty↔expression trade low-EV/sign-uncertain; owner can swap → ecd_des_2_4 = v6c on request). Evidence
   `data/candidates/v6b_production_viability_2026-10-19.csv`. **v6b UNCHANGED.**
+- **2026-10-19e owner "go ahead" → v6c built + ordering recommendation.** (A) **v6c** = v6b with binder slot
+  glp1r_20 `ecd_des_8_7`→`ecd_des_18_5` (`submissions/glp1r_track3_v6c.csv`, md5 `643f3fe6`, PASS 20/0/0, diff vs v6b
+  = one row). Fixes poly-Ala (run 20→5) BUT the full trade is net-negative: ecd_des_8_7 is the 2nd-strongest (pae
+  7.03) AND only structurally-novel (maxTM 0.705) binder; ecd_des_18_5 is weaker (pae 9.55) + common (0.873).
+  → **v6b composition still recommended; v6c ready if owner weights expression.** (B) **Ordering (recommended):**
+  prize-tier grouping `01 02 03 04 05 06 07 08 09 10 12 13 14 15 16 21 22 | 18 19 20` (all agonism before the 3
+  binders; current order has 21/22 after the binders). Do NOT order within the agonism arm (reach≠agonism = firewall).
+  Materialized at the user-gated upload once composition is locked. **PICK = v6b; v6c = expression-weighted alt.**

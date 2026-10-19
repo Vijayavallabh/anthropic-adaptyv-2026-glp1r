@@ -106,6 +106,25 @@ reporter, so solubility/expression is a first-order "gets-a-shot" axis.
   helical bundles usually express; don't trade a verified novelty asset for a speculative expression gain). Owner can
   swap ecd_des_8_7 → ecd_des_2_4 (→ v6c) on request. **v6b (`32819e6f`) UNCHANGED; no agonism claim.**
 
+### 2026-10-19e — "go ahead" on the two optional moves → v6c built (binder swap) + ordering recommendation; v6b still recommended
+Owner said "go ahead" on the two optional owner-gated moves. Executed:
+- **Binder swap → v6c (built, validated, viability-confirmed; NOT adopted).** `submissions/glp1r_track3_v6c.csv`
+  md5 `643f3fe6`, validator PASS 20/0/0, diff vs v6b = one row. glp1r_20_bind: `ecd_des_8_7` → `ecd_des_18_5`
+  (distinct backbone des_18 — NOT a cousin of glp1r_19's des_2; ecd_des_2_4 excluded for that reason). Viability
+  fixed: poly-run 20→5, ch_margin −0.205→−0.034, fusion cChM −0.118→−0.026. **HONEST FULL TRADE surfaced on build:**
+  ecd_des_8_7 is simultaneously the 2nd-strongest binder (pae 7.03) AND the ONLY structurally-novel binder
+  (maxTM 0.705); every clean distinct-backbone alternative costs BOTH binding and novelty (ecd_des_18_5 pae 9.55
+  borderline-<10, maxTM 0.873 common). So the swap trades binding strength + the portfolio's only novel binder fold
+  for an uncertain expression gain (Ala-faced helical bundles often express fine), on an antagonist-leaning hedge
+  slot — net-negative on 2 of 3 axes. Eligibility is intact either way (all binders sequence-novel). →
+  **Recommendation stands: v6b composition (keep ecd_des_8_7); v6c is ready if the owner weights expression.**
+- **Ordering (firewall-clean tidy):** recommend prize-tier grouping — all 17 agonism designs first, the 3
+  antagonist-leaning ECD binders last (current order has glp1r_21/22 agonism AFTER the binders). Do NOT order within
+  the agonism arm by reach/engagement (that would fake an agonism-confidence signal — firewall). Recommended order:
+  `01 02 03 04 05 06 07 08 09 10 12 13 14 15 16 21 22 | 18 19 20`. Trivial permutation; materialized at upload once
+  composition is locked.
+**v6b (`32819e6f`) remains the recommended PICK; v6c (`643f3fe6`) is the expression-weighted alternative. Upload USER-GATED.**
+
 ## Session 2026-10-16 — brutal stress test → v5c confirmed; mechanism-coverage moonshot → **v6 adopted**; Track-C disulfide → negative
 
 Owner: "brutally stress-test every design … produce the best 20 that dominate at all costs" then "what more

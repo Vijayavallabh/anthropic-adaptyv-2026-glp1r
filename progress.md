@@ -144,6 +144,14 @@ remaining legitimate levers to completion:
   fishing). "At all costs" = maximal LEGITIMATE effort.
 **FINAL = `glp1r_track3_v6b_ranked.csv` (md5 `1571a3d4`), upload-ready; v6b `398bfb30`→`32819e6f`, v6c alt `643f3fe6`.
 The only remaining action is the owner's USER-GATED upload.**
+- **Rationale fact-checked (side-agent flag → "stand behind every claim"):** audited every claim in
+  `docs/SUBMISSION_RATIONALE_v6b.md` against the committed data. **Corrected one overclaim** ("≤30% sequence id" →
+  the accurate **coverage-gated** rule: flagged only if >30% id AND ≥50% coverage; several designs carry higher
+  *local* id, up to ~67%, at <50% coverage — all eligible). Tightened provenance (added ESM-2; model-weight
+  framing: no AF3/ESM-3/ESMC). Softened a calibration phrasing ("≈liraglutide" → "within native-control band").
+  **PubMed-verified the load-bearing Baker *Nature* 2026 citation**: DOI 10.1038/s41586-026-10656-8 ↔ PMID 42168559
+  (Muratspahić…Norn & Baker, *Nature* 656:1044–1053); the abstract confirms class-A agonists / class-B (incl. GLP1R)
+  antagonists. The rationale now stands behind every claim.
 
 ## Session 2026-10-16 — brutal stress test → v5c confirmed; mechanism-coverage moonshot → **v6 adopted**; Track-C disulfide → negative
 

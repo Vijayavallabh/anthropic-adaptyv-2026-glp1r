@@ -662,3 +662,48 @@ predicted folds (Sγ–Sγ 2.83 Å / 26.3 Å, verified); (d) novelty — longest
 3 residues (verified; not grafted, no GLP-1 His7 signature); (e) trimmed the "no instructions" meta-line. Baker
 *Nature* 2026 citation RE-VERIFIED via PubMed (PMID 42168559 ↔ DOI 10.1038/s41586-026-10656-8). Commits `7373993`
 (reorder) + the audit-response. Upload USER-GATED; no GPU fishing (re-score of existing co-folds only).
+
+## 2026-10-20 — un-submitted-pool re-mine → ONE robust reacher (rm_0079) → owner-approved swap → FINAL = v7
+
+Owner ("best 20 even if it replaces nearly all of our submission, at all costs" + AskUserQuestion "re-mine first,
+then decide"): re-mined the un-submitted de-novo sequence pool with sharper activation-core filters. In-mandate
+throughout (scoring EXISTING de-novo sequences; no new generation, no gated env setup; idle-GPU windows; never
+clobbered a foreign job). Scoring envs: Boltz-2 2.2.1 = `sepiq-2026-challenge/.venv-boltz` + `$HOME/.boltz`;
+Chai-1 = `.venv-chai` + `CHAI_DOWNLOADS_DIR=/home/prachh/v/chai_downloads`. Chai parallelism DEADLOCKS on a shared
+model-load lock (8-way and 4-way-isolated both hung at 0% util) → run Chai SEQUENTIAL on gpu0 (proven reliable).
+
+**Wave-1 — 366 peptide-pool sequences, Boltz-2 co-fold + score** (`iface_score` constants; central-polar
+microswitch {190,240,363,364,394}; numbering control glp1r_10 reproduced R299 + iPAE 2.43): **135 reach R299**, 99
+contact ≥2 central-polar. 60 strongest → Chai 2-folder confirmation.
+
+**2-folder consensus (Chai-1 on all 60):** the result was a NEGATIVE that validates the incumbent selection. Boltz
+and Chai interface confidence DIVERGE for nearly all candidates (Boltz iPAE 2.6–4 "confident" vs Chai 7–16
+"garbage", ipTM 0.95 vs 0.2–0.5) — the folder-artifact signature the 2-folder bar exists to catch (the same wall
+BoltzGen's deep-inserters died on, [[lesson-boltzgen-deep-insertion-fails-2folder]]). 28 reach R299 geometrically in
+both, but *confident in both* is rare. Only **rm_0079** (PepGLAD, 15aa) showed native-comparable Chai iPAE (4.16 vs
+native GLP-1 4.49).
+
+**Multi-seed confirmation (9 R299-both + Boltz-confident candidates, 4 seeds × both folders — the exact bar the
+incumbents cleared, glp1r_10 was 4/4):** EXACTLY ONE survivor.
+- **rm_0079 = ROBUST-2F:** Chai **4/4** seeds dock R299 (best iPAE 4.16, median 4.17), Boltz **3/4** dock (best 3.2,
+  median 3.77), canonical ipSAE 0.799 (ties glp1r_04 0.764, below glp1r_10 0.893), ipTM 0.961/0.712, central-polar
+  **{190,364} in every Chai seed**. Developability: 0 Cys, 15aa, gravy −0.6, longest run 2, de-novo (≤2aa incretin
+  overlap, no His7 signature). It carries the BEST Chai-side interface confidence of ANY portfolio reacher
+  (glp1r_04 4.63, glp1r_10 7.0, glp1r_21 11.22, glp1r_22 19.73).
+- The other 8 (rm_0254/0138/0158/0092/0032/0004/0013/0190) reproduced the Boltz-confident/Chai-poor artifact
+  (Chai best iPAE 5.7–9.1) and were rejected; rm_0190 failed outright (0/4 Chai dock). A single-seed win can be a
+  confound ([[lesson-seed-stable-win-can-be-a-confound]]) — multi-seed is why only rm_0079 stands.
+
+**Owner-gated composition change (AskUserQuestion → "Promote rm_0079 to top tier, drop glp1r_15"):** rm_0079 enters
+as `glp1r_23_ago` at **rank 4** (with the robust reachers); weakest incumbent `glp1r_15_ago` (rank 17; PepGLAD;
+ipSAE 0.012, Boltz iPAE 12.85, Chai 16.1, 2 Cys, not a both-fold reacher — dead weight) removed. SAME PepGLAD
+lineage in and out → NO lineage/epitope diversity loss; strict Pareto improvement on every necessary-condition axis
++ developability. Built FROM the bytes of v6b_ranked2 (one swap; all 18 other sequences byte-identical; binders
+18–20 unchanged). FINAL = `submissions/glp1r_track3_v7.csv` (md5 `9ee8df5b`, validator PASS 20/0/0) +
+`docs/SUBMISSION_RATIONALE_v7.md`. Evidence: `data/candidates/v7_necessary_conditions_2026-10-20.csv` +
+`data/candidates/remine_confirmation_2026-10-20.csv`. v6b_ranked2 (`976e7e8e`) kept byte-frozen as fallback.
+
+FIREWALL INTACT — reach / central-polar contact / ipSAE are NECESSARY conditions only, never agonism ranks; agonism
+remains unprovable in-silico and only the wet cAMP/SEAP assay is the verdict. The re-mine delivered ONE honest
+upgrade, not the wholesale replacement "at all costs" might suggest — manufacturing more swaps than the data support
+would violate the firewall. Upload remains USER-GATED (owner's click only).

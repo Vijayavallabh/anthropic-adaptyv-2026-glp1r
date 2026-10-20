@@ -7,9 +7,10 @@ best-first ranking. Validator: `rows=19 errors=0 warnings=0`, exit 0 (Track 3). 
 submission's byte identity (stable across the packaging commit `c69dc93` and this dossier's later commit; verify by
 bytes, not by commit). Private repo. **Upload is USER-GATED — not uploaded.**
 
-> **CURRENT STATE (2026-10-20):** the final upload artifact is **`submissions/glp1r_track3_v6b_ranked2.csv`**
-> (md5 `976e7e8e`, 20 designs, validator PASS 20/0/0) — the **v6b** composition in a **cap-aware, ipSAE-informed
-> order**. The published selection prompt (`…/anthropic-adaptyv-2026/selection`) caps designs-per-submission at 10,
+> **CURRENT STATE (2026-10-20):** the final upload artifact is **`submissions/glp1r_track3_v7.csv`**
+> (md5 `9ee8df5b`, 20 designs, validator PASS 20/0/0) — the **v6b** composition with one owner-approved swap
+> (glp1r_15 → `glp1r_23_ago`/rm_0079, a re-mined robust 2-folder R299 reacher promoted to rank 4) in a
+> **cap-aware, ipSAE-informed order**. The published selection prompt (`…/anthropic-adaptyv-2026/selection`) caps designs-per-submission at 10,
 > taken from the top of the row order; the new order front-loads all four 2-folder R299 reachers + all four agonism
 > lineages into the top 10 (rank-1 = glp1r_10; binders 18–20 hedge), ranked by measured necessary conditions
 > (R299 reach, then best-pose ipSAE) + diversity — never agonism (firewall). ipSAE/pLDDT computed for all 20

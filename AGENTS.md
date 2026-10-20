@@ -78,8 +78,9 @@ for Track 3, and the command + key output are recorded as evidence. Never claim 
   v1 on 2026-10-13 and again for the 20-row v2 incl. slot-20 on 2026-10-14). Builders/validator now emit `single_chain` (owner directive 2026-10-14; portal accepts both values). Low-risk.
 - **The upload portal has NO novelty score** — it only runs a format/parse gate returning per-row "Single chain /
   Passed". Novelty is locked up-front with the local screens (coverage-gated id, FoldSeek structural TM, graft LCS);
-  there is no portal recheck. **Current FINAL = `submissions/glp1r_track3_v6b_ranked2.csv`** (md5 `976e7e8e`, PASS
-  20/0/0): the v6b composition in a **cap-aware, ipSAE-informed row order** — the published selection prompt
+  there is no portal recheck. **Current FINAL = `submissions/glp1r_track3_v7.csv`** (md5 `9ee8df5b`, PASS
+  20/0/0): the v6b composition with one owner-approved swap (glp1r_15 → `glp1r_23_ago`/rm_0079, a re-mined robust
+  2-folder R299 reacher promoted to rank 4) in a **cap-aware, ipSAE-informed row order** — the published selection prompt
   (`…/anthropic-adaptyv-2026/selection`) takes ≤10 designs/submission from the top of the row order, so the top 10
   front-loads all four 2-folder R299 reachers + all four agonism lineages (rank-1 = `glp1r_10`; binders 18–20 hedge),
   ordered by measured necessary conditions (R299 reach, then best-pose ipSAE) + diversity, **never agonism**

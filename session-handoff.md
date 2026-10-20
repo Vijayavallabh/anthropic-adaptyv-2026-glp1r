@@ -1,6 +1,6 @@
 # session handoff
 
-## Where things stand (2026-10-20 — FINAL upload artifact = `submissions/glp1r_track3_v6b_ranked2.csv` (md5 `976e7e8e`, v6b composition in **cap-aware ipSAE-informed order**, PASS 20/0/0) + rationale `docs/SUBMISSION_RATIONALE_v6b.md`; supersedes v6b_ranked `1571a3d4` (prize-tier, kept as fallback); deeper fallbacks v6b `32819e6f` / v6 `398bfb30` / v6c `643f3fe6`; upload USER-GATED. Driver = the published selection prompt: ≤10 designs/submission taken from the top of our row order → the reorder front-loads all 4 R299 reachers + all 4 lineages into the top 10. See the 2026-10-20 section at the bottom + [[adaptyv-glp1r-selection-rubric]].)
+## Where things stand (2026-10-20 — FINAL upload artifact = `submissions/glp1r_track3_v7.csv` (md5 `9ee8df5b`, PASS 20/0/0) + rationale `docs/SUBMISSION_RATIONALE_v7.md` = v6b composition with ONE owner-approved swap (weakest member glp1r_15 → `glp1r_23_ago`/rm_0079, a re-mined **robust 2-folder R299 reacher** confirmed at 4 seeds/folder, promoted to rank 4); supersedes v6b_ranked2 `976e7e8e` + v6b_ranked `1571a3d4` (both kept as fallbacks); deeper fallbacks v6b `32819e6f` / v6 `398bfb30` / v6c `643f3fe6`; upload USER-GATED. Driver = the published selection prompt: ≤10 designs/submission taken from the top of our row order → the order front-loads the 4 robust R299 reachers (glp1r_10/21/04/23) + all 4 lineages into the top 10. See the 2026-10-20 (v7 re-mine) section at the bottom + [[adaptyv-glp1r-selection-rubric]].)
 
 **Pipeline F0–F9 COMPLETE; v5c survived a brutal reject-everything audit; a mechanism-coverage moonshot then
 produced v6, which the owner ADOPTED as the recommended pick (2026-10-16).** **The remaining action is the
@@ -105,10 +105,11 @@ re-confirmed, no in-silico re-ranking is valid. **v6 UNCHANGED.** Evidence:
 
 ## Do next
 
-1. **Upload the FINAL package — `submissions/glp1r_track3_v6b_ranked2.csv`** (md5 `976e7e8e`, PASS 20/0/0) +
-   supporting rationale `docs/SUBMISSION_RATIONALE_v6b.md`. This is the v6b composition (recommended) in the
-   **cap-aware ipSAE-informed order** (all 4 R299 reachers + all 4 agonism lineages in the top 10; rank-1 = glp1r_10;
-   binders 18–20 hedge) — built because the published selection prompt caps designs/submission at 10, taken from the
+1. **Upload the FINAL package — `submissions/glp1r_track3_v7.csv`** (md5 `9ee8df5b`, PASS 20/0/0) +
+   supporting rationale `docs/SUBMISSION_RATIONALE_v7.md`. This is the v6b composition with ONE owner-approved swap
+   (glp1r_15 → `glp1r_23_ago`/rm_0079, a re-mined robust 2-folder R299 reacher at rank 4) in the
+   **cap-aware ipSAE-informed order** (the 4 robust R299 reachers glp1r_10/21/04/23 + all 4 agonism lineages in the
+   top 10; rank-1 = glp1r_10; binders 18–20 hedge) — built because the published selection prompt caps designs/submission at 10, taken from the
    top of our row order. The upload click is **USER-GATED** — never auto-upload. Fallbacks: `v6b_ranked` prize-tier
    (`1571a3d4`), `v6b` unordered (`32819e6f`), `v6` (`398bfb30`), `v6c` (`643f3fe6`), `v5c`/`v1` deeper.
 2. **No submission change is pending.** v5c is fully verified (validator PASS, 17/3/0, byte-regression-safe,
@@ -309,6 +310,34 @@ Three owner-approved moves executed (all firewall-clean; **same 20 sequences**, 
    (vestibule/R299 agonism arm; ECD groove hedge) with evidence linked; §5 presents ipSAE (judge's own screen) + the
    2-folder R299 reach calibration; §6 the cap-aware ordering principle + refreshed per-design table.
 
-**FINAL = `glp1r_track3_v6b_ranked2.csv` (md5 `976e7e8e`)** supersedes v6b_ranked (`1571a3d4`, prize-tier; kept as a
-fallback). Upload remains **USER-GATED**. No GPU fishing — ipSAE was a re-score of co-folds we already had. ipsae.py
-fetched from DunbrackLab/IPSAE, read in full + safety-scanned (no network/shell/exec) before running with `-I`.
+**FINAL (as of this section) = `glp1r_track3_v6b_ranked2.csv` (md5 `976e7e8e`)** supersedes v6b_ranked (`1571a3d4`,
+prize-tier; kept as a fallback). Upload remains **USER-GATED**. No GPU fishing — ipSAE was a re-score of co-folds we
+already had. ipsae.py fetched from DunbrackLab/IPSAE, read in full + safety-scanned (no network/shell/exec) before
+running with `-I`. *(Superseded 2026-10-20 by the v7 re-mine below.)*
+
+## 2026-10-20 (v7 re-mine) — un-submitted-pool re-mine → ONE robust reacher → owner-approved swap → FINAL = v7
+
+Owner directive ("best 20 even if it replaces nearly all, at all costs" + "re-mine first, then decide"): re-mined the
+un-submitted de-novo pool with sharper activation-core filters, fully in-mandate (scoring existing de-novo seqs; no
+new generation, no gated env setup; idle-GPU windows only; Chai run SEQUENTIAL on gpu0 — parallel Chai deadlocks on a
+shared model-load lock).
+
+- **Wave-1 (366 peptide-pool seqs), Boltz-2 co-fold + score:** 135 reach R299, 99 contact ≥2 central-polar
+  (activation microswitch {190,240,363,364,394}); 60 strongest taken to Chai.
+- **2-folder consensus (Chai-1 on all 60):** dominant signal was a NEGATIVE that VALIDATES the incumbents — Boltz and
+  Chai interface confidence DIVERGE for almost all (Boltz 2.6–4 / Chai 7–16 = the folder-artifact wall, same one
+  BoltzGen's deep-inserters died on). Only **rm_0079** showed native-comparable Chai iPAE (4.16; native GLP-1 4.49).
+- **Multi-seed confirmation (9 candidates, 4 seeds × both folders — the exact bar incumbents cleared):** EXACTLY ONE
+  survivor. **rm_0079** = ROBUST-2F — Chai 4/4 dock R299 (median iPAE 4.17), Boltz 3/4 dock (median 3.77), canonical
+  ipSAE 0.799, central-polar {190,364} in EVERY Chai seed, 0 Cys, 15aa, gravy −0.6, de-novo (≤2aa incretin overlap).
+  The other 8 reproduced the Boltz-confident/Chai-poor artifact and were rejected.
+- **Owner-gated composition decision (AskUserQuestion → "Promote rm_0079 to top tier, drop glp1r_15"):** rm_0079 →
+  `glp1r_23_ago` at **rank 4** (with robust reachers glp1r_10/21/04); weakest member glp1r_15 (ipSAE 0.012, Chai
+  16.1, 2 Cys, not-robust, SAME PepGLAD lineage) removed → NO lineage/epitope diversity loss, strict
+  necessary-condition + developability improvement. All 18 other sequences byte-identical; binders stay 18–20.
+
+**FINAL = `glp1r_track3_v7.csv` (md5 `9ee8df5b`, PASS 20/0/0)** + `docs/SUBMISSION_RATIONALE_v7.md`. Evidence:
+`data/candidates/v7_necessary_conditions_2026-10-20.csv` + `data/candidates/remine_confirmation_2026-10-20.csv` (the
+9 multi-seed candidates + verdicts). v6b_ranked2 (`976e7e8e`) kept as fallback. FIREWALL INTACT — reach /
+central-polar / ipSAE are NECESSARY conditions, never agonism ranks; only the wet cAMP/SEAP assay decides. Upload
+USER-GATED; owner's click only.

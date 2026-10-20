@@ -7,6 +7,16 @@ best-first ranking. Validator: `rows=19 errors=0 warnings=0`, exit 0 (Track 3). 
 submission's byte identity (stable across the packaging commit `c69dc93` and this dossier's later commit; verify by
 bytes, not by commit). Private repo. **Upload is USER-GATED — not uploaded.**
 
+> **CURRENT STATE (2026-10-20):** the final upload artifact is **`submissions/glp1r_track3_v6b_ranked2.csv`**
+> (md5 `976e7e8e`, 20 designs, validator PASS 20/0/0) — the **v6b** composition in a **cap-aware, ipSAE-informed
+> order**. The published selection prompt (`…/anthropic-adaptyv-2026/selection`) caps designs-per-submission at 10,
+> taken from the top of the row order; the new order front-loads all four 2-folder R299 reachers + all four agonism
+> lineages into the top 10 (rank-1 = glp1r_10; binders 18–20 hedge), ranked by measured necessary conditions
+> (R299 reach, then best-pose ipSAE) + diversity — never agonism (firewall). ipSAE/pLDDT computed for all 20
+> (`data/candidates/v6b_necessary_conditions_2026-10-20.csv`); rationale `docs/SUBMISSION_RATIONALE_v6b.md` reframed
+> as neutral data with the epitope stated. Supersedes `v6b_ranked` (`1571a3d4`, prize-tier) which is kept as a
+> fallback. Upload USER-GATED. Detail: `session-handoff.md` (2026-10-20) + [[adaptyv-glp1r-selection-rubric]].
+>
 > **CURRENT STATE (2026-10-19):** the final upload artifact is **`submissions/glp1r_track3_v6b_ranked.csv`**
 > (md5 `1571a3d4`, 20 designs, validator PASS 20/0/0) — the **v6b** composition (v6 with its one staple-dependent
 > slot de-risked to a clean linear peptide) in firewall-clean prize-tier order. See

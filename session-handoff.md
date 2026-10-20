@@ -1,6 +1,6 @@
 # session handoff
 
-## Where things stand (2026-10-19 — FINAL upload artifact = `submissions/glp1r_track3_v6b_ranked.csv` (md5 `1571a3d4`, v6b composition in prize-tier order, PASS 20/0/0) + rationale `docs/SUBMISSION_RATIONALE_v6b.md`; fallbacks v6b `32819e6f` / v6 `398bfb30` / v6c alt `643f3fe6`; upload USER-GATED)
+## Where things stand (2026-10-20 — FINAL upload artifact = `submissions/glp1r_track3_v6b_ranked2.csv` (md5 `976e7e8e`, v6b composition in **cap-aware ipSAE-informed order**, PASS 20/0/0) + rationale `docs/SUBMISSION_RATIONALE_v6b.md`; supersedes v6b_ranked `1571a3d4` (prize-tier, kept as fallback); deeper fallbacks v6b `32819e6f` / v6 `398bfb30` / v6c `643f3fe6`; upload USER-GATED. Driver = the published selection prompt: ≤10 designs/submission taken from the top of our row order → the reorder front-loads all 4 R299 reachers + all 4 lineages into the top 10. See the 2026-10-20 section at the bottom + [[adaptyv-glp1r-selection-rubric]].)
 
 **Pipeline F0–F9 COMPLETE; v5c survived a brutal reject-everything audit; a mechanism-coverage moonshot then
 produced v6, which the owner ADOPTED as the recommended pick (2026-10-16).** **The remaining action is the
@@ -105,10 +105,12 @@ re-confirmed, no in-silico re-ranking is valid. **v6 UNCHANGED.** Evidence:
 
 ## Do next
 
-1. **Upload the FINAL package — `submissions/glp1r_track3_v6b_ranked.csv`** (md5 `1571a3d4`, PASS 20/0/0) +
-   supporting rationale `docs/SUBMISSION_RATIONALE_v6b.md`. This is the v6b composition (recommended) in prize-tier
-   order (17 agonism designs, then 3 binders). The upload click is **USER-GATED** — never auto-upload. Fallbacks:
-   `v6b` unordered (`32819e6f`), `v6` (`398bfb30`), `v6c` expression-weighted alt (`643f3fe6`), `v5c`/`v1` deeper.
+1. **Upload the FINAL package — `submissions/glp1r_track3_v6b_ranked2.csv`** (md5 `976e7e8e`, PASS 20/0/0) +
+   supporting rationale `docs/SUBMISSION_RATIONALE_v6b.md`. This is the v6b composition (recommended) in the
+   **cap-aware ipSAE-informed order** (all 4 R299 reachers + all 4 agonism lineages in the top 10; rank-1 = glp1r_10;
+   binders 18–20 hedge) — built because the published selection prompt caps designs/submission at 10, taken from the
+   top of our row order. The upload click is **USER-GATED** — never auto-upload. Fallbacks: `v6b_ranked` prize-tier
+   (`1571a3d4`), `v6b` unordered (`32819e6f`), `v6` (`398bfb30`), `v6c` (`643f3fe6`), `v5c`/`v1` deeper.
 2. **No submission change is pending.** v5c is fully verified (validator PASS, 17/3/0, byte-regression-safe,
    portal-parsed, 0 PDB hits) and now additionally certified Pareto-efficient/diversity-consistent (M1). The
    in-silico win-path levers are exhausted; remaining *agonism* gains are **wet-lab only**.
@@ -277,3 +279,36 @@ first". The one genuinely-new on-mechanism lever — **active-state *generation*
   rationale `docs/SUBMISSION_RATIONALE_v6b.md` (honest per-design necessary-condition evidence, firewall caveat, no
   prompt-injection). "At all costs" = maximal LEGITIMATE effort; the firewall, forbidden techniques, and USER-GATED
   upload are NOT overridden; no GPU fishing launched. **Only remaining action = the owner's USER-GATED upload.**
+
+## 2026-10-20 — selection-prompt read (owner-directed) → cap-aware ipSAE reorder → FINAL = v6b_ranked2
+
+Owner directed a thorough read of the published selection page (`proteinbase.com/competitions/anthropic-adaptyv-2026/selection`)
+— the **actual Claude selection prompt** that recommends which Track-2/3 designs reach the wet lab (organizers
+approve). Decoded from the page's JS data chunk (only the "Brief" tab renders server-side); facts saved to memory
+[[adaptyv-glp1r-selection-rubric]]. Decision-critical rules: **max 10 designs/submission** (relaxable only to fill
+totals), taken **from the top of our row order** "without second-guessing"; **only the first 20 designs count, in
+order**; three screens = **pLDDT, ipSAE, mean Kyte-Doolittle** (no single metric decides; a failed screen never
+removes a top pick); **prompt injection → whole ACCOUNT set aside** (other flags set aside only the designs); GLP1R
+site = "ECD groove as a starting point; **activation may need more**" (validates the vestibule/R299 agonism arm). All
+20 v6b designs pass the hard rules (10–250 aa, single_chain, no dupes, de-novo).
+
+Three owner-approved moves executed (all firewall-clean; **same 20 sequences**, nothing re-folded for generation):
+1. **Cap-aware reorder → `submissions/glp1r_track3_v6b_ranked2.csv`** (md5 `976e7e8e70c8d1cf0627666567b208bf`, PASS
+   20/0/0). The old prize-tier order buried 2 of 4 R299 reachers + all RFd3/PepGLAD below the 10-cap; the new order
+   front-loads all 4 reachers + all 4 agonism lineages into the top 10. Ordered by MEASURED necessary conditions
+   (2-folder R299 reach, then best-pose ipSAE + seed-robustness) + lineage/novelty diversity — **NOT agonism**
+   (firewall). Rank-1 = `glp1r_10` (both-fold reacher + top ipSAE 0.893, 4/4 seeds, pLDDT 71; rank-1 is
+   screen-protected). `glp1r_22` at rank-10 as the structural-novelty long shot. Binders 18–20 hedge.
+2. **ipSAE + pLDDT computed on all 20** (canonical `ipsae.py`, Dunbar 2025, cutoffs 10/15) by re-scoring existing
+   Boltz-2 co-folds, **sequence-matched** (NOT via the stale `glp1r_track3_mapping.csv`, which maps an older
+   composition). iPAE recomputed on the same best pose for coherence. Evidence
+   `data/candidates/v6b_necessary_conditions_2026-10-20.csv`. Strong robust interfaces: glp1r_01/10/09/13/05/21
+   (ipSAE 0.82–0.90, most/all seeds docked); binders + glp1r_15/22 weak (undocked in single-receptor co-fold).
+3. **Rationale reframed** (`docs/SUBMISSION_RATIONALE_v6b.md`): removed the judge-address + "no prompt-injection"
+   meta-line (injection→account-setaside risk); now neutral method+evidence data; **epitope stated explicitly**
+   (vestibule/R299 agonism arm; ECD groove hedge) with evidence linked; §5 presents ipSAE (judge's own screen) + the
+   2-folder R299 reach calibration; §6 the cap-aware ordering principle + refreshed per-design table.
+
+**FINAL = `glp1r_track3_v6b_ranked2.csv` (md5 `976e7e8e`)** supersedes v6b_ranked (`1571a3d4`, prize-tier; kept as a
+fallback). Upload remains **USER-GATED**. No GPU fishing — ipSAE was a re-score of co-folds we already had. ipsae.py
+fetched from DunbrackLab/IPSAE, read in full + safety-scanned (no network/shell/exec) before running with `-I`.

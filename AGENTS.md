@@ -78,7 +78,14 @@ for Track 3, and the command + key output are recorded as evidence. Never claim 
   v1 on 2026-10-13 and again for the 20-row v2 incl. slot-20 on 2026-10-14). Builders/validator now emit `single_chain` (owner directive 2026-10-14; portal accepts both values). Low-risk.
 - **The upload portal has NO novelty score** — it only runs a format/parse gate returning per-row "Single chain /
   Passed". Novelty is locked up-front with the local screens (coverage-gated id, FoldSeek structural TM, graft LCS);
-  there is no portal recheck. Current pick **v6b** (md5 `32819e6f`, owner-approved 2026-10-19) = **v6** with its lone staple-dependent slot
+  there is no portal recheck. **Current FINAL = `submissions/glp1r_track3_v6b_ranked2.csv`** (md5 `976e7e8e`, PASS
+  20/0/0): the v6b composition in a **cap-aware, ipSAE-informed row order** — the published selection prompt
+  (`…/anthropic-adaptyv-2026/selection`) takes ≤10 designs/submission from the top of the row order, so the top 10
+  front-loads all four 2-folder R299 reachers + all four agonism lineages (rank-1 = `glp1r_10`; binders 18–20 hedge),
+  ordered by measured necessary conditions (R299 reach, then best-pose ipSAE) + diversity, **never agonism**
+  ([[adaptyv-glp1r-selection-rubric]]; `data/candidates/v6b_necessary_conditions_2026-10-20.csv`).
+  `v6b_ranked` (`1571a3d4`, prize-tier) is a fallback. The underlying v6b composition (md5 `32819e6f`,
+  owner-approved 2026-10-19) = **v6** with its lone staple-dependent slot
   (glp1r_13 = dpbss_010, Cys9–Cys13) swapped for the clean linear peptide `pglad_053` (`GHGKIAAYPWNYTA`, 0 Cys) —
   Adaptyv cell-free "linear only" expression likely won't form the staple (leaving 2 free thiols), per the
   Production-reality invariant. **v6** (md5 `398bfb30`, owner-adopted 2026-10-16; 2-folder Boltz+Chai

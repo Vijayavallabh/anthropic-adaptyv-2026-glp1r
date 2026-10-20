@@ -1,6 +1,6 @@
 # session handoff
 
-## Where things stand (2026-10-20 — FINAL upload artifact = `submissions/glp1r_track3_v7.csv` (md5 `9ee8df5b`, PASS 20/0/0) + rationale `docs/SUBMISSION_RATIONALE_v7.md` = v6b composition with ONE owner-approved swap (weakest member glp1r_15 → `glp1r_23_ago`/rm_0079, a re-mined **robust 2-folder R299 reacher** confirmed at 4 seeds/folder, promoted to rank 4); supersedes v6b_ranked2 `976e7e8e` + v6b_ranked `1571a3d4` (both kept as fallbacks); deeper fallbacks v6b `32819e6f` / v6 `398bfb30` / v6c `643f3fe6`; upload USER-GATED. Driver = the published selection prompt: ≤10 designs/submission taken from the top of our row order → the order front-loads the 4 robust R299 reachers (glp1r_10/21/04/23) + all 4 lineages into the top 10. See the 2026-10-20 (v7 re-mine) section at the bottom + [[adaptyv-glp1r-selection-rubric]].)
+## Where things stand (2026-10-20 — FINAL upload artifact = `submissions/glp1r_track3_v9.csv` (md5 `419c57ff`, PASS 20/0/0) + rationale `docs/SUBMISSION_RATIONALE_v9.md` = v6b composition with THREE owner-approved swaps: (v7) weakest glp1r_15 → `glp1r_23_ago`/rm_0079 at rank 4; (v8) weakest-remaining glp1r_22 (ipSAE 0.0, 0/2 docked, geometric-only reacher) → `glp1r_24_ago`/bg_0746 at rank 5; (v9, owner "win at all costs") weakest-remaining glp1r_03 (EvoBind, ipSAE 0.428, non-reacher) → `glp1r_25_ago`/bg_1170 at rank 6. bg_0746 + bg_1170 = TWO independent wave-2 BoltzGen architectures (Jaccard ~0.017: the length-honest 22aa outlier + the 30aa dominant-family archetype), both **robust 2-folder R299 reachers** (4/4 both folders, 4 seeds/folder). Seating both = max diverse robust reachers in the top-10 pick window (6 reachers across 5 generators) — a P(≥1 activates) coverage move, NOT an agonism rank (bg_1170's 2/5 central-polar reach is length-consistent, not a quality signal). v8 `3b7d2581` (single-swap) kept as immediate fallback; v7 `9ee8df5b`; deeper v6b_ranked2 `976e7e8e` / v6b_ranked `1571a3d4` / v6b `32819e6f` / v6 `398bfb30` / v6c `643f3fe6`; upload USER-GATED. Driver = the published selection prompt: ≤10 designs/submission taken from the top of our row order → the order front-loads all 6 robust R299 reachers (glp1r_10/21/04/23/24/25) + all lineages into the top 10. See the 2026-10-20 (v9 wave-2) section at the bottom + [[adaptyv-glp1r-selection-rubric]].)
 
 **Pipeline F0–F9 COMPLETE; v5c survived a brutal reject-everything audit; a mechanism-coverage moonshot then
 produced v6, which the owner ADOPTED as the recommended pick (2026-10-16).** **The remaining action is the
@@ -105,11 +105,13 @@ re-confirmed, no in-silico re-ranking is valid. **v6 UNCHANGED.** Evidence:
 
 ## Do next
 
-1. **Upload the FINAL package — `submissions/glp1r_track3_v7.csv`** (md5 `9ee8df5b`, PASS 20/0/0) +
-   supporting rationale `docs/SUBMISSION_RATIONALE_v7.md`. This is the v6b composition with ONE owner-approved swap
-   (glp1r_15 → `glp1r_23_ago`/rm_0079, a re-mined robust 2-folder R299 reacher at rank 4) in the
-   **cap-aware ipSAE-informed order** (the 4 robust R299 reachers glp1r_10/21/04/23 + all 4 agonism lineages in the
-   top 10; rank-1 = glp1r_10; binders 18–20 hedge) — built because the published selection prompt caps designs/submission at 10, taken from the
+1. **Upload the FINAL package — `submissions/glp1r_track3_v9.csv`** (md5 `419c57ff`, PASS 20/0/0) +
+   supporting rationale `docs/SUBMISSION_RATIONALE_v9.md`. This is the v6b composition with THREE owner-approved swaps
+   (v7: glp1r_15 → rm_0079 @4; v8: glp1r_22 → bg_0746/`glp1r_24_ago` @5; v9: glp1r_03 → bg_1170/`glp1r_25_ago` @6 —
+   two independent wave-2 BoltzGen architectures) in the
+   **cap-aware ipSAE-informed order** (all 6 robust R299 reachers glp1r_10/21/04/23/24/25 + all agonism lineages in the
+   top 10; rank-1 = glp1r_10; binders 18–20 hedge). Fallback = `glp1r_track3_v8.csv` (md5 `3b7d2581`, single-swap) if
+   two BoltzGen slots are judged too concentrated — built because the published selection prompt caps designs/submission at 10, taken from the
    top of our row order. The upload click is **USER-GATED** — never auto-upload. Fallbacks: `v6b_ranked` prize-tier
    (`1571a3d4`), `v6b` unordered (`32819e6f`), `v6` (`398bfb30`), `v6c` (`643f3fe6`), `v5c`/`v1` deeper.
 2. **No submission change is pending.** v5c is fully verified (validator PASS, 17/3/0, byte-regression-safe,
@@ -314,6 +316,36 @@ Three owner-approved moves executed (all firewall-clean; **same 20 sequences**, 
 prize-tier; kept as a fallback). Upload remains **USER-GATED**. No GPU fishing — ipSAE was a re-score of co-folds we
 already had. ipsae.py fetched from DunbrackLab/IPSAE, read in full + safety-scanned (no network/shell/exec) before
 running with `-I`. *(Superseded 2026-10-20 by the v7 re-mine below.)*
+
+## 2026-10-20 (v9 wave-2) — full BoltzGen re-mine → TWO independent robust reachers → seat both → FINAL = v9
+
+Owner ("Go ahead with optional /ultrathink", then "do whatever's required to win at all costs"): re-mined the
+**1,220 un-submitted eligible BoltzGen designs** — the complete remaining de-novo frontier — in-mandate (scoring
+existing de-novo seqs; no new generation / no env setup; Chai SEQUENTIAL on gpu0 because gpu1–7 were a FOREIGN TfR1
+BoltzGen job never clobbered).
+
+**Funnel:** 1,220 Boltz-2 co-folds → 869 reach R299 on Boltz alone (71% = over-optimistic) → 100 diverse
+Chai-escalation → 64 reach R299 in BOTH folders → **43 two-folder survivors**. A 5-agent adversarial-verification
+workflow **CONFIRMED** these are length-confounded cousins: survival 6%→71% short→long, localized to the Chai iPAE
+gate (r=−0.69; 12/12 pass at length 30 = zero discrimination at native GLP-1 length); the 43 collapse to ONE
+dominant BoltzGen motif family (93–95%). Multi-seed confirmation (4 seeds × both folders, gpu0): **bg_0746** (22aa,
+distinct outlier) and **bg_1170** (30aa, family archetype) both ROBUST-2F; bg_0877 borderline (2/4 Chai) rejected;
+rm_0079 control re-confirmed.
+
+**Two owner-gated decisions → v9 = seat BOTH.** (v8) AskUserQuestion → seat bg_0746 (`glp1r_24_ago` @ rank 5), drop
+glp1r_22 (ipSAE 0.0, 0/2 docked). Then a relayed side-agent note flagged bg_1170 robustly reaches both central-polar
+{190,364} every seed vs bg_0746's {190}; owner said "win at all costs" (delegated). Firewall-grounded call: central
+-polar count is a necessary-condition proxy (NOT agonism) and bg_1170's extra 364 is plausibly length-confounded, so
+bg_1170 was not seated *for* its cp count — but since bg_0746 and bg_1170 are **two independent architectures**
+(Jaccard ~0.017) and agonism is unrankable, P(≥1 activates) is maximized by seating both as diverse independent
+shots. (v9) seat bg_1170 (`glp1r_25_ago` @ rank 6), drop glp1r_03 (EvoBind, ipSAE 0.428, non-reacher). Both
+firewall-clean (0 Cys, ≤2aa overlap). v9 top-10 = 6 robust both-fold reachers across 5 generators.
+
+**FINAL = `glp1r_track3_v9.csv` (md5 `419c57ff`, PASS 20/0/0)** + `docs/SUBMISSION_RATIONALE_v9.md`. Evidence:
+`data/candidates/v9_necessary_conditions_2026-10-20.csv` + `wave2_confirmation_2026-10-20.csv` +
+`wave2_funnel_2026-10-20.csv`. Fallback = v8 (`3b7d2581`, single-swap bg_0746 only) if 2 BoltzGen slots judged too
+concentrated. FIREWALL INTACT — both BoltzGen seated as diverse independent shots (coverage/P(≥1)), never agonism
+ranks. Upload USER-GATED.
 
 ## 2026-10-20 (v7 re-mine) — un-submitted-pool re-mine → ONE robust reacher → owner-approved swap → FINAL = v7
 

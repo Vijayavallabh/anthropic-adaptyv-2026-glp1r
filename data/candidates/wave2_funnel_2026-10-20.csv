@@ -1,0 +1,10 @@
+stage,n,note
+boltzgen_eligible_unique,1220,"all maxcontig<=3 incretin-overlap, firewall-clean, de-duped; Boltz 8-way cofold"
+boltz_reach_R299,869,Boltz-only R299 contact (massively over-optimistic: 71%)
+chai_escalation_diverse,100,"R299+cp>=1+Boltz iPAE<=3.5, diversified <=2 per 6-residue prefix cluster"
+R299_both_folders,64,reach R299 in Boltz AND Chai (seed-0 screen)
+two_folder_survivors,43,R299_both + cp>=1 + Chai iPAE<=5.5; LENGTH-CONFOUNDED (6%@<=16aa -> 71%@27-30aa; Chai-iPAE/len r=-0.69)
+distinct_architectures,~1,collapse to ONE dominant motif family (93-95% substitution-aware); all BoltzGen
+multi_seeded,4,"bg_0746,bg_1170,bg_0877 + rm_0079 control; 4 seeds x 2 folders"
+robust_2f_new,2,"bg_0746 (adopted), bg_1170 (not adopted); bg_0877 borderline 2/4 Chai"
+adopted,1,"bg_0746 -> glp1r_24_ago @ v8 rank 5 (owner-gated approval); drop glp1r_22 (ipSAE 0.0, 0/2 docked)"

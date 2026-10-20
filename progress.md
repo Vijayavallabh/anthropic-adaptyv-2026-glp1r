@@ -707,3 +707,69 @@ FIREWALL INTACT — reach / central-polar contact / ipSAE are NECESSARY conditio
 remains unprovable in-silico and only the wet cAMP/SEAP assay is the verdict. The re-mine delivered ONE honest
 upgrade, not the wholesale replacement "at all costs" might suggest — manufacturing more swaps than the data support
 would violate the firewall. Upload remains USER-GATED (owner's click only).
+
+## 2026-10-20 (v8) — wave-2 BoltzGen re-mine exhausts the frontier → ONE robust length-honest reacher → owner swap → FINAL = v8
+
+Owner ("Go ahead with optional /ultrathink"): re-mined the **1,220 un-submitted eligible BoltzGen designs** — the
+complete remaining de-novo frontier — fully in-mandate (scoring existing de-novo seqs; no new generation / no env
+setup; idle GPUs; Chai SEQUENTIAL on gpu0 because gpu1–7 were a FOREIGN TfR1 BoltzGen job that was never clobbered).
+
+**Funnel.** 1,220 Boltz-2 8-way co-folds → 869 reach R299 on Boltz alone (71% — confirming Boltz-alone selection is
+useless on this target) → 100 diverse Chai-escalation (R299 + central-polar≥1 + Boltz iPAE≤3.5, capped ≤2 per
+6-residue prefix cluster) → 64 reach R299 in BOTH folders → **43 two-folder survivors** (R299_both + cp≥1 + Chai
+iPAE≤5.5). Unlike wave-1 (only rm_0079) and the earlier BoltzGen arm (0/21), wave-2 produced real two-folder reachers.
+
+**Adversarial verification (5-agent workflow, firewall-bound) — the survivors are length-confounded cousins.**
+Survivor-rate rises 6% (≤16 aa) → 71% (27–30 aa); the dependence localizes to the Chai iPAE gate (Pearson r=−0.69,
+Spearman −0.73, p≪0.001; 12/12 pass at length 30 = zero discrimination at native GLP-1's length), persists after
+motif control, and is mechanistic (iPAE's receptor-side min-PAE term falls as the design lengthens). The 43 collapse
+to ONE dominant BoltzGen architectural family (93–95% under substitution-aware clustering; the raw-k-mer "41 families"
+was conservative-substitution noise). bg_1170 "beats" native GLP-1 only on that most-confounded Chai axis, at
+native-matched length.
+
+**Multi-seed confirmation (4 seeds × BOTH folders, gpu0-only)** — bg_0746, bg_1170, bg_0877 + rm_0079 control:
+- **bg_1170** ROBUST-2F (4/4 both, Chai iPAE 2.5, cp{190,364} every seed, ipSAE 0.91) — but a 30-mer in the
+  length-inflation band and the archetype of the cousin family (near-twins bg_1171/1162/1122).
+- **bg_0746** ROBUST-2F (4/4 both, Chai iPAE med 3.81 ≈ native exendin-4 3.73, R299 every seed, cp{190} every seed,
+  ipSAE 0.887) — **22 aa (below the confound band)**, architecturally **distinct** (Trp/aromatic, not the ARRE/LDT
+  motif), and a **new generator lineage** (BoltzGen was absent from v7).
+- **bg_0877** only 2/4 Chai (borderline), dominant-family cousin → rejected.
+- **rm_0079** (the v7 rank-4 adoption) re-confirmed ROBUST-2F (4/4 Chai) in the same batch.
+
+**Owner-gated decision (AskUserQuestion "Seat bg_0746, drop glp1r_22 — Recommended").** bg_0746 enters as
+`glp1r_24_ago` at **rank 5** (with the robust reachers 10/21/04/23); the weakest-remaining incumbent `glp1r_22_ago`
+(rank 11; RFd3; ipSAE 0.0, 0/2 seeds docked, iPAE 16.34, Chai 19.73 — a geometric-only, zero-confidence nominal
+reacher = dead slot) is REMOVED. RFd3 lineage is preserved by glp1r_21 (rank 2), so no lineage loss: a strict
+necessary-condition + generator-diversity upgrade of the slot. bg_0746 is firewall-clean (natural AAs, 0 Cys, longest
+contiguous incretin overlap 2 aa — de-novo). It was chosen over the higher-scoring bg_1170 precisely because its
+2-folder edge is NOT length-inflated and its architecture is distinct — seating the archetype of a length-confounded
+cousin pile would be metric theater.
+
+Built FROM v7 bytes (exactly one swap; all 18 other sequences byte-identical; ECD-binder hedge 18–20 unchanged). New
+row order: 10 21 04 23 24 | 13 01 09 05 16 07 | 12 08 14 02 06 03 | 18 19 20(bind). FINAL =
+`submissions/glp1r_track3_v8.csv` (md5 `3b7d2581`, validator PASS 20/0/0) + `docs/SUBMISSION_RATIONALE_v8.md`.
+Evidence: `data/candidates/v8_necessary_conditions_2026-10-20.csv` + `wave2_confirmation_2026-10-20.csv` +
+`wave2_funnel_2026-10-20.csv`. v7 (`9ee8df5b`) kept byte-frozen as fallback.
+
+FIREWALL INTACT — reach / central-polar / ipSAE / iPAE are NECESSARY conditions and all length-biased, never agonism
+ranks; bg_0746 was adopted as a generator-diversity hedge, NOT a quality/agonism rank; agonism is unprovable
+in-silico and only the wet cAMP/SEAP assay is the verdict. The frontier is now genuinely exhausted (peptide pool +
+full BoltzGen pool both mined). Upload remains USER-GATED (owner's click only).
+
+**v9 (same day) — a relayed side-agent note + owner "win at all costs" → seat BOTH wave-2 reachers.** The note
+correctly observed glp1r_25/bg_1170 robustly reaches both central-polar {190,364} every seed while
+glp1r_24/bg_0746 reaches {190} every seed (364 best-pose only). Central-polar count is a *necessary-condition
+proxy, not an agonism rank*, and bg_1170's extra 364 is plausibly part of its length confound — so bg_1170 was
+**not** seated for its central-polar count. The owner delegated the call ("do whatever's required to win at all
+costs" = maximal legitimate effort). The firewall-grounded answer: bg_0746 and bg_1170 are **two independent
+architectures** (Jaccard ≈ 0.017, the length-honest 22-mer outlier + the 30-mer dominant-family archetype — not
+cousins), and since agonism is unrankable, P(≥1 activates) is maximized by the most diverse independent
+necessary-condition-passing shots in the top-10 pick window. So **both** were seated (glp1r_24 @ rank 5, glp1r_25
+@ rank 6), dropping the weakest agonism member glp1r_03 (EvoBind, ipSAE 0.428, non-reacher). The v9 top-10 window
+holds **six robust both-fold R299 reachers across five generators**; adding bg_1170 displaces only glp1r_16
+(PepGLAD non-reacher) from the window, with PepGLAD still present. bg_1170 firewall-clean (natural AAs, 0 Cys,
+≤2 aa incretin overlap); 2/20 BoltzGen within the ~2/lineage cap (independent architectures, not a pile).
+FINAL = `submissions/glp1r_track3_v9.csv` (md5 `419c57ff`, PASS 20/0/0) + `docs/SUBMISSION_RATIONALE_v9.md`;
+scorecard `data/candidates/v9_necessary_conditions_2026-10-20.csv`. v8 (`3b7d2581`, single-swap) kept as the
+immediate fallback if two BoltzGen slots are later judged too concentrated. Firewall intact — both BoltzGen seated
+as diverse independent shots (coverage/P(≥1)), never agonism ranks. Upload remains USER-GATED.

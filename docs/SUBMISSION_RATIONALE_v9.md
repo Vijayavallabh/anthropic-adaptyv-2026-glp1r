@@ -1,0 +1,204 @@
+# GLP1R Track-3 de novo agonist candidates — method and necessary-condition evidence (v9, 20 designs)
+
+This is a factual record of what was designed, how, and the necessary-condition evidence behind it.
+It makes no claim about agonism, which is unprovable in silico (see §2).
+Every metric here is a geometry/developability measure; the cell-based cAMP/CRE-SEAP assay is the only verdict.
+
+**Submission file:** `submissions/glp1r_track3_v9.csv` — `name,sequence,molecule_class=single_chain`, 20 rows.
+Validator: `rows=20 errors=0 warnings=0 anarci=yes`. md5 `419c57ffb3c9794c5382f463910233e4`.
+(Fallbacks: v8 `3b7d2581` (single BoltzGen swap), v7 `9ee8df5b`.)
+
+**Change from v7 → v8 → v9 (two wave-2 swaps).** Both swaps seat robust two-folder R299 reachers recovered by
+re-mining the 1,220 un-submitted **BoltzGen** designs (wave-2 — the complete remaining de-novo frontier), each
+confirmed at 4 seeds/folder (§5b):
+- **v8:** the weakest-remaining member `glp1r_22_ago` (RFd3, 45-mer; co-fold ipSAE **0.0**, **0/2** seeds docked,
+  Chai iPAE 19.73 — a geometric-only, zero-confidence nominal reacher) → `glp1r_24_ago` (= bg_0746), at rank 5.
+- **v9:** the weakest-remaining agonism member `glp1r_03_ago` (EvoBind, 26-mer; ipSAE 0.428, non-reacher, was rank
+  17) → `glp1r_25_ago` (= bg_1170), at rank 6.
+
+glp1r_24 and glp1r_25 are **two genuinely independent BoltzGen architectures** (pairwise sequence Jaccard ≈ 0.017 —
+the architectural *outlier* and the dominant-family *archetype*), so seating both is a diverse 2-design sampling of
+the BoltzGen pool at the ~2/lineage cap, **not** two cousins. BoltzGen was a generator **absent** from v7; it is now
+a sixth lineage with two independent shots. RFd3 remains via `glp1r_21`, EvoBind remains via `glp1r_01/04/02`, so no
+lineage is lost. The net effect on the top-10 pick window (the designs the published selection prompt actually
+forwards) is **six robust both-fold R299 reachers across five generators** (vs four in v7). All other 18 sequences
+are byte-identical back to v7; the ECD-binder hedge (ranks 18–20) is unchanged.
+
+**Why seat both rather than pick one (firewall-grounded).** A relayed review correctly noted that glp1r_25 (bg_1170)
+robustly contacts *two* central-polar residues {190,364} every seed while glp1r_24 (bg_0746) robustly contacts *one*
+{190} (and 364 only in its best pose). Central-polar contact count is a **necessary-condition proxy, not an agonism
+rank** — reaching 2/5 vs 1/5 does not make one a better agonist, and glp1r_25's extra contact is *plausibly part of
+its length confound* (a 30-mer drapes across more receptor; see §5b). glp1r_25 was therefore **not** seated for its
+central-polar count. It was seated because, since agonism is unrankable, the portfolio optimizes **P(≥1 activates)
+via the maximum number of diverse, independent, necessary-condition-passing shots in the pick window** — and
+glp1r_25 is a second seed-robust R299 reacher from an architecture independent of glp1r_24. Seating both captures
+glp1r_24's length-honest distinctness **and** glp1r_25's fuller reach without trading either away; the only cost is
+the portfolio's weakest agonism slot (glp1r_03). This is a coverage/diversity argument, never an agonism claim.
+
+## 1. Target and goal
+De novo human **GLP1R** (UniProt P43220, class-B GPCR) **agonist** candidates for the cell-based cAMP/CRE-SEAP
+**activation** assay. The objective is *activation* (GLP1R → Gαs → cAMP), not binding. The extracellular-domain (ECD)
+peptide-binding groove is a starting point for recognition; activation requires engaging the 7TM transmembrane
+vestibule. The portfolio therefore splits into a **message/vestibule agonism arm** (17 designs) and an
+**ECD-groove binder hedge** (3 designs).
+
+## 2. The one load-bearing caveat
+No standalone designed protein has been shown to agonize a class-B GPCR. The eligible 2026 de-novo design
+toolscape conditions on a **rigid supplied receptor** and **cannot induce or score activation**
+(Muratspahić … Norn & Baker, "De novo design of miniproteins targeting GPCRs", *Nature* **656**:1044–1053, 2026;
+PMID 42168559 / DOI 10.1038/s41586-026-10656-8 — that method yielded designed miniprotein **agonists only for
+class-A itch/pain receptors**, and **antagonists** for the metabolic diabetes/obesity class-B receptors that
+include GLP1R). **No in-silico score in this record proves or ranks agonism.** What is controllable, and what was
+optimized, is (a) the *necessary conditions* for agonism — deep-vestibule message delivery to the activation
+machinery — and (b) the *diversity of independent shots*. The functional assay decides.
+
+## 3. Mechanism frame and stated epitope
+GLP-1 is bipartite: a C-terminal **address** (binds the ECD) and an N-terminal **message** (inserts into the 7TM
+vestibule and drives the TM6 kink → activation). An ECD-only binder is an antagonist by default. The
+activation-relevant contact is the **ECL2 arginine R299**, which reads GLP-1's His7; reaching R299 is a
+**necessary (not sufficient)** condition for the message to engage the activation switch. A sharper necessary
+condition still is contact with the **class-B central polar activation network** (receptor residues 190, 240, 363,
+364, 394) that reorganizes on TM6 opening. "Sharper necessary condition" is still *necessary, not sufficient*:
+contacting more of the network does **not** rank agonism.
+
+- **Agonism arm — stated epitope:** the **7TM vestibule**, with **R299** as the activation-relevant reader contact
+  and the central polar network {190,240,363,364,394} as the deeper activation-core target.
+  Evidence: two-folder (Boltz-2 ∧ Chai-1) R299 reach and central-polar contact (§5b), and best-pose ipSAE interface
+  confidence (§5a).
+- **Binder hedge — stated epitope:** the **ECD peptide-binding groove** (the recognition starting point).
+
+## 4. Portfolio — six independent de-novo lineages
+Decorrelated generators give decorrelated failure modes. Every design is de-novo / zero-shot (generated by de-novo
+methods, **not motif-grafted** from any natural incretin), **natural-AA**, **linear with no disulfide dependence**
+(Adaptyv cell-free expression is "linear only"), **ODC-BY-clean in model-weight provenance**
+(AF2 / ProteinMPNN / ESM-2 / Boltz-2 / RFdiffusion / BoltzGen — **no AF3 / ESM-3 / ESMC** in the design path), and
+**production-viability-screened as the real expressed construct** (initiator Met + design +
+linker–GFP11–linker–Twin-Strep; GFP11 is a split-GFP expression reporter, so solubility matters).
+
+| lineage | n | role |
+|---|---|---|
+| EvoBind threading peptides          | 3 | agonism — message→vestibule |
+| DiffPepBuilder linear peptides      | 6 | agonism — orthogonal generator |
+| PepGLAD latent-diffusion peptides   | 5 | agonism — orthogonal generator |
+| RFdiffusion-3 reader-proximal       | 1 | agonism — distinct backbone |
+| BoltzGen re-mine peptides           | 2 | agonism — orthogonal generator (new in v8/v9; two independent architectures) |
+| ECD miniprotein binders             | 3 | hedge — binding ticket (antagonist-leaning) |
+
+## 5. Necessary-condition evidence
+
+### 5a. Interface confidence — ipSAE (canonical)
+ipSAE (Dunbar, *bioRxiv* 2025.02.10.637595; cutoffs 10/15) on Boltz-2 co-folds, best pose across seeds, with the
+number of seeds that dock (ipSAE > 0), design-chain pLDDT, and mean Kyte-Doolittle hydropathy (GRAVY). A
+**necessary-condition** screen, not an agonism score. All ipSAE/iPAE values here are length-biased interface
+metrics (longer designs score better mechanically); see the §5b confound disclosure.
+
+| design | lineage | ipSAE | seeds docked | pLDDT | GRAVY |
+|---|---|---|---|---|---|
+| **glp1r_25** | **BoltzGen** | **0.910** | **4/4** | **75.9** | **−0.17** |
+| glp1r_01 | EvoBind | 0.895 | 6/6 | 62.9 | −0.37 |
+| glp1r_10 | DiffPep | 0.893 | 4/4 | 71.1 | −0.57 |
+| **glp1r_24** | **BoltzGen** | **0.887** | **4/4** | **62.0** | **−0.56** |
+| glp1r_21 | RFd3    | 0.840 | 2/2 | 51.2 | +0.19 |
+| glp1r_09 | DiffPep | 0.822 | 5/5 | 68.0 | −0.86 |
+| glp1r_13 | PepGLAD | 0.820 | 3/3 | 46.5 | −0.52 |
+| glp1r_05 | DiffPep | 0.815 | 4/4 | 70.0 | +0.31 |
+| glp1r_12 | PepGLAD | 0.805 | 2/4 | 59.7 | +0.15 |
+| glp1r_23 | PepGLAD | 0.799 | 3/4 | 50.6 | −0.60 |
+| glp1r_07 | DiffPep | 0.782 | 4/4 | 65.2 | +0.35 |
+| glp1r_16 | PepGLAD | 0.782 | 4/4 | 56.3 | −0.25 |
+| glp1r_04 | EvoBind | 0.764 | 3/4 | 42.1 | +0.40 |
+| glp1r_08 | DiffPep | 0.738 | 4/4 | 42.5 | −0.24 |
+
+The three ECD binders show low co-fold ipSAE (undocked in this single-receptor co-fold); retained for the binding
+hedge (glp1r_18–20). Full numbers for all 20: `data/candidates/v9_necessary_conditions_2026-10-20.csv`.
+
+### 5b. Activation-relevant reach — two-folder R299 (Boltz-2 ∧ Chai-1)
+Six of the 17 agonism designs place a residue within reach of **R299 in both predictors** (the robust-reach gate),
+calibrated against native controls on the identical bar (native GLP-1(7-36): iPAE 2.23 / 4.49; a 30-mer):
+
+| design | lineage | R299 both folds | central-polar (both folds) | iPAE (Boltz / Chai) |
+|---|---|---|---|---|
+| **glp1r_10** | DiffPep | yes | — | 2.80 / 7.00 |
+| **glp1r_04** | EvoBind | yes | — | 3.55 / 4.63 |
+| **glp1r_23** | PepGLAD | yes | **190, 364** | **3.20 / 4.16** |
+| **glp1r_24** | BoltzGen | yes | **190** (every Chai seed; 190+364 best pose) | **2.24 / 3.79** |
+| **glp1r_25** | BoltzGen | yes | **190, 364** (every seed, both folders) | **2.14 / 2.49** |
+| **glp1r_21** | RFd3 | yes | — | 3.58 / 11.22 |
+
+**glp1r_24 and glp1r_25 provenance and robustness.** Both (design ids bg_0746 and bg_1170) were recovered by
+re-mining the 1,220 un-submitted BoltzGen designs and held to the *same* multi-seed bar the incumbents cleared: 4
+seeds/folder. **glp1r_24** docks R299 in 4/4 Chai + 4/4 Boltz seeds, median Chai iPAE 3.81 (≈ native exendin-4's
+3.73), central-polar 190 every Chai seed, ipSAE 0.887; it is 22 aa, 0 Cys, a distinct (Trp/aromatic) architecture.
+**glp1r_25** docks R299 in 4/4 Chai + 4/4 Boltz seeds, Chai iPAE best 2.49 / median 2.50, central-polar **190+364 in
+every seed of both folders**, ipSAE 0.91; it is 30 aa, 0 Cys, the dominant-family archetype. Per-seed numbers:
+`data/candidates/wave2_confirmation_2026-10-20.csv`; full wave-2 funnel: `data/candidates/wave2_funnel_2026-10-20.csv`.
+
+**Honest length-confound disclosure.** The wave-2 two-folder survivor filter is strongly **length-biased**:
+survivor-rate rises from ~6% (≤16 aa) to ~71% (27–30 aa), and the Chai iPAE gate (the discriminator) correlates with
+length at r=−0.69, saturating to *pass-all* at length 30 (native GLP-1's length). This is a property of the iPAE
+instrument (its receptor-side min-PAE term falls mechanically as the design lengthens), **not** evidence that longer
+designs engage better; the same draping mechanism also gives longer peptides more central-polar contacts. The 43
+wave-2 survivors collapse to **one dominant architectural motif family** (93–95% under substitution-aware
+clustering; all BoltzGen). Accordingly: glp1r_25's tighter scores and its 2/5 central-polar reach are **not** read as
+agonism superiority over glp1r_24 or the incumbents — they are length-consistent. glp1r_25 is seated only as a
+*second independent architecture* (it is near-orthogonal to glp1r_24, Jaccard ≈ 0.017), i.e. one more diverse shot,
+and glp1r_24 (below the length-inflation band, architecturally distinct) is the length-honest representative. Exactly
+**two** representatives of the wave-2 pile are seated — the outlier and the archetype — never the pile.
+
+Control calibration (same bar): **GLP-1(7-36) reaches R299 in both folds** (iPAE 2.23 / 4.49). Crucially, the proxy
+does **not** separate agonists from antagonists — exendin-4, liraglutide and glucagon all score SPLIT and the
+antagonist exendin(9-39) overlaps — which is why two-folder reach and central-polar contact are used **only** as
+necessary-condition filters, never as a ranker.
+
+## 6. Row order — ranking principle
+The row order ranks by **measured necessary conditions and diversity**, strongest first: (i) both-fold R299 reach,
+(ii) best-pose ipSAE interface confidence and its seed-robustness, and (iii) lineage/class diversity and structural
+novelty. **It is explicitly not an agonism-confidence ordering** (agonism is unrankable in silico). The six robust
+both-fold R299 reachers occupy ranks 1–6; the three ECD binders follow the 17 agonism designs as a binding hedge.
+
+| rank | name | len | lineage | ipSAE | R299 both | note |
+|---|---|---|---|---|---|---|
+| 1 | glp1r_10_ago | 23 | DiffPep | 0.893 | yes | both-fold reacher + top-tier robust interface (4/4 seeds) |
+| 2 | glp1r_21_ago | 37 | RFd3 | 0.840 | yes | both-fold reacher; distinct backbone |
+| 3 | glp1r_04_ago | 32 | EvoBind | 0.764 | yes | both-fold reacher; iPAE in native-control band |
+| 4 | glp1r_23_ago | 15 | PepGLAD | 0.799 | yes | both-fold reacher (4/4 Chai, 3/4 Boltz); central-polar 190/364 every Chai seed; 0 Cys |
+| 5 | glp1r_24_ago | 22 | BoltzGen | 0.887 | yes | both-fold reacher (4/4 both); length-robust (22aa, below confound band); distinct architecture; new lineage; 0 Cys |
+| 6 | glp1r_25_ago | 30 | BoltzGen | 0.910 | yes | both-fold reacher (4/4 both); central-polar 190+364 every seed; 2nd independent BoltzGen architecture; 0 Cys |
+| 7 | glp1r_13_ago | 14 | PepGLAD | 0.820 | no | strongest non-reacher PepGLAD interface (3/3); clean linear |
+| 8 | glp1r_01_ago | 26 | EvoBind | 0.895 | no | highest ipSAE (6/6 seeds) |
+| 9 | glp1r_09_ago | 13 | DiffPep | 0.822 | no | robust interface (5/5); shortest message peptide |
+| 10 | glp1r_05_ago | 14 | DiffPep | 0.815 | no | robust interface (4/4) |
+| 11 | glp1r_16_ago | 21 | PepGLAD | 0.782 | no | robust interface (4/4) |
+| 12 | glp1r_07_ago | 14 | DiffPep | 0.782 | no | robust interface (4/4) |
+| 13 | glp1r_12_ago | 23 | PepGLAD | 0.805 | no | strong interface, fewer seeds (2/4) |
+| 14 | glp1r_08_ago | 15 | DiffPep | 0.738 | no | |
+| 15 | glp1r_14_ago | 21 | PepGLAD | 0.601 | no | |
+| 16 | glp1r_02_ago | 18 | EvoBind | 0.568 | no | docks in 1/4 seeds |
+| 17 | glp1r_06_ago | 15 | DiffPep | 0.497 | no | |
+| 18 | glp1r_18_bind | 70 | ECD binder | 0.000 | no | binding hedge; ECD groove |
+| 19 | glp1r_19_bind | 74 | ECD binder | 0.010 | no | binding hedge |
+| 20 | glp1r_20_bind | 66 | ECD binder | 0.000 | no | binding hedge; structurally novel (maxTM 0.705); poly-Ala watch-item |
+
+The top 10 span five agonism lineages (DiffPep ×3, EvoBind ×2, PepGLAD ×2, RFd3 ×1, BoltzGen ×2) and contain **all
+six robust both-fold R299 reachers** (glp1r_10/21/04/23/24/25). Dropped this cycle: glp1r_22 (v8; geometric-only,
+zero-confidence) and glp1r_03 (v9; EvoBind, ipSAE 0.428, non-reacher) — the two weakest agonism-arm members.
+
+## 7. Provenance, eligibility, constraints
+- **De-novo / zero-shot**, not motif-grafted. **Coverage-gated eligibility:** flagged only if BOTH >30% identity AND
+  ≥50% coverage to a natural incretin — **none of the 20 are flagged**. The longest **contiguous** match to any
+  natural incretin (GLP-1, exendin-4, glucagon, GIP, semaglutide) across all 20 designs is **3 residues**; the two
+  new BoltzGen designs each have a longest incretin overlap of **2 residues** (glp1r_24 and glp1r_25), scattered
+  short-window similarity, not a grafted motif, and no design reproduces the GLP-1 His7 N-terminal message signature.
+- **Natural AAs; linear**; no design is built around a disulfide. One design carries an *incidental* Cys pair
+  (glp1r_04 C9/C29) that does **not** form a disulfide in its predicted fold (Sγ–Sγ 2.83 Å), so it presents as a
+  linear peptide with free thiols under cell-free "linear only" expression. The other 19 designs — including the two
+  new BoltzGen peptides glp1r_24 and glp1r_25 (both 0 Cys) — carry no Cys pair.
+- **Model-weight provenance** AF2 / ProteinMPNN / ESM-2 / Boltz-2 / RFdiffusion / BoltzGen; **no AF3 / ESM-3 / ESMC**.
+  Lengths 13–74 residues (within 10–250); `molecule_class = single_chain`; no duplicates.
+- **Construct-aware:** screened as the real expressed construct (retained (f)Met; C-terminal GFP11/Twin-Strep tag
+  present during the assay); message kept internal, termini disposable.
+
+## 8. What decides it
+These 20 are a maximally-diverse, necessary-condition-optimized, production-viable set of **independent shots**,
+built for **P(≥1 activates)** rather than any single design's predicted potency, which is unprovable in silico. The
+functional cAMP/CRE-SEAP assay is the verdict.

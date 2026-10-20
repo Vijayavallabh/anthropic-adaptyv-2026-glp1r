@@ -79,7 +79,8 @@ for Track 3, and the command + key output are recorded as evidence. Never claim 
 - **The upload portal has NO novelty score** — it only runs a format/parse gate returning per-row "Single chain /
   Passed". Novelty is locked up-front with the local screens (coverage-gated id, FoldSeek structural TM, graft LCS);
   there is no portal recheck. **Current FINAL = `submissions/glp1r_track3_v9.csv`** (md5 `419c57ff`, PASS
-  20/0/0): the v6b composition with three owner-approved swaps (v7: glp1r_15 → rm_0079; v8: glp1r_22 → bg_0746;
+  20/0/0; 2026-10-20 loaded into the portal + parsed clean [20 incl / 0 fixes / all "Single chain·Passed"], byte-verified
+  portal==committed v9): the v6b composition with three owner-approved swaps (v7: glp1r_15 → rm_0079; v8: glp1r_22 → bg_0746;
   v9: glp1r_03 → bg_1170), seating the two wave-2 re-mined robust 2-folder R299 reachers from a new BoltzGen lineage
   (`glp1r_24_ago`/bg_0746 at rank 5, `glp1r_25_ago`/bg_1170 at rank 6 — two independent architectures) in a
   **cap-aware, ipSAE-informed row order** — the published selection prompt

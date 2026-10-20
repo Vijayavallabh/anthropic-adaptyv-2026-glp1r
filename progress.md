@@ -773,3 +773,11 @@ FINAL = `submissions/glp1r_track3_v9.csv` (md5 `419c57ff`, PASS 20/0/0) + `docs/
 scorecard `data/candidates/v9_necessary_conditions_2026-10-20.csv`. v8 (`3b7d2581`, single-swap) kept as the
 immediate fallback if two BoltzGen slots are later judged too concentrated. Firewall intact — both BoltzGen seated
 as diverse independent shots (coverage/P(≥1)), never agonism ranks. Upload remains USER-GATED.
+
+**Portal-parse confirmed (2026-10-20).** Owner loaded v9 into the Adaptyv Challenge-3 portal; it parsed clean —
+**20 included / 0 needing fixes / every row "Single chain · Passed"**, in the exact v9 row order
+(glp1r_10/21/04/23/24/25/13/01/09/05/16/07/12/08/14/02/06/18/19/20). Byte-verified the portal parse against the
+committed artifact (names, order, lengths, molecule_class, and every truncated prefix+suffix) — **portal == committed
+v9 (`419c57ff`), i.e. submit == validated** (the "verify the live artifact by bytes" lesson; no overloaded-name trap).
+This is the portal's format/parse+eligibility gate only — there is no novelty score and no agonism assessment at
+upload. Evidence: `data/candidates/portal_parse_v9_2026-10-20.txt`. Only the owner's final submit click remains.

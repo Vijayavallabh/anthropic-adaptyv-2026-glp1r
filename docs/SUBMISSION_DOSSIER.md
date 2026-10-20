@@ -5,7 +5,7 @@ GLP1R → Gαs → cAMP → CRE-SEAP), **not** binding. **Deadline:** 2026-10-25
 **Package:** `submissions/glp1r_track3.csv` — 19 designs, `name,sequence,molecule_class`, rows in our
 best-first ranking. Validator: `rows=19 errors=0 warnings=0`, exit 0 (Track 3). **md5 `1ce4e943d897832965a66b5f3bef9123`** is the
 submission's byte identity (stable across the packaging commit `c69dc93` and this dossier's later commit; verify by
-bytes, not by commit). Private repo. **Upload is USER-GATED — not uploaded.**
+bytes, not by commit). Private repo. **Upload is USER-GATED. 2026-10-20: v9 loaded into the Adaptyv portal and parsed clean (20 included / 0 needing fixes / all "Single chain·Passed"), byte-verified portal==committed v9 (`419c57ff`) = submit==validated; the final submit click is the owner's remaining step (format/parse gate only — no novelty/agonism assessment).**
 
 > **CURRENT STATE (2026-10-20):** the final upload artifact is **`submissions/glp1r_track3_v9.csv`**
 > (md5 `419c57ff`, 20 designs, validator PASS 20/0/0) — the **v6b** composition with three owner-approved swaps

@@ -1,0 +1,38 @@
+Adaptyv Challenge-3 (GLP1R agonist) portal parse — v9 submission
+Date: 2026-10-20
+Artifact: submissions/glp1r_track3_v9.csv   md5 419c57ffb3c9794c5382f463910233e4
+Portal result: "Parsed proteins (20)  —  20 included • 0 needing fixes"  (every row: Single chain / Passed)
+
+NOTE: the portal is a FORMAT/PARSE + eligibility gate only. It returns per-row "Single chain / Passed";
+there is NO novelty score and NO agonism assessment at upload. "Passed" = correctly formatted + eligible,
+nothing about receptor activation (which only the wet cAMP/CRE-SEAP assay can decide).
+
+Byte-verification (portal parse vs committed v9.csv): PORTAL == COMMITTED v9 (submit == validated).
+Checked for all 20 rows: name, row order, length, molecule_class=single_chain, and full prefix+suffix
+of every truncated sequence. All 20 OK. (See the verification run in the session transcript.)
+
+portal row | name           | len | molecule_class | match
+-----------+----------------+-----+----------------+------
+   2       | glp1r_10_ago   |  23 | single_chain   | OK   (RNQAYEAYYEDNGIDALLDAYFF)
+   3       | glp1r_21_ago   |  37 | single_chain   | OK   (DFYFDAAMVYLY…IALSLIVD)
+   4       | glp1r_04_ago   |  32 | single_chain   | OK   (HIDFSAIHCAVY…KWVVCKMI)
+   5       | glp1r_23_ago   |  15 | single_chain   | OK   (MALTSTQQLTNAKYQ)              [rm_0079, v7 swap]
+   6       | glp1r_24_ago   |  22 | single_chain   | OK   (WEKVARKIAIEDRWESLLLYRY)       [bg_0746, v8 swap]
+   7       | glp1r_25_ago   |  30 | single_chain   | OK   (MSPEVQALLQRV…SMLEMASG)        [bg_1170, v9 swap]
+   8       | glp1r_13_ago   |  14 | single_chain   | OK   (GHGKIAAYPWNYTA)
+   9       | glp1r_01_ago   |  26 | single_chain   | OK   (DATFKYSQNPGN…MSAYWQFF)
+  10       | glp1r_09_ago   |  13 | single_chain   | OK   (EYGAQAYETARTF)
+  11       | glp1r_05_ago   |  14 | single_chain   | OK   (RYGIDQVFTAFFRL)
+  12       | glp1r_16_ago   |  21 | single_chain   | OK   (LGILLHDFQRTQIKLRELHDM)
+  13       | glp1r_07_ago   |  14 | single_chain   | OK   (LEQIIDYLLDALYR)
+  14       | glp1r_12_ago   |  23 | single_chain   | OK   (SNLDKGLWGLNLHSIFLFWEYEI)
+  15       | glp1r_08_ago   |  15 | single_chain   | OK   (HEYIGAQVYLQAFRY)
+  16       | glp1r_14_ago   |  21 | single_chain   | OK   (AVFKIGANEAALRYKKVKFEY)
+  17       | glp1r_02_ago   |  18 | single_chain   | OK   (WKLLEGYVVKTVGHINDT)
+  18       | glp1r_06_ago   |  15 | single_chain   | OK   (HMEYGESVVLTAFFT)
+  19       | glp1r_18_bind  |  70 | single_chain   | OK   (EDERLAALDEAT…AYLKAQAA)        [ECD-binder hedge]
+  20       | glp1r_19_bind  |  74 | single_chain   | OK   (NLNKVREAAERA…EAIRERAR)        [ECD-binder hedge]
+  21       | glp1r_20_bind  |  66 | single_chain   | OK   (DELAEFEADRQQ…AAALAAAR)        [ECD-binder hedge]
+
+Status: v9 loaded in the portal and parsed clean; final submit click is the owner's remaining USER-GATED step.
+Fallback = v8 glp1r_track3_v8.csv (md5 3b7d2581, single-swap bg_0746 only).

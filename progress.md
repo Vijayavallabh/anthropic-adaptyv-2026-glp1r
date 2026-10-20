@@ -633,3 +633,32 @@ Concurrent SEPIQ/TNF/AMP sessions often hold several GPUs; one process per GPU; 
 
 Portal upload; creating/altering the GitHub repo or its visibility; env/setup changes beyond the approved init.
 (GPU ceiling raised to 8 by the owner on 2026-10-14, so >4 GPUs is no longer gated — but still use only free ones.)
+
+## 2026-10-20 — selection-prompt read → cap-aware ipSAE reorder (FINAL = v6b_ranked2) + adversarial audit
+
+Owner directed a full read of the PUBLISHED selection prompt (`proteinbase.com/competitions/anthropic-adaptyv-2026/selection`)
+= the actual Claude prompt that recommends which Track-2/3 designs reach the wet lab (organizers approve). Decoded
+from the page JS chunk (only the "Brief" tab renders server-side); facts in memory `adaptyv-glp1r-selection-rubric`.
+Load-bearing rules: **≤10 designs/submission taken from the top of our row order**; only the first 20 count; 3 screens
+(pLDDT / **ipSAE** / mean Kyte-Doolittle); **injection → whole-account set-aside**; GLP1R site "ECD groove a starting
+point; activation may need more." All 20 v6b designs pass the hard rules.
+
+Executed (owner-approved via AskUserQuestion; all firewall-clean; **same 20 sequences**):
+1. **ipSAE + pLDDT on all 20** (canonical `ipsae.py`, Dunbar 2025, cutoffs 10/15) re-scoring existing Boltz-2
+   co-folds, **sequence-matched** (the repo `submissions/glp1r_track3_mapping.csv` is STALE — maps an older
+   composition). Evidence `data/candidates/v6b_necessary_conditions_2026-10-20.csv`.
+2. **Cap-aware reorder → `submissions/glp1r_track3_v6b_ranked2.csv`** (md5 `976e7e8e`, PASS 20/0/0): top-10 now
+   front-loads all 4 R299 reachers + all 4 agonism lineages; ordered by measured necessary conditions (reach, then
+   best-pose ipSAE + seed-robustness) + diversity — never agonism. Rank-1 = glp1r_10. Supersedes v6b_ranked
+   (`1571a3d4`, prize-tier, kept fallback).
+3. **Rationale reframed** (`docs/SUBMISSION_RATIONALE_v6b.md`): neutral data (removed judge-address + meta-lines),
+   epitope stated (vestibule/R299 arm; ECD-groove hedge), ipSAE added as the judge-aligned screen.
+
+**Adversarial audit** (independent subagent reading as the selection judge) → **account stands (NO injection).**
+Fixes applied: (a) §5b iPAE pose-provenance note (2.80 reach-pose vs 2.43 best-ipSAE-pose for glp1r_10; each
+named-file-sourced); (b) dropped the in-silico agonist/antag `consensus` column from the scorecard (firewall
+hygiene; never used to rank); (c) precise Cys claim — glp1r_04/15 are incidental Cys pairs that do NOT bond in their
+predicted folds (Sγ–Sγ 2.83 Å / 26.3 Å, verified); (d) novelty — longest CONTIGUOUS incretin overlap across all 20 =
+3 residues (verified; not grafted, no GLP-1 His7 signature); (e) trimmed the "no instructions" meta-line. Baker
+*Nature* 2026 citation RE-VERIFIED via PubMed (PMID 42168559 ↔ DOI 10.1038/s41586-026-10656-8). Commits `7373993`
+(reorder) + the audit-response. Upload USER-GATED; no GPU fishing (re-score of existing co-folds only).

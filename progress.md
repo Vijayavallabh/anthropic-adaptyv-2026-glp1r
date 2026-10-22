@@ -781,3 +781,30 @@ committed artifact (names, order, lengths, molecule_class, and every truncated p
 v9 (`419c57ff`), i.e. submit == validated** (the "verify the live artifact by bytes" lesson; no overloaded-name trap).
 This is the portal's format/parse+eligibility gate only — there is no novelty score and no agonism assessment at
 upload. Evidence: `data/candidates/portal_parse_v9_2026-10-20.txt`. Only the owner's final submit click remains.
+
+## 2026-10-21/22 — Wave-3: BindCraft2 v1.0.4 active-state moonshot → NEGATIVE; v9 UNCHANGED
+
+Owner: "use all the resources to your will / dominate at all costs." Ran the one genuinely-new lever: **BindCraft2
+v1.0.4** (released 2026-10-19; AF2 + ProteinMPNN/HyperMPNN; ODC-BY-clean) — the first **AF2-based** generator used
+here, architecturally orthogonal to the Boltz-family (BoltzGen) + RFd3 designs already in v9. Target = active-state
+**6X18** receptor (GLP-1 removed → empty active-state pocket); hotspots on the deep vestibule (R190/N240/Y242/W243),
+central-polar net, and R299 reader. Install = isolated `.venv` (owner-run via `!`, the env-setup gate). Funnel = the
+committed **Boltz∧Chai 2-folder construct bar** rebuilt byte-faithfully and VALIDATED on native controls (Chai
+reproduces the calibration to 2 dp; all 4 native agonists PASS). Scripts (committed):
+`scripts/bc2/{run_bc2.sh,run_bc2b.sh,run_bc2c.sh,fold_boltz.sh,harvest_bc2.py,build_construct_csv.py,apply_bar.py,two_stage.sh}`.
+
+Three waves, ~5,000 trajectories on 8 H100s (coexisted with a foreign TfR1 Chai job at 1 worker/GPU until it
+finished — owner-authorized share — then full throughput; 2 contention CUDA-graph crashes healed on the free-GPU retry):
+- **3a forced-deep peptides** (4 arms): **0/1,988 accepted** — AF2 cannot confidently fold a lone de-novo linear
+  peptide forced into the deep class-B vestibule (every trajectory died at the fold-screen). Reachability wall, AF2 side.
+- **3b ordinary peptides + miniproteins** (E reader 6, H 0-Cys miniprotein 5, F 1; G forced-mini 0 = 12; 11 eligible,
+  1 dropped for an exendin "MEEE" 4-aa overlap): **0/11** pass. 3 near-misses reach R299 in BOTH folders but Chai iPAE 11–18 (native ≤5.5).
+- **3c ordinary + termini_accessible** (construct-robustness lever; 8 eligible): **0/8**; best reached R299 4/4 in Chai
+  at iPAE 12.44 — termini-away did NOT close the gap, so the failure is interface-fundamental, not tag-clash.
+
+**Verdict: HOLD v9.** Two orthogonal generators (BoltzGen 0/21; BC2/AF2 0/all-waves) fail the 2-folder construct bar
+with an identical mode — de-novo designs *reach* R299 but don't *dock* with native-comparable confidence in the
+independent folder (Chai iPAE 10–18 vs native ≤5.5). The in-silico frontier for this necessary condition is
+exhausted; **no candidate v10**. Firewall intact (no agonism claimed or ranked; the wet cAMP/SEAP assay is the only
+verdict). Evidence: `data/candidates/wave3_bc2_funnel_2026-10-22.md`. v9 (`419c57ff`) stands FINAL; only the owner's
+portal submit + the assay remain.

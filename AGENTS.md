@@ -8,7 +8,7 @@ the cited evidence in `reports/` + `research_notes/`. Keep it short.
 ## The one thing that makes this challenge different
 
 **AGONISM ≠ BINDING, and for a class B GPCR the gap is maximal.** The win condition is
-**activation** (cell-surface GLP1R → Gαs → cAMP → CRE-SEAP), not binding. A surface/ECD binder
+**activation** (cell-surface GLP1R → Gαs → cAMP → CRE reporter; **INDIGO luciferase** as of Oct 22, was SEAP), not binding. A surface/ECD binder
 is an **antagonist** by default (proven: Baker's de-novo GLP1R binders were antagonists). Activation
 requires a **"message" that reaches the 7TM vestibule and drives the TM6 kink** (His7-imidazole-charge
 logic). No standalone designed protein has ever agonized a class B GPCR — this is a **frontier moonshot**;
@@ -32,19 +32,23 @@ the portfolio is a mechanism-hedged bet.
   passage against the WT/apo `24–432` model**. Keep the two scores **separate**; **demerit off-state-only binders**.
 - **No in-silico score proves agonism.** Co-folders default to inactive and ignore the membrane; there is no
   validated activation oracle. Computation gates a *credible active-state binder* only. **Only the functional
-  cAMP/SEAP assay confirms an agonist** — never claim a design "is an agonist" from computation.
+  cAMP/CRE-reporter assay (INDIGO luciferase; was SEAP) confirms an agonist** — never claim a design "is an agonist" from computation.
 - **Calibrate against controls, not absolute cutoffs.** Per-folder positives (GLP-1(7-36), exendin-4, orforglipron,
   Boc5) + scrambled negatives. Controls are **calibration only — NEVER design seeds**.
 - **De-novo / zero-shot only.** Never start from or modify a known binder or a native agonist–receptor complex.
   **No significant identity to GLP-1 / exendin-4 / glucagon / semaglutide**; generated-not-grafted scaffold.
-  **Linear or intramolecular-disulfide only** (gene-encodable; no head-to-tail macrocycles); natural AAs only.
-  **Do NOT depend on a disulfide forming** — Adaptyv cell-free expression is "linear only" with redox UNCONFIRMED
-  (organizer-clarified 2026-10-19); treat a disulfide as a bonus topology, never a load-bearing assumption.
+  **Linear-backbone only** (gene-encodable; no head-to-tail macrocycles); **20 standard AAs only** (no NCAAs); 10–250/chain.
+  **PAIRED intramolecular disulfides ARE ELIGIBLE** (CORRECTED 2026-10-23, supersedes the 2026-10-19 "no disulfide
+  dependence"): expression is **oxidizing** and paired Cys are explicitly acceptable (organizer Q&A Oct 22, consolidated
+  in `docs/ORGANIZER_QA_2026-10-23.md`); **avoid UNPAIRED Cys**. A disulfide-stapled peptide IS "linear" (the "only linear"
+  answer bans head-to-tail macrocycles, not side-chain staples). Caveat: §7 is a synthesis, not a verbatim quote — owner to
+  confirm the paired-disulfide allowance in Slack before any staple design enters the submitted set.
 - **Production reality (organizer-clarified 2026-10-19).** Adaptyv **cell-free expresses** Track-3 designs (not
   chemically synthesized): an initiator **(f)Met is added and NOT removed**, and the C-terminus carries a
   **linker–GFP11–linker–Twin-Strep tag that stays ON during the activation assay**. ⇒ the activating "message" must be
-  **internal** (not a free N-terminal tip); **both termini are disposable/compromised**; **no design may depend on a
-  disulfide** (redox unconfirmed). Fold the REAL construct (±Met, +tag) before trusting any reach number; reach is a
+  **internal** (not a free N-terminal tip); **both termini are disposable/compromised**; **paired disulfides are now
+  permitted** (oxidizing expression confirmed Oct 22 — supersedes the earlier "redox unconfirmed"; avoid unpaired Cys).
+  Fold the REAL construct (±Met, +tag) before trusting any reach number; reach is a
   **positive indicator, never a disqualifier**. No self wet-lab; the ranked ≤20 go to a Claude selection workflow.
 - **uv only** for env work; heavy tools in isolated `envs/` venvs (reuse sibling repos' venvs + the Anthropic
   `third_party/uplifting-biomolecular-modeling` kit; `--det 1` for byte-reproducible submitted artifacts). See `configs/tools.yaml`.
@@ -110,13 +114,23 @@ for Track 3, and the command + key output are recorded as evidence. Never claim 
   disulfide-constrained** peptides — topologies this challenge forbids), and a deep-reader (Q234/V237 TM3, V237F −257×)
   discriminator was **refuted by its own matched controls** (the inactive metabolite GLP-1(9-36) passes it as strongly as
   agonists → reach ≠ efficacy). The organizers then **definitively confirmed the design space — linear peptides / 20 standard
-  AAs only / 10–250 per chain, no cyclic and no load-bearing disulfide staple** — and `molecule_class=single_chain` (NOT
+  AAs only / 10–250 per chain, no cyclic macrocycle** (the "no load-bearing disulfide staple" I *inferred* here was
+  **corrected 2026-10-23(b), next bullet** — paired disulfides ARE eligible) — and `molecule_class=single_chain` (NOT
   `protein`; a WebFetch paraphrase had misread it; see [[lesson-unverified-constraint-fenced-design-space]]). A compliance
   audit found 19/20 v9 designs clean; the lone flag was `glp1r_04` (the only 2-Cys / disulfide-capable design). A fold proved
   its 2 Cys are **not** load-bearing (its C9S/C29S mutant reaches R299 identically), so it was de-Cys'd at zero behavioural
   cost → **FINAL = `submissions/glp1r_track3_v10.csv` (md5 `6769ef67`, PASS 20/0/0, `single_chain`)**, = v9 with that one
   change (row order + 19 other sequences byte-identical). **v9 (`419c57ff`) = immediate byte-frozen fallback.** Rationale
   `docs/SUBMISSION_RATIONALE_v10.md`; evidence `runs/finalize/`. Firewall intact (compliance hardening, never agonism).
+- **2026-10-23 (b) — organizer Q&A consolidation REOPENED the disulfide route; v10 UNCHANGED.** Owner-pasted consolidated
+  Slack Q&A (`docs/ORGANIZER_QA_2026-10-23.md`): §7 — expression **oxidizing**, **paired disulfides ACCEPTABLE**, avoid
+  unpaired Cys; "only linear" = no head-to-tail macrocycle (a staple is linear-backbone). Also: ranking = affinity displayed
+  for all binders + **agonist special label** (binding is itself a ranked axis); activation assay **SEAP→INDIGO CRE/luciferase**;
+  our construct already carries L260. **Re-evaluating the 16 firewall-clean dpbss disulfide-staple designs** on the real
+  2-folder construct bar + GLP-1(7-36)/exendin(9-39) controls (`runs/rfd4/dpbss_confirm`) — binding evidence only; the agonism
+  edge (pre-organization = the only *demonstrated* de-novo class-B agonist route) is a labeled PRIOR, never a rank. **Any swap
+  into the 20 = owner-gated composition change**; owner to confirm the paired-disulfide allowance in Slack (§7 is a synthesis).
+  v10 is valid under both readings → no forced change. [[adaptyv-glp1r-production-constraints]]
 - Names published verbatim → no PII/prompt-like text. Unique names + sequences. De-novo + zero-shot (hard gate).
 - Candidate CSVs live in `runs/` (gitignored). **Upload is USER-GATED** (portal account) — never auto-upload.
 
@@ -128,6 +142,7 @@ Repo-local identity **Vijayavallabh** + noreply (id 88388452). Descriptive messa
 ## Open questions / must re-verify before upload
 
 - ~~`molecule_class` live value (`protein` vs `single_chain`)~~ — RESOLVED 2026-10-13 (live portal = "Single chain", accepts both; owner chose to emit `single_chain` 2026-10-14).
-- Macrocycle / non-canonical policy (working assumption: linear/disulfide, natural-AA only).
+- ~~Macrocycle / non-canonical policy~~ — RESOLVED 2026-10-23: **linear-backbone + PAIRED disulfides eligible**, 20 standard
+  AAs only, 10–250/chain; no head-to-tail macrocycle, no NCAAs, avoid unpaired Cys (`docs/ORGANIZER_QA_2026-10-23.md`; owner to Slack-confirm the disulfide allowance before deploying staples).
 - Whether de-novo *motif scaffolding* of a novel (non-GLP-1) message is permitted (a sibling Adaptyv comp forbade motif scaffolding) — prefer fully-generated/blind-search designs.
 - Organizer-unspecified: EC50/affinity/agonism thresholds, the reference agonist, the selection-prompt weighting.

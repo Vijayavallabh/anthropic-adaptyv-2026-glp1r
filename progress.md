@@ -892,3 +892,22 @@ the lone disulfide/"cyclic" ambiguity in a linear-only competition at zero behav
 `glp1r_04` sequence change (diff-verified). v9 (`419c57ff`) byte-frozen fallback. Evidence `runs/finalize/` (candidate, audit,
 `glp1r04_swap/` fold); rationale `docs/SUBMISSION_RATIONALE_v10.md`. Firewall intact (compliance/necessary-condition, never
 agonism); wet cAMP/SEAP the only verdict; upload USER-GATED, deadline Sun 2026-10-25 23:59 AoE.
+
+## 2026-10-23 — Organizer Q&A consolidation → disulfide route REOPENED → dpbss re-evaluated (HOLD v10 recommended)
+
+Owner pasted a consolidated organizer Slack Q&A (11 sections). Reconciled all vs state → `docs/ORGANIZER_QA_2026-10-23.md`.
+Material item = **§7: paired disulfides are EXPLICITLY ACCEPTABLE** (expression oxidizing, confirmed Oct 22; avoid *unpaired*
+Cys); the earlier "only linear" bans **head-to-tail macrocycles**, not side-chain staples → the shelved `dpbss` disulfide
+designs are eligible after all. Other items: ranking = affinity displayed for all binders + agonist special label (binding is
+a real ranked axis); activation assay SEAP→**INDIGO CRE/luciferase**; our construct already has L260 (§5 satisfied);
+construct/SPR/de-novo gate all CONFIRM our setup. Corrected AGENTS.md + configs/target.yaml + memories accordingly.
+
+**Re-folded all 16 dpbss** as the real tagged construct (Boltz×4+Chai×4) + GLP-1(7-36)/exendin(9-39) controls, same committed
+2-folder bar (`runs/rfd4/dpbss_confirm`; reused the already-complete Boltz phase from the killed `dpbss_refold`). **4 pass**
+(dpbss_010/007/009/015) alongside the agonist control. **Firewall re-confirmed:** antagonist exendin(9-39) sits at the same
+boundary (R299-both, Boltz 6.72) → passing ≠ agonism. **All dpbss have weak Chai interface (iPAE 12–16 vs control 8.0)** → not
+a binding upgrade over v10's incumbents. Disulfide Sγ–Sγ: dpbss_007 FORMED both folders (~2.0 Å) = cleanest; dpbss_010 Chai-only;
+009/015 partial. Independently re-verified all 16 graft-free (≤3-aa incretin overlap). **Recommendation: HOLD v10 (default)**;
+optional 1-slot `dpbss_007` constrained-topology hedge only if owner confirms disulfide eligibility in Slack + wants the
+pre-organization prior (modality diversity, NOT a binding gain) — owner-gated composition change. Firewall intact throughout.
+Also drafted + 4-lens-reviewed the Slack questions the owner should ask (disulfide eligibility; resubmission-mechanics confirm).

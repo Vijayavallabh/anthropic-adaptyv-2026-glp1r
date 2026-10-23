@@ -71,3 +71,33 @@ de novo designs can *reach* R299 (geometric near-misses: several hit R299 in bot
 The in-silico frontier for this necessary condition is exhausted. **v9 (`419c57ff`) stands as FINAL,
 unchanged;** no candidate v10. Firewall intact throughout — no agonism was claimed or ranked; the wet
 cAMP/SEAP assay remains the only verdict. Owner's portal submit of v9 + the assay are all that remain.
+
+## Addendum 2026-10-22 — apples-to-apples re-score (side-agent critique resolved)
+A side agent correctly flagged that Wave-3 scored BC2 designs tag-ON (full expression construct) but
+judged them against a bar calibrated on tag-OFF natives (GLP-1 bare Chai 4.5, cut ≤5.5) and compared
+them to v9's tag-OFF numbers — not apples-to-apples. Valid. Re-folded the 14-design comparison set
+BOTH bare and tag-on through one pipeline (runs/bc2/compare/scorecard_{bare,construct}.csv; Boltz+Chai,
+4 seeds each).
+
+Findings:
+- The tag DOES inflate Chai iPAE heavily: GLP-1(7-36) bare 4.53 → tagged **8.2**; liraglutide 3.67→8.96;
+  glucagon 2.86→9.06; glp1r_25 2.5→7.93. So the absolute ≤5.5 Chai cut is **TAG-OFF-ONLY**; the correct
+  tag-ON reference (the tagged real agonists) is ~8–9.
+- Corrected comparison still HOLDS the negative. Scored identically tag-ON, R299-both reachers rank by
+  Chai reaching-iPAE: **glp1r_25_ago 7.93 (v9)** < GLP-1 8.2 (native) < **glp1r_18_bind 8.37 (v9)** <
+  liraglutide 8.96 < **bc2E_pep_reader 11.2 (best BC2)** < **glp1r_19_bind 12.71 (v9)**. The best BC2
+  design (11.2) is worse than 2 of the 3 v9 reachers (glp1r_25 7.93, glp1r_18 8.37) and far worse than
+  tagged GLP-1 (8.2); it edges only the weak glp1r_19 (12.71). No BC2 design is tag-on GLP-1-comparable.
+  (NB: `scorecard_construct.csv`'s PASS_2folder column used the tag-OFF 5.5 Chai cut, so it reads False for
+  every row incl. native GLP-1 — read the iPAE VALUES above, not that PASS column. `compare_fold.sh` has
+  since been fixed to use `--chai-cut 99` for construct mode.)
+- The side agent's specific hypothesis — a BC2 R299-reacher could be a better hedge than the v9 ECD-hedges
+  (18/19/20, believed not to reach R299) — is **REFUTED**. In the realistic tagged construct, v9's own
+  glp1r_18_bind and glp1r_19_bind DO reach R299 in both folders (8.37 / 12.71), and glp1r_18 (8.37) ≈
+  tagged GLP-1 (8.2) — better than every BC2 reacher. The earlier "hedges don't reach R299" was itself a
+  tag-OFF artifact.
+
+Net: the critique was methodologically correct (unfair comparison; the tag wrecks scores), but the
+corrected apples-to-apples re-score **CONFIRMS the Wave-3 negative on sound footing** — and reveals v9 is
+slightly STRONGER than recorded (its top reachers glp1r_25/glp1r_18 reach R299 in the tagged construct at
+GLP-1-comparable Chai confidence). No BC2 design earns a v10 slot. v9 (`419c57ff`) stands, unchanged.

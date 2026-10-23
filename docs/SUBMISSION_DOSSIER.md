@@ -7,6 +7,16 @@ best-first ranking. Validator: `rows=19 errors=0 warnings=0`, exit 0 (Track 3). 
 submission's byte identity (stable across the packaging commit `c69dc93` and this dossier's later commit; verify by
 bytes, not by commit). Private repo. **Upload is USER-GATED. 2026-10-20: v9 loaded into the Adaptyv portal and parsed clean (20 included / 0 needing fixes / all "Single chain·Passed"), byte-verified portal==committed v9 (`419c57ff`) = submit==validated; the final submit click is the owner's remaining step (format/parse gate only — no novelty/agonism assessment). 2026-10-22: a BindCraft2 v1.0.4 active-state moonshot (first AF2-based generator, orthogonal to v9's lineages; 3 waves, ~5,000 trajectories) returned 0 designs clearing the Boltz∧Chai 2-folder construct bar → HOLD v9, no v10 (evidence `data/candidates/wave3_bc2_funnel_2026-10-22.md`). 2026-10-23: a wave-4 RFD4-Proteina moonshot (RosettaCommons×NVIDIA, BSD-3; 2,520 designs) + a length-matched same-pipeline bake-off proved the 2-folder reach bar is cheaply clearable by many generators AND agonism-blind (the antagonist exendin(9-39) passes it; iPAE is length-biased; the old "BoltzGen 0/21" was a tag-off-cut artifact), so no in-silico result is an agonism-relevant reason to change v9 — a 4-agent adversarial workflow reached unanimous HOLD; de-novo frontier exhausted across 7 generators (evidence `runs/rfd4/`, `progress.md` 2026-10-22/23).**
 
+> **CURRENT STATE (2026-10-23):** FINAL = **`submissions/glp1r_track3_v10.csv`** (md5 `6769ef67`, 20 designs,
+> validator PASS 20/0/0, `molecule_class=single_chain`) = v9 with exactly one owner-approved change — `glp1r_04` → its
+> 0-Cys **C9S/C29S** variant — adopted after the organizers **definitively confirmed the design space (linear peptides /
+> 20 standard AAs / 10–250 per chain; no cyclic, no load-bearing disulfide, no noncanonical) and `molecule_class=single_chain`**.
+> The swap removes v9's lone disulfide-capable design in a linear-only competition at zero behavioural cost (fold-verified
+> reach-identical; the 2 Cys are not load-bearing). An ambition-lift /ultrathink frontier sweep re-confirmed the firewall and
+> **refuted** a deep-reader (Q234/V237) discriminator with its own controls (the inactive metabolite GLP-1(9-36) passes it).
+> **v9 (`419c57ff`) = byte-frozen fallback.** Upload USER-GATED. Rationale `docs/SUBMISSION_RATIONALE_v10.md`; evidence
+> `runs/finalize/`. Detail: `session-handoff.md` (2026-10-23) + [[lesson-unverified-constraint-fenced-design-space]].
+>
 > **CURRENT STATE (2026-10-20):** the final upload artifact is **`submissions/glp1r_track3_v9.csv`**
 > (md5 `419c57ff`, 20 designs, validator PASS 20/0/0) — the **v6b** composition with three owner-approved swaps
 > (v7: glp1r_15 → rm_0079 @4; v8: glp1r_22 → bg_0746/`glp1r_24_ago` @5; v9: glp1r_03 → bg_1170/`glp1r_25_ago` @6),

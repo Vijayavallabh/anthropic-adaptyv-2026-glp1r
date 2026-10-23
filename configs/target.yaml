@@ -83,7 +83,7 @@ eligibility:
   zero_shot: true
   rule: generated-not-grafted scaffold; NO significant identity to GLP-1 / exendin-4 / glucagon / semaglutide; never seed from a known binder or a native agonist-receptor complex
   forbidden_archetype: semaglutide redesign (Wei et al. Adv Sci 2025; template 7KI0; 0.68-0.81 id) = DISQUALIFIED
-  backbone: linear or DISULFIDE-cyclized only (gene-encodable); head-to-tail macrocycles NOT submittable; natural AAs only
+  backbone: LINEAR peptides only (organizers confirmed 2026-10-23 "only linear, not cyclic"); NO cyclic — head-to-tail macrocycle AND load-bearing intramolecular disulfide staple both OUT; standard/canonical-20 AAs only; 10-250 residues per chain
   novelty_level4: sequence <=30% id (MMseqs2 vs SwissProt+PDB+patents+Ab-DBs) AND sub-moderate structural (Foldseek/TM-align TM<0.5)
   portal_is_authority: true          # the Proteinbase novelty check is the final word; always re-check before upload
 
@@ -91,7 +91,7 @@ eligibility:
 formats:
   protein: {len: [10, 250], bands: {microbinder: "<40", minibinder: "40-100", large: ">100"}}
   antibody: [nanobody, scfv, fab_kappa, fab_lambda]   # ANARCI-parseable; Fab encoded VH:VL (heavy first)
-  molecule_class_conflict: "brief/page='protein'; live TNF portal 2026-10='single_chain' -> accept both, EMIT 'single_chain' (owner directive 2026-10-14), VERIFY at upload"
+  molecule_class_conflict: "RESOLVED 2026-10-23 (owner relayed GLP1R FAQ): set = single_chain/nanobody/scfv/fab_kappa/fab_lambda -> EMIT 'single_chain' (NOT 'protein'; a WebFetch paraphrase misread it). v9/v10 use single_chain; portal parsed v9 clean 2026-10-20"
 
 # --- Strategy (user-approved 2026-10-13: mechanism-hedged portfolio) ------------------------
 objective_priority: [agonism, binding, novelty_and_compliance, developability, portfolio_diversity]

@@ -78,7 +78,7 @@ for Track 3, and the command + key output are recorded as evidence. Never claim 
   v1 on 2026-10-13 and again for the 20-row v2 incl. slot-20 on 2026-10-14). Builders/validator now emit `single_chain` (owner directive 2026-10-14; portal accepts both values). Low-risk.
 - **The upload portal has NO novelty score** — it only runs a format/parse gate returning per-row "Single chain /
   Passed". Novelty is locked up-front with the local screens (coverage-gated id, FoldSeek structural TM, graft LCS);
-  there is no portal recheck. **Current FINAL = `submissions/glp1r_track3_v9.csv`** (md5 `419c57ff`, PASS
+  there is no portal recheck. **FINAL as of 2026-10-20 (superseded 2026-10-23 → v10; see the 2026-10-23 line at the end of this section) = `submissions/glp1r_track3_v9.csv`** (md5 `419c57ff`, PASS
   20/0/0; 2026-10-20 loaded into the portal + parsed clean [20 incl / 0 fixes / all "Single chain·Passed"], byte-verified
   portal==committed v9): the v6b composition with three owner-approved swaps (v7: glp1r_15 → rm_0079; v8: glp1r_22 → bg_0746;
   v9: glp1r_03 → bg_1170), seating the two wave-2 re-mined robust 2-folder R299 reachers from a new BoltzGen lineage
@@ -105,6 +105,18 @@ for Track 3, and the command + key output are recorded as evidence. Never claim 
   many generators AND agonism-blind** (the antagonist exendin(9-39) passes it; iPAE is length-biased) — so no in-silico
   result is an agonism-relevant reason to change v9. De-novo frontier exhausted across 7 generators; wet cAMP/SEAP is the
   only verdict. Detail: `progress.md` + `session-handoff.md` (2026-10-22/23) + [[lesson-cofold-reach-bar-cheaply-clearable-agonism-blind]].
+- **2026-10-23 (ambition-lift moonshot → FINAL is now v10).** A 4-angle frontier sweep re-confirmed the firewall (no
+  wet-validated class-B agonism ranker exists; the only demonstrated de-novo class-B agonists are **cyclic / noncanonical /
+  disulfide-constrained** peptides — topologies this challenge forbids), and a deep-reader (Q234/V237 TM3, V237F −257×)
+  discriminator was **refuted by its own matched controls** (the inactive metabolite GLP-1(9-36) passes it as strongly as
+  agonists → reach ≠ efficacy). The organizers then **definitively confirmed the design space — linear peptides / 20 standard
+  AAs only / 10–250 per chain, no cyclic and no load-bearing disulfide staple** — and `molecule_class=single_chain` (NOT
+  `protein`; a WebFetch paraphrase had misread it; see [[lesson-unverified-constraint-fenced-design-space]]). A compliance
+  audit found 19/20 v9 designs clean; the lone flag was `glp1r_04` (the only 2-Cys / disulfide-capable design). A fold proved
+  its 2 Cys are **not** load-bearing (its C9S/C29S mutant reaches R299 identically), so it was de-Cys'd at zero behavioural
+  cost → **FINAL = `submissions/glp1r_track3_v10.csv` (md5 `6769ef67`, PASS 20/0/0, `single_chain`)**, = v9 with that one
+  change (row order + 19 other sequences byte-identical). **v9 (`419c57ff`) = immediate byte-frozen fallback.** Rationale
+  `docs/SUBMISSION_RATIONALE_v10.md`; evidence `runs/finalize/`. Firewall intact (compliance hardening, never agonism).
 - Names published verbatim → no PII/prompt-like text. Unique names + sequences. De-novo + zero-shot (hard gate).
 - Candidate CSVs live in `runs/` (gitignored). **Upload is USER-GATED** (portal account) — never auto-upload.
 

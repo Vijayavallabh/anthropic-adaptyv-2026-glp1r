@@ -856,3 +856,39 @@ success); `confirm_stage2.sh` zero-survivor guard + OMP cap on Chai; GPU idle pr
 CLAUDE.md never-clobber, `FORCE_GPU=1` override); `compare_fold.sh` construct-mode `--chai-cut 99`; `harvest_rfd4.py`
 receptor-chain assert; wave3 doc BC2-vs-v9 ranking + PASS-column caveat. All verified (`bash -n`/`py_compile` pass).
 Pushed back: F3 (superseded) + F5 (by design — caller pre-merges anchors; done in all 3 runs). v9 byte-unchanged throughout.
+
+## 2026-10-23 — Ambition-lift /ultrathink: frontier moonshot, constraint verification, `glp1r_04` fix → v10 ADOPTED
+
+Owner invoked `/ambition-lift` ("what moonshots to dominate… even if it replaces nearly all of the submission"). Ran a
+focused **4-angle frontier sweep** (4 background research agents): (1) de-novo class-B agonist frontier, (2) in-silico
+agonism-ranking validity, (3) active-state structures/pharmacophore, (4) cross-field conformation-induction. Verdict:
+**firewall HOLDS** — no method is wet-validated to rank class-B agonism (AlloGen two-state = binding-selectivity = our
+rejected method, validated only on a soluble non-GPCR; enhanced-sampling MD unreliable + needs Gs; ML efficacy predictors
+class-A only). The only demonstrated de-novo class-B agonists (EvoBind **cyclic** 32 nM; RareFold **cyclic+NCAA**; 9J1P
+**disulfide-scaffolded**) are all conformationally **constrained**; Baker 2026 folded miniproteins → antagonists. Agent-3
+handed a mutagenesis-validated deep-reader map (TM3 **Q234/V237**, V237F −257×).
+
+**Deep-reader discriminator REFUTED by its own controls.** Re-scored saved v9 poses for Q234/V237 (vs the shallow R299):
+it separated the known antagonist exendin(9-39) (FAIL) from agonist GLP-1(7-36) (PASS) in one pair — but a matched-pair
+control panel (folded through the same pipeline) killed it: the **inactive DPP-4 metabolite GLP-1(9-36)** reaches Q234/V237
+as strongly as the agonists (Boltz 4/4) — reach ≠ efficacy, exactly the firewall. Do NOT rank/demote by deep-reach.
+
+**Constraint verification (the session's core correction; [[lesson-unverified-constraint-fenced-design-space]]).** Owner:
+"it is legal for us [cyclic/NCAA/disulfide]… check the challenge site, they never mention constraints." The project's
+"linear/natural-AA/no-macrocycle" rules were flagged "assume… re-verify at upload" yet never actually verified. The primary
+web pages (proteinbase.com challenge+FAQ+terms) are SILENT on topology/NCAA; I briefly inferred a production-narrowing to
+disulfide and recovered the benched **dpbss** disulfide-staple designs (dpbss_000–015, firewall re-checked ≤3 overlap). Then
+the owner asked the **organizers directly** → DEFINITIVE: **"not supporting cyclic peptides, only linear"** + **"10 to 250
+standard amino acid residues per chain"** + molecule_class ∈ {single_chain,nanobody,scfv,fab_kappa,fab_lambda} (a WebFetch
+paraphrase had misread this as "protein"). So macrocycle + NCAA + load-bearing disulfide staple are ALL out; the dpbss pivot
+was **stood down** (fold killed), the memories corrected.
+
+**Finalize audit + `glp1r_04` fix → v10.** Compliance audit of all 20 v9 designs vs the verified rules: **19/20 clean**
+(length 13–74 ∈ 10–250; all 20 standard AAs; graft overlap ≤3; unique); `glp1r_04` the LONE flag (2 Cys → disulfide-capable).
+A fold (`glp1r_04` vs its C9S/C29S mutant + agonist/antagonist anchors, same 2-folder pipeline) proved the **2 Cys are NOT
+load-bearing** — C→S reaches R299 identically (Boltz 0/4, Chai 4/4, same cp_union 190|363|364|394). So the de-Cys swap removes
+the lone disulfide/"cyclic" ambiguity in a linear-only competition at zero behavioural cost. **Owner "go ahead" → v10 ADOPTED:**
+`submissions/glp1r_track3_v10.csv` (md5 `6769ef67`, PASS 20/0/0, molecule_class `single_chain`) = v9 with exactly the one
+`glp1r_04` sequence change (diff-verified). v9 (`419c57ff`) byte-frozen fallback. Evidence `runs/finalize/` (candidate, audit,
+`glp1r04_swap/` fold); rationale `docs/SUBMISSION_RATIONALE_v10.md`. Firewall intact (compliance/necessary-condition, never
+agonism); wet cAMP/SEAP the only verdict; upload USER-GATED, deadline Sun 2026-10-25 23:59 AoE.

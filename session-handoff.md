@@ -12,6 +12,25 @@ v9 (`419c57ff`); no candidate v10.** Funnel + evidence: `scripts/bc2/` + `data/c
 full log in `progress.md`. Firewall intact (no agonism claimed/ranked). The in-silico frontier is exhausted; only the
 owner's portal submit of v9 + the wet cAMP/SEAP assay remain.
 
+**2026-10-23 — Wave-4 (RFD4-Proteina moonshot; owner "utilize all GPUs / dominate at all costs" + /ultrathink) → NEGATIVE; v9 UNCHANGED, NO v10.**
+Ran the newest SOTA generator **RFD4-Proteina** (RosettaCommons × NVIDIA, **BSD-3 code+weights**, ~2026-10-19;
+flow-matching all-atom co-design) — installed clean (`third_party/RFD4-Proteina/.venv`), vestibule-conditioned on 6X18,
+→ **2,520 designs** → 8-GPU Boltz R299 screen (1,046 reach, 41% — Boltz permissive) → top 202 → Stage-2 Boltz+Chai
+2-folder + anchors. The 9 RFD4 minis that appear to "beat" glp1r_25 are **length-confounded** (iPAE bias −0.93 within RFD4).
+A side-agent-prompted **length-matched bake-off** (BoltzGen+BC2+RFD4+anchors through ONE pipeline; `runs/rfd4/bakeoff/`)
+was decisive and **refuted the "RFD4 breakthrough"**: (1) BoltzGen SHORT peptides (length-unconfounded) clear the bar too
+— 26/41 reach R299-both, 6 beat glp1r_25 (best `bg_v4_reader_33` 25aa 4/4-both @ Chai 7.22); the old "BoltzGen 0/21" was a
+**tag-off 5.5-cut artifact**. (2) The bar is **agonism-blind** — the antagonist exendin(9-39) reaches R299-both in all 3
+runs and PASSES the gate while the agonist exendin-4 FAILS the same run (gate inverts the pair). A 4-agent adversarial
+Workflow (`wf_7d8374c6-29c`) reproduced the scorecard byte-exact (0/770) and reached **unanimous HOLD, high confidence**.
+**HOLD v9 (`419c57ff`); de-novo frontier now exhausted across 7 generators** (EvoBind, DiffPepBuilder, PepGLAD, RFd3,
+BoltzGen, BindCraft2, RFD4-Proteina). Evidence: `runs/rfd4/` + `progress.md` (2026-10-22/23) + memory
+[[lesson-cofold-reach-bar-cheaply-clearable-agonism-blind]]. **`/code-review` 2026-10-23** (committed `693c17d`): 9 findings,
+none invalidate HOLD; 6 fixed + 1 defensive (fail-loud screen, zero-survivor guard, GPU idle preflight, OMP cap, construct
+chai-cut 99, harvest assert, doc fix), 2 pushed back. **NB when reading scorecards: `PASS_2folder` is run-noisy
+(`R299_both AND boltz_ipae≤6.0`) — rank by `R299_both` reach + within-length-bin iPAE, never the raw PASS column.**
+Firewall intact; only the owner's USER-GATED v9 submit + the wet cAMP/SEAP assay remain.
+
 **Pipeline F0–F9 COMPLETE; v5c survived a brutal reject-everything audit; a mechanism-coverage moonshot then
 produced v6, which the owner ADOPTED as the recommended pick (2026-10-16).** **The remaining action is the
 owner's USER-GATED upload of v6 — never auto-upload.** Autonomous-to-deadline (deadline 2026-10-25 23:59 AoE).

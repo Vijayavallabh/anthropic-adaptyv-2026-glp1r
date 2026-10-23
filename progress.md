@@ -808,3 +808,51 @@ independent folder (Chai iPAE 10–18 vs native ≤5.5). The in-silico frontier 
 exhausted; **no candidate v10**. Firewall intact (no agonism claimed or ranked; the wet cAMP/SEAP assay is the only
 verdict). Evidence: `data/candidates/wave3_bc2_funnel_2026-10-22.md`. v9 (`419c57ff`) stands FINAL; only the owner's
 portal submit + the assay remain.
+
+## 2026-10-22/23 — Wave-4: RFD4-Proteina moonshot → NEGATIVE; v9 UNCHANGED (no v10) + code-review hardening
+
+Owner: "utilize all GPUs to max VRAM / dominate at all costs" + /ultrathink. Ran the newest SOTA generator
+**RFD4-Proteina** (RosettaCommons × NVIDIA; GitHub RosettaCommons/RFD4-Proteina, HF nvidia/RFD4-Proteina; **BSD-3
+code AND weights**, released ~2026-10-19; flow-matching all-atom sequence+structure co-design). Installed clean to
+`third_party/RFD4-Proteina/.venv` (`setup.sh --skip-search-envs`; base gen uses `'~metrics'` → no folder-in-loop →
+ODC-BY clean, AF3 never fetched). Target = active-state 6X18 chain R, vestibule-conditioned (C_HOT 299/190/363/364/394)
++ 0-Cys. Full + 7TM-cropped (contiguous F145-432) waves → **2,520 unique 0-Cys natural designs** (`runs/rfd4/harvest.csv`).
+
+Funnel (8-GPU parallel, all through the committed 2-folder construct bar; scripts `scripts/rfd4/{gen_wave,gen_wave_crop,
+boltz_screen,confirm_stage2,harvest_rfd4}`): Boltz R299 screen all 2,520 (1 seed; reach is seed-stable) → **1,046 reach
+R299 (41% — Boltz permissive)** → top **202 (Boltz iPAE_reach ≤6.0)** → Stage-2 Boltz(0-3)+Chai(0-3) vs `construct_24_432`
++ 7 anchors. Apparent result: 9 RFD4 **minis** beat glp1r_25 (Chai 7.98) — **but all length-confounded** (corr(len,chai_iPAE)
+−0.56 pooled, −0.93 within RFD4; every winner 52-90aa vs the 30aa anchors).
+
+**Side-agent-prompted length-matched BAKE-OFF (the decisive control; `runs/rfd4/bakeoff/`)** — BoltzGen 41 + BC2 21 +
+RFD4 11 + 4 anchors through ONE identical pipeline, decomposing length-INDEPENDENT reach from length-BIASED iPAE:
+- **"RFD4 first to clear the bar" REFUTED.** Re-scored identically, **BoltzGen SHORT peptides (10-30aa, length-UNCONFOUNDED)
+  clear the bar: 26/41 reach R299-both; 6 beat glp1r_25; `bg_v4_reader_33` (25aa) is 4/4-both @ Chai 7.22, `bg_v4_reader_18`
+  @ 6.91.** The old "BoltzGen 0/21 FAIL" was a **tag-OFF Chai-cut (5.5) artifact** on tag-on constructs (which inflate Chai
+  ~+3.7). Multiple generators clear the bar; it is cheaply clearable.
+- RFD4 minis > BC2 minis is real (RFD4 7/7 reach both; BC2 0/9 — genuine Boltz non-reach, 308/308 folds verified) but
+  **mini-only + length-inflated**. RFD4 SHORT peptides (best 9.48) are WORSE than BoltzGen's — RFD4 isn't even best in
+  v9's agonist-relevant short modality.
+- **DECISIVE firewall proof: the bar is AGONISM-BLIND.** The orthosteric ANTAGONIST exendin(9-39) reaches R299-both in all
+  3 runs and PASSES the gate in stage2 (boltz 5.72) while the full AGONIST exendin-4 FAILS the same run — the gate
+  **inverts the known agonist/antagonist pair**. Clearing it carries zero agonism content.
+- v9 reach-coverage (same pipeline): **13/20 reach R299-both; glp1r_25 (30aa, Chai 7.99) is v9's honest flagship reacher**,
+  stable across 3 runs; nothing short beats it.
+
+**4-agent adversarial Workflow (ultracode `wf_7d8374c6-29c`) → UNANIMOUS HOLD, high confidence** (scorecard reproduced
+byte-exact 0/770, no bugs). Even the steelmanned swap (out glp1r_07, in bg_v4_reader_33) is length-confounded (25aa vs
+14aa) + firewall-illegal (reach ≠ agonism). **VERDICT: HOLD v9 (`419c57ff`), NO v10** — no firewall-legal, length-controlled,
+agonism-relevant improvement exists. De-novo frontier exhausted across **7 generators** (EvoBind, DiffPepBuilder, PepGLAD,
+RFd3, BoltzGen, BindCraft2, RFD4-Proteina). Firewall intact; wet cAMP/SEAP the only verdict; upload USER-GATED.
+
+**Decision-relevant artifact (byte-reproduced):** `PASS_2folder` = `(R299_both AND boltz_ipae_reach ≤ 6.0)`, Chai-cut
+disabled — it is **run-noisy** (glp1r_25 flips PASS across runs straddling 6.0 by 0.09). Rank by `R299_both` reach +
+WITHIN-length-bin iPAE, never the raw PASS column or cross-length iPAE. Lessons:
+[[lesson-cofold-reach-bar-cheaply-clearable-agonism-blind]], [[env-pgrep-waitloop-self-match-deadlock]].
+
+**`/code-review` (2026-10-23) → 9 findings, verdict unaffected; committed `693c17d`.** None invalidate HOLD (result data
+reproduced byte-exact). Fixed 6 genuine + 1 defensive, pushed back on 2: `boltz_screen.sh` fail-loud (no silent false
+success); `confirm_stage2.sh` zero-survivor guard + OMP cap on Chai; GPU idle preflight on both 8-GPU launchers (enforce
+CLAUDE.md never-clobber, `FORCE_GPU=1` override); `compare_fold.sh` construct-mode `--chai-cut 99`; `harvest_rfd4.py`
+receptor-chain assert; wave3 doc BC2-vs-v9 ranking + PASS-column caveat. All verified (`bash -n`/`py_compile` pass).
+Pushed back: F3 (superseded) + F5 (by design — caller pre-merges anchors; done in all 3 runs). v9 byte-unchanged throughout.

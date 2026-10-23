@@ -99,6 +99,12 @@ for Track 3, and the command + key output are recorded as evidence. Never claim 
   active-state generation arm (2026-10-19)** produced deep-vestibule inserters that passed Boltz multi-pose but
   **FAILED the 2-folder Boltz∧Chai bar GLP-1(7-36) clears (0/21)** → a Boltz-specific artifact; the proposed v7 was
   **REJECTED, v6 UNCHANGED** (see `reports/GLP1R active-state generation and construct probes 2026-10-19.md`).
+  Two further orthogonal-generator moonshots then also returned NEGATIVE → **HOLD v9, no v10**: **BindCraft2 v1.0.4**
+  (AF2-based; wave-3, ~5,000 traj, 0 clear the bar) and **RFD4-Proteina** (BSD-3 flow-matching all-atom; wave-4, 2,520
+  designs). A length-matched same-pipeline bake-off (2026-10-23) proved the 2-folder reach bar is **cheaply clearable by
+  many generators AND agonism-blind** (the antagonist exendin(9-39) passes it; iPAE is length-biased) — so no in-silico
+  result is an agonism-relevant reason to change v9. De-novo frontier exhausted across 7 generators; wet cAMP/SEAP is the
+  only verdict. Detail: `progress.md` + `session-handoff.md` (2026-10-22/23) + [[lesson-cofold-reach-bar-cheaply-clearable-agonism-blind]].
 - Names published verbatim → no PII/prompt-like text. Unique names + sequences. De-novo + zero-shot (hard gate).
 - Candidate CSVs live in `runs/` (gitignored). **Upload is USER-GATED** (portal account) — never auto-upload.
 

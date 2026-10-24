@@ -7,6 +7,19 @@ best-first ranking. Validator: `rows=19 errors=0 warnings=0`, exit 0 (Track 3). 
 submission's byte identity (stable across the packaging commit `c69dc93` and this dossier's later commit; verify by
 bytes, not by commit). Private repo. **Upload is USER-GATED. 2026-10-20: v9 loaded into the Adaptyv portal and parsed clean (20 included / 0 needing fixes / all "Single chain·Passed"), byte-verified portal==committed v9 (`419c57ff`) = submit==validated; the final submit click is the owner's remaining step (format/parse gate only — no novelty/agonism assessment). 2026-10-22: a BindCraft2 v1.0.4 active-state moonshot (first AF2-based generator, orthogonal to v9's lineages; 3 waves, ~5,000 trajectories) returned 0 designs clearing the Boltz∧Chai 2-folder construct bar → HOLD v9, no v10 (evidence `data/candidates/wave3_bc2_funnel_2026-10-22.md`). 2026-10-23: a wave-4 RFD4-Proteina moonshot (RosettaCommons×NVIDIA, BSD-3; 2,520 designs) + a length-matched same-pipeline bake-off proved the 2-folder reach bar is cheaply clearable by many generators AND agonism-blind (the antagonist exendin(9-39) passes it; iPAE is length-biased; the old "BoltzGen 0/21" was a tag-off-cut artifact), so no in-silico result is an agonism-relevant reason to change v9 — a 4-agent adversarial workflow reached unanimous HOLD; de-novo frontier exhausted across 7 generators (evidence `runs/rfd4/`, `progress.md` 2026-10-22/23).**
 
+> **CURRENT STATE (2026-10-25):** FINAL = **`submissions/glp1r_track3_v11.csv`** (md5 `fc3653c4`, 20 designs,
+> validator PASS 20/0/0, all `single_chain`) = v10's EXACT 20 sequences **REORDERED** for the organizers' published
+> picker rubric (SET == v10, byte-verified — nothing added/removed). Reproduced the picker's method (bare design +
+> WT GLP1R 24-432, ipSAE/ipTM + ESMFold pLDDT + Kyte-Doolittle, Boltz+Chai) over the full pool; a cold devil's-advocate
+> **REFUTED a wholesale 13/20 swap** (P≈0.70 — the both-folder reach gate is agonism-blind, margin-fragile, held a
+> near-dup, imported unvetted designs), so the re-score's real value is the **row-order lever**: front-load the
+> 2f-robust vestibule reachers (rank-1 `glp1r_25`, up from v10 row 6), ECD antagonist-hedge last. **PORTAL-CONFIRMED
+> 2026-10-25:** parsed clean (20 included / 0 needing fixes / all "Single chain · Passed"); byte-verified portal ==
+> committed v11 = submit==validated (evidence `data/candidates/portal_parse_v11_2026-10-25.txt`). **v10 (`6769ef67`)
+> + v9 (`419c57ff`) = byte-frozen fallbacks.** Upload USER-GATED. Rationale `docs/SUBMISSION_RATIONALE_v11.md`;
+> per-design screens `data/candidates/v11_picker_screens.csv`; firewall intact (ordered by measurable
+> binding/reach/expression, never agonism).
+>
 > **CURRENT STATE (2026-10-23):** FINAL = **`submissions/glp1r_track3_v10.csv`** (md5 `6769ef67`, 20 designs,
 > validator PASS 20/0/0, `molecule_class=single_chain`) = v9 with exactly one owner-approved change — `glp1r_04` → its
 > 0-Cys **C9S/C29S** variant — adopted after the organizers **definitively confirmed the design space (linear peptides /

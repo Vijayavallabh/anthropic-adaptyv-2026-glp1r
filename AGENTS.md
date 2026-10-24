@@ -82,7 +82,7 @@ for Track 3, and the command + key output are recorded as evidence. Never claim 
   v1 on 2026-10-13 and again for the 20-row v2 incl. slot-20 on 2026-10-14). Builders/validator now emit `single_chain` (owner directive 2026-10-14; portal accepts both values). Low-risk.
 - **The upload portal has NO novelty score** — it only runs a format/parse gate returning per-row "Single chain /
   Passed". Novelty is locked up-front with the local screens (coverage-gated id, FoldSeek structural TM, graft LCS);
-  there is no portal recheck. **FINAL as of 2026-10-20 (superseded 2026-10-23 → v10; see the 2026-10-23 line at the end of this section) = `submissions/glp1r_track3_v9.csv`** (md5 `419c57ff`, PASS
+  there is no portal recheck. **FINAL (SUPERSEDED → v11 = v10 REORDERED for the picker rubric, PORTAL-CONFIRMED 2026-10-25; see the 2026-10-24 line at the end of this section) — historical base `submissions/glp1r_track3_v9.csv`** (md5 `419c57ff`, PASS
   20/0/0; 2026-10-20 loaded into the portal + parsed clean [20 incl / 0 fixes / all "Single chain·Passed"], byte-verified
   portal==committed v9): the v6b composition with three owner-approved swaps (v7: glp1r_15 → rm_0079; v8: glp1r_22 → bg_0746;
   v9: glp1r_03 → bg_1170), seating the two wave-2 re-mined robust 2-folder R299 reachers from a new BoltzGen lineage
@@ -143,6 +143,12 @@ for Track 3, and the command + key output are recorded as evidence. Never claim 
   (`6769ef67`) byte-frozen fallback.** Rationale `docs/SUBMISSION_RATIONALE_v11.md`; screens
   `data/candidates/v11_picker_screens.csv`. Firewall intact (ordered by measurable binding/reach/expression on the
   stated vestibule epitope, NEVER agonism; the picker is a binder/expresser gate, agonism stays the wet verdict).
+  A side-agent "thin binding edge" note was evaluated + addressed: v11 is a REORDER (not a swap), its tier structure
+  rests on the robust cross-folder REACH + pLDDT (not the folder-noisy averaged ipSAE), and rank-1 `glp1r_25` is #1 on
+  every axis. **PORTAL-CONFIRMED 2026-10-25:** owner loaded v11 → parsed clean (20 included / 0 needing fixes / all
+  "Single chain · Passed") in the exact reordered order; byte-verified portal == committed v11 (`fc3653c4`) on
+  names+order+lengths+molecule_class+prefix/suffix = submit==validated; evidence
+  `data/candidates/portal_parse_v11_2026-10-25.txt`. Only the owner's final submit click remains.
 - Names published verbatim → no PII/prompt-like text. Unique names + sequences. De-novo + zero-shot (hard gate).
 - Candidate CSVs live in `runs/` (gitignored). **Upload is USER-GATED** (portal account) — never auto-upload.
 

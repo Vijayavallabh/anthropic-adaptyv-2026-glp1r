@@ -937,3 +937,13 @@ activation-relevant engagement: rows 1-6 the 2f-robust vestibule reachers (rank-
 `docs/SUBMISSION_RATIONALE_v11.md`; per-design 3-screen evidence `data/candidates/v11_picker_screens.csv`. Firewall intact
 (ordered by measurable binding/reach/expression on the stated vestibule epitope, never agonism). No wholesale replacement;
 the staple arm (`dpbss_007`) stays optional pending the owner's Slack disulfide confirmation. Upload USER-GATED.
+
+**2026-10-25 — v11 PORTAL-CONFIRMED.** Owner loaded v11 into the Adaptyv Challenge-3 portal → parsed clean (**20 included
+/ 0 needing fixes / every row "Single chain · Passed"**) in the exact reordered row order. Byte-verified portal parse ==
+committed v11 (`fc3653c4`) on names + order + lengths + molecule_class + truncated prefix/suffix → **submit == validated**;
+`glp1r_04` parsed 0-Cys as committed. Evidence `data/candidates/portal_parse_v11_2026-10-25.txt`. A side-agent "the
+rebuild leans on averaging two disagreeing binding AIs / the binding edge is thin" note was evaluated and **addressed**:
+v11 is a REORDER (not a swap — same validated 20), its tier structure rests on the robust cross-folder REACH + pLDDT
+(not the folder-noisy averaged ipSAE), and rank-1 `glp1r_25` is #1 on every axis — so the thin binding signal affects
+only fine order, never which designs. FINAL = v11 (`fc3653c4`); v10 (`6769ef67`) + v9 (`419c57ff`) byte-frozen fallbacks;
+only the owner's final submit click remains (deadline tonight AoE).

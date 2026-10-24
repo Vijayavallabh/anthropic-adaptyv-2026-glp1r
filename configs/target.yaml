@@ -91,7 +91,7 @@ eligibility:
 formats:
   protein: {len: [10, 250], bands: {microbinder: "<40", minibinder: "40-100", large: ">100"}}
   antibody: [nanobody, scfv, fab_kappa, fab_lambda]   # ANARCI-parseable; Fab encoded VH:VL (heavy first)
-  molecule_class_conflict: "RESOLVED 2026-10-23 (owner relayed GLP1R FAQ): set = single_chain/nanobody/scfv/fab_kappa/fab_lambda -> EMIT 'single_chain' (NOT 'protein'; a WebFetch paraphrase misread it). v9/v10 use single_chain; portal parsed v9 clean 2026-10-20"
+  molecule_class_conflict: "RESOLVED 2026-10-23 (owner relayed GLP1R FAQ): set = single_chain/nanobody/scfv/fab_kappa/fab_lambda -> EMIT 'single_chain' (NOT 'protein'; a WebFetch paraphrase misread it). v9/v10/v11 use single_chain; portal parsed v9 clean 2026-10-20 AND v11 (=v10 reordered) clean 2026-10-25"
 
 # --- Strategy (user-approved 2026-10-13: mechanism-hedged portfolio) ------------------------
 objective_priority: [agonism, binding, novelty_and_compliance, developability, portfolio_diversity]

@@ -72,7 +72,8 @@ def score_cif(cif, pae_npz, conf_json):
     }
 
 def main(work, out):
-    cifs = sorted(glob.glob(os.path.join(work, "boltz", "**", "*_model_0.cif"), recursive=True))
+    # glob recursively so this works on a Boltz tree (work/boltz/**) or a Chai tree alike
+    cifs = sorted(glob.glob(os.path.join(work, "**", "*_model_0.cif"), recursive=True))
     per = {}  # name -> list of seed dicts
     for cif in cifs:
         base = os.path.basename(cif).replace("_model_0.cif", "")

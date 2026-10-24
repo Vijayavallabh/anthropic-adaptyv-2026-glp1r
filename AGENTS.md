@@ -131,6 +131,18 @@ for Track 3, and the command + key output are recorded as evidence. Never claim 
   edge (pre-organization = the only *demonstrated* de-novo class-B agonist route) is a labeled PRIOR, never a rank. **Any swap
   into the 20 = owner-gated composition change**; owner to confirm the paired-disulfide allowance in Slack (§7 is a synthesis).
   v10 is valid under both readings → no forced change. [[adaptyv-glp1r-production-constraints]]
+- **2026-10-24 (picker-rubric re-score → FINAL recommendation is v11 = v10 REORDERED).** Reproduced the organizers'
+  published selection prompt on its EXACT method (bare design + WT GLP1R 24-432 tags-off; ipSAE/ipTM co-fold + ESMFold
+  pLDDT + Kyte-Doolittle; BOTH Boltz+Chai) over the full eligible pool (1,607 → 221 shortlist + 271 expansion; pipeline
+  `scripts/picker/`). A draft wholesale **13/20 swap was REFUTED by a cold devil's-advocate (P≈0.70)**, verified vs our
+  own files: the both-folder R299 gate is **agonism-blind** (antagonist exendin passes it — the HOLD-v9 lesson), 7/17
+  "robust" sit at the `chai==2` reseed margin, the draft held a 0.75-identity near-dup, and it imported unvetted designs.
+  The re-score's real value = the **row-order lever**: **FINAL recommendation `submissions/glp1r_track3_v11.csv` (md5
+  `fc3653c4`, PASS 20/0/0)** = v10's EXACT 20 reordered (SET==v10, byte-verified, zero import risk) — top-6 = the
+  2f-robust vestibule reachers (rank-1 `glp1r_25`), then single-folder reachers, ECD antagonist-hedge last. **v10
+  (`6769ef67`) byte-frozen fallback.** Rationale `docs/SUBMISSION_RATIONALE_v11.md`; screens
+  `data/candidates/v11_picker_screens.csv`. Firewall intact (ordered by measurable binding/reach/expression on the
+  stated vestibule epitope, NEVER agonism; the picker is a binder/expresser gate, agonism stays the wet verdict).
 - Names published verbatim → no PII/prompt-like text. Unique names + sequences. De-novo + zero-shot (hard gate).
 - Candidate CSVs live in `runs/` (gitignored). **Upload is USER-GATED** (portal account) — never auto-upload.
 

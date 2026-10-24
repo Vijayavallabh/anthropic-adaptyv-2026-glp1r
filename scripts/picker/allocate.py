@@ -38,7 +38,10 @@ def load(scores_csv, plddt_json):
             r[k] = float(r[k]) if r.get(k) not in ("", None, "None") else None
         for k in ("length", "n_cys", "r299_n", "n_seeds", "nterm_in7TM_n", "graft_max"):
             r[k] = int(r[k]) if r.get(k) not in ("", None) else 0
-        r["plddt"] = plddt.get(r["name"])
+        p = plddt.get(r["name"])
+        if p is not None and p <= 1.0:   # esmfold_v1 B-factor is 0-1 here -> scale to 0-100
+            p *= 100.0
+        r["plddt"] = round(p, 1) if p is not None else None
         rows.append(r)
     return rows
 

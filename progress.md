@@ -911,3 +911,29 @@ a binding upgrade over v10's incumbents. Disulfide Sγ–Sγ: dpbss_007 FORMED b
 optional 1-slot `dpbss_007` constrained-topology hedge only if owner confirms disulfide eligibility in Slack + wants the
 pre-organization prior (modality diversity, NOT a binding gain) — owner-gated composition change. Firewall intact throughout.
 Also drafted + 4-lens-reviewed the Slack questions the owner should ask (disulfide eligibility; resubmission-mechanics confirm).
+
+## 2026-10-24 — Picker-rubric re-score (owner: "replace a lot at all costs, best 20 per selection prompt") → FINAL = v11 (v10 REORDERED)
+
+Owner supplied the organizers' published **selection prompt** (the Claude "picker") and asked to rebuild the best-20 to it.
+Reproduced the picker's EXACT method as a pipeline (`scripts/picker/`): fold **bare submitted design (tags off) + WT GLP1R
+24-432**, score **ipSAE + ipTM** (co-fold), **ESMFold2 monomer pLDDT**, **mean Kyte-Doolittle**; epitope-from-fold; both
+**Boltz (optimistic) + Chai (pessimistic)** co-folders. Pool: 1,607 eligible → 221 cheap-screen shortlist + 271 un-folded
+expansion; ~160 Chai-confirmed. Compute: queued across idle GPUs (foreign jobs on others never clobbered; GPU preflight
+caught two mid-run GPU-landscape shifts and refused to clobber).
+
+**Finding:** on the picker's method, only **6-7 of v10's 20 are 2f-robust** (reach R299 in both folders); the rest are
+single-folder reachers or non-reaching. A draft **wholesale 13/20 swap** scored higher on a 2-folder composite — but a
+**cold devil's-advocate REFUTED it (P≈0.70)**, verified vs our own files: (1) the both-folder R299 gate is **agonism-blind**
+(the antagonist exendin(9-39) passes it — the exact finding behind HOLD-v9); the picker is a binder/expresser GATE and the
+PRIZE is activation, so a higher binding composite bought by deleting 13 mode/reference-diverse agonism bets optimizes the
+wrong objective; (2) **7 of the 17 "2f-robust" sit at the `chai_r299==2` reseed margin** (tiny-n noise); (3) an in-hand
+**0.75-identity near-dup** (`v5_short_143_0/1`) my k-mer dedup missed, plus unvetted novelty/developability on the imports.
+
+**Decision:** the re-score's real value is the **row-order lever** (picker takes top-10 of row order; v10 wasn't
+picker-sorted — `glp1r_25`, our best bare+WT design, was at row 6). **FINAL = `submissions/glp1r_track3_v11.csv` (md5
+`fc3653c4`, PASS 20/0/0)** = v10's EXACT 20 reordered (SET==v10, byte-verified, **zero import risk**), tiered by
+activation-relevant engagement: rows 1-6 the 2f-robust vestibule reachers (rank-1 `glp1r_25`), 7-15 single-folder reachers,
+16-17 weak message peptides, 18-20 the ECD antagonist-leaning hedge. **v10 (`6769ef67`) byte-frozen fallback.** Rationale
+`docs/SUBMISSION_RATIONALE_v11.md`; per-design 3-screen evidence `data/candidates/v11_picker_screens.csv`. Firewall intact
+(ordered by measurable binding/reach/expression on the stated vestibule epitope, never agonism). No wholesale replacement;
+the staple arm (`dpbss_007`) stays optional pending the owner's Slack disulfide confirmation. Upload USER-GATED.

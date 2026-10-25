@@ -1,0 +1,21 @@
+row,submit_name,design_id,role
+1,glp1r_42_mini,rfd4_mini_g5_glp1r_deepcore_mini_101,AGONIST-ARM R190-both
+2,glp1r_43_ago,rfd4_pep_g3_glp1r_deepcore_pep_66,AGONIST-ARM R190-both
+3,glp1r_44_ago,v2_deep_087_0,AGONIST-ARM R190-both
+4,glp1r_28_ago,glp1r_28_ago,gate-core
+5,glp1r_30_mini,glp1r_30_mini,gate-core
+6,glp1r_25_ago,glp1r_25_ago,gate-core
+7,glp1r_29_ago,glp1r_29_ago,gate-core
+8,glp1r_23_ago,glp1r_23_ago,gate-core
+9,glp1r_10_ago,glp1r_10_ago,gate-core
+10,glp1r_33_ago,glp1r_33_ago,gate-core
+11,glp1r_27_ago,glp1r_27_ago,gate-core
+12,glp1r_36_ago,glp1r_36_ago,gate-core
+13,glp1r_08_ago,glp1r_08_ago,gate-core
+14,glp1r_26_ago,glp1r_26_ago,gate-core
+15,glp1r_38_bind,glp1r_38_bind,gate-core
+16,glp1r_31_mini,glp1r_31_mini,gate-core
+17,glp1r_19_bind,glp1r_19_bind,tail-hedge
+18,glp1r_37_ago,glp1r_37_ago,tail-hedge
+19,glp1r_21_ago,glp1r_21_ago,tail-hedge
+20,glp1r_39_pm,glp1r_39_pm,tail-hedge

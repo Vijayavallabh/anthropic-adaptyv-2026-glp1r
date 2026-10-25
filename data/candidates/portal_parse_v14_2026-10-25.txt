@@ -1,0 +1,39 @@
+GLP1R Track-3 v14 — portal-parse + byte-verification record (2026-10-25)
+========================================================================
+
+Owner loaded submissions/glp1r_track3_v14.csv into the Adaptyv Challenge-3
+/submit portal and pasted the parse. Portal result (owner-reported):
+  Parsed proteins: 20   |   20 included   |   0 needing fixes
+  Every row: molecule_class 'Single chain' - Passed
+
+Byte-verification (this file, reproducible): the portal-reported
+name / length / head / tail for each row were compared against the
+committed CSV (md5 1f25ed31bbab4181d3a606cd1e2625fc). RESULT: portal == disk, PASS 20/20.
+=> submit == validated (the verify-live-artifact-by-bytes check).
+
+row  name            len  head(10)    tail(6)
+------------------------------------------------
+  1  glp1r_42_mini    49  EDSFNAGLGA  LDSWHE
+  2  glp1r_43_ago     25  DSEFTTLRSE  KINELK
+  3  glp1r_44_ago     25  SLIREVFERV  WDVMSL
+  4  glp1r_28_ago     30  SQPSPELQAV  SMLEML
+  5  glp1r_30_mini    80  SEDTFSTLYS  FFTHLH
+  6  glp1r_25_ago     30  MSPEVQALLQ  LEMASG
+  7  glp1r_29_ago     23  MQEILERISR  WDTLSV
+  8  glp1r_23_ago     15  MALTSTQQLT  TNAKYQ
+  9  glp1r_10_ago     23  RNQAYEAYYE  LDAYFF
+ 10  glp1r_33_ago     14  RRGIDQVITA  TAFFRY
+ 11  glp1r_27_ago     13  AAGMVRKVDN  VDNLYN
+ 12  glp1r_36_ago     22  RSFFMKQLAY  AFEEIS
+ 13  glp1r_08_ago     15  HEYIGAQVYL  LQAFRY
+ 14  glp1r_26_ago     17  LEFKFTNDAY  GSTYPI
+ 15  glp1r_38_bind    77  AAAAAQAAAA  LRAEAA
+ 16  glp1r_31_mini    79  SLGESEFTSL  ISLTLL
+ 17  glp1r_19_bind    74  NLNKVREAAE  IRERAR
+ 18  glp1r_37_ago     14  DAVIPWLWKQ  KQLVLK
+ 19  glp1r_21_ago     37  DFYFDAAMVY  LSLIVD
+ 20  glp1r_39_pm      20  VILQQRLLSR  GALAAT
+
+md5(glp1r_track3_v14.csv) = 1f25ed31bbab4181d3a606cd1e2625fc
+validator: rows=20 errors=0 warnings=0 RESULT PASS (Track 3)
+0-Cys all 20; longest contiguous incretin overlap <=3 all 20 (de-novo).

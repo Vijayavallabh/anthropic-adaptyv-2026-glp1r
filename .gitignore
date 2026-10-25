@@ -26,6 +26,7 @@ designs/
 results/
 runs/
 outputs/
+hydra_outputs/
 scratchpad/
 data/generated/
 data/raw/

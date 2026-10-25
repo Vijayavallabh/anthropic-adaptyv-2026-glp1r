@@ -82,7 +82,7 @@ for Track 3, and the command + key output are recorded as evidence. Never claim 
   v1 on 2026-10-13 and again for the 20-row v2 incl. slot-20 on 2026-10-14). Builders/validator now emit `single_chain` (owner directive 2026-10-14; portal accepts both values). Low-risk.
 - **The upload portal has NO novelty score** — it only runs a format/parse gate returning per-row "Single chain /
   Passed". Novelty is locked up-front with the local screens (coverage-gated id, FoldSeek structural TM, graft LCS);
-  there is no portal recheck. **FINAL (SUPERSEDED → v11 = v10 REORDERED for the picker rubric, PORTAL-CONFIRMED 2026-10-25; see the 2026-10-24 line at the end of this section) — historical base `submissions/glp1r_track3_v9.csv`** (md5 `419c57ff`, PASS
+  there is no portal recheck. **FINAL (owner-adopted 2026-10-25 → `submissions/glp1r_track3_v14.csv` = the agonist-mechanism MOONSHOT portfolio, md5 `1f25ed31`, PASS 20/0/0, PORTAL-CONFIRMED+byte-verified; see the 2026-10-25 (v14) line at the end of this section; v12/v11b/v11/v10/v9 fallbacks) — historical base `submissions/glp1r_track3_v9.csv`** (md5 `419c57ff`, PASS
   20/0/0; 2026-10-20 loaded into the portal + parsed clean [20 incl / 0 fixes / all "Single chain·Passed"], byte-verified
   portal==committed v9): the v6b composition with three owner-approved swaps (v7: glp1r_15 → rm_0079; v8: glp1r_22 → bg_0746;
   v9: glp1r_03 → bg_1170), seating the two wave-2 re-mined robust 2-folder R299 reachers from a new BoltzGen lineage
@@ -149,6 +149,30 @@ for Track 3, and the command + key output are recorded as evidence. Never claim 
   "Single chain · Passed") in the exact reordered order; byte-verified portal == committed v11 (`fc3653c4`) on
   names+order+lengths+molecule_class+prefix/suffix = submit==validated; evidence
   `data/candidates/portal_parse_v11_2026-10-25.txt`. Only the owner's final submit click remains.
+- **2026-10-25 (v14 = agonist-mechanism MOONSHOT portfolio — OWNER-ADOPTED FINAL).** After "push even further
+  moonshots", a **deep-core generation** lever (RFd4-Proteina with the R299 *rim* hotspot dropped and the binder
+  forced onto the deep activation switch only — R190/H363/E364/Q394; specs `runs/rfd4/specs/deepcore_{pep,mini}.yaml`)
+  lifted Boltz switch-engagement (`central_polar`) from **~3% → ~24%** (217/912); after the independent Chai fold,
+  **16/80 were two-folder switch-engagers and 7 reached R190 in both folders** — the first firewall-legal enrichment
+  for the *activator pose* in this project. **FINAL = `submissions/glp1r_track3_v14.csv` (md5 `1f25ed31`, PASS 20/0/0,
+  all `single_chain`)** = **3 agonist-arm designs** (rows 1-3: `glp1r_42_mini` RFd4 deep-core mini 49aa at
+  screen-protected **rank-1**, `glp1r_43_ago` RFd4 deep-core peptide, `glp1r_44_ago` BoltzGen deep — all R190-both)
+  + **13 gate-core binders** (rows 4-16, from the v12 gate-max set) + **4 tail hedge** (rows 17-20); 8 generator
+  families, 0-Cys. The agonist bets occupy exactly the picker's **screen-protected rank-1 + reserved long-shot**
+  slots; the 13 binders hold the binder/expresser gate. **Honest trade:** v12 (`ae879c97`) and v11 (`fc3653c4`) score
+  higher on the pure binding-gate ranking — v14 gives up a little of that to seat activator-pose bets where they are
+  most likely to be tested; a relayed side-agent "moonshots bind weaker → may be tested less" note was **affirmed**
+  (hence *mixed in*, not crowding out the tested slots), and **v12 is the drop-in gate-max alternative**.
+  **PORTAL-CONFIRMED + byte-verified 20/20** (`data/candidates/portal_parse_v14_2026-10-25.txt`; portal==disk, md5
+  `1f25ed31`). Re-verified fresh at lock: validator 20/0/0, 0-Cys all 20, longest contiguous incretin overlap ≤3 all
+  20 (new designs 3/2/2 = de-novo). Rationale `docs/SUBMISSION_RATIONALE_v14.md`; provenance
+  `data/candidates/v14_provenance.csv`. **Fallbacks:** v12 gate-max (`ae879c97`), v11b balanced (`3f4b5bf0`), v11
+  portal-confirmed reorder (`fc3653c4`), v10 (`6769ef67`), v9 (`419c57ff`). **FIREWALL INTACT:** R190/deep-core
+  engagement in both folders is a **necessary-condition pose enrichment**, never a proof or rank of agonism; the
+  agonist arm is seated as diverse independent shots (coverage/P(≥1)), the wet INDIGO CRE/luciferase assay the only
+  verdict. Upload remains USER-GATED — v14 is the artifact to upload (replacing the portal-confirmed v11); only the
+  owner's final submit click remains (deadline tonight AoE). [[adaptyv-glp1r-selection-rubric]]
+  [[lesson-cofold-reach-bar-cheaply-clearable-agonism-blind]] [[feedback-dominate-at-all-costs]]
 - Names published verbatim → no PII/prompt-like text. Unique names + sequences. De-novo + zero-shot (hard gate).
 - Candidate CSVs live in `runs/` (gitignored). **Upload is USER-GATED** (portal account) — never auto-upload.
 

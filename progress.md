@@ -947,3 +947,49 @@ v11 is a REORDER (not a swap — same validated 20), its tier structure rests on
 (not the folder-noisy averaged ipSAE), and rank-1 `glp1r_25` is #1 on every axis — so the thin binding signal affects
 only fine order, never which designs. FINAL = v11 (`fc3653c4`); v10 (`6769ef67`) + v9 (`419c57ff`) byte-frozen fallbacks;
 only the owner's final submit click remains (deadline tonight AoE).
+
+## 2026-10-25 — "push even further moonshots" → agonist-mechanism deep-core wave → FINAL = v14 (owner-adopted, PORTAL-CONFIRMED)
+
+Owner: "push even further moonshots /ultrathink", then "update all the harness files and other files [v14 submission] and
+then commit and push." The earlier waves all optimized the measurable **binding gate** (R299 vestibule reach) because that
+is all computation can score. This wave **reframed the moonshot from binding to agonist MECHANISM**: the agonist-relevant
+discriminator per the active-state notes is insertion DEPTH + **activation-switch engagement** — `central_polar` contacts to
+the **R190 central polar hub / TM6 H363,E364 / TM7 Q394** (R299 is the ECL2 **rim** = antagonist-leaning). Only **3/98**
+prior designs engaged `central_polar` in BOTH folders.
+
+**Deep-core generation lever (the moonshot).** Re-ran RFd4-Proteina with the **R299 rim hotspot dropped** and the binder
+forced onto the deep switch only (R190/H363/E364/Q394; new specs `runs/rfd4/specs/deepcore_{pep,mini}.yaml`, pep 15-30aa /
+mini 45-85aa, 0-Cys). Result: Boltz `central_polar` engagement rose from **~3% (base pool) → ~24% (217/912)**; a deep-core
+Boltz fold completed rc=0 (relaunched excluding GPU 3 after a foreign `mmbu` job re-occupied it). After the independent
+**Chai** fold, **16/80 were two-folder switch-engagers and 7 reached R190 in both folders** — the first firewall-legal
+enrichment for the *activator pose* this project has found (hydrophobic deep-core minis at gravy +1.4…+1.9 were excluded as
+membrane-blind over-docking artifacts by the developability screen gravy≤0.5/pLDDT≥70/0-Cys).
+
+**FINAL = `submissions/glp1r_track3_v14.csv` (md5 `1f25ed31bbab4181d3a606cd1e2625fc`, validator PASS 20/0/0, all
+`single_chain`)** — the mechanism-hedged moonshot portfolio:
+- **Rows 1-3 agonist arm (R190 both folders):** `glp1r_42_mini` (rfd4_mini_g5_deepcore, 49aa, `EDSF…DSWHE`, ipSAE_min 0.55,
+  pLDDT 87, N-term-in-7TM 4/3 — flagship at **screen-protected rank-1**); `glp1r_43_ago` (rfd4_pep_g3_deepcore, 25aa, R190
+  both, 2f-robust, nterm 4/3); `glp1r_44_ago` (BoltzGen `v2_deep_087_0`, 25aa, R190/E364). Distinct modalities; pairwise id
+  0.48 / 0.40 / 0.0.
+- **Rows 4-16 gate core (13 strong binders, the v12 gate-max set):** `glp1r_28, 30, 25, 29, 23, 10, 33, 27, 36, 08, 26, 38,
+  31`.
+- **Rows 17-20 tail hedge:** `glp1r_19, 37, 21, 39`. 8 generator families (RFd4 4, BoltzGen 4, DiffPep 4, PepGLAD 3, ECD 2,
+  EvoBind/RFd3/PepMLM 1 each); **0-Cys**.
+
+The agonist bets occupy exactly the picker's **screen-protected rank-1 + reserved long-shot** slots; the 13 binders hold the
+binder/expresser gate. **Honest trade (recorded, not hidden):** v12 (`ae879c97`) and v11 (`fc3653c4`) score higher on the
+pure binding-gate ranking — v14 gives up a little of that to seat activator-pose bets where they are most likely to be
+tested. A relayed side-agent "moonshots bind weaker → the binding-ranked contest may test them less" note was **affirmed**
+(hence the moonshots are *mixed in*, not crowding out the tested slots), and **v12 is the drop-in gate-max alternative**.
+
+**Re-verified fresh at lock:** validator rows=20 errors=0 warnings=0 PASS; md5 `1f25ed31…`; **0-Cys all 20**; **longest
+contiguous incretin overlap ≤3 all 20** (the 3 new designs 3/2/2 = de-novo, no graft). **PORTAL-CONFIRMED + byte-verified
+20/20:** owner pasted the v14 portal parse (20 included / 0 needing fixes / all "Single chain · Passed"); portal == disk v14
+(`1f25ed31`), evidence `data/candidates/portal_parse_v14_2026-10-25.txt`. Rationale `docs/SUBMISSION_RATIONALE_v14.md`;
+provenance `data/candidates/v14_provenance.csv`. **Fallbacks:** v12 gate-max (`ae879c97`), v11b balanced (`3f4b5bf0`), v11
+portal-confirmed reorder (`fc3653c4`), v10 (`6769ef67`), v9 (`419c57ff`). **FIREWALL INTACT:** R190/deep-core engagement in
+both folders is a **necessary-condition pose enrichment** (membrane-blind co-fold biased toward the activator pose), **never
+a proof or a rank of agonism**; the agonist arm is seated as diverse independent shots (coverage / P(≥1 activates)); the wet
+**INDIGO CRE/luciferase** assay is the only verdict. Upload remains **USER-GATED** — v14 is the artifact to upload (replacing
+the portal-confirmed v11); only the owner's final submit click remains (deadline tonight AoE).
+[[adaptyv-glp1r-selection-rubric]] [[lesson-cofold-reach-bar-cheaply-clearable-agonism-blind]] [[feedback-dominate-at-all-costs]]

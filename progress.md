@@ -993,3 +993,39 @@ a proof or a rank of agonism**; the agonist arm is seated as diverse independent
 **INDIGO CRE/luciferase** assay is the only verdict. Upload remains **USER-GATED** — v14 is the artifact to upload (replacing
 the portal-confirmed v11); only the owner's final submit click remains (deadline tonight AoE).
 [[adaptyv-glp1r-selection-rubric]] [[lesson-cofold-reach-bar-cheaply-clearable-agonism-blind]] [[feedback-dominate-at-all-costs]]
+
+## 2026-10-26 (DEADLINE DAY) — devil's-advocate REVERSAL + final-day 8-GPU confirmation → FINAL = v12 (v14 agonism arm RETRACTED)
+
+The user invoked a cold **devil's-advocate** on v14; I **conceded the kill shot and all 3 attacks**, verified against the
+project's own data. v14's reason to exist — the R190 "deep-switch" agonism arm — is a **null signal**:
+- `runs/rfd4/ctrlpanel/scorecard_2folder.csv`: **scrambled-GLP-1 negatives** engage the same central-polar residues
+  (`190|363|364`, `190|364`) as the agonists (exendin-4, GLP-1) **and** the antagonist exendin(9-39) → zero discrimination.
+- `diff runs/rfd4/specs/{mini,deepcore_mini}.yaml`: deep-core = vestibule spec **with the R299 hotspot line removed**, so the
+  "3%->24% switch engagement" is an **R299-deletion artifact** (total central-polar engagement FLAT: 561/912=61.5% deep-core vs
+  365/608=60.0% base). The flagship/arm touch **R190 alone** - fewer switch residues than a scramble.
+- ORGANIZER_QA §1: **affinity ranking is displayed for all binders** -> binding is a real ranked axis; v14's net binding
+  downgrade (traded strong minis for weaker agonism bets) hurt the axis that scores. Verdict: **STOP** defending v14 on
+  mechanism; switch to gate-max + diversity. Checks logged in `data/candidates/v14_cross_metric_scorecard.md`.
+
+The user then said **"whatever it takes to win in the next 4h, all GPUs."** All 8 GPUs were free, ~4.6h to deadline. I ran a
+**multi-seed confirmation fold** (the one legitimate high-EV GPU use - no new generation, a spent + confounded frontier): the
+36 top binding contenders (v12/pool leaders + the deep-core designs incl. the v14 flagship), re-folded **bare+WT 24-432 at 6
+Boltz + 4 Chai seeds** on all 8 GPUs (`scripts/picker/fold_pool.sh` + `chai_shard.sh`; `runs/picker/confirm15_*`). **Findings:**
+(1) v12's strongest members are robust at the higher seed count - `glp1r_32` (vest_76) ipSAE 0.61/0.79 R299 5/4, `glp1r_34`
+(v2_deep_060_1) 6/4, `glp1r_35` (vest_91) 5/2, `glp1r_30/31` 2f-robust; (2) the v14 flagship
+(`rfd4_mini_g5_deepcore_mini_101`) **never makes the 2f-robust cut** even at 6/4 seeds (reaches R299 in only 1 Chai seed) -
+independently confirming it was not special; (3) re-allocating over the complete pool (deep-core merged on-axis)
+**over-concentrates length-favored cousins** (6 BoltzGen incl. near-twins `v2_deep_060_0/1` + 5 RFd4; 6 families) - a
+length-confounded ipSAE bump at the cost of diversity. That set is saved as **v15** (`submissions/glp1r_track3_v15.csv`, md5
+`39f3cf00`, validator PASS 20/0/0) for reference but is **NOT preferred**.
+
+**DECISION: FINAL = `submissions/glp1r_track3_v12.csv` (md5 `ae879c9738ca02882faeb29fb4e48c57`, PASS 20/0/0, all
+`single_chain`)** - the gate-max + diversity best-20: **8 families** (BoltzGen 4 / RFd4 4 / PepGLAD 3 / DiffPep 4 / ECD 2 /
+EvoBind 1 / RFd3 1 / PepMLM 1), <=4/lineage, 17/20 2f-robust, **length-honest rank-1** `glp1r_25` (30aa, pLDDT 92), already
+validated + portal-parse-confirmed (zero re-upload risk). The 4.6h of GPU work **validated v12 and killed v14's premise** -
+confirm, don't churn. Rationale `docs/SUBMISSION_RATIONALE_v12.md`. **Fallbacks:** v15 (`39f3cf00`), v14 (`1f25ed31`,
+retracted), v11 (`fc3653c4`), v10 (`6769ef67`), v9 (`419c57ff`). **FIREWALL INTACT:** v12 ranked on measurable
+binding/expression + lineage diversity, NEVER agonism; the in-silico agonism-pose signal was explicitly tested and found
+non-discriminating (scrambles pass); wet **INDIGO CRE/luciferase** the only verdict. Upload **USER-GATED** - v12 is the
+artifact to upload (replacing v14 on the portal); only the owner's final submit click remains; deadline 2026-10-26 11:59 UTC.
+[[lesson-glp1r-agonism-insilico-rankers-fail]] [[lesson-cofold-engagement-needs-two-folder-consensus]] [[feedback-diverse-not-cousins]]

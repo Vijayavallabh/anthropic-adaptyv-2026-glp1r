@@ -82,7 +82,7 @@ for Track 3, and the command + key output are recorded as evidence. Never claim 
   v1 on 2026-10-13 and again for the 20-row v2 incl. slot-20 on 2026-10-14). Builders/validator now emit `single_chain` (owner directive 2026-10-14; portal accepts both values). Low-risk.
 - **The upload portal has NO novelty score** — it only runs a format/parse gate returning per-row "Single chain /
   Passed". Novelty is locked up-front with the local screens (coverage-gated id, FoldSeek structural TM, graft LCS);
-  there is no portal recheck. **FINAL (owner-adopted 2026-10-25 → `submissions/glp1r_track3_v14.csv` = the agonist-mechanism MOONSHOT portfolio, md5 `1f25ed31`, PASS 20/0/0, PORTAL-CONFIRMED+byte-verified; see the 2026-10-25 (v14) line at the end of this section; v12/v11b/v11/v10/v9 fallbacks) — historical base `submissions/glp1r_track3_v9.csv`** (md5 `419c57ff`, PASS
+  there is no portal recheck. **FINAL (2026-10-26, supersedes v14 → `submissions/glp1r_track3_v12.csv` = the gate-max + 8-lineage-diversity best-20, md5 `ae879c97`, PASS 20/0/0, portal-confirmed; a user-invoked devil's-advocate proved v14's R190 agonism arm is a NULL signal [scrambles pass the control], and a final-day 8-GPU multi-seed confirmation fold validated v12's strongest members as 2f-robust; see the 2026-10-26 line at the end of this section; v15/v14/v11/v10/v9 fallbacks) — historical base `submissions/glp1r_track3_v9.csv`** (md5 `419c57ff`, PASS
   20/0/0; 2026-10-20 loaded into the portal + parsed clean [20 incl / 0 fixes / all "Single chain·Passed"], byte-verified
   portal==committed v9): the v6b composition with three owner-approved swaps (v7: glp1r_15 → rm_0079; v8: glp1r_22 → bg_0746;
   v9: glp1r_03 → bg_1170), seating the two wave-2 re-mined robust 2-folder R299 reachers from a new BoltzGen lineage
@@ -173,6 +173,27 @@ for Track 3, and the command + key output are recorded as evidence. Never claim 
   verdict. Upload remains USER-GATED — v14 is the artifact to upload (replacing the portal-confirmed v11); only the
   owner's final submit click remains (deadline tonight AoE). [[adaptyv-glp1r-selection-rubric]]
   [[lesson-cofold-reach-bar-cheaply-clearable-agonism-blind]] [[feedback-dominate-at-all-costs]]
+- **2026-10-26 (deadline day) — devil's-advocate REVERSAL → FINAL = v12 (gate-max + diversity); v14 agonism arm RETRACTED.**
+  A user-invoked cold devil's-advocate attacked v14 and I **conceded all of it**: v14's R190 "deep-switch" agonism arm is a
+  **null signal** — the project's own control panel (`runs/rfd4/ctrlpanel/scorecard_2folder.csv`) shows **scrambled-GLP-1
+  negatives engage the same central-polar residues (190|363|364, 190|364) as the agonists AND the antagonist**; the deep-core
+  spec was the vestibule spec **minus the R299 hotspot**, so the "3%→24% switch engagement" was an R299-deletion artifact
+  (total central-polar engagement flat 61.5% vs 60.0%); and the flagship/arm touch R190 *alone* (fewer switch residues than a
+  scramble). Also confirmed: binding is a **displayed ranked axis** (ORGANIZER_QA §1), so v14's net binding downgrade hurt the
+  axis that actually scores. Owner then said "whatever it takes to win in the next 4h, all GPUs." With all 8 GPUs free, I ran a
+  **multi-seed confirmation fold** (36 top binding contenders, bare+WT, 6 Boltz + 4 Chai seeds; `runs/picker/confirm15_*`):
+  it **validated v12's strongest members as 2f-robust** (`glp1r_32`/vest_76 ipSAE 0.61/0.79 R299 5/4; `glp1r_34` 6/4; `glp1r_35`
+  5/2) and **confirmed the v14 flagship never makes the 2f-robust cut** (1 Chai reach) — vindicating dropping the agonism arm.
+  Re-allocating over the complete pool over-concentrates length-favored cousins (6 BoltzGen incl. near-twins + 5 RFd4, 6
+  families) → kept as **v15** (`39f3cf00`, validated) but NOT preferred. **FINAL = `submissions/glp1r_track3_v12.csv` (md5
+  `ae879c97`, PASS 20/0/0, all `single_chain`)** — 8 families (BoltzGen 4 / RFd4 4 / PepGLAD 3 / DiffPep 4 / ECD 2 / EvoBind 1 /
+  RFd3 1 / PepMLM 1), ≤4/lineage, 17/20 2f-robust, length-honest rank-1 (`glp1r_25`, 30aa, pLDDT 92), portal-parse-confirmed.
+  **Fallbacks:** v15 (`39f3cf00`, higher-ipSAE cousin-heavier), v14 (`1f25ed31`, agonism arm — retracted), v11 (`fc3653c4`),
+  v10 (`6769ef67`), v9 (`419c57ff`). Rationale `docs/SUBMISSION_RATIONALE_v12.md`; checks `data/candidates/v14_cross_metric_scorecard.md`.
+  **FIREWALL INTACT:** ranked on measurable binding/expression + lineage diversity, NEVER agonism; the agonism-pose signal was
+  tested and found non-discriminating; wet INDIGO CRE/luciferase the only verdict. Upload USER-GATED — v12 is the artifact to
+  upload; only the owner's final submit click remains. [[lesson-glp1r-agonism-insilico-rankers-fail]]
+  [[lesson-cofold-engagement-needs-two-folder-consensus]] [[feedback-diverse-not-cousins]]
 - Names published verbatim → no PII/prompt-like text. Unique names + sequences. De-novo + zero-shot (hard gate).
 - Candidate CSVs live in `runs/` (gitignored). **Upload is USER-GATED** (portal account) — never auto-upload.
 

@@ -1029,3 +1029,27 @@ binding/expression + lineage diversity, NEVER agonism; the in-silico agonism-pos
 non-discriminating (scrambles pass); wet **INDIGO CRE/luciferase** the only verdict. Upload **USER-GATED** - v12 is the
 artifact to upload (replacing v14 on the portal); only the owner's final submit click remains; deadline 2026-10-26 11:59 UTC.
 [[lesson-glp1r-agonism-insilico-rankers-fail]] [[lesson-cofold-engagement-needs-two-folder-consensus]] [[feedback-diverse-not-cousins]]
+
+## 2026-10-26 (deadline day) — "improve v12 at all costs" → mining pass → FINAL = v16 (v12 + 2 reserve upgrades)
+
+On the owner directive, ran a **mining pass** on the one un-exploited seam: the ~1185 pool designs that Boltz-reach R299
+(>=2) + 0-Cys + graft<=3 but **never received the Chai 2-folder gate**. Took the 38 best (length-honest-weighted, non-cousin
+of v12, internally de-duped; `runs/picker/mine_candidates.csv`), re-folded bare+WT 24-432 at **6 Boltz + 4 Chai seeds** on all
+8 GPUs (`scripts/picker/fold_pool.sh`+`chai_shard.sh`), ESMFolded for pLDDT (`runs/picker/mine_plddt/`). **30/38 confirmed
+2f-robust.** But (a) the winners are predominantly the **same dominant BoltzGen architecture v12 already caps at 4** (shared
+ARRE/RRQYIED motif) — a full curated re-allocation over-concentrates (6 BoltzGen + 5 RFd4, 6 families, length-confounded minis
+to the top, rank-1 pLDDT 67) = the cousin-pile trap, kept only as context; and (b) the fold **confirmed two v12 reserve
+members are dead**: `glp1r_08` (DiffPep, Boltz R299 0/6) and `glp1r_37` (EvoBind, 1/6) don't robustly reach the vestibule.
+
+**DECISION: a strict surgical upgrade, not a churn.** `submissions/glp1r_track3_v16.csv` (md5
+`ca321795cb58b0c6922c5cca54b951ec`, PASS 20/0/0) = v12 with ONLY rows 14,16 (both reserve) replaced by the best length-honest,
+high-pLDDT, 2f-robust, non-cousin mining winners: `glp1r_50_ago` (v4_reader_101_0, 21aa, R299 6/3, pLDDT 87) and `glp1r_51_ago`
+(v4_reader_069_0, 22aa, R299 6/2, pLDDT 90) — both de-novo (longest contiguous incretin overlap 3/2), 0-Cys. The **proven,
+diverse tested top-10 is byte-identical to v12** (length-honest rank-1 glp1r_25, pLDDT 92). Net: +2 robust binders, zero change
+to the tested set. **Honest scope:** a marginal reserve-only gain — v12 and v16 are near-equivalent bets (same tested-10); the
+mining's real result is that **v12 was already near the firewall-imposed ceiling** (the frontier is one dominant BoltzGen
+architecture + length-confounded minis; no large improvement is findable in-silico). Rationale
+`docs/SUBMISSION_RATIONALE_v16.md`. **FIREWALL INTACT** (binding/expression + diversity, never agonism; the agonism-pose signal
+was tested + found non-discriminating earlier this session). **Upload USER-GATED:** upload v16 (2 new seqs -> fresh portal
+parse; both clean single_chain = low risk) OR v12 (portal-confirmed, near-equivalent) if zero re-parse preferred. Fallbacks
+v12 (`ae879c97`) / v15 (`39f3cf00`) / v14 (`1f25ed31`, retracted) / v11 / v10 / v9. Deadline 2026-10-26 11:59 UTC.
